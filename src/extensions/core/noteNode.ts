@@ -1,4 +1,4 @@
-import { LiteGraph, LGraphCanvas } from "@comfyorg/litegraph";
+import { LiteGraph, LGraphCanvas, LGraphNode } from "@comfyorg/litegraph";
 import { app } from "../../scripts/app";
 import { ComfyWidgets } from "../../scripts/widgets";
 // Node that add notes to your project
@@ -6,6 +6,8 @@ import { ComfyWidgets } from "../../scripts/widgets";
 app.registerExtension({
   name: "Comfy.NoteNode",
   registerCustomNodes() {
+    interface NoteNode extends LGraphNode {}
+
     class NoteNode {
       static category: string;
 
@@ -23,8 +25,6 @@ app.registerExtension({
           this.properties = { text: "" };
         }
         ComfyWidgets.STRING(
-          // @ts-ignore
-          // Should we extends LGraphNode?
           this,
           "",
           ["", { default: this.properties.text, multiline: true }],
@@ -40,7 +40,6 @@ app.registerExtension({
 
     LiteGraph.registerNodeType(
       "Note",
-      // @ts-ignore
       Object.assign(NoteNode, {
         title_mode: LiteGraph.NORMAL_TITLE,
         title: "Note",

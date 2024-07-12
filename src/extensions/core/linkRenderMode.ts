@@ -9,7 +9,6 @@ const ext = {
       name: "Link Render Mode",
       defaultValue: 2,
       type: "combo",
-      // @ts-ignore
       options: [...LiteGraph.LINK_RENDER_MODES, "Hidden"].map((m, i) => ({
         value: i,
         text: m,

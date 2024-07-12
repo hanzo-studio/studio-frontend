@@ -1,6 +1,6 @@
 import { app, ANIM_PREVIEW_WIDGET } from "./app";
 import { LGraphCanvas, LGraphNode, LiteGraph } from "@comfyorg/litegraph";
-import type { Vector4 } from "@comfyorg/litegraph";
+import type { DOMWidget, DOMWidgetOptions, Vector4 } from "@comfyorg/litegraph";
 
 const SIZE = Symbol();
 
@@ -9,25 +9,6 @@ interface Rect {
   width: number;
   x: number;
   y: number;
-}
-
-export interface DOMWidget<T = HTMLElement> {
-  type: string;
-  name: string;
-  computedHeight?: number;
-  element?: T;
-  options: any;
-  value?: any;
-  y?: number;
-  callback?: (value: any) => void;
-  draw?: (
-    ctx: CanvasRenderingContext2D,
-    node: LGraphNode,
-    widgetWidth: number,
-    y: number,
-    widgetHeight: number
-  ) => void;
-  onRemove?: () => void;
 }
 
 function intersect(a: Rect, b: Rect): Vector4 | null {
@@ -40,9 +21,7 @@ function intersect(a: Rect, b: Rect): Vector4 | null {
 }
 
 function getClipPath(node: LGraphNode, element: HTMLElement): string {
-  const selectedNode: LGraphNode = Object.values(
-    app.canvas.selected_nodes
-  )[0] as LGraphNode;
+  const selectedNode = Object.values(app.canvas.selected_nodes)[0];
   if (selectedNode && selectedNode !== node) {
     const elRect = element.getBoundingClientRect();
     const MARGIN = 7;
@@ -216,9 +195,7 @@ function computeSize(size: [number, number]): void {
 
 // Override the compute visible nodes function to allow us to hide/show DOM elements when the node goes offscreen
 const elementWidgets = new Set();
-//@ts-ignore
 const computeVisibleNodes = LGraphCanvas.prototype.computeVisibleNodes;
-//@ts-ignore
 LGraphCanvas.prototype.computeVisibleNodes = function (): LGraphNode[] {
   const visibleNodes = computeVisibleNodes.apply(this, arguments);
   // @ts-ignore
@@ -226,11 +203,8 @@ LGraphCanvas.prototype.computeVisibleNodes = function (): LGraphNode[] {
     if (elementWidgets.has(node)) {
       const hidden = visibleNodes.indexOf(node) === -1;
       for (const w of node.widgets) {
-        // @ts-ignore
         if (w.element) {
-          // @ts-ignore
           w.element.hidden = hidden;
-          // @ts-ignore
           w.element.style.display = hidden ? "none" : undefined;
           if (hidden) {
             w.options.onHide?.(w);
@@ -257,13 +231,11 @@ export function addDomClippingSetting(): void {
   });
 }
 
-//@ts-ignore
-LGraphNode.prototype.addDOMWidget = function (
-  name: string,
-  type: string,
-  element: HTMLElement,
-  options: Record<string, any>
-): DOMWidget {
+LGraphNode.prototype.addDOMWidget = function <
+  TElement extends HTMLElement,
+  TValue,
+  TOptions extends DOMWidgetOptions<TValue>,
+>(name, type, element: TElement, options: TOptions) {
   options = { hideOnZoom: true, selectOn: ["focus", "click"], ...options };
 
   if (!element.parentElement) {
@@ -282,7 +254,7 @@ LGraphNode.prototype.addDOMWidget = function (
     document.addEventListener("mousedown", mouseDownHandler);
   }
 
-  const widget: DOMWidget = {
+  const widget: DOMWidget<TElement, TValue, TOptions> = {
     type,
     name,
     get value() {
@@ -290,6 +262,7 @@ LGraphNode.prototype.addDOMWidget = function (
     },
     set value(v) {
       options.setValue?.(v);
+      // @ts-ignore
       widget.callback?.(widget.value);
     },
     draw: function (

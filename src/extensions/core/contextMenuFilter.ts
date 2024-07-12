@@ -3,6 +3,8 @@ import { app } from "../../scripts/app";
 
 // Adds filtering to combo context menus
 
+console.log(LiteGraph, LGraphCanvas);
+
 const ext = {
   name: "Comfy.ContextMenuFilter",
   init() {
@@ -27,7 +29,6 @@ const ext = {
 
         // We must request an animation frame for the current node of the active canvas to update.
         requestAnimationFrame(() => {
-          // @ts-ignore
           const currentNode = LGraphCanvas.active_canvas.current_node;
           const clickedComboValue = currentNode.widgets
             ?.filter(

@@ -1,7 +1,6 @@
 import { app } from "../../scripts/app";
 import { api } from "../../scripts/api";
-import type { IWidget } from "@comfyorg/litegraph";
-import type { DOMWidget } from "@/scripts/domWidget";
+import type { DOMWidget, IWidget } from "@comfyorg/litegraph";
 import { ComfyNodeDef } from "@/types/apiTypes";
 
 type FolderType = "input" | "output" | "temp";
@@ -98,7 +97,6 @@ app.registerExtension({
           /* name=*/ "audioUI",
           audio
         );
-        // @ts-ignore
         // TODO: Sort out the DOMWidget type.
         audioUIWidget.serialize = false;
 

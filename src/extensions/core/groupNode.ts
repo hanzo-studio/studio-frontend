@@ -2,7 +2,7 @@ import { app } from "../../scripts/app";
 import { api } from "../../scripts/api";
 import { mergeIfValid } from "./widgetInputs";
 import { ManageGroupDialog } from "./groupNodeManage";
-import type { LGraphNode } from "@comfyorg/litegraph";
+import type { LGraphNode, LLink } from "@comfyorg/litegraph";
 import { LGraphCanvas, LiteGraph } from "@comfyorg/litegraph";
 
 const GROUP = Symbol();
@@ -16,7 +16,6 @@ const Workflow = {
   isInUseGroupNode(name) {
     const id = `workflow/${name}`;
     // Check if lready registered/in use in this workflow
-    // @ts-ignore
     if (app.graph.extra?.groupNodes?.[name]) {
       // @ts-ignore
       if (app.graph._nodes.find((n) => n.type === id)) {
@@ -28,9 +27,7 @@ const Workflow = {
     return Workflow.InUse.Free;
   },
   storeGroupNode(name, data) {
-    // @ts-ignore
     let extra = app.graph.extra;
-    // @ts-ignore
     if (!extra) app.graph.extra = extra = {};
     let groupNodes = extra.groupNodes;
     if (!groupNodes) extra.groupNodes = groupNodes = {};
@@ -84,11 +81,35 @@ class GroupNodeBuilder {
   }
 
   sortNodes() {
+    const compare = (a: LGraphNode, b: LGraphNode) => {
+      if (typeof a.id === "number") {
+        if (typeof b.id === "number") {
+          return a.id - b.id;
+        }
+        return a;
+      } else if (typeof b.id === "number") {
+        return b;
+      }
+      if (a.id > b.id) {
+        return;
+      }
+    };
+
     // Gets the builders nodes in graph execution order
     const nodesInOrder = app.graph.computeExecutionOrder(false);
     this.nodes = this.nodes
       .map((node) => ({ index: nodesInOrder.indexOf(node), node }))
-      .sort((a, b) => a.index - b.index || a.node.id - b.node.id)
+      .sort((a, b) => {
+        if (a.index !== b.index) {
+          return a.index - b.index;
+        } else if (a.node.id < b.node.id) {
+          return -1;
+        } else if (a.node.id > b.node.id) {
+          return 1;
+        } else {
+          return 0;
+        }
+      })
       .map(({ node }) => node);
   }
 
@@ -133,8 +154,6 @@ class GroupNodeBuilder {
     // Use the built in copyToClipboard function to generate the node data we need
     const backup = localStorage.getItem("litegrapheditor_clipboard");
     try {
-      // @ts-ignore
-      // TODO Figure out if copyToClipboard is really taking this param
       app.canvas.copyToClipboard(this.nodes);
       const config = JSON.parse(
         localStorage.getItem("litegrapheditor_clipboard")
@@ -303,7 +322,7 @@ export class GroupNodeConfig {
         return null;
       }
 
-      let config = {};
+      let config: Record<string, unknown> = {};
       let rerouteType = "*";
       if (linksFrom) {
         for (const [, , id, slot] of linksFrom["0"]) {
@@ -328,7 +347,6 @@ export class GroupNodeConfig {
               null,
               widget
             );
-            // @ts-ignore
             config = res?.customConfig ?? config;
           }
         }
@@ -352,7 +370,6 @@ export class GroupNodeConfig {
         }
       }
 
-      // @ts-ignore
       config.forceInput = true;
       return {
         input: {
@@ -740,11 +757,9 @@ export class GroupNodeHandler {
           if (externalSlot != null) {
             // The inner node is connected via the group node inputs
             const linkId = this.node.inputs[externalSlot].link;
-            let link = app.graph.links[linkId];
+            let link: Partial<LLink> = app.graph.links[linkId];
 
             // Use the outer link, but update the target to the inner node
-            // @ts-ignore
-            // TODO: Fix this
             link = {
               ...link,
               target_id: innerNode.id,
@@ -797,7 +812,6 @@ export class GroupNodeHandler {
           this.groupData.nodeData.nodes.map((n, i) => {
             const innerNode = LiteGraph.createNode(n.type);
             innerNode.configure(n);
-            // @ts-ignore
             innerNode.id = `${this.node.id}:${i}`;
             return innerNode;
           })
@@ -1412,9 +1426,7 @@ function addConvertToGroupOptions() {
   }
 
   // Add to canvas
-  // @ts-ignore
   const getCanvasMenuOptions = LGraphCanvas.prototype.getCanvasMenuOptions;
-  // @ts-ignore
   LGraphCanvas.prototype.getCanvasMenuOptions = function () {
     const options = getCanvasMenuOptions.apply(this, arguments);
     const index =
@@ -1426,9 +1438,7 @@ function addConvertToGroupOptions() {
   };
 
   // Add to nodes
-  // @ts-ignore
   const getNodeMenuOptions = LGraphCanvas.prototype.getNodeMenuOptions;
-  // @ts-ignore
   LGraphCanvas.prototype.getNodeMenuOptions = function (node) {
     const options = getNodeMenuOptions.apply(this, arguments);
     if (!GroupNodeHandler.isGroupNode(node)) {

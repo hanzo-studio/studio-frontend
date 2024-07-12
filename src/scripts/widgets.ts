@@ -2,12 +2,12 @@ import { api } from "./api";
 import "./domWidget";
 import type { ComfyApp } from "./app";
 import type { IWidget, LGraphNode } from "@comfyorg/litegraph";
-import { ComfyNodeDef } from "@/types/apiTypes";
+import { ComfyNodeDef, Input, StringInput } from "@/types/apiTypes";
 
 export type ComfyWidgetConstructor = (
   node: LGraphNode,
   inputName: string,
-  inputData: ComfyNodeDef,
+  inputData: Input,
   app?: ComfyApp,
   widgetName?: string
 ) => { widget: IWidget; minWidth?: number; minHeight?: number };
@@ -26,7 +26,7 @@ const IS_CONTROL_WIDGET = Symbol();
 const HAS_EXECUTED = Symbol();
 
 function getNumberDefaults(
-  inputData: ComfyNodeDef,
+  inputData: Input,
   defaultStep,
   precision,
   enable_rounding
@@ -429,7 +429,7 @@ export const ComfyWidgets: Record<string, ComfyWidgetConstructor> = {
       ),
     };
   },
-  STRING(node, inputName, inputData: ComfyNodeDef, app) {
+  STRING(node, inputName, inputData: StringInput, app) {
     const defaultVal = inputData[1].default || "";
     const multiline = !!inputData[1].multiline;
 

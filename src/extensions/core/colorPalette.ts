@@ -425,18 +425,10 @@ const defaultColorPaletteId = "dark";
 const els: { select: HTMLSelectElement | null } = {
   select: null,
 };
-// const ctxMenu = LiteGraph.ContextMenu;
+
 app.registerExtension({
   name: id,
   init() {
-    /**
-     * Changes the background color of the canvas.
-     *
-     * @method updateBackground
-     * @param {image} String
-     * @param {clearBackgroundColor} String
-     */
-    // @ts-ignore
     LGraphCanvas.prototype.updateBackground = function (
       image,
       clearBackgroundColor
@@ -632,12 +624,10 @@ app.registerExtension({
         // Sets the colors of node slots and links
         if (colorPalette.colors.node_slot) {
           Object.assign(
-            // @ts-ignore
             app.canvas.default_connection_color_byType,
             colorPalette.colors.node_slot
           );
           Object.assign(
-            // @ts-ignore
             LGraphCanvas.link_type_colors,
             colorPalette.colors.node_slot
           );
@@ -882,8 +872,6 @@ app.registerExtension({
           BACKGROUND_IMAGE = base.BACKGROUND_IMAGE;
           CLEAR_BACKGROUND_COLOR = base.CLEAR_BACKGROUND_COLOR;
         }
-        // @ts-ignore
-        // litegraph.extensions.js
         app.canvas.updateBackground(BACKGROUND_IMAGE, CLEAR_BACKGROUND_COLOR);
       },
     });

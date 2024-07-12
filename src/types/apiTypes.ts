@@ -224,5 +224,7 @@ const zComfyNodeDef = z.object({
 
 // `/object_info`
 export type ComfyNodeDef = z.infer<typeof zComfyNodeDef>;
+export type Input = z.infer<typeof zInputSpec>;
+export type StringInput = z.infer<typeof zStringInputSpec>;
 
 // TODO: validate `/object_info` API endpoint responses.
