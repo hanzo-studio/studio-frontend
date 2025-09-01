@@ -1,0 +1,52 @@
+name: Generate API DOC
+
+on:
+    push:
+        branches: [master]
+        paths:
+            - 'packages/primevue/src/**/*.d.ts'
+            - 'packages/primevue/src/**/style/*.js'
+            - 'packages/themes/src/presets/**/**/index.js'
+
+permissions:
+    contents: write
+
+jobs:
+    build:
+        if: github.repository == 'primefaces/primevue' && github.ref == 'refs/heads/master'
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [20]
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Install pnpm
+              uses: pnpm/action-setup@v4
+              with:
+                  version: 9.6.0
+
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: 'pnpm'
+
+            - name: Install node packages
+              run: pnpm run setup
+
+            - name: Generate api doc
+              run: pnpm run build:apidoc
+
+            - name: Code Format
+              run: pnpm run format
+
+            - name: Commit doc
+              run: |
+                  git config user.name "GitHub Actions Bot"
+                  git config user.email "<>"
+                  git commit -a -m "Update API doc"
+                  git push
