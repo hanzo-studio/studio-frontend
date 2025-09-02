@@ -59,8 +59,7 @@ const config: KnipConfig = {
     exports: 'off',
     nsExports: 'off',
     nsTypes: 'off',
-    types: 'off',
-    unlisted: 'off'
+    types: 'off'
   },
   // Include dependencies analysis
   includeEntryExports: true
