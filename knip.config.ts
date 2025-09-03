@@ -63,14 +63,7 @@ const config: KnipConfig = {
   // Only check for unused files, disable all other rules
   // TODO: Gradually enable other rules - see https://github.com/Comfy-Org/ComfyUI_frontend/issues/4888
   rules: {
-    // binaries: 'off',
-    classMembers: 'off',
-    duplicates: 'off',
-    enumMembers: 'off',
-    exports: 'off',
-    nsExports: 'off',
-    nsTypes: 'off',
-    types: 'off'
+    classMembers: 'off'
   },
   // Include dependencies analysis
   includeEntryExports: true

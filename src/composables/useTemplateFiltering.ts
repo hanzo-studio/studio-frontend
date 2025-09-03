@@ -2,10 +2,6 @@ import { type Ref, computed, ref } from 'vue'
 
 import type { TemplateInfo } from '@/types/workflowTemplateTypes'
 
-export interface TemplateFilterOptions {
-  searchQuery?: string
-}
-
 export function useTemplateFiltering(
   templates: Ref<TemplateInfo[]> | TemplateInfo[]
 ) {

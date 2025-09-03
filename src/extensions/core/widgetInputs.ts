@@ -416,23 +416,6 @@ function getConfig(this: LGraphNode, widgetName: string) {
   )
 }
 
-/**
- * Convert a widget to an input slot.
- * @deprecated Widget to socket conversion is no longer necessary, as they co-exist now.
- * @param node The node to convert the widget to an input slot for.
- * @param widget The widget to convert to an input slot.
- * @returns The input slot that was converted from the widget or undefined if the widget is not found.
- */
-export function convertToInput(
-  node: LGraphNode,
-  widget: IBaseWidget
-): INodeInputSlot | undefined {
-  console.warn(
-    'Please remove call to convertToInput. Widget to socket conversion is no longer necessary, as they co-exist now.'
-  )
-  return node.inputs.find((slot) => slot.widget?.name === widget.name)
-}
-
 function getWidgetType(config: InputSpec) {
   // Special handling for COMBO so we restrict links based on the entries
   let type = config[0]

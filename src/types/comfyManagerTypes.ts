@@ -13,8 +13,6 @@ export const isMergedNodePack = (
   nodePack: RegistryPack | AlgoliaNodePack
 ): nodePack is MergedNodePack => 'comfy_nodes' in nodePack
 
-export type PackField = keyof RegistryPack | null
-
 export const IsInstallingKey: InjectionKey<Ref<boolean>> =
   Symbol('isInstalling')
 
@@ -60,28 +58,6 @@ export interface UseNodePacksOptions {
   maxConcurrent?: number
 }
 
-enum ManagerPackState {
-  /** Pack is installed and enabled */
-  INSTALLED = 'installed',
-  /** Pack is installed but disabled */
-  DISABLED = 'disabled',
-  /** Pack is not installed */
-  NOT_INSTALLED = 'not_installed',
-  /** Pack failed to import */
-  IMPORT_FAILED = 'import_failed',
-  /** Pack has an update available */
-  NEEDS_UPDATE = 'needs_update'
-}
-
-enum ManagerPackInstallType {
-  /** Installed via git clone */
-  GIT = 'git-clone',
-  /** Installed via file copy */
-  COPY = 'copy',
-  /** Installed from the Comfy Registry */
-  REGISTRY = 'cnr'
-}
-
 export enum SelectedVersion {
   /** Latest version of the pack from the registry */
   LATEST = 'latest',
@@ -93,22 +69,16 @@ export enum ManagerChannel {
   /** All packs except those with instability or security issues */
   DEFAULT = 'default',
   /** Packs that were recently updated */
-  RECENT = 'recent',
   /** Packs that were superseded by distinct replacements of some type */
-  LEGACY = 'legacy',
   /** Packs that were forked as a result of the original pack going unmaintained */
-  FORKED = 'forked',
   /** Packs with instability or security issues suitable only for developers */
-  DEV = 'dev',
+  DEV = 'dev'
   /** Packs suitable for beginners */
-  TUTORIAL = 'tutorial'
 }
 
 export enum ManagerDatabaseSource {
   /** Get pack info from the Comfy Registry */
-  REMOTE = 'remote',
   /** If set to `local`, the channel is ignored */
-  LOCAL = 'local',
   /** Get pack info from the cached response from the Comfy Registry (1 day TTL) */
   CACHE = 'cache'
 }
@@ -156,54 +126,6 @@ export interface ManagerPackInstalled {
 export type InstalledPacksResponse = Record<
   NonNullable<RegistryPack['name']>,
   ManagerPackInstalled
->
-
-/**
- * Returned by `/customnode/getlist`
- */
-export interface ManagerPack extends ManagerPackInfo {
-  /** Pack author name or 'Unclaimed' if the pack was added automatically via GitHub crawl. */
-  author: components['schemas']['Node']['author']
-  /** Files included in the pack */
-  files: string[]
-  /** The type of installation that was used to install the pack */
-  reference: string
-  /** The display name of the pack */
-  title: string
-  /** The latest version of the pack */
-  cnr_latest: SelectedVersion
-  /** The github link to the repository of the pack */
-  repository: string
-  /** The state of the pack */
-  state: ManagerPackState
-  /** The state of the pack update */
-  'update-state': 'false' | 'true' | null
-  /** The number of stars the pack has on GitHub. Distinct from registry stars */
-  stars: number
-  /**
-   * The last time the pack was updated. In ISO 8601 format.
-   * @example '2024-05-22 20:00:00'
-   */
-  last_update: string
-  health: string
-  description: string
-  trust: boolean
-  install_type: ManagerPackInstallType
-}
-
-/**
- * Returned by `/customnode/getmappings`.
- */
-export type ManagerMappings = Record<
-  NonNullable<components['schemas']['Node']['name']>,
-  [
-    /** List of ComfyNode names included in the pack */
-    Array<components['schemas']['ComfyNode']['comfy_node_name']>,
-    {
-      /** The display name of the pack */
-      title_aux: string
-    }
-  ]
 >
 
 /**

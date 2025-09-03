@@ -196,12 +196,6 @@ export interface ClipboardItems {
   subgraphs?: ExportedSubgraph[]
 }
 
-/** @deprecated */
-export interface IClipboardContents {
-  nodes?: ISerialisedNode[]
-  links?: TClipboardLink[]
-}
-
 export interface SerialisableReroute {
   id: RerouteId
   parentId?: RerouteId

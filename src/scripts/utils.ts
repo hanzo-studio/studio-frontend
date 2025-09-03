@@ -1,7 +1,6 @@
 import { applyTextReplacements as _applyTextReplacements } from '@/utils/searchAndReplace'
 
 import { api } from './api'
-import type { ComfyApp } from './app'
 import { $el } from './ui'
 
 export function clone<T>(obj: T): T {
@@ -14,39 +13,6 @@ export function clone<T>(obj: T): T {
   }
 
   return JSON.parse(JSON.stringify(obj))
-}
-
-/**
- * @deprecated Use `applyTextReplacements` from `@/utils/searchAndReplace` instead
- * There are external callers to this function, so we need to keep it for now
- */
-export function applyTextReplacements(app: ComfyApp, value: string): string {
-  return _applyTextReplacements(app.graph, value)
-}
-
-export async function addStylesheet(
-  urlOrFile: string,
-  relativeTo?: string
-): Promise<void> {
-  return new Promise((res, rej) => {
-    let url
-    if (urlOrFile.endsWith('.js')) {
-      url = urlOrFile.substr(0, urlOrFile.length - 2) + 'css'
-    } else {
-      url = new URL(
-        urlOrFile,
-        relativeTo ?? `${window.location.protocol}//${window.location.host}`
-      ).toString()
-    }
-    $el('link', {
-      parent: document.head,
-      rel: 'stylesheet',
-      type: 'text/css',
-      href: url,
-      onload: res,
-      onerror: rej
-    })
-  })
 }
 
 export function downloadBlob(filename: string, blob: Blob) {
