@@ -15,6 +15,7 @@ const config: KnipConfig = {
     'src/**/*.{js,ts,vue}',
     'tests-ui/**/*.{js,ts,vue}'
   ],
+  ignoreBinaries: ['only-allow', 'openapi-typescript'],
   ignoreDependencies: [
     '@primeuix/forms',
     '@primeuix/styled',
@@ -62,7 +63,7 @@ const config: KnipConfig = {
   // Only check for unused files, disable all other rules
   // TODO: Gradually enable other rules - see https://github.com/Comfy-Org/ComfyUI_frontend/issues/4888
   rules: {
-    binaries: 'off',
+    // binaries: 'off',
     classMembers: 'off',
     duplicates: 'off',
     enumMembers: 'off',
