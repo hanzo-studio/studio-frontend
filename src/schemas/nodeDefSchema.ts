@@ -34,7 +34,7 @@ export const zBaseInputOptions = z
   })
   .passthrough()
 
-export const zNumericInputOptions = zBaseInputOptions.extend({
+const zNumericInputOptions = zBaseInputOptions.extend({
   min: z.number().optional(),
   max: z.number().optional(),
   step: z.number().optional(),
@@ -234,11 +234,8 @@ export type NumericInputOptions = z.infer<typeof zNumericInputOptions>
 
 export type IntInputSpec = z.infer<typeof zIntInputSpec>
 export type FloatInputSpec = z.infer<typeof zFloatInputSpec>
-export type BooleanInputSpec = z.infer<typeof zBooleanInputSpec>
-export type StringInputSpec = z.infer<typeof zStringInputSpec>
 export type ComboInputSpec = z.infer<typeof zComboInputSpec>
 export type ComboInputSpecV2 = z.infer<typeof zComboInputSpecV2>
-export type CustomInputSpec = z.infer<typeof zCustomInputSpec>
 export type InputSpec = z.infer<typeof zInputSpec>
 
 export function validateComfyNodeDef(

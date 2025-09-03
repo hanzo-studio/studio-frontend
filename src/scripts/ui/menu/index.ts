@@ -5,10 +5,6 @@ import { ComfyButtonGroup } from '../components/buttonGroup'
 import './menu.css'
 
 // Export to make sure following components are shimmed and exported by vite
-export { ComfyButton } from '../components/button'
-export { ComfyPopup } from '../components/popup'
-export { ComfyAsyncDialog } from '@/scripts/ui/components/asyncDialog'
-export { DraggableList } from '@/scripts/ui/draggableList'
 
 export class ComfyAppMenu {
   app: ComfyApp

@@ -57,7 +57,6 @@ const config: KnipConfig = {
     'src/components/card/CardDescription.vue',
     'src/components/input/SingleSelect.vue'
   ],
-  ignoreExportsUsedInFile: true,
   // Vue-specific configuration
   vue: true,
   // Only check for unused files, disable all other rules

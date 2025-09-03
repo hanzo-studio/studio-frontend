@@ -30,7 +30,7 @@ export interface IWidgetOptions<TValues = unknown[]> {
   callback?: IWidget['callback']
 }
 
-export interface IWidgetSliderOptions extends IWidgetOptions<number[]> {
+interface IWidgetSliderOptions extends IWidgetOptions<number[]> {
   min: number
   max: number
   step2: number
@@ -38,7 +38,7 @@ export interface IWidgetSliderOptions extends IWidgetOptions<number[]> {
   marker_color?: CanvasColour
 }
 
-export interface IWidgetKnobOptions extends IWidgetOptions<number[]> {
+interface IWidgetKnobOptions extends IWidgetOptions<number[]> {
   min: number
   max: number
   step2: number
@@ -133,7 +133,7 @@ export interface IButtonWidget
 }
 
 /** A custom widget - accepts any value and has no built-in special handling */
-export interface ICustomWidget extends IBaseWidget<string | object, 'custom'> {
+interface ICustomWidget extends IBaseWidget<string | object, 'custom'> {
   type: 'custom'
   value: string | object
 }

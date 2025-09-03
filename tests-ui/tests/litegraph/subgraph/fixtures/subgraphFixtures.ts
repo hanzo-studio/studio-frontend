@@ -16,7 +16,7 @@ import {
   createTestSubgraphNode
 } from './subgraphHelpers'
 
-export interface SubgraphFixtures {
+interface SubgraphFixtures {
   /** A minimal subgraph with no inputs, outputs, or nodes */
   emptySubgraph: Subgraph
 
@@ -169,24 +169,3 @@ export const subgraphTest = test.extend<SubgraphFixtures>({
     capture.cleanup()
   }
 })
-
-/**
- * Fixtures that test edge cases and error conditions.
- * These may leave the system in an invalid state and should be used carefully.
- */
-export interface EdgeCaseFixtures {
-  /** Subgraph with circular references (for testing recursion detection) */
-  circularSubgraph: {
-    rootGraph: LGraph
-    subgraphA: Subgraph
-    subgraphB: Subgraph
-    nodeA: SubgraphNode
-    nodeB: SubgraphNode
-  }
-
-  /** Deeply nested subgraphs approaching the theoretical limit */
-  deeplyNestedSubgraph: ReturnType<typeof createNestedSubgraphs>
-
-  /** Subgraph with maximum inputs and outputs */
-  maxIOSubgraph: Subgraph
-}

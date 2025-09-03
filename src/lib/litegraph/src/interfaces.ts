@@ -63,7 +63,7 @@ export interface HasBoundingRect {
 }
 
 /** An object containing a set of child objects */
-export interface Parent<TChild> {
+interface Parent<TChild> {
   /** All objects owned by the parent object. */
   readonly children?: ReadonlySet<TChild>
 }
@@ -209,7 +209,7 @@ export interface LinkSegment {
   readonly origin_slot: number | undefined
 }
 
-export interface IInputOrOutput {
+interface IInputOrOutput {
   // If an input, this will be defined
   input?: INodeInputSlot | null
   // If an output, this will be defined
@@ -272,7 +272,7 @@ export type ReadOnlyTypedArray<T extends TypedArrays | TypedBigIntArrays> =
   >
 
 /** Union of property names that are of type Match */
-export type KeysOfType<T, Match> = Exclude<
+type KeysOfType<T, Match> = Exclude<
   { [P in keyof T]: T[P] extends Match ? P : never }[keyof T],
   undefined
 >
@@ -444,7 +444,7 @@ export interface IContextMenuValue<
   ): void | boolean
 }
 
-export interface IContextMenuSubmenu<TValue = unknown>
+interface IContextMenuSubmenu<TValue = unknown>
   extends IContextMenuOptions<TValue> {
   options: ConstructorParameters<typeof ContextMenu<TValue>>[0]
 }
