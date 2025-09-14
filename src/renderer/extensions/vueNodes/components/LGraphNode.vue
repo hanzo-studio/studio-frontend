@@ -10,18 +10,11 @@
         'bg-white dark-theme:bg-charcoal-100',
         'min-w-[445px]',
         'lg-node absolute rounded-2xl',
-        // border
         'border border-solid border-sand-100 dark-theme:border-charcoal-300',
-        !!executing && 'border-blue-500 dark-theme:border-blue-500',
-        !!error && 'border-red-700 dark-theme:border-red-300',
-        // hover
+        borderClass,
         'hover:ring-7 ring-gray-500/50 dark-theme:ring-gray-500/20',
-        // Selected
         'outline-transparent -outline-offset-2 outline-2',
-        !!isSelected && 'outline-black dark-theme:outline-white',
-        !!(isSelected && executing) &&
-          'outline-blue-500 dark-theme:outline-blue-500',
-        !!(isSelected && error) && 'outline-red-500 dark-theme:outline-red-500',
+        outlineClass,
         {
           'animate-pulse': executing,
           'opacity-50': nodeData.mode === 4,
@@ -184,6 +177,10 @@ if (!selectedNodeIds) {
   )
 }
 
+watch(props, () => {
+  console.log(JSON.stringify(props.nodeData, null, 2))
+})
+
 // Computed selection state - only this node re-evaluates when its selection changes
 const isSelected = computed(() => {
   return selectedNodeIds.value.has(props.nodeData.id)
@@ -264,6 +261,19 @@ const shouldShowWidgets = computed(
 const shouldShowContent = computed(
   () => shouldRenderContent.value && hasCustomContent.value
 )
+
+const borderClass = computed(() => {
+  if (props.error) return 'border-red-700 dark-theme:border-red-300'
+  if (props.executing) return 'border-blue-500'
+  return undefined
+})
+
+const outlineClass = computed(() => {
+  if (!isSelected.value) return undefined
+  if (props.error) return 'outline-red-500'
+  if (props.executing) return 'outline-blue-500'
+  return 'outline-black dark-theme:outline-white'
+})
 
 // Event handlers
 const handlePointerDown = (event: PointerEvent) => {
