@@ -7,7 +7,6 @@
  * 3. Only run when transform changes (event driven)
  */
 import { createSharedComposable, useThrottleFn } from '@vueuse/core'
-import { computed } from 'vue'
 
 import { useVueNodeLifecycle } from '@/composables/graph/useVueNodeLifecycle'
 import type { LGraphNode } from '@/lib/litegraph/src/LGraphNode'
@@ -58,14 +57,12 @@ function useViewportCullingIndividual() {
   const canvasStore = useCanvasStore()
   const { nodeManager } = useVueNodeLifecycle()
 
-  const viewport = computed(() => viewportEdges(canvasStore.canvas))
-
   function inViewport(node: LGraphNode | undefined): boolean {
-    if (!viewport.value || !node) {
+    if (!node) {
       return true
     }
     const nodeBounds = getNodeBounds(node)
-    return boundsIntersect(nodeBounds, viewport.value)
+    return boundsIntersect(nodeBounds, viewportEdges(canvasStore.canvas)!)
   }
 
   /**
@@ -73,7 +70,7 @@ function useViewportCullingIndividual() {
    * Queries DOM directly - no cache maintenance needed
    */
   function updateVisibility() {
-    if (!nodeManager.value || !app.canvas) return // load bearing app.canvas check for workflows being loaded.
+    if (!nodeManager.value || !app.canvas || !canvasStore.canvas) return // load bearing app.canvas check for workflows being loaded.
 
     const nodeElements = document.querySelectorAll('[data-node-id]')
     for (const element of nodeElements) {
@@ -93,7 +90,7 @@ function useViewportCullingIndividual() {
     }
   }
 
-  const handleTransformUpdate = useThrottleFn(() => updateVisibility, 100, true)
+  const handleTransformUpdate = useThrottleFn(updateVisibility, 100, true)
 
   return { handleTransformUpdate }
 }
