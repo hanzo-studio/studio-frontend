@@ -157,10 +157,11 @@ export class ComfyApp {
   // @ts-expect-error fixme ts strict error
   _nodeOutputs: Record<string, any>
   nodePreviewImages: Record<string, string[]>
-  // @ts-expect-error fixme ts strict error
-  #graph: LGraph
   get graph() {
-    return this.#graph
+    if (!this.canvas.graph) {
+      throw new Error('Graph not yet initialized')
+    }
+    return this.canvas.graph
   }
   // @ts-expect-error fixme ts strict error
   canvas: LGraphCanvas
@@ -809,10 +810,10 @@ export class ComfyApp {
     this.#addConfigureHandler()
     this.#addApiUpdateHandlers()
 
-    this.#graph = new LGraph()
+    const graph = new LGraph()
 
     // Register the subgraph - adds type wrapper for Litegraph's `createNode` factory
-    this.graph.events.addEventListener('subgraph-created', (e) => {
+    graph.events.addEventListener('subgraph-created', (e) => {
       try {
         const { subgraph, data } = e.detail
         useSubgraphService().registerNewSubgraph(subgraph, data)
@@ -828,7 +829,7 @@ export class ComfyApp {
 
     this.#addAfterConfigureHandler()
 
-    this.canvas = new LGraphCanvas(canvasEl, this.graph)
+    this.canvas = new LGraphCanvas(canvasEl, graph)
     // Make canvas states reactive so we can observe changes on them.
     this.canvas.state = reactive(this.canvas.state)
 
