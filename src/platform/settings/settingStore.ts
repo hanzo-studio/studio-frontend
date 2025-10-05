@@ -42,6 +42,17 @@ function onChange(
   app.ui.settings.dispatchChange(setting.id, newValue, oldValue)
 }
 
+type SettingBooleans<Type> = {
+  [Property in keyof Type]: Type[Property] extends boolean ? Property : never
+}
+
+type BooleanSettingsMap = SettingBooleans<Settings>
+
+type BooleanSettings = Exclude<
+  BooleanSettingsMap[keyof BooleanSettingsMap],
+  undefined
+>
+
 export const useSettingStore = defineStore('setting', () => {
   const settingValues = ref<Record<string, any>>({})
   const settingsById = ref<Record<string, SettingParams>>({})
@@ -83,6 +94,11 @@ export const useSettingStore = defineStore('setting', () => {
   function get<K extends keyof Settings>(key: K): Settings[K] {
     // Clone the value when returning to prevent external mutations
     return _.cloneDeep(settingValues.value[key] ?? getDefaultValue(key))
+  }
+
+  async function toggle<K extends BooleanSettings>(key: K) {
+    const current = get(key)
+    await set(key, !current)
   }
 
   /**
@@ -244,6 +260,7 @@ export const useSettingStore = defineStore('setting', () => {
     loadSettingValues,
     set,
     get,
+    toggle,
     exists,
     getDefaultValue
   }

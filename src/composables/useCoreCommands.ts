@@ -1114,8 +1114,7 @@ export function useCoreCommands(): ComfyCommand[] {
         } AssetAPI`,
       function: async () => {
         const settingStore = useSettingStore()
-        const current = settingStore.get('Comfy.Assets.UseAssetAPI') ?? false
-        await settingStore.set('Comfy.Assets.UseAssetAPI', !current)
+        await settingStore.toggle('Comfy.Assets.UseAssetAPI')
         await useWorkflowService().reloadCurrentWorkflow() // ensure changes take effect immediately
       }
     }
