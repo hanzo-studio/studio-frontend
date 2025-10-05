@@ -42,16 +42,11 @@ function onChange(
   app.ui.settings.dispatchChange(setting.id, newValue, oldValue)
 }
 
-type SettingBooleans<Type> = {
-  [Property in keyof Type]: Type[Property] extends boolean ? Property : never
-}
+type KeysMatching<T, V> = {
+  [K in keyof T]-?: T[K] extends V ? K : never
+}[keyof T]
 
-type BooleanSettingsMap = SettingBooleans<Settings>
-
-type BooleanSettings = Exclude<
-  BooleanSettingsMap[keyof BooleanSettingsMap],
-  undefined
->
+type BooleanSettings = KeysMatching<Settings, boolean>
 
 export const useSettingStore = defineStore('setting', () => {
   const settingValues = ref<Record<string, any>>({})
