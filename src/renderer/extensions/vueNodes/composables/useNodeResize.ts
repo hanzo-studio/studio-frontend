@@ -2,18 +2,9 @@ import { useEventListener } from '@vueuse/core'
 import { ref } from 'vue'
 
 import type { TransformState } from '@/renderer/core/layout/injectionKeys'
+import type { Point, Size } from '@/renderer/core/layout/types'
 import { useNodeSnap } from '@/renderer/extensions/vueNodes/composables/useNodeSnap'
 import { useShiftKeySync } from '@/renderer/extensions/vueNodes/composables/useShiftKeySync'
-
-interface Size {
-  width: number
-  height: number
-}
-
-interface Position {
-  x: number
-  y: number
-}
 
 interface UseNodeResizeOptions {
   /** Transform state for coordinate conversion */
@@ -32,10 +23,9 @@ export function useNodeResize(
 ) {
   const { transformState } = options
 
-  const isResizing = ref(false)
-  const resizeStartPos = ref<Position | null>(null)
-  const resizeStartSize = ref<Size | null>(null)
-  const intrinsicMinSize = ref<Size | null>(null)
+  const resizeStartPos = ref<Point>()
+  const resizeStartSize = ref<Size>()
+  const intrinsicMinSize = ref<Size>()
 
   // Snap-to-grid functionality
   const { shouldSnap, applySnapToSize } = useNodeSnap()
@@ -56,7 +46,6 @@ export function useNodeResize(
     // Capture pointer to ensure we get all move/up events
     target.setPointerCapture(event.pointerId)
 
-    isResizing.value = true
     resizeStartPos.value = { x: event.clientX, y: event.clientY }
 
     // Get current node size from the DOM and calculate intrinsic min size
@@ -90,7 +79,6 @@ export function useNodeResize(
 
     const handlePointerMove = (moveEvent: PointerEvent) => {
       if (
-        !isResizing.value ||
         !resizeStartPos.value ||
         !resizeStartSize.value ||
         !intrinsicMinSize.value
@@ -130,11 +118,10 @@ export function useNodeResize(
     }
 
     const handlePointerUp = (upEvent: PointerEvent) => {
-      if (isResizing.value) {
-        isResizing.value = false
-        resizeStartPos.value = null
-        resizeStartSize.value = null
-        intrinsicMinSize.value = null
+      if (resizeStartPos.value) {
+        resizeStartPos.value = undefined
+        resizeStartSize.value = undefined
+        intrinsicMinSize.value = undefined
 
         // Stop tracking shift key state
         stopShiftSync()
@@ -149,8 +136,5 @@ export function useNodeResize(
     const stopUpListen = useEventListener('pointerup', handlePointerUp)
   }
 
-  return {
-    startResize,
-    isResizing
-  }
+  return { startResize }
 }
