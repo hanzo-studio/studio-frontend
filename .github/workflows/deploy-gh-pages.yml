@@ -170,5 +170,5 @@ jobs:
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }} # Required
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }} # Required
           working-directory: ./docs/pages
-          env:
-            VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }} # Required for Vercel Action
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }} # Required for Vercel Action

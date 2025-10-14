@@ -10,6 +10,7 @@
   "scripts": {
     "build:desktop": "nx build @comfyorg/desktop-ui",
     "build-storybook": "storybook build",
+    "build:pages": "bash scripts/build-pages.sh",
     "build:types": "nx build --config vite.types.config.mts && node scripts/prepare-types.js",
     "build": "cross-env NODE_OPTIONS='--max-old-space-size=8192' pnpm typecheck && nx build",
     "collect-i18n": "pnpm exec playwright test --config=playwright.i18n.config.ts",
