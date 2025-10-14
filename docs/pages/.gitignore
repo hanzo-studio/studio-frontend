@@ -1,0 +1,14 @@
+*
+!/.gitignore
+!/README.md
+!/index.html
+!/knip/
+!/knip/index.html
+knip/report.md
+!/vite.config.ts
+!/tsconfig.json
+/storybook/
+/nx-graph/
+/coverage/
+/vitest-ui/
+/playwright-reports/

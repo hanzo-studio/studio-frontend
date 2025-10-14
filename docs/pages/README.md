@@ -33,11 +33,7 @@ The deployment is managed by the `.github/workflows/deploy-gh-pages.yml` workflo
 
 2. **Build Process**:
    - Installs dependencies with pnpm
-   - Builds Storybook static site
-   - Generates Nx dependency graph
-   - Creates TypeDoc documentation
-   - Runs tests and generates coverage reports
-   - Generates Knip analysis report
+   - Runs `scripts/build-pages.sh` to generate Storybook, Nx dependency graph, Vitest reports, coverage, and Knip analysis
    - Creates a landing page with links to all tools
 
 3. **Deployment**:
@@ -49,7 +45,7 @@ The deployment is managed by the `.github/workflows/deploy-gh-pages.yml` workflo
 
 ### Build Steps
 
-Each tool is built in its own step with `continue-on-error: true`, ensuring that if one tool fails to build, the others will still be deployed.
+The build script handles optional tooling gracefully—if an individual tool fails to build, the remainder of the deployment still proceeds and the failure is logged as a warning.
 
 #### Storybook (Required)
 ```bash
@@ -63,12 +59,12 @@ pnpm nx graph --file=dist/nx-graph/index.html
 
 #### Test Coverage (Optional)
 ```bash
-pnpm test:unit --run --coverage --coverage.reporter=html
+pnpm exec vitest --run --coverage --coverage.reporter=html
 ```
 
 #### Vitest Results (Optional)
 ```bash
-pnpm test:unit --run --reporter=html
+pnpm exec vitest --run --reporter=html --outputFile dist/vitest-ui/index.html
 ```
 
 #### Knip Report (Optional)
