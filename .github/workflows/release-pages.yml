@@ -1,0 +1,152 @@
+name: Deploy to GitHub Pages
+
+on:
+  # Triggers when any of these workflows complete on main branch
+  # Runs ONCE per workflow completion (e.g., if "Vitest Tests" completes, this workflow runs once)
+  workflow_run:
+    workflows: ['Storybook and Chromatic CI', 'Vitest Tests', 'Tests CI']
+    types: [completed]
+  # Allow direct pushes to the debug branch to kick off the full pipeline
+  push:
+    branches: [sno-deploy-ghpage]
+  # Keep manual trigger for debugging
+  workflow_dispatch:
+
+jobs:
+  incremental-build:
+    runs-on: ubuntu-latest
+    # Only run if the triggering workflow succeeded (or manual dispatch/push)
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'push' || github.event.workflow_run.conclusion == 'success'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Download Storybook artifact (source run)
+        id: fetch_storybook_trigger
+        continue-on-error: true
+        if: github.event_name == 'workflow_run' && github.event.workflow_run.name == 'Storybook and Chromatic CI'
+        uses: actions/download-artifact@v4
+        with:
+          name: storybook-static
+          path: storybook-static
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Download Storybook artifact (latest successful run on main)
+        continue-on-error: true
+        if: steps.fetch_storybook_trigger.outcome != 'success'
+        uses: dawidd6/action-download-artifact@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          workflow: storybook-and-chromatic-ci.yaml
+          name: storybook-static
+          branch: main
+          workflow_conclusion: success
+          path: storybook-static
+
+      - name: Download Vitest reports (source run)
+        id: fetch_vitest_trigger
+        continue-on-error: true
+        if: github.event_name == 'workflow_run' && github.event.workflow_run.name == 'Vitest Tests'
+        uses: actions/download-artifact@v4
+        with:
+          name: vitest-reports
+          path: ./.pages
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Download Vitest reports (latest successful run on main)
+        continue-on-error: true
+        if: steps.fetch_vitest_trigger.outcome != 'success'
+        uses: dawidd6/action-download-artifact@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          workflow: vitest-tests.yaml
+          name: vitest-reports
+          branch: main
+          workflow_conclusion: success
+          path: ./.pages
+
+      - name: Build static assets (with artifact reuse)
+        run: ./scripts/build-pages.sh
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload built pages as cache
+        uses: actions/upload-pages-artifact@v3
+        with:
+          name: built-pages
+          path: './docs/pages'
+
+  # deploy-for-sno-deploy-ghpage-branch:
+  #   runs-on: ubuntu-latest
+  #   needs: build
+  #   if: github.ref == 'refs/heads/sno-deploy-ghpage'
+  #   steps:
+  #     - name: Debug deployment
+  #       run: |
+  #         echo "Contents of ./docs/pages:"
+  #         ls -la ./docs/pages
+  #         echo "Contents of ./docs/pages/vitest-reports (if exists):"
+  #         ls -la ./docs/pages/vitest-reports || echo "No vitest-reports directory"
+  #         echo "Preview URL: https://comfyorg-comfyui-frontend.vercel.app"
+
+  incremental-deploy-github-pages:
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+      actions: read
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    needs: incremental-build
+    steps:
+      # - [Feature request: Partial upload/deploy · Issue #349 · actions/deploy-pages]( https://github.com/actions/deploy-pages/issues/349 )
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  deploy-vercel-app:
+    runs-on: ubuntu-latest
+    needs: incremental-build
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: download built pages
+        uses: actions/download-artifact@v3
+        with:
+          name: built-pages
+          path: ./docs/pages
+
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v20
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }} # Required
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }} # Required
+          working-directory: ./docs/pages
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }} # Required for Vercel Action

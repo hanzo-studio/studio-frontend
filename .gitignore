@@ -78,7 +78,7 @@ templates_repo/
 vite.config.mts.timestamp-*.mjs
 
 # Linux core dumps
-./core
+/core
 
 *storybook.log
 storybook-static
@@ -93,14 +93,8 @@ storybook-static
 vite.config.*.timestamp*
 vitest.config.*.timestamp*
 
-# Github Pages Build output
-/pages-dist
+# Generated reports in docs/pages (exclude generated, keep HTML templates)
+/.pages/*/**/*
+/.pages-dist/
 
-# Generated reports in docs/pages (exclude JSON data, keep HTML templates)
-docs/pages/knip/report.json
-docs/pages/vitest-ui/results.json
-docs/pages/coverage/
-docs/pages/nx-graph/
-docs/pages/storybook/
-docs/pages/playwright-reports/
 .vercel

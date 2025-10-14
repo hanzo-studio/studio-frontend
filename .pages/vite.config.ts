@@ -3,7 +3,7 @@ import { resolve } from 'node:path'
 import { defineConfig } from 'vite'
 
 const rootDir = __dirname
-const outDir = resolve(rootDir, '../pages-dist')
+const outDir = resolve(rootDir, '../.pages-dist')
 
 const discoverHtmlEntries = () => {
   const entries = new Map<string, string>()

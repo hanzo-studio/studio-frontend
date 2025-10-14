@@ -40,8 +40,8 @@ const config: KnipConfig = {
     'packages/registry-types/src/comfyRegistryTypes.ts',
     // Used by a custom node (that should move off of this)
     'src/scripts/ui/components/splitButton.ts',
-    'docs/pages/public/**/*',
-    'docs/pages/public/vite.config.ts'
+    '.pages/**/*',
+    '.pages/vite.config.ts'
   ],
   compilers: {
     // https://github.com/webpro-nl/knip/issues/1008#issuecomment-3207756199
