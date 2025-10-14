@@ -92,3 +92,14 @@ storybook-static
 .github/instructions/nx.instructions.md
 vite.config.*.timestamp*
 vitest.config.*.timestamp*
+
+# Github Pages Build output
+/pages-dist
+
+# Generated reports in docs/pages (exclude JSON data, keep HTML templates)
+docs/pages/knip/report.json
+docs/pages/vitest-ui/results.json
+docs/pages/coverage/
+docs/pages/nx-graph/
+docs/pages/storybook/
+docs/pages/playwright-reports/
