@@ -40,7 +40,6 @@ const config: KnipConfig = {
     'packages/registry-types/src/comfyRegistryTypes.ts',
     // Used by a custom node (that should move off of this)
     'src/scripts/ui/components/splitButton.ts',
-    '.pages/**/*',
     '.pages/vite.config.ts'
   ],
   compilers: {

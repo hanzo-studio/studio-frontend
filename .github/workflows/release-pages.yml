@@ -65,7 +65,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: vitest-reports
-          path: ./.pages
+          path: ./.gh-pages-cache/vitest-reports
           run-id: ${{ github.event.workflow_run.id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -79,7 +79,7 @@ jobs:
           name: vitest-reports
           branch: main
           workflow_conclusion: success
-          path: ./.pages
+          path: ./.gh-pages-cache/vitest-reports
 
       - name: Build static assets (with artifact reuse)
         run: ./scripts/build-pages.sh

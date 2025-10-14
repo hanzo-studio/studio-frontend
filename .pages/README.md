@@ -25,7 +25,7 @@ The primary motivation for this deployment is to provide the design team with a 
 
 ## Deployment Workflow
 
-The deployment is managed by the `.github/workflows/deploy-gh-pages.yml` workflow, which:
+The deployment is managed by the `.github/workflows/release-pages.yml` workflow, which:
 
 1. **Triggers on**:
    - Push to `main` branch
@@ -123,7 +123,7 @@ If changes aren't reflected on the live site:
 
 To add a new development tool to the deployment:
 
-1. Add a new build step in `.github/workflows/deploy-gh-pages.yml`
+1. Add a new build step in `.github/workflows/release-pages.yml`
 2. Ensure the output goes to a subdirectory of `dist/`
 3. Add `continue-on-error: true` if the tool is optional
 4. Update the landing page `dist/index.html` with a link to the new tool
