@@ -21,7 +21,7 @@ const discoverHtmlEntries = () => {
 
 export default defineConfig({
   root: rootDir,
-  base: '/ComfyUI_frontend',
+  base: '/ComfyUI_frontend/',
   appType: 'mpa',
   logLevel: 'info',
   publicDir: false,
