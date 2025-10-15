@@ -1,6 +1,7 @@
 import tailwindcss from '@tailwindcss/vite'
 import vue from '@vitejs/plugin-vue'
 import dotenv from 'dotenv'
+import { visualizer } from 'rollup-plugin-visualizer'
 import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 import IconsResolver from 'unplugin-icons/resolver'
 import Icons from 'unplugin-icons/vite'
@@ -16,6 +17,7 @@ dotenv.config()
 
 const IS_DEV = process.env.NODE_ENV === 'development'
 const SHOULD_MINIFY = process.env.ENABLE_MINIFY === 'true'
+const ANALYZE_BUNDLE = process.env.ANALYZE_BUNDLE === 'true'
 // vite dev server will listen on all addresses, including LAN and public addresses
 const VITE_REMOTE_DEV = process.env.VITE_REMOTE_DEV === 'true'
 const DISABLE_TEMPLATES_PROXY = process.env.DISABLE_TEMPLATES_PROXY === 'true'
@@ -23,6 +25,11 @@ const DISABLE_VUE_PLUGINS = process.env.DISABLE_VUE_PLUGINS === 'true'
 
 const DEV_SERVER_COMFYUI_URL =
   process.env.DEV_SERVER_COMFYUI_URL || 'http://127.0.0.1:8188'
+
+const DISTRIBUTION = (process.env.DISTRIBUTION || 'localhost') as
+  | 'desktop'
+  | 'localhost'
+  | 'cloud'
 
 export default defineConfig({
   base: '',
@@ -158,7 +165,21 @@ export default defineConfig({
       deep: true,
       extensions: ['vue'],
       directoryAsNamespace: true
-    })
+    }),
+
+    // Bundle analyzer - generates dist/stats.html after build
+    // Only enabled when ANALYZE_BUNDLE=true
+    ...(ANALYZE_BUNDLE
+      ? [
+          visualizer({
+            filename: 'dist/stats.html',
+            open: false,
+            gzipSize: true,
+            brotliSize: true,
+            template: 'treemap' // or 'sunburst', 'network'
+          })
+        ]
+      : [])
   ],
 
   build: {
@@ -195,7 +216,8 @@ export default defineConfig({
     __SENTRY_DSN__: JSON.stringify(process.env.SENTRY_DSN || ''),
     __ALGOLIA_APP_ID__: JSON.stringify(process.env.ALGOLIA_APP_ID || ''),
     __ALGOLIA_API_KEY__: JSON.stringify(process.env.ALGOLIA_API_KEY || ''),
-    __USE_PROD_CONFIG__: process.env.USE_PROD_CONFIG === 'true'
+    __USE_PROD_CONFIG__: process.env.USE_PROD_CONFIG === 'true',
+    __DISTRIBUTION__: JSON.stringify(DISTRIBUTION)
   },
 
   resolve: {
