@@ -52,7 +52,9 @@ const config: KnipConfig = {
     'src/renderer/extensions/vueNodes/widgets/utils/audioUtils.ts',
     'src/utils/electronMirrorCheck.ts',
     'src/renderer/extensions/vueNodes/composables/slotLinkDragContext.ts',
-    'src/types/spatialIndex.ts'
+    'src/types/spatialIndex.ts',
+    'src/lib/litegraph/src/litegraph.ts',
+    'src/utils/vintageClipboard.ts'
   ],
   compilers: {
     // https://github.com/webpro-nl/knip/issues/1008#issuecomment-3207756199
