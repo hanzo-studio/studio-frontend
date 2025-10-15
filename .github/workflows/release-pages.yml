@@ -40,12 +40,13 @@ jobs:
         id: fetch_storybook_trigger
         continue-on-error: true
         if: github.event_name == 'workflow_run' && github.event.workflow_run.name == 'Storybook and Chromatic CI'
-        uses: actions/download-artifact@v4
+        uses: dawidd6/action-download-artifact@v6
         with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          workflow: storybook-and-chromatic-ci.yaml
           name: storybook-static
+          run_id: ${{ github.event.workflow_run.id }}
           path: storybook-static
-          run-id: ${{ github.event.workflow_run.id }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Download Storybook artifact (latest successful run on main)
         continue-on-error: true
@@ -63,12 +64,13 @@ jobs:
         id: fetch_vitest_trigger
         continue-on-error: true
         if: github.event_name == 'workflow_run' && github.event.workflow_run.name == 'Vitest Tests'
-        uses: actions/download-artifact@v4
+        uses: dawidd6/action-download-artifact@v6
         with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          workflow: vitest-tests.yaml
           name: vitest-reports
+          run_id: ${{ github.event.workflow_run.id }}
           path: ./.pages/vitest-reports
-          run-id: ${{ github.event.workflow_run.id }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Download Vitest reports (latest successful run on main)
         continue-on-error: true
