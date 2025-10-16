@@ -96,30 +96,11 @@ jobs:
           workflow_conclusion: success
           path: ./.pages/vitest-reports
 
-      - name: Install bun
-        uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
-
-      - name: Start pages dev server in background
-        run: |
-          bun pages:dev &
-          echo "Started bun pages:dev in background (PID: $!)"
-          echo "DEV_SERVER_PID=$!" >> $GITHUB_ENV
-
       - name: Build static assets (with artifact reuse)
         run: ./scripts/build-pages.sh
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
-
-      - name: Stop pages dev server
-        if: always()
-        run: |
-          if [ -n "$DEV_SERVER_PID" ]; then
-            kill $DEV_SERVER_PID 2>/dev/null || true
-            echo "Stopped pages dev server (PID: $DEV_SERVER_PID)"
-          fi
 
       - name: Upload built pages as cache
         uses: actions/upload-pages-artifact@v4
