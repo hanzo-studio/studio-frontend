@@ -43,7 +43,7 @@ jobs:
             .pages
             storybook-static
             coverage
-          key: build-cache-${{ github.ref_name }}-${{ hashFiles('pnpm-lock.yaml', 'package.json') }}
+          key: build-cache-${{ github.ref_name }}-${{ github.run_id }}-${{ hashFiles('pnpm-lock.yaml', 'package.json') }}
           restore-keys: |
             build-cache-${{ github.ref_name }}-
             build-cache-main-
