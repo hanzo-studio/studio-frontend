@@ -70,6 +70,6 @@ echo "[build-pages] Landing page already exists at .pages/index.html"
 
 echo "[build-pages] Build artifacts ready in ./.pages"
 
-echo "[build-pages] Note: For local dev, you can develop the docs/pages/index.html using:
+echo "[build-pages] Note: For local dev, you can develop the .pages/index.html using:
   pnpm exec vite .pages
 "
