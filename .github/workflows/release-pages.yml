@@ -121,6 +121,10 @@ jobs:
           name: built-pages
           path: ./.pages
 
+      # debug ls of ./.pages
+      - name: List ./.pages contents
+        run: ls -la ./.pages
+
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v20
         with:
