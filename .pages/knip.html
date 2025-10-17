@@ -38,7 +38,7 @@
       border: 1px solid #404040;
     }
   </style>
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
   <h1>🧹 Knip Code Quality Report</h1>
@@ -61,8 +61,10 @@
 
         const reportText = await response.text()
         statusEl.style.display = 'none'
-        if (window.marked) {
-          contentEl.innerHTML = window.marked.parse(reportText)
+
+        // Wait for marked to be available
+        if (typeof marked !== 'undefined') {
+          contentEl.innerHTML = marked.parse(reportText)
         } else {
           contentEl.innerHTML = `<pre>${reportText}</pre>`
         }
@@ -74,7 +76,12 @@
       }
     }
 
-    loadReport()
+    // Wait for marked library to load before running
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', loadReport)
+    } else {
+      loadReport()
+    }
   </script>
 </body>
 </html>
