@@ -96,6 +96,52 @@ jobs:
           workflow_conclusion: success
           path: ./.pages/vitest-reports
 
+      - name: Download Playwright E2E reports (source run)
+        id: fetch_playwright_trigger
+        continue-on-error: true
+        if: github.event_name == 'workflow_run' && github.event.workflow_run.name == 'Tests CI'
+        uses: dawidd6/action-download-artifact@v6
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          workflow: ci-tests-e2e.yaml
+          name_is_regexp: true
+          name: playwright-report-.*
+          run_id: ${{ github.event.workflow_run.id }}
+          path: ./playwright-reports-temp
+
+      - name: Download Playwright E2E reports (latest successful run on main)
+        continue-on-error: true
+        if: steps.fetch_playwright_trigger.outcome != 'success'
+        uses: dawidd6/action-download-artifact@v6
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          workflow: ci-tests-e2e.yaml
+          name_is_regexp: true
+          name: playwright-report-.*
+          branch: main
+          workflow_conclusion: success
+          path: ./playwright-reports-temp
+
+      - name: Organize Playwright reports by browser
+        if: always()
+        run: |
+          mkdir -p ./.pages/playwright-reports
+
+          # Move each browser report to its own directory
+          if [ -d "./playwright-reports-temp" ]; then
+            for dir in ./playwright-reports-temp/playwright-report-*; do
+              if [ -d "$dir" ]; then
+                browser_name=$(basename "$dir" | sed 's/playwright-report-//')
+                mkdir -p "./.pages/playwright-reports/${browser_name}"
+                cp -r "$dir"/* "./.pages/playwright-reports/${browser_name}/"
+              fi
+            done
+          fi
+
+      - name: Create Playwright reports index page
+        if: always()
+        run: node scripts/create-playwright-index.js
+
       - name: Build static assets (with artifact reuse)
         run: ./scripts/build-pages.sh
 
