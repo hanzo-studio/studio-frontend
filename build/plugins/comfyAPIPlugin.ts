@@ -98,7 +98,7 @@ export function comfyAPIPlugin(isDev: boolean): Plugin {
 
           if (warningMessage) {
             // It will only display once because it is at the root of the file.
-            shimContent += `console.warn('${warningMessage}');\n`
+            shimContent += `console.warn('${JSON.stringify(warningMessage)}');\n`
           }
 
           shimContent += result.exports.join('')
