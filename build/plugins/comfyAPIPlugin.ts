@@ -41,28 +41,56 @@ function isLegacyFile(id: string): boolean {
   )
 }
 
+function isFunctionExport(type: string, rest: string) {
+  if (type.includes('function')) {
+    return true
+  }
+  if (type === 'const' || type === 'let' || type === 'var') {
+    return rest.includes('= (')
+  }
+  return false
+}
+
+function loggingFunctionExport(moduleName: string, name: string) {
+  return `export const ${name} = loggingFn('${moduleName}.${name}', window.comfyAPI.${moduleName}.${name});`
+}
+
+function isClassExport(type: string) {
+  return type === 'class'
+}
+
+function loggingClassExport(moduleName: string, name: string) {
+  return `export const ${name} = loggingClass('${moduleName}.${name}', window.comfyAPI.${moduleName}.${name});`
+}
+
 function transformExports(code: string, id: string): ShimResult {
   const moduleName = getModuleName(id)
-  const exports: string[] = []
-  let newCode = code
 
   // Regex to match different types of exports
   const regex =
-    /export\s+(const|let|var|function|class|async function)\s+([a-zA-Z$_][a-zA-Z\d$_]*)(\s|\()/g
-  let match
-
-  while ((match = regex.exec(code)) !== null) {
-    const name = match[2]
-    // All exports should be bind to the window object as new API endpoint.
-    if (exports.length == 0) {
-      newCode += `\nwindow.comfyAPI = window.comfyAPI || {};`
-      newCode += `\nwindow.comfyAPI.${moduleName} = window.comfyAPI.${moduleName} || {};`
+    /export\s+(const|let|var|function|class|async function)\s+([a-zA-Z$_][a-zA-Z\d$_]*)(\s.*|\(.*)\n/g
+  const matches = [...code.matchAll(regex)].map((match) => match.slice(0, 4))
+  if (!matches.length) {
+    return {
+      code,
+      exports: []
     }
-    newCode += `\nwindow.comfyAPI.${moduleName}.${name} = ${name};`
-    exports.push(
-      `export const ${name} = window.comfyAPI.${moduleName}.${name};\n`
-    )
   }
+  const names = matches.map(([, , name]) => name)
+  // All exports should be bind to the window object as new API endpoint.
+  const newCode = `
+${code}
+window.comfyAPI = window.comfyAPI || {};
+window.comfyAPI.${moduleName} = window.comfyAPI.${moduleName} || {};
+${names.map((name) => `window.comfyAPI.${moduleName}.${name} = ${name};`).join('\n')}
+`
+  const exports: string[] = matches.map(([, type, name, rest]) =>
+    isFunctionExport(type, rest)
+      ? loggingFunctionExport(moduleName, name)
+      : isClassExport(type)
+        ? loggingClassExport(moduleName, name)
+        : `export const ${name} = window.comfyAPI.${moduleName}.${name};`
+  )
 
   return {
     code: newCode,
@@ -90,18 +118,55 @@ export function comfyAPIPlugin(isDev: boolean): Plugin {
           const projectRoot = process.cwd()
           const relativePath = path.relative(path.join(projectRoot, 'src'), id)
           const shimFileName = relativePath.replace(/\.ts$/, '.js')
-
-          let shimContent = `// Shim for ${relativePath}\n`
-
           const fileKey = relativePath.replace(/\.ts$/, '').replace(/\\/g, '/')
           const warningMessage = getWarningMessage(fileKey, shimFileName)
+          // It will only display once because it is at the root of the file.
+          const warningMessageLog = warningMessage
+            ? `console.warn('${JSON.stringify(warningMessage)}', 'First Imported: ' + frames);`
+            : ''
+          const isDeprecatedConstant = `const MODULE_DEPRECATED = ${warningMessage ? 'true' : 'false'};`
 
-          if (warningMessage) {
-            // It will only display once because it is at the root of the file.
-            shimContent += `console.warn('${JSON.stringify(warningMessage)}');\n`
-          }
+          const shimContent = `// Shim for ${relativePath}
+const frames = new Error().stack?.split('\\n');
+const immediateCaller = frames?.[1] ?? frames?.[0];
+${warningMessageLog}
+${isDeprecatedConstant}
 
-          shimContent += result.exports.join('')
+
+function loggingFn(name, fn) {
+  const callers = new Set();
+  return (...args) => {
+    const frames = new Error().stack?.split('\\n');
+    const immediateCaller = frames?.[1] ?? frames?.[0];
+    if (immediateCaller && !callers.has(immediateCaller)) {
+      if (MODULE_DEPRECATED) {
+        console.log(name, immediateCaller);
+      }
+      callers.add(immediateCaller);
+    }
+    return fn(...args);
+  };
+}
+
+function loggingClass(name, klazz) {
+  const callers = new Set();
+  return new Proxy(klazz, {
+    construct(target, args) {
+      const frames = new Error().stack?.split('\\n');
+      const immediateCaller = frames?.[1] ?? frames?.[0];
+      if (immediateCaller && !callers.has(immediateCaller)) {
+        if (MODULE_DEPRECATED) {
+          console.log(name, immediateCaller);
+        }
+        callers.add(immediateCaller);
+      }
+      return new target(...args);
+    },
+  });
+}
+
+${result.exports.join('\n')}
+`
 
           this.emitFile({
             type: 'asset',
