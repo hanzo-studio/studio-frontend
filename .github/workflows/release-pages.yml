@@ -138,10 +138,6 @@ jobs:
             done
           fi
 
-      - name: Create Playwright reports index page
-        if: always()
-        run: node scripts/create-playwright-index.js
-
       - name: Build static assets (with artifact reuse)
         run: ./scripts/build-pages.sh
 
