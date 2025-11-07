@@ -24,7 +24,7 @@
       />
 
       <!-- Modal Body -->
-      <div class="modal-body flex flex-col gap-4 px-4 pt-6 pb-2 flex-1">
+      <div class="modal-body flex flex-col gap-4 px-0 pt-0 pb-2 flex-1">
         <!-- Release Content -->
         <div class="content-text" v-html="formattedContent"></div>
       </div>
@@ -43,20 +43,7 @@
           <i class="icon-[lucide--external-link]"></i>
           {{ $t('whatsNewPopup.learnMore') }}
         </a>
-        <div class="footer-actions flex items-center gap-4">
-          <button
-            class="action-secondary h-8 px-0 bg-transparent border-none text-sm font-normal rounded cursor-pointer"
-            @click="closePopup"
-          >
-            {{ $t('whatsNewPopup.later') }}
-          </button>
-          <button
-            class="action-primary h-10 px-4 border-none text-sm font-normal rounded-lg cursor-pointer"
-            @click="handleCTA"
-          >
-            {{ $t('whatsNewPopup.update') }}
-          </button>
-        </div>
+        <div class="footer-actions flex items-center gap-4"></div>
       </div>
     </div>
   </div>
@@ -115,15 +102,20 @@ const formattedContent = computed(() => {
 
   try {
     const markdown = latestRelease.value.content
-    // Replace the h1 with our custom title
-    const versionText = latestRelease.value.version
-      ? ` (${latestRelease.value.version})`
-      : ''
-    const customContent = markdown.replace(
-      /^# .+$/m,
-      `# What's new in our latest update${versionText}`
-    )
-    return renderMarkdownToHtml(customContent)
+
+    // Extract image and remaining content separately
+    const imageMatch = markdown.match(/!\[.*?\]\(.*?\)/)
+    const image = imageMatch ? imageMatch[0] : ''
+
+    // Remove image from content but keep original title
+    const contentWithoutImage = markdown.replace(/!\[.*?\]\(.*?\)/, '').trim()
+
+    // Reorder: image first, then original content
+    const reorderedContent = [image, contentWithoutImage]
+      .filter(Boolean)
+      .join('\n\n')
+
+    return renderMarkdownToHtml(reorderedContent)
   } catch (error) {
     console.error('Error parsing markdown:', error)
     // Fallback to plain text with line breaks
@@ -148,11 +140,6 @@ const closePopup = async () => {
   hide()
 }
 
-const handleCTA = async () => {
-  window.open('https://docs.comfy.org/installation/update_comfyui', '_blank')
-  await closePopup()
-}
-
 // Initialize on mount
 onMounted(async () => {
   // Fetch releases if not already loaded
@@ -165,7 +152,6 @@ onMounted(async () => {
 defineExpose({
   show,
   hide,
-  handleCTA,
   closePopup
 })
 </script>
@@ -198,7 +184,7 @@ defineExpose({
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 1.5rem 1rem 0.5rem;
+  padding: 0;
   flex: 1;
 }
 
@@ -213,6 +199,7 @@ defineExpose({
   font-size: 14px;
   line-height: 1.5;
   word-wrap: break-word;
+  padding: 0 1rem;
 }
 
 /* Style the markdown content */
@@ -225,6 +212,8 @@ defineExpose({
   color: var(--text-primary);
   font-family: Inter, sans-serif;
   font-size: 14px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 /* Version subtitle - targets the first p tag after h1 */
@@ -312,10 +301,23 @@ defineExpose({
 .content-text :deep(img) {
   width: 100%;
   height: 200px;
-  border-radius: 8px;
   margin: 0 0 16px;
   object-fit: cover;
   display: block;
+  border-radius: 8px;
+}
+
+.content-text :deep(img:first-child) {
+  margin: -1rem -1rem 16px;
+  width: calc(100% + 2rem);
+  border-top-left-radius: var(--corner-radius-corner-radius-md, 8px);
+  border-top-right-radius: var(--corner-radius-corner-radius-md, 8px);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.content-text :deep(img + h1) {
+  margin-top: 0;
 }
 
 .content-text :deep(h2) {
@@ -325,24 +327,6 @@ defineExpose({
   font-weight: 600;
   margin: 16px 0 8px;
   line-height: 1.4;
-}
-
-/* Remove top margin for first media element */
-.content-text :deep(img:first-child),
-.content-text :deep(video:first-child),
-.content-text :deep(iframe:first-child) {
-  margin-top: -32px; /* Align with the top edge of the popup content */
-  margin-bottom: 24px;
-}
-
-/* Media elements */
-.content-text :deep(img),
-.content-text :deep(video),
-.content-text :deep(iframe) {
-  width: calc(100% + 64px);
-  height: auto;
-  margin: 24px -32px;
-  display: block;
 }
 
 /* Modal Footer */
