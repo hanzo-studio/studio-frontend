@@ -203,7 +203,7 @@ defineExpose({
   width: 384px;
   background: var(--interface-menu-surface);
   box-shadow: 1px 1px 8px 0 rgb(0 0 0 / 0.2);
-  border-radius: var(--corner-radius-corner-radius-md, 8px);
+  border-radius: 8px;
   border: 1px solid var(--interface-menu-stroke);
   display: flex;
   flex-direction: column;
@@ -223,7 +223,7 @@ defineExpose({
   height: 40px;
   padding: 12px;
   background: var(--primary-background);
-  border-radius: var(--corner-radius-corner-radius-md, 8px);
+  border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -395,7 +395,7 @@ defineExpose({
   height: 40px;
   padding: 8px 16px;
   background: var(--interface-menu-component-surface-hovered);
-  border-radius: var(--base-corner-radius-corner-radius-md, 8px);
+  border-radius: 8px;
   border: none;
   color: var(--text-primary);
   font-size: 14px;
