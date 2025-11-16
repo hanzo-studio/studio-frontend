@@ -4,7 +4,10 @@ import { computed, ref, shallowRef, toRaw, toValue } from 'vue'
 
 import { isCloud } from '@/platform/distribution/types'
 import { reconcileHistory } from '@/platform/remote/comfyui/history/reconciliation'
-import { getWorkflowFromHistory } from '@/platform/workflow/cloud'
+import {
+  getWorkflowFromHistory,
+  getOutputsFromHistory
+} from '@/platform/workflow/cloud'
 import type {
   ComfyWorkflowJSON,
   NodeId
@@ -268,6 +271,17 @@ export class TaskItemImpl {
     )
   }
 
+  /**
+   * Detects if this task only contains preview outputs (from Jobs API list endpoint).
+   * Used to trigger lazy loading of full outputs when loading workflows.
+   * @internal
+   */
+  hasOnlyPreviewOutputs(): boolean {
+    if (!this.outputs) return false
+    const outputKeys = Object.keys(this.outputs)
+    return outputKeys.length === 1 && outputKeys[0] === 'preview_node'
+  }
+
   get apiTaskType(): APITaskType {
     switch (this.taskType) {
       case 'Running':
@@ -401,6 +415,33 @@ export class TaskItemImpl {
       : undefined
   }
 
+  /**
+   * Loads full outputs for tasks that only have preview data
+   * Returns a new TaskItemImpl with full outputs loaded
+   */
+  public async loadFullOutputs(
+    fetchApi: (url: string) => Promise<Response>
+  ): Promise<TaskItemImpl> {
+    // Only load for cloud history tasks with preview-only outputs
+    if (!isCloud || !this.isHistory || !this.hasOnlyPreviewOutputs()) {
+      return this
+    }
+
+    const fullOutputs = await getOutputsFromHistory(fetchApi, this.promptId)
+    if (!fullOutputs) {
+      return this
+    }
+
+    // Create new TaskItemImpl with full outputs
+    return new TaskItemImpl(
+      this.taskType,
+      this.prompt,
+      this.status,
+      fullOutputs
+      // flatOutputs will be recalculated from the new outputs
+    )
+  }
+
   public async loadWorkflow(app: ComfyApp) {
     let workflowData = this.workflow
 
@@ -421,8 +462,20 @@ export class TaskItemImpl {
       return
     }
 
+    // Lazy-load full outputs if we only have preview data
+    let outputsToLoad = this.outputs
+    if (isCloud && this.isHistory && this.hasOnlyPreviewOutputs()) {
+      const fullOutputs = await getOutputsFromHistory(
+        (url) => app.api.fetchApi(url),
+        this.promptId
+      )
+      if (fullOutputs) {
+        outputsToLoad = fullOutputs
+      }
+    }
+
     const nodeOutputsStore = useNodeOutputStore()
-    const rawOutputs = toRaw(this.outputs)
+    const rawOutputs = toRaw(outputsToLoad)
     for (const nodeExecutionId in rawOutputs) {
       nodeOutputsStore.setNodeOutputsByExecutionId(
         nodeExecutionId,

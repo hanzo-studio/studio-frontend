@@ -1,21 +1,32 @@
 import type { ComfyWorkflowJSON } from '@/platform/workflow/validation/schemas/workflowSchema'
-import type { PromptId } from '@/schemas/apiSchema'
+import type { PromptId, TaskOutput } from '@/schemas/apiSchema'
+import {
+  getWorkflowFromJob,
+  getOutputsFromJob
+} from '@/platform/remote/comfyui/jobs'
 
+/**
+ * Fetches workflow from jobs API
+ * @param fetchApi - API instance with fetchApi method
+ * @param promptId - The prompt ID to fetch workflow for
+ * @returns Promise resolving to workflow or undefined if not found
+ */
 export async function getWorkflowFromHistory(
   fetchApi: (url: string) => Promise<Response>,
   promptId: PromptId
 ): Promise<ComfyWorkflowJSON | undefined> {
-  try {
-    const res = await fetchApi(`/history_v2/${promptId}`)
-    const json = await res.json()
+  return getWorkflowFromJob(fetchApi, promptId)
+}
 
-    const historyItem = json[promptId]
-    if (!historyItem) return undefined
-
-    const workflow = historyItem.prompt?.extra_data?.extra_pnginfo?.workflow
-    return workflow ?? undefined
-  } catch (error) {
-    console.error(`Failed to fetch workflow for prompt ${promptId}:`, error)
-    return undefined
-  }
+/**
+ * Fetches full outputs from jobs API for lazy loading
+ * @param fetchApi - API instance with fetchApi method
+ * @param promptId - The prompt ID to fetch outputs for
+ * @returns Promise resolving to full outputs or undefined if not found
+ */
+export async function getOutputsFromHistory(
+  fetchApi: (url: string) => Promise<Response>,
+  promptId: PromptId
+): Promise<TaskOutput | undefined> {
+  return getOutputsFromJob(fetchApi, promptId)
 }

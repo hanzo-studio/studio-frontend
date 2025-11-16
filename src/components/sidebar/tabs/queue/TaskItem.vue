@@ -62,11 +62,11 @@
       </div>
       <div class="tag-wrapper">
         <Button
-          v-if="task.isHistory && flatOutputs.length > 1"
+          v-if="task.isHistory && outputCount > 1"
           outlined
           @click="handleOutputLengthClick"
         >
-          <span style="font-weight: 700">{{ flatOutputs.length }}</span>
+          <span style="font-weight: 700">{{ outputCount }}</span>
         </Button>
       </div>
     </div>
@@ -105,6 +105,13 @@ const node: ComfyNode | null =
       ) ?? null)
     : null
 const progressPreviewBlobUrl = ref('')
+
+// For lazy-loaded outputs, use output_count from extra_data
+// This allows showing the count button before fetching full outputs
+const outputCount = computed(() => {
+  const extraData = props.task.prompt[3] as Record<string, any> | undefined
+  return extraData?.output_count ?? flatOutputs.length
+})
 
 const emit = defineEmits<{
   (

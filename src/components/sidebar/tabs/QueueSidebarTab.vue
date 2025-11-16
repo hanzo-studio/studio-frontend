@@ -259,8 +259,10 @@ const handlePreview = (task: TaskItemImpl) => {
   )
 }
 
-const enterFolderView = (task: TaskItemImpl) => {
-  folderTask.value = task
+const enterFolderView = async (task: TaskItemImpl) => {
+  // Lazy load full outputs if task only has preview data
+  const taskWithOutputs = await task.loadFullOutputs((url) => api.fetchApi(url))
+  folderTask.value = taskWithOutputs
 }
 
 const exitFolderView = () => {

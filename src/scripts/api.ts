@@ -48,6 +48,7 @@ import type { useFirebaseAuthStore } from '@/stores/firebaseAuthStore'
 import type { AuthHeader } from '@/types/authTypes'
 import type { NodeExecutionId } from '@/types/nodeIdentification'
 import { fetchHistory } from '@/platform/remote/comfyui/history'
+import { fetchQueue } from '@/platform/remote/comfyui/queue'
 
 interface QueuePromptRequestBody {
   client_id: string
@@ -873,23 +874,9 @@ export class ComfyApi extends EventTarget {
     Pending: PendingTaskItem[]
   }> {
     try {
-      const res = await this.fetchApi('/queue')
-      const data = await res.json()
-      return {
-        // Running action uses a different endpoint for cancelling
-        Running: data.queue_running.map((prompt: Record<number, any>) => ({
-          taskType: 'Running',
-          prompt,
-          // prompt[1] is the prompt id
-          remove: { name: 'Cancel', cb: () => api.interrupt(prompt[1]) }
-        })),
-        Pending: data.queue_pending.map((prompt: Record<number, any>) => ({
-          taskType: 'Pending',
-          prompt
-        }))
-      }
+      return await fetchQueue(this.fetchApi.bind(this))
     } catch (error) {
-      console.error(error)
+      console.error('Failed to fetch queue:', error)
       return { Running: [], Pending: [] }
     }
   }
