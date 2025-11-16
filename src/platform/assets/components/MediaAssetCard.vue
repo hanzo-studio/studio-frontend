@@ -57,15 +57,17 @@
           </div>
 
           <!-- Media actions - show on hover or when playing -->
-          <IconGroup v-else-if="showActionsOverlay">
-            <IconButton
-              size="sm"
+          <ButtonGroup v-else-if="showActionsOverlay">
+            <Button
+              variant="secondary"
+              size="icon-sm"
+              aria-label="View Asset"
               @click.stop="handleZoomClick"
               @mouseenter="handleOverlayMouseEnter"
               @mouseleave="handleOverlayMouseLeave"
             >
-              <i class="icon-[lucide--zoom-in] size-4" />
-            </IconButton>
+              <i class="icon-[lucide--zoom-in]" />
+            </Button>
             <MoreButton
               size="sm"
               @menu-opened="isMenuOpen = true"
@@ -82,7 +84,7 @@
                 />
               </template>
             </MoreButton>
-          </IconGroup>
+          </ButtonGroup>
         </template>
 
         <!-- Output count (top-right) -->
@@ -134,14 +136,14 @@
 import { useElementHover } from '@vueuse/core'
 import { computed, defineAsyncComponent, provide, ref, toRef } from 'vue'
 
-import IconButton from '@/components/button/IconButton.vue'
-import IconGroup from '@/components/button/IconGroup.vue'
 import IconTextButton from '@/components/button/IconTextButton.vue'
 import MoreButton from '@/components/button/MoreButton.vue'
 import CardBottom from '@/components/card/CardBottom.vue'
 import CardContainer from '@/components/card/CardContainer.vue'
 import CardTop from '@/components/card/CardTop.vue'
 import SquareChip from '@/components/chip/SquareChip.vue'
+import ButtonGroup from '@/components/ui/button-group/ButtonGroup.vue'
+import Button from '@/components/ui/button/Button.vue'
 import { formatDuration, getMediaTypeFromFilename } from '@/utils/formatUtil'
 import { cn } from '@/utils/tailwindUtil'
 
