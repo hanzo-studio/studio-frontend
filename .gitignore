@@ -96,3 +96,9 @@ vitest.config.*.timestamp*
 
 # Weekly docs check output
 /output.txt
+
+# Generated reports in .pages (exclude generated, keep HTML templates)
+/.pages/*/**/*
+/.pages-dist/
+
+.vercel
