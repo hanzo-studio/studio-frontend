@@ -268,7 +268,7 @@ const surveyData = ref({
 
 // Options
 const familiarityOptions = [
-  { label: 'New to ComfyUI (never used it before)', value: 'new' },
+  { label: 'New to Hanzo Studio (never used it before)', value: 'new' },
   { label: 'Just getting started (following tutorials)', value: 'starting' },
   { label: 'Comfortable with basics', value: 'basics' },
   { label: 'Advanced user (custom workflows)', value: 'advanced' },

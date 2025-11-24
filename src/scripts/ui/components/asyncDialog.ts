@@ -7,13 +7,13 @@ export class ComfyAsyncDialog extends ComfyDialog<HTMLDialogElement> {
 
   constructor(actions?: Array<string | { value?: any; text: string }>) {
     super(
-      'dialog.comfy-dialog.comfyui-dialog',
+      'dialog.comfy-dialog.hanzo-studio-dialog',
       // @ts-expect-error fixme ts strict error
       actions?.map((opt) => {
         if (typeof opt === 'string') {
           opt = { text: opt }
         }
-        return $el('button.comfyui-button', {
+        return $el('button.hanzo-studio-button', {
           type: 'button',
           textContent: opt.text,
           onclick: () => this.close(opt.value ?? opt.text)

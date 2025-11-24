@@ -30,7 +30,7 @@ export function generateErrorReport(error: ErrorReportData): string {
   const systemStats = error.systemStats
 
   return `
-# ComfyUI Error Report
+# Hanzo Studio Error Report
 ${
   error
     ? `## Error Details
@@ -45,7 +45,7 @@ ${error.traceback || 'No stack trace available'}
     : ''
 }
 ## System Information
-- **ComfyUI Version:** ${systemStats.system.comfyui_version}
+- **Hanzo Studio Version:** ${systemStats.system.hanzo-studio_version}
 - **Arguments:** ${systemStats.system.argv.join(' ')}
 - **OS:** ${systemStats.system.os}
 - **Python Version:** ${systemStats.system.python_version}

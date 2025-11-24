@@ -13,7 +13,7 @@ import './assets/css/style.css'
 import { i18n } from './i18n'
 import router from './router'
 
-const ComfyUIPreset = definePreset(Aura, {
+const Hanzo StudioPreset = definePreset(Aura, {
   semantic: {
     // @ts-expect-error fixme ts strict error
     primary: Aura['primitive'].blue
@@ -28,7 +28,7 @@ app
   .use(router)
   .use(PrimeVue, {
     theme: {
-      preset: ComfyUIPreset,
+      preset: Hanzo StudioPreset,
       options: {
         prefix: 'p',
         cssLayer: {

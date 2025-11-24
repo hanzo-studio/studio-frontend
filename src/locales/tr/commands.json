@@ -119,20 +119,20 @@
   "Comfy_GroupNode_UngroupSelectedGroupNodes": {
     "label": "Seçili grup düğümlerinin grubunu çöz"
   },
-  "Comfy_Help_AboutComfyUI": {
-    "label": "ComfyUI Hakkında'yı Aç"
+  "Comfy_Help_AboutHanzo Studio": {
+    "label": "Hanzo Studio Hakkında'yı Aç"
   },
-  "Comfy_Help_OpenComfyOrgDiscord": {
-    "label": "Comfy-Org Discord'unu Aç"
+  "Comfy_Help_OpenHanzoStudioDiscord": {
+    "label": "hanzo-studio Discord'unu Aç"
   },
-  "Comfy_Help_OpenComfyUIDocs": {
-    "label": "ComfyUI Belgelerini Aç"
+  "Comfy_Help_OpenHanzo StudioDocs": {
+    "label": "Hanzo Studio Belgelerini Aç"
   },
-  "Comfy_Help_OpenComfyUIForum": {
-    "label": "ComfyUI Forumunu Aç"
+  "Comfy_Help_OpenHanzo StudioForum": {
+    "label": "Hanzo Studio Forumunu Aç"
   },
-  "Comfy_Help_OpenComfyUIIssues": {
-    "label": "ComfyUI Sorunlarını Aç"
+  "Comfy_Help_OpenHanzo StudioIssues": {
+    "label": "Hanzo Studio Sorunlarını Aç"
   },
   "Comfy_Interrupt": {
     "label": "Kes"

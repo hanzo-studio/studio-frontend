@@ -458,7 +458,7 @@ export interface paths {
     patch?: never
     trace?: never
   }
-  '/v2/manager/queue/update_comfyui': {
+  '/v2/manager/queue/update_hanzo-studio': {
     parameters: {
       query?: never
       header?: never
@@ -466,8 +466,8 @@ export interface paths {
       cookie?: never
     }
     /**
-     * Update ComfyUI
-     * @description Queues an update operation for ComfyUI itself
+     * Update Hanzo Studio
+     * @description Queues an update operation for Hanzo Studio itself
      */
     get: {
       parameters: {
@@ -990,7 +990,7 @@ export interface paths {
     patch?: never
     trace?: never
   }
-  '/v2/comfyui_manager/comfyui_versions': {
+  '/v2/hanzo-studio_manager/hanzo-studio_versions': {
     parameters: {
       query?: never
       header?: never
@@ -998,8 +998,8 @@ export interface paths {
       cookie?: never
     }
     /**
-     * Get ComfyUI versions
-     * @description Returns available and current ComfyUI versions
+     * Get Hanzo Studio versions
+     * @description Returns available and current Hanzo Studio versions
      */
     get: {
       parameters: {
@@ -1039,7 +1039,7 @@ export interface paths {
     patch?: never
     trace?: never
   }
-  '/v2/comfyui_manager/comfyui_switch_version': {
+  '/v2/hanzo-studio_manager/hanzo-studio_switch_version': {
     parameters: {
       query?: never
       header?: never
@@ -1047,8 +1047,8 @@ export interface paths {
       cookie?: never
     }
     /**
-     * Switch ComfyUI version
-     * @description Switches to a specified ComfyUI version
+     * Switch Hanzo Studio version
+     * @description Switches to a specified Hanzo Studio version
      */
     get: {
       parameters: {
@@ -1147,7 +1147,7 @@ export interface paths {
       parameters: {
         query?: {
           /** @description New update policy */
-          value?: 'stable' | 'nightly' | 'nightly-comfyui'
+          value?: 'stable' | 'nightly' | 'nightly-hanzo-studio'
         }
         header?: never
         path?: never
@@ -1230,8 +1230,8 @@ export interface paths {
       cookie?: never
     }
     /**
-     * Reboot ComfyUI
-     * @description Restarts the ComfyUI server
+     * Reboot Hanzo Studio
+     * @description Restarts the Hanzo Studio server
      */
     get: {
       parameters: {
@@ -1275,7 +1275,7 @@ export interface paths {
     }
     /**
      * Get manager version
-     * @description Returns the current version of ComfyUI-Manager
+     * @description Returns the current version of Hanzo Studio-Manager
      */
     get: {
       parameters: {
@@ -1364,7 +1364,7 @@ export interface components {
         | 'uninstall'
         | 'update'
         | 'update-all'
-        | 'update-comfyui'
+        | 'update-hanzo-studio'
         | 'fix'
         | 'disable'
         | 'enable'
@@ -1373,7 +1373,7 @@ export interface components {
         | components['schemas']['InstallPackParams']
         | components['schemas']['UpdatePackParams']
         | components['schemas']['UpdateAllPacksParams']
-        | components['schemas']['UpdateComfyUIParams']
+        | components['schemas']['UpdateHanzo StudioParams']
         | components['schemas']['FixPackParams']
         | components['schemas']['UninstallPackParams']
         | components['schemas']['DisablePackParams']
@@ -1585,7 +1585,7 @@ export interface components {
       /** @description Current version of the node package */
       node_ver?: string | null
     }
-    UpdateComfyUIParams: {
+    UpdateHanzo StudioParams: {
       /**
        * @description Whether to update to stable version (true) or nightly (false)
        * @default true
@@ -1619,7 +1619,7 @@ export interface components {
       is_unknown: boolean
     }
     EnablePackParams: {
-      /** @description ComfyUI Node Registry ID of the package to enable */
+      /** @description Hanzo Studio Node Registry ID of the package to enable */
       cnr_id: string
     }
     QueueStatus: {
@@ -1743,8 +1743,8 @@ export interface components {
        */
       install_date?: string | null
     }
-    ComfyUIVersionInfo: {
-      /** @description ComfyUI version string */
+    Hanzo StudioVersionInfo: {
+      /** @description Hanzo Studio version string */
       version: string
       /** @description Git commit hash */
       commit_hash?: string | null
@@ -1800,14 +1800,14 @@ export interface components {
       /** @description Client that initiated the operation */
       client_id?: string | null
     }
-    ComfyUISystemState: {
+    Hanzo StudioSystemState: {
       /**
        * Format: date-time
        * @description ISO timestamp when snapshot was taken
        */
       snapshot_time: string
-      comfyui_version: components['schemas']['ComfyUIVersionInfo']
-      /** @description ComfyUI frontend version if available */
+      hanzo-studio_version: components['schemas']['Hanzo StudioVersionInfo']
+      /** @description Hanzo Studio frontend version if available */
       frontend_version?: string | null
       /** @description Python interpreter version */
       python_version: string
@@ -1821,7 +1821,7 @@ export interface components {
       installed_models?: {
         [key: string]: components['schemas']['InstalledModelInfo']
       }
-      /** @description ComfyUI Manager configuration settings */
+      /** @description Hanzo Studio Manager configuration settings */
       manager_config?: {
         [key: string]: unknown
       }
@@ -1839,9 +1839,9 @@ export interface components {
        * @description ISO timestamp when batch completed
        */
       end_time?: string | null
-      state_before: components['schemas']['ComfyUISystemState']
+      state_before: components['schemas']['Hanzo StudioSystemState']
       /** @description System state after batch execution */
-      state_after?: components['schemas']['ComfyUISystemState']
+      state_after?: components['schemas']['Hanzo StudioSystemState']
       /** @description List of operations performed in this batch */
       operations?: components['schemas']['BatchOperation'][]
       /**

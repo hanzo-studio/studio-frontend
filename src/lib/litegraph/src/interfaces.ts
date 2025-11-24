@@ -333,8 +333,8 @@ export interface INodeFlags {
 /**
  * A widget that is linked to a slot.
  *
- * This is set by the ComfyUI_frontend logic. See
- * https://github.com/Comfy-Org/ComfyUI_frontend/blob/b80e0e1a3c74040f328c4e344326c969c97f67e0/src/extensions/core/widgetInputs.ts#L659
+ * This is set by the studio-frontend logic. See
+ * https://github.com/hanzo-studio/studio-frontend/blob/b80e0e1a3c74040f328c4e344326c969c97f67e0/src/extensions/core/widgetInputs.ts#L659
  */
 export interface IWidgetLocator {
   name: string

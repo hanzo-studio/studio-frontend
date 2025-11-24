@@ -14,7 +14,7 @@ const ZENDESK_FIELDS = {
   USER_ID: 'tf_42515251051412'
 } as const
 
-const SUPPORT_BASE_URL = 'https://support.comfy.org/hc/en-us/requests/new'
+const SUPPORT_BASE_URL = 'https://support.studio.hanzo.ai/hc/en-us/requests/new'
 
 /**
  * Builds the support URL with optional user information for pre-filling.

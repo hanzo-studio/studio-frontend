@@ -79,7 +79,7 @@ describe('GLTF binary metadata parser', () => {
     const mockFile = createMockGltfFile({
       asset: {
         version: '2.0',
-        generator: 'ComfyUI GLTF Test',
+        generator: 'Hanzo Studio GLTF Test',
         extras: {
           workflow: testWorkflow
         }
@@ -112,7 +112,7 @@ describe('GLTF binary metadata parser', () => {
     const mockFile = createMockGltfFile({
       asset: {
         version: '2.0',
-        generator: 'ComfyUI GLTF Test',
+        generator: 'Hanzo Studio GLTF Test',
         extras: {
           prompt: testPrompt
         }

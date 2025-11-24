@@ -143,7 +143,7 @@ const processGltfFileBuffer = (buffer: ArrayBuffer): ComfyMetadata => {
 }
 
 /**
- * Extract ComfyUI metadata from a GLTF binary file (GLB)
+ * Extract Hanzo Studio metadata from a GLTF binary file (GLB)
  */
 export function getGltfBinaryMetadata(file: File): Promise<ComfyMetadata> {
   return new Promise<ComfyMetadata>((resolve) => {

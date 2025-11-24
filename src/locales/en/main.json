@@ -35,8 +35,8 @@
     "calculatingDimensions": "Calculating dimensions",
     "import": "Import",
     "loadAllFolders": "Load All Folders",
-    "logoAlt": "ComfyUI Logo",
-    "comfyOrgLogoAlt": "ComfyOrg Logo",
+    "logoAlt": "Hanzo Studio Logo",
+    "comfyOrgLogoAlt": "HanzoStudio Logo",
     "comfy": "Comfy",
     "refresh": "Refresh",
     "refreshNode": "Refresh Node",
@@ -147,7 +147,7 @@
     "community": "Community",
     "all": "All",
     "versionMismatchWarning": "Version Compatibility Warning",
-    "versionMismatchWarningMessage": "{warning}: {detail} Visit https://docs.comfy.org/installation/update_comfyui#common-update-issues for update instructions.",
+    "versionMismatchWarningMessage": "{warning}: {detail} Visit https://docs.studio.hanzo.ai/installation/update_hanzo-studio#common-update-issues for update instructions.",
     "frontendOutdated": "Frontend version {frontendVersion} is outdated. Backend requires {requiredVersion} or higher.",
     "frontendNewer": "Frontend version {frontendVersion} may not be compatible with backend version {backendVersion}.",
     "updateFrontend": "Update Frontend",
@@ -248,7 +248,7 @@
     "title": "Custom Nodes Manager",
     "legacyMenuNotAvailable": "Legacy manager menu is not available, defaulting to the new manager menu.",
     "legacyManagerUI": "Use Legacy UI",
-    "legacyManagerUIDescription": "To use the legacy Manager UI, start ComfyUI with --enable-manager-legacy-ui",
+    "legacyManagerUIDescription": "To use the legacy Manager UI, start Hanzo Studio with --enable-manager-legacy-ui",
     "failed": "Failed",
     "failedToInstall": "Failed to Install",
     "installError": "Install Error",
@@ -261,7 +261,7 @@
     "inWorkflow": "In Workflow",
     "infoPanelEmpty": "Click an item to see the info",
     "applyChanges": "Apply Changes",
-    "restartToApplyChanges": "To apply changes, please restart ComfyUI",
+    "restartToApplyChanges": "To apply changes, please restart Hanzo Studio",
     "clickToFinishSetup": "Click",
     "toFinishSetup": "to finish setup",
     "restartingBackend": "Restarting backend to apply changes...",
@@ -325,8 +325,8 @@
     },
     "conflicts": {
       "title": "Node Pack Issues Detected!",
-      "description": "We've detected conflicts between some of your extensions and the new version of ComfyUI. By updating you risk breaking workflows that rely on those extensions.",
-      "info": "If you continue with the update, the conflicting extensions will be disabled automatically. You can review and manage them anytime in the ComfyUI Manager.",
+      "description": "We've detected conflicts between some of your extensions and the new version of Hanzo Studio. By updating you risk breaking workflows that rely on those extensions.",
+      "info": "If you continue with the update, the conflicting extensions will be disabled automatically. You can review and manage them anytime in the Hanzo Studio Manager.",
       "extensionAtRisk": "Extension at Risk",
       "conflicts": "Conflicts",
       "importFailedExtensions": "Import Failed Extensions",
@@ -340,7 +340,7 @@
         "button": "Learn More..."
       },
       "conflictMessages": {
-        "comfyui_version": "ComfyUI version mismatch (current: {current}, required: {required})",
+        "hanzo-studio_version": "Hanzo Studio version mismatch (current: {current}, required: {required})",
         "frontend_version": "Frontend version mismatch (current: {current}, required: {required})",
         "os": "Operating system not supported (current: {current}, required: {required})",
         "accelerator": "GPU/Accelerator not supported (available: {current}, required: {required})",
@@ -442,7 +442,7 @@
     "exclamation-triangle": "Warning"
   },
   "welcome": {
-    "title": "Welcome to ComfyUI",
+    "title": "Welcome to Hanzo Studio",
     "getStarted": "Get Started"
   },
   "userSelect": {
@@ -468,7 +468,7 @@
     "title": "Download git",
     "message": "Unable to locate git.  A working copy of git is required for normal operation.",
     "instructions": "Please download and install the latest version for your operating system.  The Download git button below opens the git-scm.com downloads page.",
-    "warning": "If you are sure you do not need git installed, or there has been a mistake, you may click Skip to byapss this check.  Attempting to run ComfyUI without a working copy of git is not currently supported.",
+    "warning": "If you are sure you do not need git installed, or there has been a mistake, you may click Skip to byapss this check.  Attempting to run Hanzo Studio without a working copy of git is not currently supported.",
     "gitWebsite": "Download git",
     "skip": "Skip"
   },
@@ -486,15 +486,15 @@
       "appleMetalDescription": "Leverages your Mac's GPU for faster speed and a better overall experience",
       "nvidiaDescription": "Use your NVIDIA GPU with CUDA acceleration for the best performance.",
       "cpuDescription": "Use CPU mode for compatibility when GPU acceleration is not available",
-      "manualDescription": "Configure ComfyUI manually for advanced setups or unsupported hardware"
+      "manualDescription": "Configure Hanzo Studio manually for advanced setups or unsupported hardware"
     },
     "locationPicker": {
-      "title": "Choose where to install ComfyUI",
-      "subtitle": "Pick a folder for ComfyUI's files. We'll also set up Python there automatically.",
-      "pathPlaceholder": "/Users/username/Documents/ComfyUI",
-      "migrationPathPlaceholder": "Select existing ComfyUI installation (optional)",
+      "title": "Choose where to install Hanzo Studio",
+      "subtitle": "Pick a folder for Hanzo Studio's files. We'll also set up Python there automatically.",
+      "pathPlaceholder": "/Users/username/Documents/Hanzo Studio",
+      "migrationPathPlaceholder": "Select existing Hanzo Studio installation (optional)",
       "migrateFromExisting": "Migrate from existing installation",
-      "migrateDescription": "Copy or link your existing models, custom nodes, and configurations from a previous ComfyUI installation.",
+      "migrateDescription": "Copy or link your existing models, custom nodes, and configurations from a previous Hanzo Studio installation.",
       "chooseDownloadServers": "Choose download servers manually",
       "downloadServersDescription": "Select specific mirror servers for downloading Python, PyPI packages, and PyTorch based on your location."
     },
@@ -504,22 +504,22 @@
     "pathExists": "Directory already exists - please ensure you have backed up all data",
     "cannotWrite": "Unable to write to the selected path",
     "insufficientFreeSpace": "Insufficient space - minimum free space",
-    "isOneDrive": "OneDrive is not supported. Please install ComfyUI in another location.",
-    "insideAppInstallDir": "This folder is inside the ComfyUI Desktop application bundle and will be deleted during updates. Choose a directory outside the install folder, such as Documents/ComfyUI.",
-    "insideUpdaterCache": "This folder is inside the ComfyUI updater cache, which is cleared on every update. Select a different location for your data.",
-    "nonDefaultDrive": "Please install ComfyUI on your system drive (eg. C:\\). Drives with different file systems may cause unpredicable issues. Models and other files can be stored on other drives after installation.",
+    "isOneDrive": "OneDrive is not supported. Please install Hanzo Studio in another location.",
+    "insideAppInstallDir": "This folder is inside the Hanzo Studio Desktop application bundle and will be deleted during updates. Choose a directory outside the install folder, such as Documents/Hanzo Studio.",
+    "insideUpdaterCache": "This folder is inside the Hanzo Studio updater cache, which is cleared on every update. Select a different location for your data.",
+    "nonDefaultDrive": "Please install Hanzo Studio on your system drive (eg. C:\\). Drives with different file systems may cause unpredicable issues. Models and other files can be stored on other drives after installation.",
     "parentMissing": "Path does not exist - create the containing directory first",
     "unhandledError": "Unknown error",
-    "installLocationDescription": "Select the directory for ComfyUI's user data. A python environment will be installed to the selected location.",
-    "installLocationTooltip": "ComfyUI's user data directory. Stores:\n- Python Environment\n- Models\n- Custom nodes\n",
-    "appDataLocationTooltip": "ComfyUI's app data directory. Stores:\n- Logs\n- Server configs",
-    "appPathLocationTooltip": "ComfyUI's app asset directory. Stores the ComfyUI code and assets",
+    "installLocationDescription": "Select the directory for Hanzo Studio's user data. A python environment will be installed to the selected location.",
+    "installLocationTooltip": "Hanzo Studio's user data directory. Stores:\n- Python Environment\n- Models\n- Custom nodes\n",
+    "appDataLocationTooltip": "Hanzo Studio's app data directory. Stores:\n- Logs\n- Server configs",
+    "appPathLocationTooltip": "Hanzo Studio's app asset directory. Stores the Hanzo Studio code and assets",
     "migrateFromExistingInstallation": "Migrate from Existing Installation",
-    "migrationSourcePathDescription": "If you have an existing ComfyUI installation, we can copy/link your existing user files and models to the new installation. Your existing ComfyUI installation will not be affected.",
+    "migrationSourcePathDescription": "If you have an existing Hanzo Studio installation, we can copy/link your existing user files and models to the new installation. Your existing Hanzo Studio installation will not be affected.",
     "selectItemsToMigrate": "Select Items to Migrate",
     "migrationOptional": "Migration is optional. If you don't have an existing installation, you can skip this step.",
     "desktopAppSettings": "Desktop App Settings",
-    "desktopAppSettingsDescription": "Configure how ComfyUI behaves on your desktop. You can change these settings later.",
+    "desktopAppSettingsDescription": "Configure how Hanzo Studio behaves on your desktop. You can change these settings later.",
     "gpu": "GPU",
     "gpuSelection": {
       "selectGpu": "Select GPU",
@@ -531,7 +531,7 @@
       "nvidiaDescription": "NVIDIA devices are directly supported using pytorch CUDA builds.",
       "mpsDescription": "Apple Metal Performance Shaders are supported using pytorch nightly.",
       "customSkipsPython": "This option skips the normal python setup.",
-      "customComfyNeedsPython": "ComfyUI will not work until python is setup",
+      "customComfyNeedsPython": "Hanzo Studio will not work until python is setup",
       "customManualVenv": "Manually configure python venv",
       "customInstallRequirements": "Install all requirements and dependencies (e.g. custom torch)",
       "customMayNotWork": "This is entirely unsupported, and may simply not work"
@@ -541,7 +541,7 @@
       "requirements": "Requirements",
       "createVenv": "You will need to create a virtual environment in the following directory",
       "virtualEnvironmentPath": "Virtual environment path",
-      "restartWhenFinished": "When you have finished configuring the virtual environment, please restart ComfyUI."
+      "restartWhenFinished": "When you have finished configuring the virtual environment, please restart Hanzo Studio."
     },
     "settings": {
       "autoUpdate": "Automatic Updates",
@@ -549,7 +549,7 @@
       "errorUpdatingConsent": "Error Updating Consent",
       "errorUpdatingConsentDetail": "Failed to update metrics consent settings",
       "autoUpdateDescription": "Automatically download updates when they become available. You will be notified before updates are installed.",
-      "allowMetricsDescription": "Help improve ComfyUI by sending anonymous usage metrics. No personal information or workflow content will be collected.",
+      "allowMetricsDescription": "Help improve Hanzo Studio by sending anonymous usage metrics. No personal information or workflow content will be collected.",
       "learnMoreAboutData": "Learn more about data collection",
       "dataCollectionDialog": {
         "title": "About Data Collection",
@@ -576,8 +576,8 @@
       "mirrorSettings": "Mirror Settings"
     },
     "customNodes": "Custom Nodes",
-    "customNodesDescription": "Reinstall custom nodes from existing ComfyUI installations.",
-    "helpImprove": "Please help improve ComfyUI",
+    "customNodesDescription": "Reinstall custom nodes from existing Hanzo Studio installations.",
+    "helpImprove": "Please help improve Hanzo Studio",
     "moreInfo": "For more info, please read our",
     "privacyPolicy": "privacy policy",
     "metricsEnabled": "Metrics Enabled",
@@ -588,23 +588,23 @@
     "initialising": "Initialising..."
   },
   "serverStart": {
-    "title": "Starting ComfyUI",
+    "title": "Starting Hanzo Studio",
     "troubleshoot": "Troubleshoot",
     "reportIssue": "Report Issue",
     "openLogs": "Open Logs",
     "showTerminal": "Show Terminal",
     "copySelectionTooltip": "Copy selection",
     "copyAllTooltip": "Copy all",
-    "errorMessage": "Unable to start ComfyUI Desktop",
+    "errorMessage": "Unable to start Hanzo Studio Desktop",
     "installation": {
-      "title": "Installing ComfyUI"
+      "title": "Installing Hanzo Studio"
     },
     "process": {
       "initial-state": "Loading...",
       "python-setup": "Setting up Python Environment...",
-      "starting-server": "Starting ComfyUI server...",
+      "starting-server": "Starting Hanzo Studio server...",
       "ready": "Loading Human Interface",
-      "error": "Unable to start ComfyUI Desktop"
+      "error": "Unable to start Hanzo Studio Desktop"
     }
   },
   "serverConfig": {
@@ -801,7 +801,7 @@
     "loadingMore": "Loading more templates...",
     "searchPlaceholder": "Search templates...",
     "category": {
-      "ComfyUI Examples": "ComfyUI Examples",
+      "Hanzo Studio Examples": "Hanzo Studio Examples",
       "Custom Nodes": "Custom Nodes",
       "Basics": "Basics",
       "GettingStarted": "Getting Started",
@@ -1068,11 +1068,11 @@
     "Convert selected nodes to group node": "Convert selected nodes to group node",
     "Manage group nodes": "Manage group nodes",
     "Ungroup selected group nodes": "Ungroup selected group nodes",
-    "About ComfyUI": "About ComfyUI",
-    "Comfy-Org Discord": "Comfy-Org Discord",
-    "ComfyUI Docs": "ComfyUI Docs",
-    "ComfyUI Forum": "ComfyUI Forum",
-    "ComfyUI Issues": "ComfyUI Issues",
+    "About Hanzo Studio": "About Hanzo Studio",
+    "hanzo-studio Discord": "hanzo-studio Discord",
+    "Hanzo Studio Docs": "Hanzo Studio Docs",
+    "Hanzo Studio Forum": "Hanzo Studio Forum",
+    "Hanzo Studio Issues": "Hanzo Studio Issues",
     "Interrupt": "Interrupt",
     "Load Default Workflow": "Load Default Workflow",
     "Custom Nodes Manager": "Custom Nodes Manager",
@@ -1279,7 +1279,7 @@
     },
     "disable-smart-memory": {
       "name": "Disable smart memory management",
-      "tooltip": "Force ComfyUI to aggressively offload to regular ram instead of keeping models in vram when it can."
+      "tooltip": "Force Hanzo Studio to aggressively offload to regular ram instead of keeping models in vram when it can."
     },
     "deterministic": {
       "name": "Make pytorch use slower deterministic algorithms when it can.",
@@ -1494,11 +1494,11 @@
     },
     "unsafeMigration": {
       "title": "Unsafe install location detected",
-      "generic": "Your current ComfyUI base path is in a location that may be deleted or modified during updates. To avoid data loss, move it to a safe folder.",
-      "appInstallDir": "Your base path is inside the ComfyUI Desktop application bundle. This folder may be deleted or overwritten during updates. Choose a directory outside the install folder, such as Documents/ComfyUI.",
-      "updaterCache": "Your base path is inside the ComfyUI updater cache, which is cleared on each update. Choose a different location for your data.",
+      "generic": "Your current Hanzo Studio base path is in a location that may be deleted or modified during updates. To avoid data loss, move it to a safe folder.",
+      "appInstallDir": "Your base path is inside the Hanzo Studio Desktop application bundle. This folder may be deleted or overwritten during updates. Choose a directory outside the install folder, such as Documents/Hanzo Studio.",
+      "updaterCache": "Your base path is inside the Hanzo Studio updater cache, which is cleared on each update. Choose a different location for your data.",
       "oneDrive": "Your base path is on OneDrive, which can cause sync issues and accidental data loss. Choose a local folder that is not managed by OneDrive.",
-      "action": "Use the \"Base path\" maintenance task below to move ComfyUI to a safe location."
+      "action": "Use the \"Base path\" maintenance task below to move Hanzo Studio to a safe location."
     }
   },
   "missingModelsDialog": {
@@ -1530,8 +1530,8 @@
     "totalCost": "Total Cost"
   },
   "desktopUpdate": {
-    "title": "Updating ComfyUI Desktop",
-    "description": "ComfyUI Desktop is installing new dependencies.  This may take a few minutes.",
+    "title": "Updating Hanzo Studio Desktop",
+    "description": "Hanzo Studio Desktop is installing new dependencies.  This may take a few minutes.",
     "terminalDefaultMessage": "Any console output from the update will be shown here.",
     "updateFoundTitle": "Update Found (v{version})",
     "updateAvailableMessage": "An update is available. Do you want to restart and update now?",
@@ -1949,20 +1949,20 @@
       "title": "Cloud Survey",
       "placeholder": "Survey questions placeholder",
       "steps": {
-        "familiarity": "How familiar are you with ComfyUI?",
-        "purpose": "What will you primarily use ComfyUI for?",
+        "familiarity": "How familiar are you with Hanzo Studio?",
+        "purpose": "What will you primarily use Hanzo Studio for?",
         "industry": "What's your primary industry?",
         "making": "What do you plan on making?"
       },
       "questions": {
-        "familiarity": "How familiar are you with ComfyUI?",
-        "purpose": "What will you primarily use ComfyUI for?",
+        "familiarity": "How familiar are you with Hanzo Studio?",
+        "purpose": "What will you primarily use Hanzo Studio for?",
         "industry": "What's your primary industry?",
         "making": "What do you plan on making?"
       },
       "options": {
         "familiarity": {
-          "new": "New to ComfyUI (never used it before)",
+          "new": "New to Hanzo Studio (never used it before)",
           "starting": "Just getting started (following tutorials)",
           "basics": "Comfortable with basics",
           "advanced": "Advanced user (custom workflows)",
@@ -2017,15 +2017,15 @@
       "desc": "Zero setup required. Works on any device.",
       "explain": "Generate multiple outputs at once. Share workflows with ease.",
       "learnAboutButton": "Learn about Cloud",
-      "wantToRun": "Want to run ComfyUI locally instead?",
-      "download": "Download ComfyUI"
+      "wantToRun": "Want to run Hanzo Studio locally instead?",
+      "download": "Download Hanzo Studio"
     },
     "checkingStatus": "Checking your account status...",
     "retrying": "Retrying...",
     "retry": "Try Again",
     "authTimeout": {
       "title": "Connection Taking Too Long",
-      "message": "We're having trouble connecting to ComfyUI Cloud. This could be due to a slow connection or temporary service issue.",
+      "message": "We're having trouble connecting to Hanzo Studio Cloud. This could be due to a slow connection or temporary service issue.",
       "restart": "Sign Out & Try Again",
       "troubleshooting": "Common causes:",
       "causes": [
@@ -2045,8 +2045,8 @@
   "cloudStart_desc": "Zero setup required. Works on any device.",
   "cloudStart_explain": "Generate multiple outputs at once. Share workflows with ease.",
   "cloudStart_learnAboutButton": "Learn about Cloud",
-  "cloudStart_wantToRun": "Want to run ComfyUI locally instead?",
-  "cloudStart_download": "Download ComfyUI",
+  "cloudStart_wantToRun": "Want to run Hanzo Studio locally instead?",
+  "cloudStart_download": "Download Hanzo Studio",
   "cloudWaitlist_questionsText": "Questions? Contact us",
   "cloudWaitlist_contactLink": "here",
   "cloudSorryContactSupport_title": "Sorry, contact support",
@@ -2062,8 +2062,8 @@
   "cloudForgotPassword_emailRequired": "Email is required",
   "cloudForgotPassword_passwordResetSent": "Password reset sent",
   "cloudForgotPassword_passwordResetError": "Failed to send password reset email",
-  "cloudSurvey_steps_familiarity": "How familiar are you with ComfyUI?",
-  "cloudSurvey_steps_purpose": "What will you primarily use ComfyUI for?",
+  "cloudSurvey_steps_familiarity": "How familiar are you with Hanzo Studio?",
+  "cloudSurvey_steps_purpose": "What will you primarily use Hanzo Studio for?",
   "cloudSurvey_steps_industry": "What's your primary industry?",
   "cloudSurvey_steps_making": "What do you plan on making?",
   "assetBrowser": {

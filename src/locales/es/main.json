@@ -181,7 +181,7 @@
         "Try a different browser or network"
       ],
       "helpText": "¿Necesitas ayuda? Contacta",
-      "message": "Estamos teniendo problemas para conectarnos a ComfyUI Cloud. Esto podría deberse a una conexión lenta o a un problema temporal del servicio.",
+      "message": "Estamos teniendo problemas para conectarnos a Hanzo Studio Cloud. Esto podría deberse a una conexión lenta o a un problema temporal del servicio.",
       "restart": "Cerrar sesión e intentar de nuevo",
       "supportLink": "soporte",
       "technicalDetails": "Detalles técnicos",
@@ -209,11 +209,11 @@
     "retrying": "Reintentando...",
     "start": {
       "desc": "Cero configuración requerida. Funciona en cualquier dispositivo.",
-      "download": "Descargar ComfyUI",
+      "download": "Descargar Hanzo Studio",
       "explain": "Genera múltiples resultados a la vez. Comparte flujos de trabajo con facilidad.",
       "learnAboutButton": "Conoce más sobre Cloud",
       "title": "comienza a crear en segundos",
-      "wantToRun": "¿Prefieres ejecutar ComfyUI localmente?"
+      "wantToRun": "¿Prefieres ejecutar Hanzo Studio localmente?"
     },
     "survey": {
       "options": {
@@ -221,7 +221,7 @@
           "advanced": "Usuario avanzado (flujos de trabajo personalizados)",
           "basics": "Cómodo con lo básico",
           "expert": "Experto (ayudo a otros)",
-          "new": "Nuevo en ComfyUI (nunca lo he usado antes)",
+          "new": "Nuevo en Hanzo Studio (nunca lo he usado antes)",
           "starting": "Recién comenzando (siguiendo tutoriales)"
         },
         "industry": {
@@ -253,16 +253,16 @@
       },
       "placeholder": "Marcador de posición para preguntas de la encuesta",
       "questions": {
-        "familiarity": "¿Qué tan familiarizado estás con ComfyUI?",
+        "familiarity": "¿Qué tan familiarizado estás con Hanzo Studio?",
         "industry": "¿Cuál es tu industria principal?",
         "making": "¿Qué planeas crear?",
-        "purpose": "¿Para qué usarás principalmente ComfyUI?"
+        "purpose": "¿Para qué usarás principalmente Hanzo Studio?"
       },
       "steps": {
-        "familiarity": "¿Qué tan familiarizado estás con ComfyUI?",
+        "familiarity": "¿Qué tan familiarizado estás con Hanzo Studio?",
         "industry": "¿Cuál es tu industria principal?",
         "making": "¿Qué planeas crear?",
-        "purpose": "¿Para qué usarás principalmente ComfyUI?"
+        "purpose": "¿Para qué usarás principalmente Hanzo Studio?"
       },
       "title": "Encuesta en la Nube"
     }
@@ -271,15 +271,15 @@
   "cloudPrivateBeta_title": "Cloud está actualmente en beta privada",
   "cloudSorryContactSupport_title": "Lo sentimos, contacta al soporte",
   "cloudStart_desc": "Cero configuración requerida. Funciona en cualquier dispositivo.",
-  "cloudStart_download": "Descargar ComfyUI",
+  "cloudStart_download": "Descargar Hanzo Studio",
   "cloudStart_explain": "Genera múltiples salidas a la vez. Comparte flujos de trabajo con facilidad.",
   "cloudStart_learnAboutButton": "Conoce más sobre Cloud",
   "cloudStart_title": "comienza a crear en segundos",
-  "cloudStart_wantToRun": "¿Prefieres ejecutar ComfyUI localmente?",
-  "cloudSurvey_steps_familiarity": "¿Qué tan familiarizado estás con ComfyUI?",
+  "cloudStart_wantToRun": "¿Prefieres ejecutar Hanzo Studio localmente?",
+  "cloudSurvey_steps_familiarity": "¿Qué tan familiarizado estás con Hanzo Studio?",
   "cloudSurvey_steps_industry": "¿Cuál es tu industria principal?",
   "cloudSurvey_steps_making": "¿Qué planeas crear?",
-  "cloudSurvey_steps_purpose": "¿Para qué usarás principalmente ComfyUI?",
+  "cloudSurvey_steps_purpose": "¿Para qué usarás principalmente Hanzo Studio?",
   "cloudWaitlist_contactLink": "aquí",
   "cloudWaitlist_questionsText": "¿Preguntas? Contáctanos",
   "color": {
@@ -481,12 +481,12 @@
     "initialising": "Inicializando..."
   },
   "desktopUpdate": {
-    "description": "ComfyUI Desktop está instalando nuevas dependencias. Esto puede tardar unos minutos.",
+    "description": "Hanzo Studio Desktop está instalando nuevas dependencias. Esto puede tardar unos minutos.",
     "errorCheckingUpdate": "Error al buscar actualizaciones",
     "errorInstallingUpdate": "Error al instalar la actualización",
     "noUpdateFound": "No se encontró ninguna actualización",
     "terminalDefaultMessage": "Cualquier salida de consola de la actualización se mostrará aquí.",
-    "title": "Actualizando ComfyUI Desktop",
+    "title": "Actualizando Hanzo Studio Desktop",
     "updateAvailableMessage": "Hay una actualización disponible. ¿Quieres reiniciar y actualizar ahora?",
     "updateFoundTitle": "Actualización encontrada (v{version})"
   },
@@ -496,7 +496,7 @@
     "message": "No se puede localizar git. Se requiere una copia funcional de git para el funcionamiento normal.",
     "skip": "Saltar",
     "title": "Descargar git",
-    "warning": "Si estás seguro de que no necesitas instalar git, o ha habido un error, puedes hacer clic en Saltar para eludir esta comprobación. Intentar ejecutar ComfyUI sin una copia funcional de git no está actualmente soportado."
+    "warning": "Si estás seguro de que no necesitas instalar git, o ha habido un error, puedes hacer clic en Saltar para eludir esta comprobación. Intentar ejecutar Hanzo Studio sin una copia funcional de git no está actualmente soportado."
   },
   "electronFileDownload": {
     "cancel": "Cancelar descarga",
@@ -542,7 +542,7 @@
     "close": "Cerrar",
     "color": "Color",
     "comfy": "Comfy",
-    "comfyOrgLogoAlt": "Logo de ComfyOrg",
+    "comfyOrgLogoAlt": "Logo de HanzoStudio",
     "comingSoon": "Próximamente",
     "command": "Comando",
     "commandProhibited": "El comando {command} está prohibido. Contacta a un administrador para más información.",
@@ -632,7 +632,7 @@
     "loading": "Cargando",
     "loadingPanel": "Cargando panel {panel}...",
     "login": "Iniciar sesión",
-    "logoAlt": "Logo de ComfyUI",
+    "logoAlt": "Logo de Hanzo Studio",
     "logs": "Registros",
     "markdown": "markdown",
     "micPermissionDenied": "Permiso de micrófono denegado",
@@ -727,7 +727,7 @@
     "usageHint": "Sugerencia de uso",
     "user": "Usuario",
     "versionMismatchWarning": "Advertencia de compatibilidad de versión",
-    "versionMismatchWarningMessage": "{warning}: {detail} Visita https://docs.comfy.org/installation/update_comfyui#common-update-issues para obtener instrucciones de actualización.",
+    "versionMismatchWarningMessage": "{warning}: {detail} Visita https://docs.studio.hanzo.ai/installation/update_hanzo-studio#common-update-issues para obtener instrucciones de actualización.",
     "videoFailedToLoad": "Falló la carga del video",
     "videoPreview": "Vista previa de video - Usa las teclas de flecha para navegar entre videos",
     "viewImageOfTotal": "Ver imagen {index} de {total}",
@@ -786,14 +786,14 @@
     "star": "Estrella"
   },
   "install": {
-    "appDataLocationTooltip": "Directorio de datos de la aplicación ComfyUI. Almacena:\n- Registros\n- Configuraciones del servidor",
-    "appPathLocationTooltip": "Directorio de activos de la aplicación ComfyUI. Almacena el código y los activos de ComfyUI",
+    "appDataLocationTooltip": "Directorio de datos de la aplicación Hanzo Studio. Almacena:\n- Registros\n- Configuraciones del servidor",
+    "appPathLocationTooltip": "Directorio de activos de la aplicación Hanzo Studio. Almacena el código y los activos de Hanzo Studio",
     "cannotWrite": "No se puede escribir en la ruta seleccionada",
     "chooseInstallationLocation": "Elegir Ubicación de Instalación",
     "customNodes": "Nodos Personalizados",
-    "customNodesDescription": "Reinstala los nodos personalizados de las instalaciones existentes de ComfyUI.",
+    "customNodesDescription": "Reinstala los nodos personalizados de las instalaciones existentes de Hanzo Studio.",
     "desktopAppSettings": "Configuraciones de la Aplicación de Escritorio",
-    "desktopAppSettingsDescription": "Configura cómo se comporta ComfyUI en tu escritorio. Puedes cambiar estas configuraciones más tarde.",
+    "desktopAppSettingsDescription": "Configura cómo se comporta Hanzo Studio en tu escritorio. Puedes cambiar estas configuraciones más tarde.",
     "desktopSettings": "Configuraciones de Escritorio",
     "failedToSelectDirectory": "Falló al seleccionar el directorio",
     "gpu": "GPU",
@@ -801,7 +801,7 @@
       "appleMetalDescription": "Aprovecha la GPU de tu Mac para mayor velocidad y una mejor experiencia general",
       "cpuDescription": "Usa el modo CPU para compatibilidad cuando la aceleración GPU no esté disponible",
       "cpuSubtitle": "Modo CPU",
-      "manualDescription": "Configura ComfyUI manualmente para configuraciones avanzadas o hardware no soportado",
+      "manualDescription": "Configura Hanzo Studio manualmente para configuraciones avanzadas o hardware no soportado",
       "manualSubtitle": "Configuración Manual",
       "nvidiaDescription": "Usa tu GPU NVIDIA con aceleración CUDA para el mejor rendimiento.",
       "nvidiaSubtitle": "NVIDIA CUDA",
@@ -812,7 +812,7 @@
       "cpuMode": "Modo CPU",
       "cpuModeDescription": "El modo CPU está destinado para desarrolladores y casos extremos raros solamente.",
       "cpuModeDescription2": "Si no estás absolutamente seguro de que necesitas esto, por favor ignora esta casilla y selecciona tu GPU arriba.",
-      "customComfyNeedsPython": "ComfyUI no funcionará hasta que python esté configurado",
+      "customComfyNeedsPython": "Hanzo Studio no funcionará hasta que python esté configurado",
       "customInstallRequirements": "Instalar todos los requisitos y dependencias (ej. torch personalizado)",
       "customManualVenv": "Configurar manualmente el entorno virtual de python",
       "customMayNotWork": "Esto no está soportado en absoluto, y simplemente puede que no funcione",
@@ -823,26 +823,26 @@
       "selectGpu": "Seleccionar GPU",
       "selectGpuDescription": "Selecciona el tipo de GPU que tienes"
     },
-    "helpImprove": "Por favor ayuda a mejorar ComfyUI",
+    "helpImprove": "Por favor ayuda a mejorar Hanzo Studio",
     "installLocation": "Ubicación de Instalación",
-    "installLocationDescription": "Selecciona el directorio para los datos de usuario de ComfyUI. Un entorno de python será instalado en la ubicación seleccionada.",
-    "installLocationTooltip": "Directorio de datos de usuario de ComfyUI. Almacena:\n- Entorno Python\n- Modelos\n- Nodos personalizados\n",
+    "installLocationDescription": "Selecciona el directorio para los datos de usuario de Hanzo Studio. Un entorno de python será instalado en la ubicación seleccionada.",
+    "installLocationTooltip": "Directorio de datos de usuario de Hanzo Studio. Almacena:\n- Entorno Python\n- Modelos\n- Nodos personalizados\n",
     "insufficientFreeSpace": "Espacio insuficiente - espacio libre mínimo",
-    "isOneDrive": "OneDrive no es compatible. Por favor instala ComfyUI en otra ubicación.",
+    "isOneDrive": "OneDrive no es compatible. Por favor instala Hanzo Studio en otra ubicación.",
     "locationPicker": {
       "chooseDownloadServers": "Elegir servidores de descarga manualmente",
       "downloadServersDescription": "Selecciona servidores espejo específicos para descargar Python, paquetes PyPI y PyTorch según tu ubicación.",
-      "migrateDescription": "Copia o vincula tus modelos existentes, nodos personalizados y configuraciones de una instalación previa de ComfyUI.",
+      "migrateDescription": "Copia o vincula tus modelos existentes, nodos personalizados y configuraciones de una instalación previa de Hanzo Studio.",
       "migrateFromExisting": "Migrar desde instalación existente",
-      "migrationPathPlaceholder": "Selecciona instalación existente de ComfyUI (opcional)",
-      "pathPlaceholder": "/Users/username/Documents/ComfyUI",
-      "subtitle": "Elige una carpeta para los archivos de ComfyUI. También configuraremos Python allí automáticamente.",
-      "title": "Elige dónde instalar ComfyUI"
+      "migrationPathPlaceholder": "Selecciona instalación existente de Hanzo Studio (opcional)",
+      "pathPlaceholder": "/Users/username/Documents/Hanzo Studio",
+      "subtitle": "Elige una carpeta para los archivos de Hanzo Studio. También configuraremos Python allí automáticamente.",
+      "title": "Elige dónde instalar Hanzo Studio"
     },
     "manualConfiguration": {
       "createVenv": "Necesitarás crear un entorno virtual en el siguiente directorio",
       "requirements": "Requisitos",
-      "restartWhenFinished": "Cuando hayas terminado de configurar el entorno virtual, por favor reinicia ComfyUI.",
+      "restartWhenFinished": "Cuando hayas terminado de configurar el entorno virtual, por favor reinicia Hanzo Studio.",
       "title": "Configuración Manual",
       "virtualEnvironmentPath": "Ruta del entorno virtual"
     },
@@ -851,9 +851,9 @@
     "migrateFromExistingInstallation": "Migrar desde una Instalación Existente",
     "migration": "Migración",
     "migrationOptional": "La migración es opcional. Si no tienes una instalación existente, puedes saltarte este paso.",
-    "migrationSourcePathDescription": "Si tienes una instalación existente de ComfyUI, podemos copiar/enlazar tus archivos de usuario existentes y modelos a la nueva instalación. Tu instalación existente de ComfyUI no será afectada.",
+    "migrationSourcePathDescription": "Si tienes una instalación existente de Hanzo Studio, podemos copiar/enlazar tus archivos de usuario existentes y modelos a la nueva instalación. Tu instalación existente de Hanzo Studio no será afectada.",
     "moreInfo": "Para más información, por favor lee nuestra",
-    "nonDefaultDrive": "Por favor instala ComfyUI en tu unidad de sistema (ej. C:\\). Las unidades con diferentes sistemas de archivos pueden causar problemas impredecibles. Los modelos y otros archivos pueden ser almacenados en otras unidades después de la instalación.",
+    "nonDefaultDrive": "Por favor instala Hanzo Studio en tu unidad de sistema (ej. C:\\). Las unidades con diferentes sistemas de archivos pueden causar problemas impredecibles. Los modelos y otros archivos pueden ser almacenados en otras unidades después de la instalación.",
     "parentMissing": "La ruta no existe - crea el directorio contenedor primero",
     "pathExists": "El directorio ya existe - por favor asegúrate de haber respaldado todos los datos",
     "pathValidationFailed": "Falló la validación de la ruta",
@@ -861,7 +861,7 @@
     "selectItemsToMigrate": "Selecciona los Elementos a Migrar",
     "settings": {
       "allowMetrics": "Métricas de Uso",
-      "allowMetricsDescription": "Ayuda a mejorar ComfyUI enviando métricas de uso anónimas. No se recogerá ninguna información personal o contenido de flujo de trabajo.",
+      "allowMetricsDescription": "Ayuda a mejorar Hanzo Studio enviando métricas de uso anónimas. No se recogerá ninguna información personal o contenido de flujo de trabajo.",
       "autoUpdate": "Actualizaciones Automáticas",
       "autoUpdateDescription": "Descarga automáticamente las actualizaciones cuando estén disponibles. Se te notificará antes de que las actualizaciones sean instaladas.",
       "checkingMirrors": "Comprobando el acceso a la red a los espejos de python...",
@@ -988,7 +988,7 @@
       "conflictMessages": {
         "accelerator": "GPU/Acelerador no soportado (disponible: {current}, requerido: {required})",
         "banned": "Este paquete está prohibido por razones de seguridad",
-        "comfyui_version": "Desajuste de versión de ComfyUI (actual: {current}, requerida: {required})",
+        "hanzo-studio_version": "Desajuste de versión de Hanzo Studio (actual: {current}, requerida: {required})",
         "frontend_version": "Desajuste de versión del frontend (actual: {current}, requerida: {required})",
         "generic": "Problema de compatibilidad (actual: {current}, requerido: {required})",
         "import_failed": "Importación Fallida",
@@ -996,11 +996,11 @@
         "pending": "Verificación de seguridad pendiente - no se puede verificar compatibilidad"
       },
       "conflicts": "Conflictos",
-      "description": "Hemos detectado conflictos entre algunas de tus extensiones y la nueva versión de ComfyUI. Al actualizar corres el riesgo de romper flujos de trabajo que dependen de esas extensiones.",
+      "description": "Hemos detectado conflictos entre algunas de tus extensiones y la nueva versión de Hanzo Studio. Al actualizar corres el riesgo de romper flujos de trabajo que dependen de esas extensiones.",
       "enableAnyway": "Habilitar de Todos Modos",
       "extensionAtRisk": "Extensión en Riesgo",
       "importFailedExtensions": "Extensiones con Importación Fallida",
-      "info": "Si continúas con la actualización, las extensiones en conflicto se deshabilitarán automáticamente. Puedes revisarlas y gestionarlas en cualquier momento en el Administrador de ComfyUI.",
+      "info": "Si continúas con la actualización, las extensiones en conflicto se deshabilitarán automáticamente. Puedes revisarlas y gestionarlas en cualquier momento en el Administrador de Hanzo Studio.",
       "installAnyway": "Instalar de Todos Modos",
       "title": "¡Problemas de Paquete de Nodos Detectados!",
       "understood": "Entendido",
@@ -1038,8 +1038,8 @@
     "lastUpdated": "Última Actualización",
     "latestVersion": "Última",
     "legacyManagerUI": "Usar UI antigua",
-    "legacyManagerUIDescription": "Para usar la UI antigua del Manager, inicia ComfyUI con --enable-manager-legacy-ui",
-    "legacyMenuNotAvailable": "El menú del administrador antiguo no está disponible en esta versión de ComfyUI. Por favor, utiliza el nuevo menú del administrador en su lugar.",
+    "legacyManagerUIDescription": "Para usar la UI antigua del Manager, inicia Hanzo Studio con --enable-manager-legacy-ui",
+    "legacyMenuNotAvailable": "El menú del administrador antiguo no está disponible en esta versión de Hanzo Studio. Por favor, utiliza el nuevo menú del administrador en su lugar.",
     "license": "Licencia",
     "loadingVersions": "Cargando versiones...",
     "mixedSelectionMessage": "No se puede realizar acción masiva en selección mixta",
@@ -1052,7 +1052,7 @@
     "notAvailable": "No Disponible",
     "packsSelected": "Paquetes Seleccionados",
     "repository": "Repositorio",
-    "restartToApplyChanges": "Para aplicar los cambios, por favor reinicia ComfyUI",
+    "restartToApplyChanges": "Para aplicar los cambios, por favor reinicia Hanzo Studio",
     "restartingBackend": "Reiniciando backend para aplicar cambios...",
     "searchPlaceholder": "Buscar",
     "selectVersion": "Seleccionar Versión",
@@ -1144,7 +1144,7 @@
     "toggleBottomPanel": "Alternar panel inferior"
   },
   "menuLabels": {
-    "About ComfyUI": "Acerca de ComfyUI",
+    "About Hanzo Studio": "Acerca de Hanzo Studio",
     "Assets": "Recursos",
     "Bottom Panel": "Panel inferior",
     "Browse Templates": "Explorar plantillas",
@@ -1157,10 +1157,10 @@
     "Clipspace": "Espacio de clip",
     "Close Current Workflow": "Cerrar flujo de trabajo actual",
     "Collapse/Expand Selected Nodes": "Contraer/Expandir nodos seleccionados",
-    "Comfy-Org Discord": "Discord de Comfy-Org",
-    "ComfyUI Docs": "Documentos de ComfyUI",
-    "ComfyUI Forum": "Foro de ComfyUI",
-    "ComfyUI Issues": "Problemas de ComfyUI",
+    "hanzo-studio Discord": "Discord de hanzo-studio",
+    "Hanzo Studio Docs": "Documentos de Hanzo Studio",
+    "Hanzo Studio Forum": "Foro de Hanzo Studio",
+    "Hanzo Studio Issues": "Problemas de Hanzo Studio",
     "Contact Support": "Contactar soporte",
     "Convert Selection to Subgraph": "Convertir selección en subgrafo",
     "Convert selected nodes to group node": "Convertir nodos seleccionados en nodo de grupo",
@@ -1443,7 +1443,7 @@
     },
     "disable-smart-memory": {
       "name": "Desactivar la gestión inteligente de memoria",
-      "tooltip": "Forzar a ComfyUI a descargar agresivamente a la ram regular en lugar de mantener los modelos en vram cuando puede."
+      "tooltip": "Forzar a Hanzo Studio a descargar agresivamente a la ram regular en lugar de mantener los modelos en vram cuando puede."
     },
     "disable-xformers": {
       "name": "Desactivar la optimización de xFormers"
@@ -1523,21 +1523,21 @@
   "serverStart": {
     "copyAllTooltip": "Copiar todo",
     "copySelectionTooltip": "Copiar selección",
-    "errorMessage": "No se puede iniciar ComfyUI Desktop",
+    "errorMessage": "No se puede iniciar Hanzo Studio Desktop",
     "installation": {
-      "title": "Instalando ComfyUI"
+      "title": "Instalando Hanzo Studio"
     },
     "openLogs": "Abrir registros",
     "process": {
-      "error": "No se puede iniciar ComfyUI Desktop",
+      "error": "No se puede iniciar Hanzo Studio Desktop",
       "initial-state": "Cargando...",
       "python-setup": "Configurando el entorno de Python...",
       "ready": "Finalizando...",
-      "starting-server": "Iniciando el servidor ComfyUI..."
+      "starting-server": "Iniciando el servidor Hanzo Studio..."
     },
     "reportIssue": "Reportar problema",
     "showTerminal": "Mostrar terminal",
-    "title": "Iniciando ComfyUI",
+    "title": "Iniciando Hanzo Studio",
     "troubleshoot": "Solucionar problemas"
   },
   "settingsCategories": {
@@ -1766,7 +1766,7 @@
       "Area Composition": "Composición de Área",
       "Audio": "Audio",
       "Basics": "Básicos",
-      "ComfyUI Examples": "Ejemplos de ComfyUI",
+      "Hanzo Studio Examples": "Ejemplos de Hanzo Studio",
       "ControlNet": "ControlNet",
       "Custom Nodes": "Nodos Personalizados",
       "Extensions": "Extensiones",
@@ -1907,7 +1907,7 @@
   },
   "welcome": {
     "getStarted": "Empezar",
-    "title": "Bienvenido a ComfyUI"
+    "title": "Bienvenido a Hanzo Studio"
   },
   "whatsNewPopup": {
     "learnMore": "Aprende más",

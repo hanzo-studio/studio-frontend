@@ -119,20 +119,20 @@
   "Comfy_GroupNode_UngroupSelectedGroupNodes": {
     "label": "選択したグループノードのグループ解除"
   },
-  "Comfy_Help_AboutComfyUI": {
-    "label": "ComfyUIについてを開く"
+  "Comfy_Help_AboutHanzo Studio": {
+    "label": "Hanzo Studioについてを開く"
   },
-  "Comfy_Help_OpenComfyOrgDiscord": {
-    "label": "Comfy-OrgのDiscordを開く"
+  "Comfy_Help_OpenHanzoStudioDiscord": {
+    "label": "hanzo-studioのDiscordを開く"
   },
-  "Comfy_Help_OpenComfyUIDocs": {
-    "label": "ComfyUIのドキュメントを開く"
+  "Comfy_Help_OpenHanzo StudioDocs": {
+    "label": "Hanzo Studioのドキュメントを開く"
   },
-  "Comfy_Help_OpenComfyUIForum": {
-    "label": "Comfy-Orgフォーラムを開く"
+  "Comfy_Help_OpenHanzo StudioForum": {
+    "label": "hanzo-studioフォーラムを開く"
   },
-  "Comfy_Help_OpenComfyUIIssues": {
-    "label": "ComfyUIの問題を開く"
+  "Comfy_Help_OpenHanzo StudioIssues": {
+    "label": "Hanzo Studioの問題を開く"
   },
   "Comfy_Interrupt": {
     "label": "中断"

@@ -1,5 +1,5 @@
 name: "i18n: Update Core"
-description: "Generates and updates translations for core ComfyUI components using OpenAI"
+description: "Generates and updates translations for core Hanzo Studio components using OpenAI"
 
 on:
   # Manual dispatch for urgent translation updates
@@ -19,12 +19,12 @@ jobs:
         uses: actions/checkout@v5
 
       # Setup playwright environment
-      - name: Setup ComfyUI Frontend
+      - name: Setup Hanzo Studio Frontend
         uses: ./.github/actions/setup-frontend
         with:
           include_build_step: true
-      - name: Setup ComfyUI Server
-        uses: ./.github/actions/setup-comfyui-server
+      - name: Setup Hanzo Studio Server
+        uses: ./.github/actions/setup-hanzo-studio-server
         with:
           launch_server: true
       - name: Setup Playwright

@@ -67,7 +67,7 @@ export function useSubscriptionActions() {
   }
 
   const handleLearnMoreClick = () => {
-    window.open('https://docs.comfy.org/get_started/cloud', '_blank')
+    window.open('https://docs.studio.hanzo.ai/get_started/cloud', '_blank')
   }
 
   return {

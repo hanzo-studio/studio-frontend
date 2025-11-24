@@ -205,7 +205,7 @@ describe('CurrentUserPopover', () => {
 
     // Verify window.open was called with the correct URL
     expect(window.open).toHaveBeenCalledWith(
-      'https://docs.comfy.org/tutorials/api-nodes/overview#api-nodes',
+      'https://docs.studio.hanzo.ai/tutorials/api-nodes/overview#api-nodes',
       '_blank'
     )
 

@@ -15,7 +15,7 @@ test.describe('Version Mismatch Warnings', () => {
         os: 'posix',
         ram_total: 67235385344,
         ram_free: 13464207360,
-        comfyui_version: '0.3.46',
+        hanzo-studio_version: '0.3.46',
         required_frontend_version: requiredFrontendVersion,
         python_version: '3.12.3 (main, Jun 18 2025, 17:59:45) [GCC 13.3.0]',
         pytorch_version: '2.6.0+cu124',

@@ -187,7 +187,7 @@
 
                   <div class="flex items-center justify-between">
                     <a
-                      href="https://platform.comfy.org/profile/usage"
+                      href="https://platform.studio.hanzo.ai/profile/usage"
                       target="_blank"
                       rel="noopener noreferrer"
                       class="text-sm text-text-secondary underline hover:text-text-secondary"

@@ -44,7 +44,7 @@ describe('getNodeSource', () => {
   })
 
   it('should identify custom nodes and format their names', () => {
-    const result = getNodeSource('custom_nodes.ComfyUI-Example')
+    const result = getNodeSource('custom_nodes.Hanzo Studio-Example')
     expect(result).toEqual({
       type: NodeSourceType.CustomNodes,
       className: 'comfy-custom-nodes',
@@ -54,7 +54,7 @@ describe('getNodeSource', () => {
   })
 
   it('should identify custom nodes with version and format their names', () => {
-    const result = getNodeSource('custom_nodes.ComfyUI-Example@1.0.0')
+    const result = getNodeSource('custom_nodes.Hanzo Studio-Example@1.0.0')
     expect(result).toEqual({
       type: NodeSourceType.CustomNodes,
       className: 'comfy-custom-nodes',

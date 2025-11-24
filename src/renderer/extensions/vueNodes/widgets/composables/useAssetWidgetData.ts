@@ -14,7 +14,7 @@ import { useModelToNodeStore } from '@/stores/modelToNodeStore'
  *
  * Cloud-only composable - returns empty data when not in cloud environment.
  *
- * @param nodeType - ComfyUI node type (ref, getter, or plain value). Can be undefined.
+ * @param nodeType - Hanzo Studio node type (ref, getter, or plain value). Can be undefined.
  *   Accepts: ref('CheckpointLoaderSimple'), () => 'CheckpointLoaderSimple', or 'CheckpointLoaderSimple'
  * @returns Reactive data including category, assets, dropdown items, loading state, and errors
  */

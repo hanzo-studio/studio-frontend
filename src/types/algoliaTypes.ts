@@ -12,7 +12,7 @@ type RegistryNodePack = components['schemas']['Node']
 
 /**
  * Node pack record after it has been mapped to Algolia index format.
- * @see https://github.com/Comfy-Org/comfy-api/blob/main/mapper/algolia.go
+ * @see https://github.com/hanzo-studio/comfy-api/blob/main/mapper/algolia.go
  */
 export interface AlgoliaNodePack {
   objectID: RegistryNodePack['id']
@@ -52,8 +52,8 @@ export interface AlgoliaNodePack {
   tags: RegistryNodePack['tags']
   github_stars: RegistryNodePack['github_stars']
   supported_os: RegistryNodePack['supported_os']
-  supported_comfyui_version: RegistryNodePack['supported_comfyui_version']
-  supported_comfyui_frontend_version: RegistryNodePack['supported_comfyui_frontend_version']
+  supported_hanzo-studio_version: RegistryNodePack['supported_hanzo-studio_version']
+  supported_hanzo-studio_frontend_version: RegistryNodePack['supported_hanzo-studio_frontend_version']
   supported_accelerators: RegistryNodePack['supported_accelerators']
   banner_url: RegistryNodePack['banner_url']
 }

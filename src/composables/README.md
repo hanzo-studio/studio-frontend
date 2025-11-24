@@ -1,6 +1,6 @@
 # Composables
 
-This directory contains Vue composables for the ComfyUI frontend application. Composables are reusable pieces of logic that encapsulate stateful functionality and can be shared across components.
+This directory contains Vue composables for the Hanzo Studio frontend application. Composables are reusable pieces of logic that encapsulate stateful functionality and can be shared across components.
 
 ## Table of Contents
 
@@ -32,7 +32,7 @@ This directory contains Vue composables for the ComfyUI frontend application. Co
 
 ## Overview
 
-Vue composables are a core part of Vue 3's Composition API and provide a way to extract and reuse stateful logic between multiple components. In ComfyUI, composables are used to encapsulate behaviors like:
+Vue composables are a core part of Vue 3's Composition API and provide a way to extract and reuse stateful logic between multiple components. In Hanzo Studio, composables are used to encapsulate behaviors like:
 
 - State management
 - DOM interactions
@@ -47,7 +47,7 @@ As described in the [Vue.js documentation](https://vuejs.org/guide/reusability/c
 
 ## Composable Architecture
 
-The composable architecture in ComfyUI follows these principles:
+The composable architecture in Hanzo Studio follows these principles:
 
 1. **Single Responsibility**: Each composable should focus on a specific concern
 2. **Composition**: Composables can use other composables
@@ -121,7 +121,7 @@ Utility composables for common patterns:
 | `useChainCallback` | Chains multiple callbacks together |
 
 ### Manager
-Composables for ComfyUI Manager integration (located in
+Composables for Hanzo Studio Manager integration (located in
 `@/workbench/extensions/manager/composables`):
 
 | Composable | Description |
@@ -228,7 +228,7 @@ General-purpose composables:
 | `usePragmaticDragAndDrop` | Integrates Atlassian's drag-and-drop library |
 | `useProgressFavicon` | Updates favicon with progress indicator |
 | `useRefreshableSelection` | Manages refreshable selections |
-| `useRegistrySearch` | Searches the ComfyUI registry |
+| `useRegistrySearch` | Searches the Hanzo Studio registry |
 | `useServerLogs` | Manages server log display |
 | `useTemplateWorkflows` | Manages template workflow loading, selection, and display |
 | `useTreeExpansion` | Handles tree node expansion state |
@@ -274,7 +274,7 @@ const { imageUrl, loadImage } = useNodeImage();
 
 ## VueUse Library
 
-ComfyUI leverages the [VueUse](https://vueuse.org/) library, which provides a collection of essential Vue Composition API utilities. Instead of implementing common functionality from scratch, prefer using VueUse composables for:
+Hanzo Studio leverages the [VueUse](https://vueuse.org/) library, which provides a collection of essential Vue Composition API utilities. Instead of implementing common functionality from scratch, prefer using VueUse composables for:
 
 - DOM event handling (`useEventListener`, `useMouseInElement`)
 - Element measurements (`useElementBounding`, `useElementSize`)
@@ -371,7 +371,7 @@ export function useExample(options = {}) {
 
 ## Common Patterns
 
-Composables in ComfyUI frequently use these patterns:
+Composables in Hanzo Studio frequently use these patterns:
 
 ### State Management
 

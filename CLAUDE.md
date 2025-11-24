@@ -1,4 +1,4 @@
-# ComfyUI Frontend Project Guidelines
+# Hanzo Studio Frontend Project Guidelines
 
 ## Repository Setup
 
@@ -46,7 +46,7 @@ Key Nx features:
 3. Run tests (see subdirectory CLAUDE.md files)
 4. Run typecheck, lint, format
 5. Check README updates
-6. Consider docs.comfy.org updates
+6. Consider docs.studio.hanzo.ai updates
 
 ## Git Conventions
 
@@ -57,9 +57,9 @@ Key Nx features:
 ## External Resources
 
 - PrimeVue docs: <https://primevue.org>
-- ComfyUI docs: <https://docs.comfy.org>
+- Hanzo Studio docs: <https://docs.studio.hanzo.ai>
 - Electron: <https://www.electronjs.org/docs/latest/>
-- Wiki: <https://deepwiki.com/Comfy-Org/ComfyUI_frontend/1-overview>
+- Wiki: <https://deepwiki.com/hanzo-studio/studio-frontend/1-overview>
 
 ## Project Philosophy
 
@@ -81,7 +81,7 @@ Key Nx features:
 
 ## GitHub Integration
 
-When referencing Comfy-Org repos:
+When referencing hanzo-studio repos:
 
 1. Check for local copy
 2. Use GitHub API for branches/PRs/metadata

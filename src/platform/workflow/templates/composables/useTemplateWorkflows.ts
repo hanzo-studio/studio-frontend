@@ -107,11 +107,11 @@ export function useTemplateWorkflows() {
     try {
       // Handle "All" category as a special case
       if (sourceModule === 'all') {
-        // Find "All" category in the ComfyUI Examples group
+        // Find "All" category in the Hanzo Studio Examples group
         const comfyExamplesGroup = allTemplateGroups.value.find(
           (g) =>
             g.label ===
-            t('templateWorkflows.category.ComfyUI Examples', 'ComfyUI Examples')
+            t('templateWorkflows.category.Hanzo Studio Examples', 'Hanzo Studio Examples')
         )
         const allCategory = comfyExamplesGroup?.modules.find(
           (m) => m.moduleName === 'all'

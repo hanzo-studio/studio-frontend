@@ -8,7 +8,7 @@ Rejected
 
 ## Context
 
-ComfyUI's frontend requires modifications to PrimeVue components that cannot be achieved through the library's customization APIs. Two specific technical incompatibilities have been identified with the transform-based canvas architecture:
+Hanzo Studio's frontend requires modifications to PrimeVue components that cannot be achieved through the library's customization APIs. Two specific technical incompatibilities have been identified with the transform-based canvas architecture:
 
 **Screen Coordinate Hit-Testing Conflicts:**
 - PrimeVue components use `getBoundingClientRect()` for screen coordinate calculations that don't account for CSS transforms

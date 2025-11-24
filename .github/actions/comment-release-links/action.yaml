@@ -1,6 +1,6 @@
 name: Post Release Summary Comment
 description: Post or update a PR comment summarizing release links with diff, derived versions, and optional extras.
-author: ComfyUI Frontend Team
+author: Hanzo Studio Frontend Team
 
 inputs:
   issue-number:
@@ -56,12 +56,12 @@ runs:
         case "$VERSION_FILE" in
           package.json)
             LINKS_VALUE=$(printf '%s\n%s' \
-              'PyPI|https://pypi.org/project/comfyui-frontend-package/{{version}}/' \
-              'npm types|https://www.npmjs.com/package/@comfyorg/comfyui-frontend-types/v/{{version}}')
+              'PyPI|https://pypi.org/project/hanzo-studio-frontend-package/{{version}}/' \
+              'npm types|https://www.npmjs.com/package/@hanzo-studio/studio-frontend-types/v/{{version}}')
             ;;
           apps/desktop-ui/package.json)
             MARKER='desktop-release-summary'
-            LINKS_VALUE='npm desktop UI|https://www.npmjs.com/package/@comfyorg/desktop-ui/v/{{version}}'
+            LINKS_VALUE='npm desktop UI|https://www.npmjs.com/package/@hanzo-studio/desktop-ui/v/{{version}}'
             ;;
         esac
 

@@ -49,7 +49,7 @@ describe('useVersionCompatibilityStore', () => {
     it('should detect frontend is outdated when required version is higher', async () => {
       mockSystemStatsStore.systemStats = {
         system: {
-          comfyui_version: '1.25.0',
+          hanzo-studio_version: '1.25.0',
           required_frontend_version: '1.25.0'
         }
       }
@@ -67,7 +67,7 @@ describe('useVersionCompatibilityStore', () => {
       // Frontend meets required version, no warning needed
       mockSystemStatsStore.systemStats = {
         system: {
-          comfyui_version: '1.23.0',
+          hanzo-studio_version: '1.23.0',
           required_frontend_version: '1.23.0'
         }
       }
@@ -83,7 +83,7 @@ describe('useVersionCompatibilityStore', () => {
     it('should not detect mismatch when versions are compatible', async () => {
       mockSystemStatsStore.systemStats = {
         system: {
-          comfyui_version: '1.24.0',
+          hanzo-studio_version: '1.24.0',
           required_frontend_version: '1.24.0'
         }
       }
@@ -99,7 +99,7 @@ describe('useVersionCompatibilityStore', () => {
     it('should handle missing version information gracefully', async () => {
       mockSystemStatsStore.systemStats = {
         system: {
-          comfyui_version: '',
+          hanzo-studio_version: '',
           required_frontend_version: ''
         }
       }
@@ -115,7 +115,7 @@ describe('useVersionCompatibilityStore', () => {
     it('should not detect mismatch when versions are not valid semver', async () => {
       mockSystemStatsStore.systemStats = {
         system: {
-          comfyui_version: '080e6d4af809a46852d1c4b7ed85f06e8a3a72be', // git hash
+          hanzo-studio_version: '080e6d4af809a46852d1c4b7ed85f06e8a3a72be', // git hash
           required_frontend_version: 'not-a-version' // invalid semver format
         }
       }
@@ -132,7 +132,7 @@ describe('useVersionCompatibilityStore', () => {
       // Frontend: 1.24.0 (from mock config)
       mockSystemStatsStore.systemStats = {
         system: {
-          comfyui_version: '1.22.0', // Backend is older
+          hanzo-studio_version: '1.22.0', // Backend is older
           required_frontend_version: '1.23.0' // Required is 1.23.0, frontend 1.24.0 meets this
         }
       }
@@ -152,7 +152,7 @@ describe('useVersionCompatibilityStore', () => {
       mockDismissalStorage.value = {}
       mockSystemStatsStore.systemStats = {
         system: {
-          comfyui_version: '1.25.0',
+          hanzo-studio_version: '1.25.0',
           required_frontend_version: '1.25.0'
         }
       }
@@ -172,7 +172,7 @@ describe('useVersionCompatibilityStore', () => {
 
       mockSystemStatsStore.systemStats = {
         system: {
-          comfyui_version: '1.25.0',
+          hanzo-studio_version: '1.25.0',
           required_frontend_version: '1.25.0'
         }
       }
@@ -186,7 +186,7 @@ describe('useVersionCompatibilityStore', () => {
     it('should not show warning when no version mismatch', async () => {
       mockSystemStatsStore.systemStats = {
         system: {
-          comfyui_version: '1.24.0',
+          hanzo-studio_version: '1.24.0',
           required_frontend_version: '1.24.0'
         }
       }
@@ -202,7 +202,7 @@ describe('useVersionCompatibilityStore', () => {
     it('should generate outdated message when frontend is outdated', async () => {
       mockSystemStatsStore.systemStats = {
         system: {
-          comfyui_version: '1.25.0',
+          hanzo-studio_version: '1.25.0',
           required_frontend_version: '1.25.0'
         }
       }
@@ -220,7 +220,7 @@ describe('useVersionCompatibilityStore', () => {
     it('should return null when no mismatch', async () => {
       mockSystemStatsStore.systemStats = {
         system: {
-          comfyui_version: '1.24.0',
+          hanzo-studio_version: '1.24.0',
           required_frontend_version: '1.24.0'
         }
       }
@@ -239,7 +239,7 @@ describe('useVersionCompatibilityStore', () => {
 
       mockSystemStatsStore.systemStats = {
         system: {
-          comfyui_version: '1.25.0',
+          hanzo-studio_version: '1.25.0',
           required_frontend_version: '1.25.0'
         }
       }
@@ -262,7 +262,7 @@ describe('useVersionCompatibilityStore', () => {
 
       mockSystemStatsStore.systemStats = {
         system: {
-          comfyui_version: '1.25.0',
+          hanzo-studio_version: '1.25.0',
           required_frontend_version: '1.25.0'
         }
       }
@@ -281,7 +281,7 @@ describe('useVersionCompatibilityStore', () => {
 
       mockSystemStatsStore.systemStats = {
         system: {
-          comfyui_version: '1.25.0',
+          hanzo-studio_version: '1.25.0',
           required_frontend_version: '1.25.0'
         }
       }
@@ -301,7 +301,7 @@ describe('useVersionCompatibilityStore', () => {
 
       mockSystemStatsStore.systemStats = {
         system: {
-          comfyui_version: '1.26.0',
+          hanzo-studio_version: '1.26.0',
           required_frontend_version: '1.26.0'
         }
       }
@@ -328,7 +328,7 @@ describe('useVersionCompatibilityStore', () => {
       const { until } = await import('@vueuse/core')
       mockSystemStatsStore.systemStats = {
         system: {
-          comfyui_version: '1.24.0',
+          hanzo-studio_version: '1.24.0',
           required_frontend_version: '1.24.0'
         }
       }

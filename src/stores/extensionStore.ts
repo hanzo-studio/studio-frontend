@@ -9,16 +9,16 @@ import type { ComfyExtension } from '@/types/comfy'
 const ALWAYS_ENABLED_EXTENSIONS: readonly string[] = []
 
 const ALWAYS_DISABLED_EXTENSIONS: readonly string[] = [
-  // pysssss.Locking is replaced by pin/unpin in ComfyUI core.
-  // https://github.com/Comfy-Org/litegraph.js/pull/117
+  // pysssss.Locking is replaced by pin/unpin in Hanzo Studio core.
+  // https://github.com/hanzo-studio/litegraph.js/pull/117
   'pysssss.Locking',
-  // pysssss.SnapToGrid is replaced by Comfy.Graph.AlwaysSnapToGrid in ComfyUI core.
+  // pysssss.SnapToGrid is replaced by Comfy.Graph.AlwaysSnapToGrid in Hanzo Studio core.
   // pysssss.SnapToGrid tries to write global app.shiftDown state, which is no longer
   // allowed since v1.3.12.
-  // https://github.com/Comfy-Org/ComfyUI_frontend/issues/1176
+  // https://github.com/hanzo-studio/studio-frontend/issues/1176
   'pysssss.SnapToGrid',
-  // Favicon status is implemented in ComfyUI core in v1.20.
-  // https://github.com/Comfy-Org/ComfyUI_frontend/pull/3880
+  // Favicon status is implemented in Hanzo Studio core in v1.20.
+  // https://github.com/hanzo-studio/studio-frontend/pull/3880
   'pysssss.FaviconStatus',
   'KJNodes.browserstatus'
 ]

@@ -1,13 +1,13 @@
-# @comfyorg/tailwind-utils
+# @hanzo-studio/tailwind-utils
 
-Shared Tailwind CSS utility functions for the ComfyUI Frontend monorepo.
+Shared Tailwind CSS utility functions for the Hanzo Studio Frontend monorepo.
 
 ## Usage
 
 The `cn` function combines `clsx` and `tailwind-merge` to handle conditional classes and resolve Tailwind conflicts.
 
 ```typescript
-import { cn } from '@comfyorg/tailwind-utils'
+import { cn } from '@hanzo-studio/tailwind-utils'
 
 // Use with conditional classes (object)
 <div :class="cn('transition-opacity', { 'opacity-75': !isHovered })" />
@@ -20,12 +20,12 @@ import { cn } from '@comfyorg/tailwind-utils'
 
 ## Installation
 
-This package is part of the ComfyUI Frontend monorepo and is automatically available to all workspace packages.
+This package is part of the Hanzo Studio Frontend monorepo and is automatically available to all workspace packages.
 
 ```json
 {
   "dependencies": {
-    "@comfyorg/tailwind-utils": "workspace:*"
+    "@hanzo-studio/tailwind-utils": "workspace:*"
   }
 }
 ```

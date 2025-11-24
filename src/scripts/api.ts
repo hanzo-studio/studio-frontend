@@ -47,7 +47,7 @@ import type { ComfyNodeDef } from '@/schemas/nodeDefSchema'
 import type { useFirebaseAuthStore } from '@/stores/firebaseAuthStore'
 import type { AuthHeader } from '@/types/authTypes'
 import type { NodeExecutionId } from '@/types/nodeIdentification'
-import { fetchHistory } from '@/platform/remote/comfyui/history'
+import { fetchHistory } from '@/platform/remote/hanzo-studio/history'
 
 interface QueuePromptRequestBody {
   client_id: string
@@ -114,7 +114,7 @@ interface FrontendApiCalls {
   reconnected: never
 }
 
-/** Dictionary of calls originating from ComfyUI core */
+/** Dictionary of calls originating from Hanzo Studio core */
 interface BackendApiCalls {
   progress: ProgressWsMessage
   executing: ExecutingWsMessage
@@ -311,7 +311,7 @@ export class ComfyApi extends EventTarget {
    * {@link queuePrompt} improperly, which causes extra parameters to be lost
    * in the function call chain.
    *
-   * Ref: https://cs.comfy.org/search?q=context:global+%22api.queuePrompt+%3D%22&patternType=keyword&sm=0
+   * Ref: https://cs.studio.hanzo.ai/search?q=context:global+%22api.queuePrompt+%3D%22&patternType=keyword&sm=0
    *
    * TODO: Move this field to parameter of {@link queuePrompt} once all
    * custom nodes are patched.
@@ -1236,7 +1236,7 @@ export class ComfyApi extends EventTarget {
         useToastStore().add({
           severity: 'error',
           summary:
-            'Unloading of models failed. Installed ComfyUI may be an outdated version.',
+            'Unloading of models failed. Installed Hanzo Studio may be an outdated version.',
           life: 5000
         })
       }

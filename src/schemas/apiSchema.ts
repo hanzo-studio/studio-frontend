@@ -329,7 +329,7 @@ const zSystemStats = z.object({
     os: z.string(),
     python_version: z.string(),
     embedded_python: z.boolean(),
-    comfyui_version: z.string(),
+    hanzo-studio_version: z.string(),
     pytorch_version: z.string(),
     required_frontend_version: z.string().optional(),
     argv: z.array(z.string()),

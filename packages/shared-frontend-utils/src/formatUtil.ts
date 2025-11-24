@@ -1,4 +1,4 @@
-import type { operations } from '@comfyorg/registry-types'
+import type { operations } from '@hanzo-studio/registry-types'
 
 export function formatCamelCase(str: string): string {
   // Check if the string is camel case

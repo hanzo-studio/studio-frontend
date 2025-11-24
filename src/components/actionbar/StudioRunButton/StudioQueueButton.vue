@@ -1,0 +1,165 @@
+<template>
+  <div class="queue-button-group flex">
+    <SplitButton
+      v-tooltip.bottom="{
+        value: queueButtonTooltip,
+        showDelay: 600
+      }"
+      class="hanzo-studio-queue-button"
+      :label="String(activeQueueModeMenuItem?.label ?? '')"
+      severity="primary"
+      size="small"
+      :model="queueModeMenuItems"
+      data-testid="queue-button"
+      @click="queuePrompt"
+    >
+      <template #icon>
+        <i :class="iconClass" />
+      </template>
+      <template #item="{ item }">
+        <Button
+          v-tooltip="{
+            value: item.tooltip,
+            showDelay: 600
+          }"
+          :label="String(item.label ?? '')"
+          :icon="item.icon"
+          :severity="item.key === queueMode ? 'primary' : 'secondary'"
+          size="small"
+          text
+        />
+      </template>
+    </SplitButton>
+    <BatchCountEdit />
+  </div>
+</template>
+
+<script setup lang="ts">
+import { storeToRefs } from 'pinia'
+import Button from 'primevue/button'
+import type { MenuItem } from 'primevue/menuitem'
+import SplitButton from 'primevue/splitbutton'
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+import { isCloud } from '@/platform/distribution/types'
+import { useTelemetry } from '@/platform/telemetry'
+import { useCommandStore } from '@/stores/commandStore'
+import { useQueueSettingsStore } from '@/stores/queueStore'
+import { useWorkspaceStore } from '@/stores/workspaceStore'
+import { useMissingNodes } from '@/workbench/extensions/manager/composables/nodePack/useMissingNodes'
+
+import BatchCountEdit from '../BatchCountEdit.vue'
+
+const workspaceStore = useWorkspaceStore()
+const { mode: queueMode, batchCount } = storeToRefs(useQueueSettingsStore())
+
+const { hasMissingNodes } = useMissingNodes()
+
+const { t } = useI18n()
+const queueModeMenuItemLookup = computed(() => {
+  const items: Record<string, MenuItem> = {
+    disabled: {
+      key: 'disabled',
+      label: t('menu.run'),
+      tooltip: t('menu.disabledTooltip'),
+      command: () => {
+        queueMode.value = 'disabled'
+      }
+    },
+    change: {
+      key: 'change',
+      label: `${t('menu.run')} (${t('menu.onChange')})`,
+      tooltip: t('menu.onChangeTooltip'),
+      command: () => {
+        useTelemetry()?.trackUiButtonClicked({
+          button_id: 'queue_mode_option_run_on_change_selected'
+        })
+        queueMode.value = 'change'
+      }
+    }
+  }
+  if (!isCloud) {
+    items.instant = {
+      key: 'instant',
+      label: `${t('menu.run')} (${t('menu.instant')})`,
+      tooltip: t('menu.instantTooltip'),
+      command: () => {
+        useTelemetry()?.trackUiButtonClicked({
+          button_id: 'queue_mode_option_run_instant_selected'
+        })
+        queueMode.value = 'instant'
+      }
+    }
+  }
+  return items
+})
+
+const activeQueueModeMenuItem = computed(() => {
+  // Fallback to disabled mode if current mode is not available (e.g., instant mode in cloud)
+  return (
+    queueModeMenuItemLookup.value[queueMode.value] ||
+    queueModeMenuItemLookup.value.disabled
+  )
+})
+const queueModeMenuItems = computed(() =>
+  Object.values(queueModeMenuItemLookup.value)
+)
+
+const iconClass = computed(() => {
+  if (hasMissingNodes.value) {
+    return 'icon-[lucide--triangle-alert]'
+  }
+  if (workspaceStore.shiftDown) {
+    return 'icon-[lucide--list-start]'
+  }
+  if (queueMode.value === 'disabled') {
+    return 'icon-[lucide--play]'
+  }
+  if (queueMode.value === 'instant') {
+    return 'icon-[lucide--fast-forward]'
+  }
+  if (queueMode.value === 'change') {
+    return 'icon-[lucide--step-forward]'
+  }
+  return 'icon-[lucide--play]'
+})
+
+const queueButtonTooltip = computed(() => {
+  if (hasMissingNodes.value) {
+    return t('menu.runWorkflowDisabled')
+  }
+  if (workspaceStore.shiftDown) {
+    return t('menu.runWorkflowFront')
+  }
+  return t('menu.runWorkflow')
+})
+
+const commandStore = useCommandStore()
+const queuePrompt = async (e: Event) => {
+  const isShiftPressed = 'shiftKey' in e && e.shiftKey
+  const commandId = isShiftPressed
+    ? 'Comfy.QueuePromptFront'
+    : 'Comfy.QueuePrompt'
+
+  if (batchCount.value > 1) {
+    useTelemetry()?.trackUiButtonClicked({
+      button_id: 'queue_run_multiple_batches_submitted'
+    })
+  }
+
+  await commandStore.execute(commandId, {
+    metadata: {
+      subscribe_to_run: false,
+      trigger_source: 'button'
+    }
+  })
+}
+</script>
+
+<style scoped>
+.hanzo-studio-queue-button :deep(.p-splitbutton-dropdown) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+</style>

@@ -1,10 +1,10 @@
-# Playwright Testing for ComfyUI_frontend
+# Playwright Testing for studio-frontend
 
-This document outlines the setup, usage, and common patterns for Playwright browser tests in the ComfyUI_frontend project.
+This document outlines the setup, usage, and common patterns for Playwright browser tests in the studio-frontend project.
 
 ## Prerequisites
 
-**CRITICAL**: Start ComfyUI backend with `--multi-user` flag:
+**CRITICAL**: Start Hanzo Studio backend with `--multi-user` flag:
 
 ```bash
 python main.py --multi-user
@@ -14,14 +14,14 @@ Without this flag, parallel tests will conflict and fail randomly.
 
 ## Setup
 
-### ComfyUI devtools
+### Hanzo Studio devtools
 
-ComfyUI_devtools is included in this repository under `tools/devtools/`. During CI/CD, these files are automatically copied to the `custom_nodes` directory.  
-_ComfyUI_devtools adds additional API endpoints and nodes to ComfyUI for browser testing._
+Hanzo Studio_devtools is included in this repository under `tools/devtools/`. During CI/CD, these files are automatically copied to the `custom_nodes` directory.  
+_Hanzo Studio_devtools adds additional API endpoints and nodes to Hanzo Studio for browser testing._
 
-For local development, copy the devtools files to your ComfyUI installation:
+For local development, copy the devtools files to your Hanzo Studio installation:
 ```bash
-cp -r tools/devtools/* /path/to/your/ComfyUI/custom_nodes/ComfyUI_devtools/
+cp -r tools/devtools/* /path/to/your/Hanzo Studio/custom_nodes/Hanzo Studio_devtools/
 ```
 
 ### Node.js & Playwright Prerequisites
@@ -50,15 +50,15 @@ DISABLE_VUE_PLUGINS=true
 PLAYWRIGHT_TEST_URL=http://localhost:5173  # Dev server
 # PLAYWRIGHT_TEST_URL=http://localhost:8188  # Direct backend
 
-# Path to ComfyUI for backing up user data/settings before tests
-TEST_COMFYUI_DIR=/path/to/your/ComfyUI
+# Path to Hanzo Studio for backing up user data/settings before tests
+TEST_COMFYUI_DIR=/path/to/your/Hanzo Studio
 ```
 
 ### Common Setup Issues
 
 ### Release API Mocking
 
-By default, all tests mock the release API (`api.comfy.org/releases`) to prevent release notification popups from interfering with test execution. This is necessary because the release notifications can appear over UI elements and block test interactions.
+By default, all tests mock the release API (`api.studio.hanzo.ai/releases`) to prevent release notification popups from interfering with test execution. This is necessary because the release notifications can appear over UI elements and block test interactions.
 
 To test with real release data, you can disable mocking:
 
@@ -120,7 +120,7 @@ Browser tests in this project follow a specific organization pattern:
 
 - **Fixtures**: Located in `fixtures/` - These provide test setup and utilities
 
-  - `ComfyPage.ts` - The main fixture for interacting with ComfyUI
+  - `ComfyPage.ts` - The main fixture for interacting with Hanzo Studio
   - `ComfyMouse.ts` - Utility for mouse interactions with the canvas
   - Components fixtures in `fixtures/components/` - Page object models for UI components
 
@@ -391,7 +391,7 @@ pnpm exec playwright test --update-snapshots
 
 ### Creating New Screenshot Baselines
 
-For PRs from `Comfy-Org/ComfyUI_frontend` branches:
+For PRs from `hanzo-studio/studio-frontend` branches:
 
 1. Write test with `toHaveScreenshot('filename.png')`
 2. Create PR and add `New Browser Test Expectation` label
@@ -408,7 +408,7 @@ The project automatically deploys Playwright test reports to Cloudflare Pages fo
 ### Accessing Test Reports
 
 - **From PR comments**: Click the "View Report" links for each browser
-- **Direct URLs**: Reports are available at `https://[branch].comfyui-playwright-[browser].pages.dev` (branch-specific deployments)
+- **Direct URLs**: Reports are available at `https://[branch].hanzo-studio-playwright-[browser].pages.dev` (branch-specific deployments)
 - **From GitHub Actions**: Download artifacts from failed runs
 
 ### How It Works
@@ -416,10 +416,10 @@ The project automatically deploys Playwright test reports to Cloudflare Pages fo
 1. **Test execution**: All browser tests run in parallel across multiple browsers
 2. **Report generation**: HTML reports are generated for each browser configuration
 3. **Cloudflare deployment**: Each browser's report deploys to its own Cloudflare Pages project with branch isolation:
-   - `comfyui-playwright-chromium` (with branch-specific URLs)
-   - `comfyui-playwright-mobile-chrome` (with branch-specific URLs)
-   - `comfyui-playwright-chromium-2x` (2x scale, with branch-specific URLs)
-   - `comfyui-playwright-chromium-0-5x` (0.5x scale, with branch-specific URLs)
+   - `hanzo-studio-playwright-chromium` (with branch-specific URLs)
+   - `hanzo-studio-playwright-mobile-chrome` (with branch-specific URLs)
+   - `hanzo-studio-playwright-chromium-2x` (2x scale, with branch-specific URLs)
+   - `hanzo-studio-playwright-chromium-0-5x` (0.5x scale, with branch-specific URLs)
 
 4. **PR comments**: GitHub automatically updates PR comments with:
    - ✅/❌ Test status for each browser

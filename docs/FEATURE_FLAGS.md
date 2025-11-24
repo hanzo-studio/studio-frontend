@@ -1,8 +1,8 @@
-# ComfyUI Feature Flags System
+# Hanzo Studio Feature Flags System
 
 ## Overview
 
-The ComfyUI feature flags system enables capability negotiation between frontend and backend, allowing both sides to communicate their supported features and adapt behavior accordingly. This ensures backward compatibility while enabling progressive enhancement of features.
+The Hanzo Studio feature flags system enables capability negotiation between frontend and backend, allowing both sides to communicate their supported features and adapt behavior accordingly. This ensures backward compatibility while enabling progressive enhancement of features.
 
 ## System Architecture
 

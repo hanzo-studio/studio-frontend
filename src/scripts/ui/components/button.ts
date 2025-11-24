@@ -46,7 +46,7 @@ export class ComfyButton implements ComfyComponent<HTMLElement> {
     content,
     tooltip,
     action,
-    classList = 'comfyui-button',
+    classList = 'hanzo-studio-button',
     visibilitySetting,
     app,
     enabled = true

@@ -1,4 +1,4 @@
-import { cn } from '@comfyorg/tailwind-utils'
+import { cn } from '@hanzo-studio/tailwind-utils'
 import type { HTMLAttributes } from 'vue'
 
 export type ButtonSize = 'fit-content' | 'sm' | 'md'

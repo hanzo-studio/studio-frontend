@@ -37,7 +37,7 @@
 </template>
 
 <script setup lang="ts">
-import { cn } from '@comfyorg/tailwind-utils'
+import { cn } from '@hanzo-studio/tailwind-utils'
 import Badge from 'primevue/badge'
 import { useI18n } from 'vue-i18n'
 

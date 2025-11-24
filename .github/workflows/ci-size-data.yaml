@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   collect:
-    if: github.repository == 'Comfy-Org/ComfyUI_frontend'
+    if: github.repository == 'hanzo-studio/studio-frontend'
     runs-on: ubuntu-latest
 
     steps:

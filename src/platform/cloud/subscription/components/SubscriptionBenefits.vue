@@ -37,6 +37,6 @@
 import Button from 'primevue/button'
 
 const handleViewMoreDetails = () => {
-  window.open('https://www.comfy.org/cloud/pricing', '_blank')
+  window.open('https://hanzo.ai/cloud/pricing', '_blank')
 }
 </script>

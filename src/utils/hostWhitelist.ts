@@ -42,7 +42,7 @@ export function isHostWhitelisted(rawHost: string): boolean {
   if (isLocalhostLabel(host)) return true
   if (isIPv4Loopback(host)) return true
   if (isIPv6Loopback(host)) return true
-  if (isComfyOrgHost(host)) return true
+  if (isHanzoStudioHost(host)) return true
   const normalizedList = HOST_WHITELIST.map(normalizeHost)
   return normalizedList.includes(host)
 }
@@ -93,6 +93,6 @@ function isIPv6Loopback(h: string): boolean {
 
 const COMFY_ORG_HOST = /\.comfy\.org$/
 
-function isComfyOrgHost(h: string): boolean {
+function isHanzoStudioHost(h: string): boolean {
   return COMFY_ORG_HOST.test(h)
 }

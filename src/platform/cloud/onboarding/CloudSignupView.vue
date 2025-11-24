@@ -60,7 +60,7 @@
       <div class="mt-5 text-sm text-gray-600">
         {{ t('auth.login.termsText') }}
         <a
-          href="https://www.comfy.org/terms-of-service"
+          href="https://hanzo.ai/terms-of-service"
           target="_blank"
           class="cursor-pointer text-blue-400 no-underline"
         >
@@ -77,7 +77,7 @@
         <p class="mt-2">
           {{ t('cloudWaitlist_questionsText') }}
           <a
-            href="https://support.comfy.org"
+            href="https://support.studio.hanzo.ai"
             class="cursor-pointer text-blue-400 no-underline"
             target="_blank"
             rel="noopener noreferrer"

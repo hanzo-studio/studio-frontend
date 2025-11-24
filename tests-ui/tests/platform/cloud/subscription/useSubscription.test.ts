@@ -292,7 +292,7 @@ describe('useSubscription', () => {
       handleViewUsageHistory()
 
       expect(windowOpenSpy).toHaveBeenCalledWith(
-        'https://stagingplatform.comfy.org/profile/usage',
+        'https://stagingplatform.studio.hanzo.ai/profile/usage',
         '_blank'
       )
 
@@ -308,7 +308,7 @@ describe('useSubscription', () => {
       handleLearnMore()
 
       expect(windowOpenSpy).toHaveBeenCalledWith(
-        'https://docs.comfy.org',
+        'https://docs.studio.hanzo.ai',
         '_blank'
       )
 

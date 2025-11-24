@@ -1,5 +1,5 @@
 {
-  "name": "@comfyorg/desktop-ui",
+  "name": "@hanzo-studio/desktop-ui",
   "version": "0.0.3",
   "type": "module",
   "nx": {
@@ -91,8 +91,8 @@
     "build-storybook": "storybook build -o dist/storybook"
   },
   "dependencies": {
-    "@comfyorg/comfyui-electron-types": "catalog:",
-    "@comfyorg/shared-frontend-utils": "workspace:*",
+    "@hanzo-studio/electron-types": "catalog:",
+    "@hanzo-studio/shared-frontend-utils": "workspace:*",
     "@primevue/core": "catalog:",
     "@primevue/themes": "catalog:",
     "@vueuse/core": "catalog:",

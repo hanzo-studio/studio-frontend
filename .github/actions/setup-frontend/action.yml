@@ -1,5 +1,5 @@
-name: Setup ComfyUI Frontend
-description: 'Install nodejs/pnpm/dependencies and optionally build ComfyUI_frontend'
+name: Setup Hanzo Studio Frontend
+description: 'Install nodejs/pnpm/dependencies and optionally build studio-frontend'
 inputs:
   include_build_step:
     description: 'Include the build step to build the frontend. Set to true for workflows that need a built frontend'
@@ -39,7 +39,7 @@ runs:
       shell: bash
       run: pnpm install --frozen-lockfile
 
-    - name: Build ComfyUI_frontend
+    - name: Build studio-frontend
       if: ${{ inputs.include_build_step == 'true' }}
       shell: bash
       run: pnpm build

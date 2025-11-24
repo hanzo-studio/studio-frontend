@@ -181,7 +181,7 @@
         "Try a different browser or network"
       ],
       "helpText": "Yardıma mı ihtiyacınız var? İletişime geçin:",
-      "message": "ComfyUI Cloud'a bağlanırken sorun yaşıyoruz. Bu, yavaş bir bağlantı veya geçici bir servis sorunundan kaynaklanıyor olabilir.",
+      "message": "Hanzo Studio Cloud'a bağlanırken sorun yaşıyoruz. Bu, yavaş bir bağlantı veya geçici bir servis sorunundan kaynaklanıyor olabilir.",
       "restart": "Çıkış Yap ve Tekrar Dene",
       "supportLink": "destek",
       "technicalDetails": "Teknik Detaylar",
@@ -209,11 +209,11 @@
     "retrying": "Yeniden deneniyor...",
     "start": {
       "desc": "Kurulum gerekmez. Her cihazda çalışır.",
-      "download": "ComfyUI'ı İndir",
+      "download": "Hanzo Studio'ı İndir",
       "explain": "Aynı anda birden fazla çıktı oluşturun. İş akışlarını kolayca paylaşın.",
       "learnAboutButton": "Cloud hakkında bilgi edinin",
       "title": "saniyeler içinde oluşturmaya başlayın",
-      "wantToRun": "ComfyUI'ı yerel olarak çalıştırmak mı istiyorsunuz?"
+      "wantToRun": "Hanzo Studio'ı yerel olarak çalıştırmak mı istiyorsunuz?"
     },
     "survey": {
       "options": {
@@ -221,7 +221,7 @@
           "advanced": "İleri seviye kullanıcı (özel iş akışları)",
           "basics": "Temel bilgilerde rahatım",
           "expert": "Uzman (başkalarına yardım ediyorum)",
-          "new": "ComfyUI'a yeni (daha önce hiç kullanmadım)",
+          "new": "Hanzo Studio'a yeni (daha önce hiç kullanmadım)",
           "starting": "Yeni başlıyorum (eğitimleri takip ediyorum)"
         },
         "industry": {
@@ -253,16 +253,16 @@
       },
       "placeholder": "Anket soruları yer tutucusu",
       "questions": {
-        "familiarity": "ComfyUI'a ne kadar aşinasınız?",
+        "familiarity": "Hanzo Studio'a ne kadar aşinasınız?",
         "industry": "Birincil sektörünüz nedir?",
         "making": "Ne yapmayı planlıyorsunuz?",
-        "purpose": "ComfyUI'ı öncelikle ne için kullanacaksınız?"
+        "purpose": "Hanzo Studio'ı öncelikle ne için kullanacaksınız?"
       },
       "steps": {
-        "familiarity": "ComfyUI'a ne kadar aşinasınız?",
+        "familiarity": "Hanzo Studio'a ne kadar aşinasınız?",
         "industry": "Birincil sektörünüz nedir?",
         "making": "Ne yapmayı planlıyorsunuz?",
-        "purpose": "ComfyUI'ı öncelikle ne için kullanacaksınız?"
+        "purpose": "Hanzo Studio'ı öncelikle ne için kullanacaksınız?"
       },
       "title": "Bulut Anketi"
     }
@@ -271,15 +271,15 @@
   "cloudPrivateBeta_title": "Cloud şu anda özel beta aşamasında",
   "cloudSorryContactSupport_title": "Üzgünüz, destekle iletişime geçin",
   "cloudStart_desc": "Kurulum gerekmez. Her cihazda çalışır.",
-  "cloudStart_download": "ComfyUI'ı İndir",
+  "cloudStart_download": "Hanzo Studio'ı İndir",
   "cloudStart_explain": "Aynı anda birden fazla çıktı oluşturun. İş akışlarını kolayca paylaşın.",
   "cloudStart_learnAboutButton": "Cloud hakkında bilgi edinin",
   "cloudStart_title": "saniyeler içinde oluşturmaya başlayın",
-  "cloudStart_wantToRun": "ComfyUI'ı yerel olarak çalıştırmak mı istiyorsunuz?",
-  "cloudSurvey_steps_familiarity": "ComfyUI'ya ne kadar aşinasınız?",
+  "cloudStart_wantToRun": "Hanzo Studio'ı yerel olarak çalıştırmak mı istiyorsunuz?",
+  "cloudSurvey_steps_familiarity": "Hanzo Studio'ya ne kadar aşinasınız?",
   "cloudSurvey_steps_industry": "Birincil sektörünüz nedir?",
   "cloudSurvey_steps_making": "Ne yapmayı planlıyorsunuz?",
-  "cloudSurvey_steps_purpose": "ComfyUI'yı öncelikle ne için kullanacaksınız?",
+  "cloudSurvey_steps_purpose": "Hanzo Studio'yı öncelikle ne için kullanacaksınız?",
   "cloudWaitlist_contactLink": "burada",
   "cloudWaitlist_questionsText": "Sorularınız mı var? Bize ulaşın",
   "color": {
@@ -481,12 +481,12 @@
     "initialising": "Başlatılıyor..."
   },
   "desktopUpdate": {
-    "description": "ComfyUI Masaüstü yeni bağımlılıkları yüklüyor. Bu birkaç dakika sürebilir.",
+    "description": "Hanzo Studio Masaüstü yeni bağımlılıkları yüklüyor. Bu birkaç dakika sürebilir.",
     "errorCheckingUpdate": "Güncellemeler kontrol edilirken hata oluştu",
     "errorInstallingUpdate": "Güncelleme yüklenirken hata oluştu",
     "noUpdateFound": "Güncelleme bulunamadı",
     "terminalDefaultMessage": "Güncellemeden gelen herhangi bir konsol çıktısı burada gösterilecektir.",
-    "title": "ComfyUI Masaüstü Güncelleniyor",
+    "title": "Hanzo Studio Masaüstü Güncelleniyor",
     "updateAvailableMessage": "Bir güncelleme mevcut. Şimdi yeniden başlatıp güncellemek ister misiniz?",
     "updateFoundTitle": "Güncelleme Bulundu (v{version})"
   },
@@ -496,7 +496,7 @@
     "message": "Git bulunamadı. Normal çalışma için çalışan bir git kopyası gereklidir.",
     "skip": "Atla",
     "title": "Git'i indir",
-    "warning": "Git'in kurulu olmasına ihtiyacınız olmadığından veya bir hata olduğundan eminseniz, bu kontrolü atlamak için Atla'yı tıklayabilirsiniz. ComfyUI'yi çalışan bir git kopyası olmadan çalıştırmak şu anda desteklenmemektedir."
+    "warning": "Git'in kurulu olmasına ihtiyacınız olmadığından veya bir hata olduğundan eminseniz, bu kontrolü atlamak için Atla'yı tıklayabilirsiniz. Hanzo Studio'yi çalışan bir git kopyası olmadan çalıştırmak şu anda desteklenmemektedir."
   },
   "electronFileDownload": {
     "cancel": "İndirmeyi İptal Et",
@@ -542,7 +542,7 @@
     "close": "Kapat",
     "color": "Renk",
     "comfy": "Comfy",
-    "comfyOrgLogoAlt": "ComfyOrg Logosu",
+    "comfyOrgLogoAlt": "HanzoStudio Logosu",
     "comingSoon": "Çok Yakında",
     "command": "Komut",
     "commandProhibited": "{command} komutu yasak. Daha fazla bilgi için bir yöneticiyle iletişime geçin.",
@@ -632,7 +632,7 @@
     "loading": "Yükleniyor",
     "loadingPanel": "{panel} paneli yükleniyor...",
     "login": "Giriş Yap",
-    "logoAlt": "ComfyUI Logosu",
+    "logoAlt": "Hanzo Studio Logosu",
     "logs": "Kayıtlar",
     "markdown": "markdown",
     "micPermissionDenied": "Mikrofon izni reddedildi",
@@ -727,7 +727,7 @@
     "usageHint": "Kullanım ipucu",
     "user": "Kullanıcı",
     "versionMismatchWarning": "Sürüm Uyumluluk Uyarısı",
-    "versionMismatchWarningMessage": "{warning}: {detail} Güncelleme talimatları için https://docs.comfy.org/installation/update_comfyui#common-update-issues adresini ziyaret edin.",
+    "versionMismatchWarningMessage": "{warning}: {detail} Güncelleme talimatları için https://docs.studio.hanzo.ai/installation/update_hanzo-studio#common-update-issues adresini ziyaret edin.",
     "videoFailedToLoad": "Video yüklenemedi",
     "videoPreview": "Video önizlemesi - Videolar arasında gezinmek için ok tuşlarını kullanın",
     "viewImageOfTotal": "{total} görüntüden {index}. görüntüyü görüntüle",
@@ -786,14 +786,14 @@
     "star": "Yıldız"
   },
   "install": {
-    "appDataLocationTooltip": "ComfyUI'nin uygulama veri dizini. Saklar:\n- Kayıtlar\n- Sunucu yapılandırmaları",
-    "appPathLocationTooltip": "ComfyUI'nin uygulama varlık dizini. ComfyUI kodunu ve varlıklarını saklar",
+    "appDataLocationTooltip": "Hanzo Studio'nin uygulama veri dizini. Saklar:\n- Kayıtlar\n- Sunucu yapılandırmaları",
+    "appPathLocationTooltip": "Hanzo Studio'nin uygulama varlık dizini. Hanzo Studio kodunu ve varlıklarını saklar",
     "cannotWrite": "Seçilen yola yazılamıyor",
     "chooseInstallationLocation": "Kurulum Konumunu Seçin",
     "customNodes": "Özel Düğümler",
-    "customNodesDescription": "Mevcut ComfyUI kurulumlarından özel düğümleri yeniden yükleyin.",
+    "customNodesDescription": "Mevcut Hanzo Studio kurulumlarından özel düğümleri yeniden yükleyin.",
     "desktopAppSettings": "Masaüstü Uygulama Ayarları",
-    "desktopAppSettingsDescription": "ComfyUI'nin masaüstünüzde nasıl davranacağını yapılandırın. Bu ayarları daha sonra değiştirebilirsiniz.",
+    "desktopAppSettingsDescription": "Hanzo Studio'nin masaüstünüzde nasıl davranacağını yapılandırın. Bu ayarları daha sonra değiştirebilirsiniz.",
     "desktopSettings": "Masaüstü Ayarları",
     "failedToSelectDirectory": "Dizin seçilemedi",
     "gpu": "GPU",
@@ -801,7 +801,7 @@
       "appleMetalDescription": "Daha hızlı hız ve daha iyi genel deneyim için Mac'inizin GPU'sunu kullanır",
       "cpuDescription": "GPU hızlandırma kullanılamadığında uyumluluk için CPU modunu kullanın",
       "cpuSubtitle": "CPU Modu",
-      "manualDescription": "Gelişmiş kurulumlar veya desteklenmeyen donanım için ComfyUI'yi manuel olarak yapılandırın",
+      "manualDescription": "Gelişmiş kurulumlar veya desteklenmeyen donanım için Hanzo Studio'yi manuel olarak yapılandırın",
       "manualSubtitle": "Manuel Kurulum",
       "nvidiaDescription": "En iyi performans için CUDA hızlandırmalı NVIDIA GPU'nuzu kullanın.",
       "nvidiaSubtitle": "NVIDIA CUDA",
@@ -812,7 +812,7 @@
       "cpuMode": "CPU Modu",
       "cpuModeDescription": "CPU modu yalnızca geliştiriciler ve nadir uç durumlar için tasarlanmıştır.",
       "cpuModeDescription2": "Buna kesinlikle ihtiyacınız olduğundan emin değilseniz, lütfen bu kutuyu yoksayın ve yukarıdan GPU'nuzu seçin.",
-      "customComfyNeedsPython": "Python kurulana kadar ComfyUI çalışmayacaktır",
+      "customComfyNeedsPython": "Python kurulana kadar Hanzo Studio çalışmayacaktır",
       "customInstallRequirements": "Tüm gereksinimleri ve bağımlılıkları yükleyin (ör. özel torch)",
       "customManualVenv": "Python venv'i manuel olarak yapılandırın",
       "customMayNotWork": "Bu tamamen desteklenmemektedir ve basitçe çalışmayabilir",
@@ -823,26 +823,26 @@
       "selectGpu": "GPU Seç",
       "selectGpuDescription": "Sahip olduğunuz GPU türünü seçin"
     },
-    "helpImprove": "Lütfen ComfyUI'yi geliştirmeye yardımcı olun",
+    "helpImprove": "Lütfen Hanzo Studio'yi geliştirmeye yardımcı olun",
     "installLocation": "Kurulum Yeri",
-    "installLocationDescription": "ComfyUI'nin kullanıcı verileri için dizini seçin. Seçilen konuma bir python ortamı yüklenecektir.",
-    "installLocationTooltip": "ComfyUI'nin kullanıcı veri dizini. Saklar:\n- Python Ortamı\n- Modeller\n- Özel düğümler\n",
+    "installLocationDescription": "Hanzo Studio'nin kullanıcı verileri için dizini seçin. Seçilen konuma bir python ortamı yüklenecektir.",
+    "installLocationTooltip": "Hanzo Studio'nin kullanıcı veri dizini. Saklar:\n- Python Ortamı\n- Modeller\n- Özel düğümler\n",
     "insufficientFreeSpace": "Yetersiz alan - minimum boş alan",
-    "isOneDrive": "OneDrive desteklenmiyor. Lütfen ComfyUI'yi başka bir konuma yükleyin.",
+    "isOneDrive": "OneDrive desteklenmiyor. Lütfen Hanzo Studio'yi başka bir konuma yükleyin.",
     "locationPicker": {
       "chooseDownloadServers": "İndirme sunucularını manuel olarak seçin",
       "downloadServersDescription": "Konumunuza göre Python, PyPI paketleri ve PyTorch indirmek için belirli yansı sunucularını seçin.",
-      "migrateDescription": "Önceki bir ComfyUI kurulumundan mevcut modellerinizi, özel düğümlerinizi ve yapılandırmalarınızı kopyalayın veya bağlayın.",
+      "migrateDescription": "Önceki bir Hanzo Studio kurulumundan mevcut modellerinizi, özel düğümlerinizi ve yapılandırmalarınızı kopyalayın veya bağlayın.",
       "migrateFromExisting": "Mevcut kurulumdan taşı",
-      "migrationPathPlaceholder": "Mevcut ComfyUI kurulumunu seçin (isteğe bağlı)",
-      "pathPlaceholder": "/Users/username/Documents/ComfyUI",
-      "subtitle": "ComfyUI'nin dosyaları için bir klasör seçin. Python'u da orada otomatik olarak kuracağız.",
-      "title": "ComfyUI'yi nereye kuracağınızı seçin"
+      "migrationPathPlaceholder": "Mevcut Hanzo Studio kurulumunu seçin (isteğe bağlı)",
+      "pathPlaceholder": "/Users/username/Documents/Hanzo Studio",
+      "subtitle": "Hanzo Studio'nin dosyaları için bir klasör seçin. Python'u da orada otomatik olarak kuracağız.",
+      "title": "Hanzo Studio'yi nereye kuracağınızı seçin"
     },
     "manualConfiguration": {
       "createVenv": "Aşağıdaki dizinde bir sanal ortam oluşturmanız gerekecektir",
       "requirements": "Gereksinimler",
-      "restartWhenFinished": "Sanal ortamı yapılandırmayı bitirdiğinizde, lütfen ComfyUI'yi yeniden başlatın.",
+      "restartWhenFinished": "Sanal ortamı yapılandırmayı bitirdiğinizde, lütfen Hanzo Studio'yi yeniden başlatın.",
       "title": "Manuel Yapılandırma",
       "virtualEnvironmentPath": "Sanal ortam yolu"
     },
@@ -851,9 +851,9 @@
     "migrateFromExistingInstallation": "Mevcut Kurulumdan Taşı",
     "migration": "Taşıma",
     "migrationOptional": "Taşıma isteğe bağlıdır. Mevcut bir kurulumunuz yoksa bu adımı atlayabilirsiniz.",
-    "migrationSourcePathDescription": "Mevcut bir ComfyUI kurulumunuz varsa, mevcut kullanıcı dosyalarınızı ve modellerinizi yeni kuruluma kopyalayabilir/bağlayabiliriz. Mevcut ComfyUI kurulumunuz etkilenmeyecektir.",
+    "migrationSourcePathDescription": "Mevcut bir Hanzo Studio kurulumunuz varsa, mevcut kullanıcı dosyalarınızı ve modellerinizi yeni kuruluma kopyalayabilir/bağlayabiliriz. Mevcut Hanzo Studio kurulumunuz etkilenmeyecektir.",
     "moreInfo": "Daha fazla bilgi için lütfen okuyun",
-    "nonDefaultDrive": "Lütfen ComfyUI'yi sistem sürücünüze (ör. C:\\) yükleyin. Farklı dosya sistemlerine sahip sürücüler öngörülemeyen sorunlara neden olabilir. Modeller ve diğer dosyalar kurulumdan sonra diğer sürücülerde saklanabilir.",
+    "nonDefaultDrive": "Lütfen Hanzo Studio'yi sistem sürücünüze (ör. C:\\) yükleyin. Farklı dosya sistemlerine sahip sürücüler öngörülemeyen sorunlara neden olabilir. Modeller ve diğer dosyalar kurulumdan sonra diğer sürücülerde saklanabilir.",
     "parentMissing": "Yol mevcut değil - önce içeren dizini oluşturun",
     "pathExists": "Dizin zaten mevcut - lütfen tüm verileri yedeklediğinizden emin olun",
     "pathValidationFailed": "Yol doğrulanamadı",
@@ -861,7 +861,7 @@
     "selectItemsToMigrate": "Taşınacak Öğeleri Seçin",
     "settings": {
       "allowMetrics": "Kullanım Metrikleri",
-      "allowMetricsDescription": "Anonim kullanım metrikleri göndererek ComfyUI'yi geliştirmeye yardımcı olun. Kişisel bilgi veya iş akışı içeriği toplanmayacaktır.",
+      "allowMetricsDescription": "Anonim kullanım metrikleri göndererek Hanzo Studio'yi geliştirmeye yardımcı olun. Kişisel bilgi veya iş akışı içeriği toplanmayacaktır.",
       "autoUpdate": "Otomatik Güncellemeler",
       "autoUpdateDescription": "Güncellemeler mevcut olduğunda otomatik olarak indirin. Güncellemeler yüklenmeden önce size bildirilecektir.",
       "checkingMirrors": "Python yansıtmalarına ağ erişimi kontrol ediliyor...",
@@ -988,7 +988,7 @@
       "conflictMessages": {
         "accelerator": "GPU/Hızlandırıcı desteklenmiyor (mevcut: {current}, gerekli: {required})",
         "banned": "Bu paket güvenlik nedenleriyle yasaklandı",
-        "comfyui_version": "ComfyUI sürüm uyuşmazlığı (mevcut: {current}, gerekli: {required})",
+        "hanzo-studio_version": "Hanzo Studio sürüm uyuşmazlığı (mevcut: {current}, gerekli: {required})",
         "frontend_version": "Ön uç sürüm uyuşmazlığı (mevcut: {current}, gerekli: {required})",
         "generic": "Uyumluluk sorunu (mevcut: {current}, gerekli: {required})",
         "import_failed": "İçe Aktarılamadı",
@@ -996,11 +996,11 @@
         "pending": "Güvenlik doğrulaması bekleniyor - uyumluluk doğrulanamıyor"
       },
       "conflicts": "Çakışmalar",
-      "description": "Bazı uzantılarınız ile ComfyUI'nin yeni sürümü arasında çakışmalar tespit ettik. Güncelleyerek bu uzantılara dayanan iş akışlarını bozma riskiyle karşı karşıya kalırsınız.",
+      "description": "Bazı uzantılarınız ile Hanzo Studio'nin yeni sürümü arasında çakışmalar tespit ettik. Güncelleyerek bu uzantılara dayanan iş akışlarını bozma riskiyle karşı karşıya kalırsınız.",
       "enableAnyway": "Yine de Etkinleştir",
       "extensionAtRisk": "Risk Altındaki Uzantı",
       "importFailedExtensions": "İçe Aktarılamayan Uzantılar",
-      "info": "Güncellemeye devam ederseniz, çakışan uzantılar otomatik olarak devre dışı bırakılacaktır. Bunları istediğiniz zaman ComfyUI Yöneticisi'nde inceleyebilir ve yönetebilirsiniz.",
+      "info": "Güncellemeye devam ederseniz, çakışan uzantılar otomatik olarak devre dışı bırakılacaktır. Bunları istediğiniz zaman Hanzo Studio Yöneticisi'nde inceleyebilir ve yönetebilirsiniz.",
       "installAnyway": "Yine de Yükle",
       "title": "Düğüm Paketi Sorunları Tespit Edildi!",
       "understood": "Anlaşıldı",
@@ -1038,7 +1038,7 @@
     "lastUpdated": "Son Güncelleme",
     "latestVersion": "En Son",
     "legacyManagerUI": "Eski Arayüzü Kullan",
-    "legacyManagerUIDescription": "Eski Yönetici Arayüzünü kullanmak için ComfyUI'yi --enable-manager-legacy-ui ile başlatın",
+    "legacyManagerUIDescription": "Eski Yönetici Arayüzünü kullanmak için Hanzo Studio'yi --enable-manager-legacy-ui ile başlatın",
     "legacyMenuNotAvailable": "Eski yönetici menüsü mevcut değil, yeni yönetici menüsüne varsayılan olarak geçiliyor.",
     "license": "Lisans",
     "loadingVersions": "Sürümler yükleniyor...",
@@ -1052,7 +1052,7 @@
     "notAvailable": "Mevcut Değil",
     "packsSelected": "paket seçildi",
     "repository": "Depo",
-    "restartToApplyChanges": "Değişiklikleri uygulamak için lütfen ComfyUI'yi yeniden başlatın",
+    "restartToApplyChanges": "Değişiklikleri uygulamak için lütfen Hanzo Studio'yi yeniden başlatın",
     "restartingBackend": "Değişiklikleri uygulamak için arka uç yeniden başlatılıyor...",
     "searchPlaceholder": "Ara",
     "selectVersion": "Sürüm Seç",
@@ -1144,7 +1144,7 @@
     "toggleBottomPanel": "Alt Paneli Aç/Kapat"
   },
   "menuLabels": {
-    "About ComfyUI": "ComfyUI Hakkında",
+    "About Hanzo Studio": "Hanzo Studio Hakkında",
     "Assets": "Varlıklar",
     "Bottom Panel": "Alt Panel",
     "Browse Templates": "Şablonlara Gözat",
@@ -1157,10 +1157,10 @@
     "Clipspace": "Clipspace",
     "Close Current Workflow": "Mevcut İş Akışını Kapat",
     "Collapse/Expand Selected Nodes": "Seçili Düğümleri Daralt/Genişlet",
-    "Comfy-Org Discord": "Comfy-Org Discord",
-    "ComfyUI Docs": "ComfyUI Belgeleri",
-    "ComfyUI Forum": "ComfyUI Forumu",
-    "ComfyUI Issues": "ComfyUI Sorunları",
+    "hanzo-studio Discord": "hanzo-studio Discord",
+    "Hanzo Studio Docs": "Hanzo Studio Belgeleri",
+    "Hanzo Studio Forum": "Hanzo Studio Forumu",
+    "Hanzo Studio Issues": "Hanzo Studio Sorunları",
     "Contact Support": "Destekle İletişime Geç",
     "Convert Selection to Subgraph": "Seçimi Alt Grafiğe Dönüştür",
     "Convert selected nodes to group node": "Seçili düğümleri grup düğümüne dönüştür",
@@ -1443,7 +1443,7 @@
     },
     "disable-smart-memory": {
       "name": "Akıllı bellek yönetimini devre dışı bırak",
-      "tooltip": "ComfyUI'yi, modelleri VRAM'de tutmak yerine agresif bir şekilde normal RAM'e boşaltmaya zorlayın."
+      "tooltip": "Hanzo Studio'yi, modelleri VRAM'de tutmak yerine agresif bir şekilde normal RAM'e boşaltmaya zorlayın."
     },
     "disable-xformers": {
       "name": "xFormers optimizasyonunu devre dışı bırak"
@@ -1523,21 +1523,21 @@
   "serverStart": {
     "copyAllTooltip": "Tümünü kopyala",
     "copySelectionTooltip": "Seçimi kopyala",
-    "errorMessage": "ComfyUI Desktop başlatılamadı",
+    "errorMessage": "Hanzo Studio Desktop başlatılamadı",
     "installation": {
-      "title": "ComfyUI Yükleniyor"
+      "title": "Hanzo Studio Yükleniyor"
     },
     "openLogs": "Kayıtları Aç",
     "process": {
-      "error": "ComfyUI Desktop başlatılamıyor",
+      "error": "Hanzo Studio Desktop başlatılamıyor",
       "initial-state": "Yükleniyor...",
       "python-setup": "Python Ortamı Kuruluyor...",
       "ready": "Bitiriliyor...",
-      "starting-server": "ComfyUI sunucusu başlatılıyor..."
+      "starting-server": "Hanzo Studio sunucusu başlatılıyor..."
     },
     "reportIssue": "Sorun Bildir",
     "showTerminal": "Terminali Göster",
-    "title": "ComfyUI Başlatılıyor",
+    "title": "Hanzo Studio Başlatılıyor",
     "troubleshoot": "Sorun Giderme"
   },
   "settingsCategories": {
@@ -1766,7 +1766,7 @@
       "Area Composition": "Alan Kompozisyonu",
       "Audio": "Ses",
       "Basics": "Temel Bilgiler",
-      "ComfyUI Examples": "ComfyUI Örnekleri",
+      "Hanzo Studio Examples": "Hanzo Studio Örnekleri",
       "ControlNet": "ControlNet",
       "Custom Nodes": "Özel Düğümler",
       "Extensions": "Eklentiler",
@@ -1907,7 +1907,7 @@
   },
   "welcome": {
     "getStarted": "Başlayın",
-    "title": "ComfyUI'ye Hoş Geldiniz"
+    "title": "Hanzo Studio'ye Hoş Geldiniz"
   },
   "whatsNewPopup": {
     "learnMore": "Daha fazla bilgi edinin",

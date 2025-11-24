@@ -1,8 +1,8 @@
-# ComfyUI Extensions Documentation
+# Hanzo Studio Extensions Documentation
 
 ## Overview
 
-Extensions are the primary way to add functionality to ComfyUI. They can be custom nodes, custom nodes that render widgets (UIs made with javascript), ComfyUI shell UI enhancements, and more. This documentation covers everything you need to know about understanding, using, and developing extensions.
+Extensions are the primary way to add functionality to Hanzo Studio. They can be custom nodes, custom nodes that render widgets (UIs made with javascript), Hanzo Studio shell UI enhancements, and more. This documentation covers everything you need to know about understanding, using, and developing extensions.
 
 ## Documentation Structure
 
@@ -22,10 +22,10 @@ Extensions are the primary way to add functionality to ComfyUI. They can be cust
 
 ### Key Concepts
 
-- **Extension**: Umbrella term for any code that extends ComfyUI
+- **Extension**: Umbrella term for any code that extends Hanzo Studio
 - **Custom Nodes**: Python backend nodes (a type of extension)
 - **JavaScript Extensions**: Frontend UI enhancements
-- **Core Extensions**: Built-in extensions bundled with ComfyUI
+- **Core Extensions**: Built-in extensions bundled with Hanzo Studio
 
 ### Common Tasks
 
@@ -35,11 +35,11 @@ Extensions are the primary way to add functionality to ComfyUI. They can be cust
 
 ### External Resources
 
-- [Official JavaScript Extension Docs](https://docs.comfy.org/custom-nodes/js/javascript_overview)
+- [Official JavaScript Extension Docs](https://docs.studio.hanzo.ai/custom-nodes/js/javascript_overview)
 - [ComfyExtension TypeScript Interface](../../src/types/comfy.ts)
 
 ## Need Help?
 
 - Check the [Development Guide](./development.md) for common issues
 - Review [Core Extensions](./core.md) for examples
-- Visit the [ComfyUI Discord](https://discord.com/invite/comfyorg) for community support
+- Visit the [Hanzo Studio Discord](https://discord.com/invite/comfyorg) for community support

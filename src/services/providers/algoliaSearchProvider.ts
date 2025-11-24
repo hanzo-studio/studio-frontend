@@ -45,8 +45,8 @@ const RETRIEVE_ATTRIBUTES: SearchAttribute[] = [
   'icon_url',
   'github_stars',
   'supported_os',
-  'supported_comfyui_version',
-  'supported_comfyui_frontend_version',
+  'supported_hanzo-studio_version',
+  'supported_hanzo-studio_frontend_version',
   'supported_accelerators',
   'banner_url'
 ]
@@ -100,9 +100,9 @@ const toRegistryPack = memoize(
       tags: algoliaNode.tags,
       github_stars: algoliaNode.github_stars,
       supported_os: algoliaNode.supported_os,
-      supported_comfyui_version: algoliaNode.supported_comfyui_version,
-      supported_comfyui_frontend_version:
-        algoliaNode.supported_comfyui_frontend_version,
+      supported_hanzo-studio_version: algoliaNode.supported_hanzo-studio_version,
+      supported_hanzo-studio_frontend_version:
+        algoliaNode.supported_hanzo-studio_frontend_version,
       supported_accelerators: algoliaNode.supported_accelerators,
       banner_url: algoliaNode.banner_url,
       comfy_nodes: algoliaNode.comfy_nodes

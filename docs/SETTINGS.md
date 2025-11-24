@@ -2,7 +2,7 @@
 
 ## Overview
 
-ComfyUI frontend uses a comprehensive settings system for user preferences with support for dynamic defaults, version-based rollouts, and environment-aware configuration.
+Hanzo Studio frontend uses a comprehensive settings system for user preferences with support for dynamic defaults, version-based rollouts, and environment-aware configuration.
 
 ### Settings Architecture
 - Settings are defined as `SettingParams` in `src/constants/coreSettings.ts`
@@ -139,7 +139,7 @@ Here are actual settings showing different patterns:
 // Hidden system setting for tracking
 {
   id: 'Comfy.InstalledVersion',
-  name: 'The frontend version that was running when the user first installed ComfyUI',
+  name: 'The frontend version that was running when the user first installed Hanzo Studio',
   type: 'hidden',
   defaultValue: null,
   versionAdded: '1.24.0'

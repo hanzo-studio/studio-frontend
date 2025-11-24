@@ -535,7 +535,7 @@ const onReleaseClick = (release: ReleaseNote): void => {
 const onUpdate = (_: ReleaseNote): void => {
   trackResourceClick('docs', true)
   openExternalLink(
-    buildDocsUrl('/installation/update_comfyui', { includeLocale: true })
+    buildDocsUrl('/installation/update_hanzo-studio', { includeLocale: true })
   )
   emit('close')
 }

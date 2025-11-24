@@ -35,7 +35,7 @@
         "euler",
         "normal",
         1,
-        "ComfyUI"
+        "Hanzo Studio"
       ]
     }
   ],
@@ -321,7 +321,7 @@
             "outputs": [],
             "properties": {},
             "widgets_values": [
-              "ComfyUI"
+              "Hanzo Studio"
             ],
             "index": 6
           }

@@ -11,7 +11,7 @@
 1. **Creating New Stories**:
    - Place `*.stories.ts` files alongside components
    - Follow the naming pattern: `ComponentName.stories.ts`
-   - Use realistic mock data that matches ComfyUI schemas
+   - Use realistic mock data that matches Hanzo Studio schemas
 
 2. **Testing Stories**:
    - Verify stories render correctly in Storybook UI
@@ -51,7 +51,7 @@ export const Default: Story = {
 
 ### Mock Data Patterns
 
-For ComfyUI components, use realistic mock data:
+For Hanzo Studio components, use realistic mock data:
 
 ```typescript
 // Node definition mock
@@ -115,7 +115,7 @@ export const WithEvents: Story = {
 ### Vue App Setup
 The Storybook preview is configured with:
 - Pinia stores initialized
-- PrimeVue with ComfyUI theme
+- PrimeVue with Hanzo Studio theme
 - i18n internationalization
 - All necessary CSS imports
 
@@ -163,19 +163,19 @@ src/
 │       └── MyComponent.stories.ts
 ```
 
-## Integration with ComfyUI
+## Integration with Hanzo Studio
 
 ### Available Context
 
 Stories have access to:
-- All ComfyUI stores (widgetStore, colorPaletteStore, etc.)
-- PrimeVue components with ComfyUI theming
+- All Hanzo Studio stores (widgetStore, colorPaletteStore, etc.)
+- PrimeVue components with Hanzo Studio theming
 - Internationalization system
-- ComfyUI CSS variables and styling
+- Hanzo Studio CSS variables and styling
 
 ### Testing Components
 
-When testing ComfyUI-specific components:
+When testing Hanzo Studio-specific components:
 1. Use realistic node definitions and data structures
 2. Test with different node types (sampling, conditioning, etc.)
 3. Verify proper CSS theming and dark/light modes

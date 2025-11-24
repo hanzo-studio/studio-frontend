@@ -9,7 +9,7 @@ import { LinkReleaseTriggerAction } from '@/types/searchBoxTypes'
 import { breakpointsTailwind } from '@vueuse/core'
 
 /**
- * Core settings are essential configuration parameters required for ComfyUI's basic functionality.
+ * Core settings are essential configuration parameters required for Hanzo Studio's basic functionality.
  * These settings must be present in the settings store and cannot be omitted.
  *
  * IMPORTANT: To prevent ID conflicts, settings should be marked as deprecated rather than removed
@@ -878,7 +878,7 @@ export const CORE_SETTINGS: SettingParams[] = [
   },
   {
     id: 'Comfy.InstalledVersion',
-    name: 'The frontend version that was running when the user first installed ComfyUI',
+    name: 'The frontend version that was running when the user first installed Hanzo Studio',
     type: 'hidden',
     defaultValue: null,
     versionAdded: '1.24.0'
@@ -1003,7 +1003,7 @@ export const CORE_SETTINGS: SettingParams[] = [
     name: 'Auto Save',
     type: 'combo',
     options: ['off', 'after delay'], // Room for other options like on focus change, tab change, window change
-    defaultValue: 'off', // Popular request by users (https://github.com/Comfy-Org/ComfyUI_frontend/issues/1584#issuecomment-2536610154)
+    defaultValue: 'off', // Popular request by users (https://github.com/hanzo-studio/studio-frontend/issues/1584#issuecomment-2536610154)
     versionAdded: '1.16.0'
   },
   {

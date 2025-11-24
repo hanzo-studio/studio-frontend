@@ -5,7 +5,7 @@ import type { LGraphCanvas } from '@/lib/litegraph/src/LGraphCanvas'
  *
  * Used to create videos of feature changes.
  *
- * Example usage with ComfyUI_frontend, via console / devtools:
+ * Example usage with studio-frontend, via console / devtools:
  *
  * ```ts
  * const inputIndicators = new InputIndicators(canvas)

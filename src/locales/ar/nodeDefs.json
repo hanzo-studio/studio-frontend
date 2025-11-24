@@ -4746,7 +4746,7 @@
     }
   },
   "LazyCache": {
-    "description": "نسخة محلية الصنع من EasyCache - نسخة 'أسهل' من EasyCache للتنفيذ. تعمل بشكل عام أسوأ من EasyCache، ولكن أفضل في بعض الحالات النادرة ومتوافقة عالميًا مع كل شيء في ComfyUI.",
+    "description": "نسخة محلية الصنع من EasyCache - نسخة 'أسهل' من EasyCache للتنفيذ. تعمل بشكل عام أسوأ من EasyCache، ولكن أفضل في بعض الحالات النادرة ومتوافقة عالميًا مع كل شيء في Hanzo Studio.",
     "display_name": "ذاكرة_التخزين_المؤقت_الكسولة",
     "inputs": {
       "end_percent": {
@@ -5409,7 +5409,7 @@
     }
   },
   "MaskPreview": {
-    "description": "يحفظ الصور المدخلة في مجلد الإخراج الخاص بـ ComfyUI.",
+    "description": "يحفظ الصور المدخلة في مجلد الإخراج الخاص بـ Hanzo Studio.",
     "display_name": "معاينة القناع",
     "inputs": {
       "mask": {
@@ -8863,7 +8863,7 @@
     }
   },
   "PreviewImage": {
-    "description": "يحفظ الصور المدخلة في دليل مخرجات ComfyUI الخاص بك.",
+    "description": "يحفظ الصور المدخلة في دليل مخرجات Hanzo Studio الخاص بك.",
     "display_name": "معاينة الصورة",
     "inputs": {
       "images": {
@@ -10352,7 +10352,7 @@
     }
   },
   "SaveImage": {
-    "description": "يحفظ الصور المدخلة في مجلد مخرجات ComfyUI الخاص بك.",
+    "description": "يحفظ الصور المدخلة في مجلد مخرجات Hanzo Studio الخاص بك.",
     "display_name": "حفظ الصورة",
     "inputs": {
       "filename_prefix": {
@@ -10415,7 +10415,7 @@
     }
   },
   "SaveVideo": {
-    "description": "يحفظ الصور المدخلة في مجلد مخرجات ComfyUI الخاص بك.",
+    "description": "يحفظ الصور المدخلة في مجلد مخرجات Hanzo Studio الخاص بك.",
     "display_name": "حفظ الفيديو",
     "inputs": {
       "codec": {

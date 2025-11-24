@@ -200,7 +200,7 @@ export default defineConfig([
           ignoreNodes: ['md-icon', 'v-icon', 'pre', 'code', 'script', 'style'],
           // Brand names and technical terms that shouldn't be translated
           ignoreText: [
-            'ComfyUI',
+            'Hanzo Studio',
             'GitHub',
             'OpenAI',
             'API',

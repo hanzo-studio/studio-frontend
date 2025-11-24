@@ -12,7 +12,7 @@ import Tooltip from 'primevue/tooltip'
 import '@/assets/css/style.css'
 import { i18n } from '@/i18n'
 
-const ComfyUIPreset = definePreset(Aura, {
+const Hanzo StudioPreset = definePreset(Aura, {
   semantic: {
     // @ts-expect-error prime type quirk
     primary: Aura['primitive'].blue
@@ -28,7 +28,7 @@ setup((app) => {
   app.use(i18n)
   app.use(PrimeVue, {
     theme: {
-      preset: ComfyUIPreset,
+      preset: Hanzo StudioPreset,
       options: {
         prefix: 'p',
         cssLayer: { name: 'primevue', order: 'primevue, tailwind-utilities' },

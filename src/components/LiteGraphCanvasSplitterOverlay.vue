@@ -157,7 +157,7 @@ const sidebarStateKey = computed(() => {
 .splitter-overlay-root {
   @apply w-full h-full absolute top-0 left-0;
 
-  /* Set it the same as the ComfyUI menu */
+  /* Set it the same as the Hanzo Studio menu */
   /* Note: Lite-graph DOM widgets have the same z-index as the node id, so
   999 should be sufficient to make sure splitter overlays on node's DOM
   widgets */

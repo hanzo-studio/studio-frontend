@@ -1,6 +1,6 @@
 # Pinia Store Testing Guide
 
-This guide covers patterns and examples for testing Pinia stores in the ComfyUI Frontend codebase.
+This guide covers patterns and examples for testing Pinia stores in the Hanzo Studio Frontend codebase.
 
 ## Table of Contents
 

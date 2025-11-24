@@ -24,7 +24,7 @@ describe('useReleaseStore', () => {
 
   const mockRelease = {
     id: 1,
-    project: 'comfyui' as const,
+    project: 'hanzo-studio' as const,
     version: '1.2.0',
     content: 'New features and improvements',
     published_at: '2023-12-01T00:00:00Z',
@@ -52,7 +52,7 @@ describe('useReleaseStore', () => {
     mockSystemStatsStore = {
       systemStats: {
         system: {
-          comfyui_version: '1.0.0'
+          hanzo-studio_version: '1.0.0'
         }
       },
       isInitialized: true,
@@ -170,7 +170,7 @@ describe('useReleaseStore', () => {
       })
 
       it('should show popup for latest version', () => {
-        mockSystemStatsStore.systemStats.system.comfyui_version = '1.2.0'
+        mockSystemStatsStore.systemStats.system.hanzo-studio_version = '1.2.0'
 
         vi.mocked(semverCompare).mockReturnValue(0)
 
@@ -183,7 +183,7 @@ describe('useReleaseStore', () => {
         await store.initialize()
 
         expect(mockReleaseService.getReleases).toHaveBeenCalledWith({
-          project: 'comfyui',
+          project: 'hanzo-studio',
           current_version: '1.0.0',
           form_factor: 'git-windows',
           locale: 'en'
@@ -212,7 +212,7 @@ describe('useReleaseStore', () => {
       })
 
       it('should not show popup even for latest version', () => {
-        mockSystemStatsStore.systemStats.system.comfyui_version = '1.2.0'
+        mockSystemStatsStore.systemStats.system.hanzo-studio_version = '1.2.0'
 
         vi.mocked(semverCompare).mockReturnValue(0)
 
@@ -241,7 +241,7 @@ describe('useReleaseStore', () => {
       await store.initialize()
 
       expect(mockReleaseService.getReleases).toHaveBeenCalledWith({
-        project: 'comfyui',
+        project: 'hanzo-studio',
         current_version: '1.0.0',
         form_factor: 'git-windows',
         locale: 'en'
@@ -256,7 +256,7 @@ describe('useReleaseStore', () => {
       await store.initialize()
 
       expect(mockReleaseService.getReleases).toHaveBeenCalledWith({
-        project: 'comfyui',
+        project: 'hanzo-studio',
         current_version: '1.0.0',
         form_factor: 'desktop-mac',
         locale: 'en'
@@ -514,7 +514,7 @@ describe('useReleaseStore', () => {
     })
 
     it('should show popup for latest version', () => {
-      mockSystemStatsStore.systemStats.system.comfyui_version = '1.2.0' // Same as release
+      mockSystemStatsStore.systemStats.system.hanzo-studio_version = '1.2.0' // Same as release
       mockSettingStore.get.mockImplementation((key: string) => {
         if (key === 'Comfy.Notification.ShowVersionUpdates') return true
         return null
@@ -591,7 +591,7 @@ describe('useReleaseStore', () => {
       })
 
       it('should show popup for latest version', () => {
-        mockSystemStatsStore.systemStats.system.comfyui_version = '1.2.0'
+        mockSystemStatsStore.systemStats.system.hanzo-studio_version = '1.2.0'
 
         vi.mocked(semverCompare).mockReturnValue(0)
 
@@ -648,7 +648,7 @@ describe('useReleaseStore', () => {
       })
 
       it('should NOT show popup even for latest version', () => {
-        mockSystemStatsStore.systemStats.system.comfyui_version = '1.2.0'
+        mockSystemStatsStore.systemStats.system.hanzo-studio_version = '1.2.0'
 
         vi.mocked(semverCompare).mockReturnValue(0)
 

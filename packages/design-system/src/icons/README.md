@@ -1,6 +1,6 @@
-# ComfyUI Icons Guide
+# Hanzo Studio Icons Guide
 
-ComfyUI supports three types of icons that can be used throughout the interface. All icons are automatically imported - no manual imports needed!
+Hanzo Studio supports three types of icons that can be used throughout the interface. All icons are automatically imported - no manual imports needed!
 
 ## Quick Start - Code Examples
 

@@ -25,7 +25,7 @@ const meta: Meta<StoryArgs> = {
     nodeType: {
       control: 'select',
       options: ['CheckpointLoaderSimple', 'VAELoader', 'ControlNetLoader'],
-      description: 'ComfyUI node type for context'
+      description: 'Hanzo Studio node type for context'
     },
     inputName: {
       control: 'select',

@@ -83,8 +83,8 @@ const { error } = defineProps<{
   }
 }>()
 
-const repoOwner = 'comfyanonymous'
-const repoName = 'ComfyUI'
+const repoOwner = 'hanzoai'
+const repoName = 'Hanzo Studio'
 const reportContent = ref('')
 const reportOpen = ref(false)
 /**

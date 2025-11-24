@@ -70,7 +70,7 @@ describe('conflictUtils', () => {
           package_id: 'mypack',
           conflicts: [
             {
-              type: 'comfyui_version',
+              type: 'hanzo-studio_version',
               current_value: '1.0.0',
               required_value: '>=2.0.0'
             }
@@ -172,7 +172,7 @@ describe('conflictUtils', () => {
           package_id: 'mynode',
           conflicts: [
             {
-              type: 'comfyui_version',
+              type: 'hanzo-studio_version',
               current_value: '1.0.0',
               required_value: '>=2.0.0'
             }
@@ -198,7 +198,7 @@ describe('conflictUtils', () => {
         required_value: 'CUDA'
       })
       expect(result[0].conflicts).toContainEqual({
-        type: 'comfyui_version',
+        type: 'hanzo-studio_version',
         current_value: '1.0.0',
         required_value: '>=2.0.0'
       })

@@ -114,8 +114,8 @@ describe('useAlgoliaSearchProvider', () => {
         tags: undefined,
         github_stars: undefined,
         supported_os: undefined,
-        supported_comfyui_version: undefined,
-        supported_comfyui_frontend_version: undefined,
+        supported_hanzo-studio_version: undefined,
+        supported_hanzo-studio_frontend_version: undefined,
         supported_accelerators: undefined,
         banner_url: undefined
       })

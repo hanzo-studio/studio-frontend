@@ -1,10 +1,10 @@
 # Extension Development Guide
 
-## Understanding Extensions in ComfyUI
+## Understanding Extensions in Hanzo Studio
 
 ### Terminology Clarification
 
-**ComfyUI Extension** - The umbrella term for any 3rd party code that extends ComfyUI functionality. This includes:
+**Hanzo Studio Extension** - The umbrella term for any 3rd party code that extends Hanzo Studio functionality. This includes:
 
 1. **Python Custom Nodes** - Backend nodes providing new operations
    - Located in `/custom_nodes/` directories
@@ -13,16 +13,16 @@
 
 2. **JavaScript Extensions** - Frontend functionality that can be:
    - Pure JavaScript extensions (implement `ComfyExtension` interface)
-   - JavaScript components of custom nodes (in `/web/` or `/js/` folders, or custom directories specified via `WEB_DIRECTORY` export in `__init__.py` [see docs](https://docs.comfy.org/custom-nodes/backend/lifecycle#web-directory))
+   - JavaScript components of custom nodes (in `/web/` or `/js/` folders, or custom directories specified via `WEB_DIRECTORY` export in `__init__.py` [see docs](https://docs.studio.hanzo.ai/custom-nodes/backend/lifecycle#web-directory))
    - Core extensions (built into frontend at `/src/extensions/core/` - see [Core Extensions Documentation](./core.md))
 
 ### How Extensions Load
 
 **Backend Flow (Python Custom Nodes):**
-1. ComfyUI server starts → scans `/custom_nodes/` directories
-2. Loads Python modules (e.g., `/custom_nodes/ComfyUI-Impact-Pack/__init__.py`)
+1. Hanzo Studio server starts → scans `/custom_nodes/` directories
+2. Loads Python modules (e.g., `/custom_nodes/Hanzo Studio-Impact-Pack/__init__.py`)
 3. Python code registers new node types with the server
-4. Server exposes these via `/object_info` API with metadata like `python_module: "custom_nodes.ComfyUI-Impact-Pack"`
+4. Server exposes these via `/object_info` API with metadata like `python_module: "custom_nodes.Hanzo Studio-Impact-Pack"`
 5. These nodes execute on the server when workflows run
 
 **Frontend Flow (JavaScript):**
@@ -37,7 +37,7 @@
 2. Server responds with list of JavaScript files from:
    - `/web/extensions/*.js` (legacy location)
    - `/custom_nodes/*/web/*.js` (node-specific UI code)
-3. Frontend fetches each JavaScript file (e.g., `/extensions/ComfyUI-Impact-Pack/impact.js`)
+3. Frontend fetches each JavaScript file (e.g., `/extensions/Hanzo Studio-Impact-Pack/impact.js`)
 4. JavaScript executes immediately, calling `app.registerExtension()` to hook into the UI
 5. These registered hooks enhance the UI for their associated Python nodes
 
@@ -52,7 +52,7 @@ The development server cannot load custom node JavaScript due to architectural c
 
 ### The Technical Challenge
 
-ComfyUI migrated to TypeScript and Vite, but thousands of extensions rely on the old unbundled module system. The solution was a **shim system** that maintains backward compatibility - but only in production builds.
+Hanzo Studio migrated to TypeScript and Vite, but thousands of extensions rely on the old unbundled module system. The solution was a **shim system** that maintains backward compatibility - but only in production builds.
 
 ### How the Shim Works
 
@@ -119,7 +119,7 @@ Note: Watch mode provides faster rebuilds than full builds, but still no hot rel
 
 For cloud extensions, modify `.env`:
 ```
-DEV_SERVER_COMFYUI_URL=http://stagingcloud.comfy.org/
+DEV_SERVER_COMFYUI_URL=http://stagingcloud.studio.hanzo.ai/
 ```
 
 ## Key Points
@@ -132,5 +132,5 @@ DEV_SERVER_COMFYUI_URL=http://stagingcloud.comfy.org/
 ## Further Reading
 
 - [Core Extensions Architecture](./core.md) - Complete list of core extensions and development guidelines
-- [JavaScript Extension Hooks](https://docs.comfy.org/custom-nodes/js/javascript_hooks) - Official documentation on extension hooks
+- [JavaScript Extension Hooks](https://docs.studio.hanzo.ai/custom-nodes/js/javascript_hooks) - Official documentation on extension hooks
 - [ComfyExtension Interface](../../src/types/comfy.ts) - TypeScript interface defining all extension capabilities

@@ -96,7 +96,7 @@ export function executeWidgetsCallback(
  * Since frontend version 1.16, forceInput input is no longer treated
  * as widget. So we need to remove the dummy widget value serialized
  * from workflows prior to v1.16.
- * Ref: https://github.com/Comfy-Org/ComfyUI_frontend/pull/3326
+ * Ref: https://github.com/hanzo-studio/studio-frontend/pull/3326
  *
  * @param nodeDef the node definition
  * @param widgets the widgets on the node instance (from node definition)
@@ -153,7 +153,7 @@ export function migrateWidgetsValues<TWidgetValue>(
  * We need to update the slot index of corresponding links to match the new
  * node inputs array order.
  *
- * Ref: https://github.com/Comfy-Org/ComfyUI_frontend/issues/3348
+ * Ref: https://github.com/hanzo-studio/studio-frontend/issues/3348
  *
  * @param graph - The graph to fix links for.
  */

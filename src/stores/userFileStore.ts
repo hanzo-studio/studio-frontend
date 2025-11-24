@@ -32,7 +32,7 @@ export class UserFile {
 
   constructor(
     /**
-     * Path relative to ComfyUI/user/ directory.
+     * Path relative to Hanzo Studio/user/ directory.
      */
     public path: string,
     /**
@@ -137,7 +137,7 @@ export class UserFile {
     })
 
     // Note: Backend supports full_info=true feature after
-    // https://github.com/comfyanonymous/ComfyUI/pull/5446
+    // https://github.com/hanzoai/Hanzo Studio/pull/5446
     const updatedFile = (await resp.json()) as string | UserDataFullInfo
     if (typeof updatedFile === 'object') {
       this.lastModified = updatedFile.modified
@@ -172,7 +172,7 @@ export class UserFile {
     }
     this.updatePath(newPath)
     // Note: Backend supports full_info=true feature after
-    // https://github.com/comfyanonymous/ComfyUI/pull/5446
+    // https://github.com/hanzoai/Hanzo Studio/pull/5446
     const updatedFile = (await resp.json()) as string | UserDataFullInfo
     if (typeof updatedFile === 'object') {
       this.lastModified = updatedFile.modified

@@ -343,7 +343,7 @@ class ComfyList {
   }
 }
 
-export class ComfyUI {
+export class Hanzo Studio {
   app: ComfyApp
   dialog: _ComfyDialog
   settings: ComfySettingsDialog

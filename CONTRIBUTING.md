@@ -1,10 +1,10 @@
-# Contributing to ComfyUI Frontend
+# Contributing to Hanzo Studio Frontend
 
 We're building this frontend together and would love your help — no matter how you'd like to pitch in! You don't need to write code to make a difference.
 
 ## Ways to Contribute
 
-- **Pull Requests:** Add features, fix bugs, or improve code health. Browse [issues](https://github.com/Comfy-Org/ComfyUI_frontend/issues) for inspiration. Look for the `Good first issue` label if you're new to the project.
+- **Pull Requests:** Add features, fix bugs, or improve code health. Browse [issues](https://github.com/hanzo-studio/studio-frontend/issues) for inspiration. Look for the `Good first issue` label if you're new to the project.
 - **Vote on Features:** Give a 👍 to the feature requests you care about to help us prioritize.
 - **Verify Bugs:** Try reproducing reported issues and share your results (even if the bug doesn't occur!).
 - **Community Support:** Hop into our [Discord](https://discord.com/invite/comfyorg) to answer questions or get help.
@@ -19,7 +19,7 @@ Have another idea? Drop into Discord or open an issue, and let's chat!
 - **Required Software**:
   - Node.js (v18 or later to build; v24 for vite dev server) and pnpm
   - Git for version control
-  - A running ComfyUI backend instance
+  - A running Hanzo Studio backend instance
   
 - **Tech Stack**:
   - [Vue 3.5 Composition API](https://vuejs.org/) with [TypeScript](https://www.typescriptlang.org/)
@@ -33,8 +33,8 @@ Have another idea? Drop into Discord or open an issue, and let's chat!
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Comfy-Org/ComfyUI_frontend.git
-   cd ComfyUI_frontend
+   git clone https://github.com/hanzo-studio/studio-frontend.git
+   cd studio-frontend
    ```
 
 2. Install dependencies:
@@ -45,11 +45,11 @@ Have another idea? Drop into Discord or open an issue, and let's chat!
 3. Configure environment (optional):
    Create a `.env` file in the project root based on the provided [.env_example](.env_example) file.
 
-   **Note about ports**: By default, the dev server expects the ComfyUI backend at `localhost:8188`. If your ComfyUI instance runs on a different port, update this in your `.env` file.
+   **Note about ports**: By default, the dev server expects the Hanzo Studio backend at `localhost:8188`. If your Hanzo Studio instance runs on a different port, update this in your `.env` file.
 
 ### Dev Server Configuration
 
-To launch ComfyUI and have it connect to your development server:
+To launch Hanzo Studio and have it connect to your development server:
 
 ```bash
 python main.py --port 8188
@@ -61,7 +61,7 @@ Run `pnpm prepare` to install Git pre-commit hooks. Currently, the pre-commit ho
 
 ### Dev Server
 
-- Start local ComfyUI backend at `localhost:8188`
+- Start local Hanzo Studio backend at `localhost:8188`
 - Run `pnpm dev` to start the dev server
 - Run `pnpm dev:electron` to start the dev server with electron API mocked
 
@@ -72,7 +72,7 @@ Enable remote access to the dev server by setting `VITE_REMOTE_DEV` in `.env` to
 After you start the dev server, you should see following logs:
 
 ```
-> comfyui-frontend@1.3.42 dev
+> hanzo-studio-frontend@1.3.42 dev
 > vite
 
 
@@ -85,7 +85,7 @@ After you start the dev server, you should see following logs:
 ```
 
 Make sure your desktop machine and touch device are on the same network. On your touch device,
-navigate to `http://<server_ip>:5173` (e.g. `http://192.168.2.20:5173` here), to access the ComfyUI frontend.
+navigate to `http://<server_ip>:5173` (e.g. `http://192.168.2.20:5173` here), to access the Hanzo Studio frontend.
 
 > ⚠️ IMPORTANT:
 The dev server will NOT load JavaScript extensions from custom nodes. Only core extensions (built into the frontend) will be loaded. This is because the shim system that allows custom node JavaScript to import frontend modules only works in production builds. Python custom nodes still function normally. See [Extension Development Guide](docs/extensions/development.md) for details and workarounds. And See [Extension Overview](docs/extensions/README.md) for extensions overview.
@@ -135,7 +135,7 @@ If the automated cherry-pick fails due to conflicts, the workflow will comment o
 - The list of conflicting files
 - Instructions to manually cherry-pick to the release candidate branch
 
-See [PR #4616](https://github.com/Comfy-Org/ComfyUI_frontend/pull/4616) for the actual subgraph bugfix that was backported from v1.25 to v1.24.
+See [PR #4616](https://github.com/hanzo-studio/studio-frontend/pull/4616) for the actual subgraph bugfix that was backported from v1.25 to v1.24.
 
 ## Code Editor Configuration
 
@@ -151,7 +151,7 @@ We've also included a list of recommended extensions in `.vscode/extensions.json
 
 The Playwright MCP server enables LLM coding assistants (like Copilot, Claude Code, etc.) to control and inspect web browsers programmatically. This allows assistants to navigate websites, take screenshots, and interact with web pages on your behalf.
 
-For ComfyUI_frontend development, you can ask coding assistants to use Playwright screenshots to continuously verify that your code changes produce the expected visual results.
+For studio-frontend development, you can ask coding assistants to use Playwright screenshots to continuously verify that your code changes produce the expected visual results.
 
 ##### Setup for Claude Code
 
@@ -185,7 +185,7 @@ Here's how Claude Code can use the Playwright MCP server to inspect the interfac
   ⎿  Read image (94.3KB)
 
 ● Based on the screenshot, I can see the menubar at
-   the top of the ComfyUI interface contains the
+   the top of the Hanzo Studio interface contains the
   following items:
 
   Main Menubar Items:
@@ -194,13 +194,13 @@ Here's how Claude Code can use the Playwright MCP server to inspect the interfac
   - Help - Menu for help and documentation
 
   Additional UI Elements:
-  - ComfyUI Logo - On the far left
+  - Hanzo Studio Logo - On the far left
   - Workflow Tab - Shows "Unsaved Workflow" with a
   dropdown and close button
   - Layout Controls - On the far right (grid view
   and hamburger menu icons)
 
-  The interface shows a typical ComfyUI workflow
+  The interface shows a typical Hanzo Studio workflow
   graph with nodes like "Load Checkpoint", "CLIP
   Text Encode (Prompt)", "KSampler", and "Empty
   Latent Image" connected with colored cables.
@@ -264,7 +264,7 @@ For detailed instructions and code examples, see [packages/design-system/src/ico
 
 ## Working with litegraph.js
 
-Since Aug 5, 2025, litegraph.js is now integrated directly into this repository. It was merged using git subtree to preserve the complete commit history ([PR #4667](https://github.com/Comfy-Org/ComfyUI_frontend/pull/4667), [ADR](docs/adr/0001-merge-litegraph-into-frontend.md)).
+Since Aug 5, 2025, litegraph.js is now integrated directly into this repository. It was merged using git subtree to preserve the complete commit history ([PR #4667](https://github.com/hanzo-studio/studio-frontend/pull/4667), [ADR](docs/adr/0001-merge-litegraph-into-frontend.md)).
 
 ### Important Notes
 
@@ -272,7 +272,7 @@ Since Aug 5, 2025, litegraph.js is now integrated directly into this repository.
 - **File Paths**: When viewing historical commits, file paths may show the original structure before the subtree merge. In those cases, just consider the paths relative to the new litegraph folder.
 - **Contributing**: All litegraph modifications should now be made directly in this repository.
 
-The original litegraph repository (https://github.com/Comfy-Org/litegraph.js) is now archived.
+The original litegraph repository (https://github.com/hanzo-studio/litegraph.js) is now archived.
 
 ## Submitting Changes
 
@@ -325,4 +325,4 @@ If you have questions about contributing:
 - Ask in our [Discord](https://discord.com/invite/comfyorg)
 - Open a new issue for clarification
 
-Thank you for contributing to ComfyUI Frontend!
+Thank you for contributing to Hanzo Studio Frontend!

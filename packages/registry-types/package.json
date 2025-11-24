@@ -1,5 +1,5 @@
 {
-  "name": "@comfyorg/registry-types",
+  "name": "@hanzo-studio/registry-types",
   "version": "1.0.0",
   "description": "Comfy Registry API TypeScript types",
   "packageManager": "pnpm@10.17.1",

@@ -4769,7 +4769,7 @@
   },
   "LazyCache": {
     "display_name": "LazyCache",
-    "description": "A homebrew version of EasyCache - even 'easier' version of EasyCache to implement. Overall works worse than EasyCache, but better in some rare cases AND universal compatibility with everything in ComfyUI.",
+    "description": "A homebrew version of EasyCache - even 'easier' version of EasyCache to implement. Overall works worse than EasyCache, but better in some rare cases AND universal compatibility with everything in Hanzo Studio.",
     "inputs": {
       "model": {
         "name": "model",
@@ -5619,7 +5619,7 @@
   },
   "MaskPreview": {
     "display_name": "MaskPreview",
-    "description": "Saves the input images to your ComfyUI output directory.",
+    "description": "Saves the input images to your Hanzo Studio output directory.",
     "inputs": {
       "mask": {
         "name": "mask"
@@ -9072,7 +9072,7 @@
   },
   "PreviewImage": {
     "display_name": "Preview Image",
-    "description": "Saves the input images to your ComfyUI output directory.",
+    "description": "Saves the input images to your Hanzo Studio output directory.",
     "inputs": {
       "images": {
         "name": "images"
@@ -10430,7 +10430,7 @@
   },
   "SaveImage": {
     "display_name": "Save Image",
-    "description": "Saves the input images to your ComfyUI output directory.",
+    "description": "Saves the input images to your Hanzo Studio output directory.",
     "inputs": {
       "images": {
         "name": "images",
@@ -10493,7 +10493,7 @@
   },
   "SaveVideo": {
     "display_name": "Save Video",
-    "description": "Saves the input images to your ComfyUI output directory.",
+    "description": "Saves the input images to your Hanzo Studio output directory.",
     "inputs": {
       "video": {
         "name": "video",

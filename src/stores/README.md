@@ -1,6 +1,6 @@
 # Stores
 
-This directory contains Pinia stores for the ComfyUI frontend application. Stores provide centralized state management for the application.
+This directory contains Pinia stores for the Hanzo Studio frontend application. Stores provide centralized state management for the application.
 
 ## Table of Contents
 
@@ -13,7 +13,7 @@ This directory contains Pinia stores for the ComfyUI frontend application. Store
 
 ## Overview
 
-Stores in ComfyUI use [Pinia](https://pinia.vuejs.org/), Vue's official state management library. Each store is responsible for managing a specific domain of the application state, such as user data, workflow information, graph state, and UI configuration.
+Stores in Hanzo Studio use [Pinia](https://pinia.vuejs.org/), Vue's official state management library. Each store is responsible for managing a specific domain of the application state, such as user data, workflow information, graph state, and UI configuration.
 
 Stores provide a way to maintain global application state that can be accessed from any component, regardless of where those components are in the component hierarchy. This solves the problem of "prop drilling" (passing data down through multiple levels of components) and allows components that aren't directly related to share and modify the same state.
 
@@ -50,7 +50,7 @@ With Pinia stores, components can directly access and update the shared state:
 
 ## Store Architecture
 
-The store architecture in ComfyUI follows these principles:
+The store architecture in Hanzo Studio follows these principles:
 
 1. **Domain-driven**: Each store focuses on a specific domain of the application
 2. **Single source of truth**: Stores serve as the definitive source for specific data
@@ -108,7 +108,7 @@ The following table lists ALL 46 store instances in the system as of 2025-09-01:
 |------|-------|-------------|----------|
 | aboutPanelStore.ts | useAboutPanelStore | Manages the About panel state and badges | UI |
 | apiKeyAuthStore.ts | useApiKeyAuthStore | Handles API key authentication | Auth |
-| comfyManagerStore.ts | useComfyManagerStore | Manages ComfyUI application state | Core |
+| comfyManagerStore.ts | useComfyManagerStore | Manages Hanzo Studio application state | Core |
 | comfyManagerStore.ts | useManagerProgressDialogStore | Manages manager progress dialog state | UI |
 | comfyRegistryStore.ts | useComfyRegistryStore | Handles extensions registry | Registry |
 | commandStore.ts | useCommandStore | Manages commands and command execution | Core |
@@ -172,7 +172,7 @@ When developing or modifying stores, follow these best practices:
 
 ### Store Template
 
-Here's a template for creating a new Pinia store, following the setup style used in ComfyUI:
+Here's a template for creating a new Pinia store, following the setup style used in Hanzo Studio:
 
 ```typescript
 import { defineStore } from 'pinia'
@@ -228,7 +228,7 @@ export const useExampleStore = defineStore('example', () => {
 
 ## Common Patterns
 
-Stores in ComfyUI frequently use these patterns:
+Stores in Hanzo Studio frequently use these patterns:
 
 ### API Integration
 

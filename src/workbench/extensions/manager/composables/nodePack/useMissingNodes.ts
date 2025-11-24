@@ -36,7 +36,7 @@ export const useMissingNodes = createSharedComposable(() => {
   })
 
   /**
-   * Check if a pack is the ComfyUI builtin node pack (nodes that come pre-installed)
+   * Check if a pack is the Hanzo Studio builtin node pack (nodes that come pre-installed)
    * @param packId - The id of the pack to check
    * @returns True if the pack is the comfy-core pack, false otherwise
    */

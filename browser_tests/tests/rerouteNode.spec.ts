@@ -105,7 +105,7 @@ test.describe('LiteGraph Native Reroute Node', () => {
   test('Can delete link that is connected to two reroutes', async ({
     comfyPage
   }) => {
-    // https://github.com/Comfy-Org/ComfyUI_frontend/issues/4695
+    // https://github.com/hanzo-studio/studio-frontend/issues/4695
     await comfyPage.loadWorkflow(
       'reroute/single-native-reroute-default-workflow'
     )

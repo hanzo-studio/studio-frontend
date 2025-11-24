@@ -43,7 +43,7 @@ function getLocalizedErrorMessage(errorCode: string): string {
 }
 
 const ASSETS_ENDPOINT = '/assets'
-const EXPERIMENTAL_WARNING = `EXPERIMENTAL: If you are seeing this please make sure "Comfy.Assets.UseAssetAPI" is set to "false" in your ComfyUI Settings.\n`
+const EXPERIMENTAL_WARNING = `EXPERIMENTAL: If you are seeing this please make sure "Comfy.Assets.UseAssetAPI" is set to "false" in your Hanzo Studio Settings.\n`
 const DEFAULT_LIMIT = 500
 
 export const MODELS_TAG = 'models'
@@ -144,7 +144,7 @@ function createAssetService() {
   /**
    * Checks if a widget input should use the asset browser based on both input name and node comfyClass
    *
-   * @param nodeType - The ComfyUI node comfyClass (e.g., 'CheckpointLoaderSimple', 'LoraLoader')
+   * @param nodeType - The Hanzo Studio node comfyClass (e.g., 'CheckpointLoaderSimple', 'LoraLoader')
    * @param widgetName - The name of the widget to check (e.g., 'ckpt_name')
    * @returns true if this input should use asset browser
    */
@@ -162,7 +162,7 @@ function createAssetService() {
    * Gets assets for a specific node type by finding the matching category
    * and fetching all assets with that category tag
    *
-   * @param nodeType - The ComfyUI node type (e.g., 'CheckpointLoaderSimple')
+   * @param nodeType - The Hanzo Studio node type (e.g., 'CheckpointLoaderSimple')
    * @returns Promise<AssetItem[]> - Full asset objects with preserved metadata
    */
   async function getAssetsForNodeType(nodeType: string): Promise<AssetItem[]> {

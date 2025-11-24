@@ -121,7 +121,7 @@ const closeHelpCenter = () => {
 
 /**
  * Handle What's New popup dismissal
- * Check if conflict modal should be shown after ComfyUI update
+ * Check if conflict modal should be shown after Hanzo Studio update
  */
 const handleWhatsNewDismissed = async () => {
   try {

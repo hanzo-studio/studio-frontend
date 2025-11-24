@@ -8,7 +8,7 @@ Proposed
 
 ## Context
 
-ComfyUI's node graph editor currently suffers from fundamental architectural limitations around spatial data management that prevent us from achieving key product goals.
+Hanzo Studio's node graph editor currently suffers from fundamental architectural limitations around spatial data management that prevent us from achieving key product goals.
 
 ### Current Architecture Problems
 

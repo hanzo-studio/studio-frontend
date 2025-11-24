@@ -1836,9 +1836,9 @@ export class LGraphNode
       }
     }
     // litescene mode using the constructor
-    // @ts-expect-error deprecated https://github.com/Comfy-Org/litegraph.js/issues/639
+    // @ts-expect-error deprecated https://github.com/hanzo-studio/litegraph.js/issues/639
     if (this.constructor[`@${property}`])
-      // @ts-expect-error deprecated https://github.com/Comfy-Org/litegraph.js/issues/639
+      // @ts-expect-error deprecated https://github.com/hanzo-studio/litegraph.js/issues/639
       info = this.constructor[`@${property}`]
 
     if (this.constructor.widgets_info?.[property])
@@ -4074,7 +4074,7 @@ export class LGraphNode
     if (!this.graph) throw new NullGraphError()
 
     // Grow the node if necessary.
-    // Ref: https://github.com/Comfy-Org/ComfyUI_frontend/issues/2652
+    // Ref: https://github.com/hanzo-studio/studio-frontend/issues/2652
     // TODO: Move the layout logic before drawing of the node shape, so we don't
     // need to trigger extra round of rendering.
     if (y > bodyHeight) {

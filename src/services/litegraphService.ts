@@ -69,7 +69,7 @@ export const CONFIG = Symbol()
 export const GET_CONFIG = Symbol()
 
 /**
- * Service that augments litegraph with ComfyUI specific functionality.
+ * Service that augments litegraph with Hanzo Studio specific functionality.
  */
 export const useLitegraphService = () => {
   const extensionService = useExtensionService()

@@ -118,7 +118,7 @@
       <p class="mt-8 text-xs text-muted">
         {{ t('auth.login.termsText') }}
         <a
-          href="https://www.comfy.org/terms-of-service"
+          href="https://hanzo.ai/terms-of-service"
           target="_blank"
           class="cursor-pointer text-blue-500"
         >
@@ -126,15 +126,15 @@
         </a>
         {{ t('auth.login.andText') }}
         <a
-          href="https://www.comfy.org/privacy"
+          href="https://hanzo.ai/privacy"
           target="_blank"
           class="cursor-pointer text-blue-500"
         >
           {{ t('auth.login.privacyLink') }} </a
         >.
         {{ t('auth.login.questionsContactPrefix') }}
-        <a href="mailto:hello@comfy.org" class="cursor-pointer text-blue-500">
-          hello@comfy.org</a
+        <a href="mailto:hello@studio.hanzo.ai" class="cursor-pointer text-blue-500">
+          hello@studio.hanzo.ai</a
         >.
       </p>
     </template>

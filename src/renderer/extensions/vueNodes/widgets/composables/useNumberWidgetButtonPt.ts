@@ -1,4 +1,4 @@
-import { cn } from '@comfyorg/tailwind-utils'
+import { cn } from '@hanzo-studio/tailwind-utils'
 
 const sharedButtonClasses = cn(
   'inline-flex items-center justify-center border-0 bg-transparent text-inherit transition-colors duration-150 ease-in-out ',

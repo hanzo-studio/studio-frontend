@@ -119,20 +119,20 @@
   "Comfy_GroupNode_UngroupSelectedGroupNodes": {
     "label": "解散选中组节点"
   },
-  "Comfy_Help_AboutComfyUI": {
-    "label": "打开关于ComfyUI"
+  "Comfy_Help_AboutHanzo Studio": {
+    "label": "打开关于Hanzo Studio"
   },
-  "Comfy_Help_OpenComfyOrgDiscord": {
-    "label": "打开Comfy-Org Discord"
+  "Comfy_Help_OpenHanzoStudioDiscord": {
+    "label": "打开hanzo-studio Discord"
   },
-  "Comfy_Help_OpenComfyUIDocs": {
-    "label": "打开ComfyUI文档"
+  "Comfy_Help_OpenHanzo StudioDocs": {
+    "label": "打开Hanzo Studio文档"
   },
-  "Comfy_Help_OpenComfyUIForum": {
-    "label": "打开 Comfy-Org 论坛"
+  "Comfy_Help_OpenHanzo StudioForum": {
+    "label": "打开 hanzo-studio 论坛"
   },
-  "Comfy_Help_OpenComfyUIIssues": {
-    "label": "打开ComfyUI问题"
+  "Comfy_Help_OpenHanzo StudioIssues": {
+    "label": "打开Hanzo Studio问题"
   },
   "Comfy_Interrupt": {
     "label": "中断"

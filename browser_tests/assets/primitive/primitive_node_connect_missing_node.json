@@ -275,7 +275,7 @@
       "outputs": [],
       "title": "TIPO Generated Prompt",
       "properties": {},
-      "widgets_values": ["ComfyUI"]
+      "widgets_values": ["Hanzo Studio"]
     },
     {
       "id": 46,
@@ -297,7 +297,7 @@
       "outputs": [],
       "title": "Hires Fix",
       "properties": {},
-      "widgets_values": ["HiresFix/ComfyUI_HiresFix"]
+      "widgets_values": ["HiresFix/Hanzo Studio_HiresFix"]
     },
     {
       "id": 4,

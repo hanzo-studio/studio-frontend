@@ -15,17 +15,17 @@ interface DesktopDialog {
 export const DESKTOP_DIALOGS = {
   /** Shown when a corrupt venv is detected. */
   reinstallVenv: {
-    title: 'Reinstall ComfyUI (Fresh Start)?',
-    message: `Sorry, we can't launch ComfyUI because some installed packages aren't compatible.
+    title: 'Reinstall Hanzo Studio (Fresh Start)?',
+    message: `Sorry, we can't launch Hanzo Studio because some installed packages aren't compatible.
 
-Click Reinstall to restore ComfyUI and get back up and running.
+Click Reinstall to restore Hanzo Studio and get back up and running.
 
 Please note: if you've added custom nodes, you'll need to reinstall them after this process.`,
     buttons: [
       {
         label: 'Learn More',
         action: 'openUrl',
-        url: 'https://docs.comfy.org',
+        url: 'https://docs.studio.hanzo.ai',
         returnValue: 'openDocs'
       },
       {

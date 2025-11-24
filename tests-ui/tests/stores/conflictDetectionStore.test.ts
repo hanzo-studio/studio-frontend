@@ -11,8 +11,8 @@ describe('useConflictDetectionStore', () => {
 
   const mockConflictedPackages: ConflictDetectionResult[] = [
     {
-      package_id: 'ComfyUI-Manager',
-      package_name: 'ComfyUI-Manager',
+      package_id: 'Hanzo Studio-Manager',
+      package_name: 'Hanzo Studio-Manager',
       has_conflict: true,
       is_compatible: false,
       conflicts: [
@@ -24,21 +24,21 @@ describe('useConflictDetectionStore', () => {
       ]
     },
     {
-      package_id: 'comfyui-easy-use',
-      package_name: 'comfyui-easy-use',
+      package_id: 'hanzo-studio-easy-use',
+      package_name: 'hanzo-studio-easy-use',
       has_conflict: true,
       is_compatible: false,
       conflicts: [
         {
-          type: 'comfyui_version',
+          type: 'hanzo-studio_version',
           current_value: '0.3.43',
           required_value: '<0.3.40'
         }
       ]
     },
     {
-      package_id: 'img2colors-comfyui-node',
-      package_name: 'img2colors-comfyui-node',
+      package_id: 'img2colors-hanzo-studio-node',
+      package_name: 'img2colors-hanzo-studio-node',
       has_conflict: true,
       is_compatible: false,
       conflicts: [
@@ -88,10 +88,10 @@ describe('useConflictDetectionStore', () => {
       const store = useConflictDetectionStore()
       store.setConflictedPackages(mockConflictedPackages)
 
-      const result = store.getConflictsForPackageByID('ComfyUI-Manager')
+      const result = store.getConflictsForPackageByID('Hanzo Studio-Manager')
 
       expect(result).toBeDefined()
-      expect(result?.package_id).toBe('ComfyUI-Manager')
+      expect(result?.package_id).toBe('Hanzo Studio-Manager')
       expect(result?.conflicts).toHaveLength(1)
     })
 
@@ -113,7 +113,7 @@ describe('useConflictDetectionStore', () => {
       const bannedPackages = store.bannedPackages
 
       expect(bannedPackages).toHaveLength(1)
-      expect(bannedPackages[0].package_id).toBe('img2colors-comfyui-node')
+      expect(bannedPackages[0].package_id).toBe('img2colors-hanzo-studio-node')
     })
 
     it('should return empty array when no banned packages', () => {
@@ -137,7 +137,7 @@ describe('useConflictDetectionStore', () => {
       const securityPendingPackages = store.securityPendingPackages
 
       expect(securityPendingPackages).toHaveLength(1)
-      expect(securityPendingPackages[0].package_id).toBe('ComfyUI-Manager')
+      expect(securityPendingPackages[0].package_id).toBe('Hanzo Studio-Manager')
     })
   })
 

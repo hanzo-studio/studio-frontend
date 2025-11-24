@@ -245,7 +245,7 @@ const parseIsobmffMetadata = (data: Uint8Array): ComfyMetadata => {
 }
 
 /**
- * Extracts ComfyUI Workflow metadata from an ISO Base Media File Format (ISOBMFF) file
+ * Extracts Hanzo Studio Workflow metadata from an ISO Base Media File Format (ISOBMFF) file
  * (e.g., MP4, MOV) by parsing the `udta.meta.keys` and `udta.meta.ilst` boxes.
  * @param file - The file to extract metadata from.
  */

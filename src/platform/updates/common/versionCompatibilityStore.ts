@@ -15,7 +15,7 @@ export const useVersionCompatibilityStore = defineStore(
 
     const frontendVersion = computed(() => config.app_version)
     const backendVersion = computed(
-      () => systemStatsStore.systemStats?.system?.comfyui_version ?? ''
+      () => systemStatsStore.systemStats?.system?.hanzo-studio_version ?? ''
     )
     const requiredFrontendVersion = computed(
       () =>

@@ -36,7 +36,7 @@ const terminalCreated = (
   // to render incorrectly as the progress bar is rendered based on the
   // server's terminal size.
   // Apply a min cols of 80 for colab environments
-  // See https://github.com/comfyanonymous/ComfyUI/issues/6396
+  // See https://github.com/hanzoai/Hanzo Studio/issues/6396
   useAutoSize({ root, autoRows: true, autoCols: false, minCols: 80 })
 
   const update = (entries: Array<LogEntry>, size?: TerminalSize) => {
@@ -71,7 +71,7 @@ const terminalCreated = (
       console.error('Error loading logs', err)
       // On older backends the endpoints won't exist
       errorMessage.value =
-        'Unable to load logs, please ensure you have updated your ComfyUI backend.'
+        'Unable to load logs, please ensure you have updated your Hanzo Studio backend.'
       return
     }
 

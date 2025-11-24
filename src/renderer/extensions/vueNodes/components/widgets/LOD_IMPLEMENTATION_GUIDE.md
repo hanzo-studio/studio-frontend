@@ -1,8 +1,8 @@
-# ComfyUI Widget LOD System: Architecture and Implementation
+# Hanzo Studio Widget LOD System: Architecture and Implementation
 
 ## Executive Summary
 
-The ComfyUI widget Level of Detail (LOD) system has evolved from a reactive, Vue-based approach to a CSS-driven, non-reactive implementation. This architectural shift was driven by performance requirements at scale (300-500+ nodes) and a deeper understanding of browser rendering pipelines. The current system prioritizes consistent performance over granular control, leveraging CSS visibility rules rather than component mounting/unmounting.
+The Hanzo Studio widget Level of Detail (LOD) system has evolved from a reactive, Vue-based approach to a CSS-driven, non-reactive implementation. This architectural shift was driven by performance requirements at scale (300-500+ nodes) and a deeper understanding of browser rendering pipelines. The current system prioritizes consistent performance over granular control, leveraging CSS visibility rules rather than component mounting/unmounting.
 
 ## The Two Approaches: Reactive vs. Static LOD
 
@@ -22,7 +22,7 @@ The implemented system takes a fundamentally different approach. All widget cont
 
 The key insight driving the current architecture comes from understanding how browsers handle CSS transforms:
 
-When you apply a CSS transform to a parent element (the "transformpane" in ComfyUI's case), the browser promotes that entire subtree to a compositor layer. This creates a single GPU texture containing all the transformed content. Here's where traditional performance intuitions break down:
+When you apply a CSS transform to a parent element (the "transformpane" in Hanzo Studio's case), the browser promotes that entire subtree to a compositor layer. This creates a single GPU texture containing all the transformed content. Here's where traditional performance intuitions break down:
 
 ### Traditional Assumption
 
@@ -134,7 +134,7 @@ Given the current architecture, here's how to work within the system:
 
 ## Conclusion
 
-The ComfyUI LOD system represents a pragmatic choice: accepting higher memory usage and less granular control in exchange for predictable performance and implementation simplicity. By understanding that GPU texture dimensions—not rasterization complexity—drive performance in a CSS-transform-based architecture, the team has chosen an approach that may seem counterintuitive but actually aligns with browser rendering realities.
+The Hanzo Studio LOD system represents a pragmatic choice: accepting higher memory usage and less granular control in exchange for predictable performance and implementation simplicity. By understanding that GPU texture dimensions—not rasterization complexity—drive performance in a CSS-transform-based architecture, the team has chosen an approach that may seem counterintuitive but actually aligns with browser rendering realities.
 
 The system works well for the common case of hundreds of relatively simple widgets. Edge cases involving genuinely expensive widgets may need future consideration, but the current approach provides a solid foundation that avoids the performance pitfalls of reactive LOD at scale.
 

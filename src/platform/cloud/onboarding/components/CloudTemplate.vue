@@ -72,7 +72,7 @@ import CloudTemplateFooter from '@/platform/cloud/onboarding/components/CloudTem
 import BaseViewTemplate from '@/views/templates/BaseViewTemplate.vue'
 
 const handleDownloadClick = () => {
-  window.open('https://www.comfy.org/download', '_blank')
+  window.open('https://hanzo.ai/download', '_blank')
 }
 </script>
 <style>

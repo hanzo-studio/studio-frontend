@@ -97,19 +97,19 @@ export class WorkflowsSidebarTab extends SidebarTab {
 
   async getOpenedWorkflowNames() {
     return await this.root
-      .locator('.comfyui-workflows-open .node-label')
+      .locator('.hanzo-studio-workflows-open .node-label')
       .allInnerTexts()
   }
 
   async getActiveWorkflowName() {
     return await this.root
-      .locator('.comfyui-workflows-open .p-tree-node-selected .node-label')
+      .locator('.hanzo-studio-workflows-open .p-tree-node-selected .node-label')
       .innerText()
   }
 
   async getTopLevelSavedWorkflowNames() {
     return await this.root
-      .locator('.comfyui-workflows-browse .node-label')
+      .locator('.hanzo-studio-workflows-browse .node-label')
       .allInnerTexts()
   }
 
@@ -120,13 +120,13 @@ export class WorkflowsSidebarTab extends SidebarTab {
   }
 
   getOpenedItem(name: string) {
-    return this.root.locator('.comfyui-workflows-open .node-label', {
+    return this.root.locator('.hanzo-studio-workflows-open .node-label', {
       hasText: name
     })
   }
 
   getPersistedItem(name: string) {
-    return this.root.locator('.comfyui-workflows-browse .node-label', {
+    return this.root.locator('.hanzo-studio-workflows-browse .node-label', {
       hasText: name
     })
   }

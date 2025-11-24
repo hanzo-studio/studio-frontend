@@ -80,7 +80,7 @@ const mountComponent = (options: { captureError?: boolean } = {}) => {
           restartingBackend: 'Restarting backend to apply changes...',
           extensionsSuccessfullyInstalled:
             'Extension(s) successfully installed and are ready to use!',
-          restartToApplyChanges: 'To apply changes, please restart ComfyUI',
+          restartToApplyChanges: 'To apply changes, please restart Hanzo Studio',
           installingDependencies: 'Installing dependencies...'
         }
       }
@@ -182,7 +182,7 @@ describe('ManagerProgressFooter', () => {
   }
 
   const mockComfyManagerService = {
-    rebootComfyUI: vi.fn().mockResolvedValue(null)
+    rebootHanzo Studio: vi.fn().mockResolvedValue(null)
   }
 
   beforeEach(() => {
@@ -277,7 +277,7 @@ describe('ManagerProgressFooter', () => {
 
       // Check restart message
       expect(wrapper.text()).toContain(
-        'To apply changes, please restart ComfyUI'
+        'To apply changes, please restart Hanzo Studio'
       )
       expect(wrapper.text()).toContain('Apply Changes')
 
@@ -445,7 +445,7 @@ describe('ManagerProgressFooter', () => {
       mockComfyManagerStore.allTasksDone = true
 
       // Mock restart to throw error
-      mockComfyManagerService.rebootComfyUI.mockRejectedValue(
+      mockComfyManagerService.rebootHanzo Studio.mockRejectedValue(
         new Error('Restart failed')
       )
 
@@ -475,7 +475,7 @@ describe('ManagerProgressFooter', () => {
         false
       )
       // Check that the error handler was called
-      expect(mockComfyManagerService.rebootComfyUI).toHaveBeenCalled()
+      expect(mockComfyManagerService.rebootHanzo Studio).toHaveBeenCalled()
     })
   })
 })

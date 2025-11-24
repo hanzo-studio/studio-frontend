@@ -118,7 +118,7 @@ const handleLearnMore = () => {
 
 const handleUpdate = () => {
   window.open(
-    buildDocsUrl('/installation/update_comfyui', { includeLocale: true }),
+    buildDocsUrl('/installation/update_hanzo-studio', { includeLocale: true }),
     '_blank'
   )
   dismissToast()

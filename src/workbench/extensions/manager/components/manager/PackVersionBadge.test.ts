@@ -15,7 +15,7 @@ import PackVersionSelectorPopover from './PackVersionSelectorPopover.vue'
 // Mock config to prevent __COMFYUI_FRONTEND_VERSION__ error
 vi.mock('@/config', () => ({
   default: {
-    app_title: 'ComfyUI',
+    app_title: 'Hanzo Studio',
     app_version: '1.0.0'
   }
 }))

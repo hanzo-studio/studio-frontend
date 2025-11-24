@@ -6,7 +6,7 @@ export const apiKeySchema = z.object({
   apiKey: z
     .string()
     .trim()
-    .startsWith('comfyui-', t('validation.prefix', { prefix: 'comfyui-' }))
+    .startsWith('hanzo-studio-', t('validation.prefix', { prefix: 'hanzo-studio-' }))
     .length(72, t('validation.length', { length: 72 }))
 })
 

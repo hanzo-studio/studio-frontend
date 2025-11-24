@@ -85,11 +85,11 @@
 </template>
 
 <script setup lang="ts">
-import { InstallStage, ProgressStatus } from '@comfyorg/comfyui-electron-types'
+import { InstallStage, ProgressStatus } from '@hanzo-studio/electron-types'
 import type {
   InstallStageInfo,
   InstallStageName
-} from '@comfyorg/comfyui-electron-types'
+} from '@hanzo-studio/electron-types'
 import type { Terminal } from '@xterm/xterm'
 import Button from 'primevue/button'
 import type { Ref } from 'vue'
@@ -208,7 +208,7 @@ const terminalCreated = (
 
 const troubleshoot = () => electron.startTroubleshooting()
 const reportIssue = () => {
-  window.open('https://forum.comfy.org/c/v1-feedback/', '_blank')
+  window.open('https://hanzo.forum/c/v1-feedback/', '_blank')
 }
 const openLogs = () => electron.openLogsFolder()
 

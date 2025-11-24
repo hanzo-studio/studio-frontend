@@ -13,7 +13,7 @@ jobs:
   deploy-and-comment-forked-pr:
     runs-on: ubuntu-latest
     if: |
-      github.repository == 'Comfy-Org/ComfyUI_frontend' &&
+      github.repository == 'hanzo-studio/studio-frontend' &&
       github.event.workflow_run.event == 'pull_request' &&
       github.event.workflow_run.head_repository != null &&
       github.event.workflow_run.repository != null &&

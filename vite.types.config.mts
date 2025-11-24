@@ -6,7 +6,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/types/index.ts'),
-      name: 'comfyui-frontend-types',
+      name: 'hanzo-studio-frontend-types',
       formats: ['es'],
       fileName: 'index'
     },

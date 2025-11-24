@@ -1,0 +1,55 @@
+name: Setup Hanzo Studio Server
+description: 'Setup Hanzo Studio server for continuous integration (with Hanzo Studio_devtools node installed)'
+inputs:
+  extra_server_params:
+    description: 'Additional parameters to pass to Hanzo Studio server'
+    required: false
+    default: ''
+  launch_server:
+    description: 'Whether to launch the server after setup'
+    required: false
+    default: 'false'
+runs:
+  using: 'composite'
+  steps:
+    # Note: this workflow assume frontend repo is checked out and is built in ../dist
+
+    # Checkout Hanzo Studio repo, install the dev_tools node and start server
+    - name: Checkout Hanzo Studio
+      uses: actions/checkout@v5
+      with:
+        repository: 'hanzoai/Hanzo Studio'
+        path: 'Hanzo Studio'
+
+    - name: Install Hanzo Studio_devtools from frontend repo
+      shell: bash
+      run: |
+        mkdir -p Hanzo Studio/custom_nodes/Hanzo Studio_devtools
+        if ! cp -r ./tools/devtools/* Hanzo Studio/custom_nodes/Hanzo Studio_devtools/; then
+          echo "::error::Failed to copy Hanzo Studio_devtools from ./tools/devtools/"
+          echo "::error::This action assumes the studio-frontend repository is checked out in the current working directory."
+          echo "::error::Please ensure you have run 'actions/checkout@v5' before calling this action."
+          exit 1
+        fi
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install Python requirements
+      shell: bash
+      working-directory: Hanzo Studio
+      run: |
+        python -m pip install --upgrade pip
+        pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+        pip install -r requirements.txt
+        pip install wait-for-it
+
+    - name: Start Hanzo Studio server
+      if: ${{ inputs.launch_server == 'true' }}
+      shell: bash
+      working-directory: Hanzo Studio
+      run: |
+        python main.py --cpu --multi-user --front-end-root ../dist ${{ inputs.extra_server_params }} &
+        wait-for-it --service 127.0.0.1:8188 -t 600

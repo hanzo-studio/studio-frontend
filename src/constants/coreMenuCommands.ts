@@ -27,11 +27,11 @@ export const CORE_MENU_COMMANDS = [
   [
     ['Help'],
     [
-      'Comfy.Help.OpenComfyUIIssues',
-      'Comfy.Help.OpenComfyUIDocs',
-      'Comfy.Help.OpenComfyOrgDiscord',
-      'Comfy.Help.OpenComfyUIForum'
+      'Comfy.Help.OpenHanzo StudioIssues',
+      'Comfy.Help.OpenHanzo StudioDocs',
+      'Comfy.Help.OpenHanzoStudioDiscord',
+      'Comfy.Help.OpenHanzo StudioForum'
     ]
   ],
-  [['Help'], ['Comfy.Help.AboutComfyUI', 'Comfy.ContactSupport']]
+  [['Help'], ['Comfy.Help.AboutHanzo Studio', 'Comfy.ContactSupport']]
 ]

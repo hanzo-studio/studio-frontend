@@ -86,7 +86,7 @@ describe('useImportFailedDetection', () => {
       is_compatible: false,
       conflicts: [
         {
-          type: 'comfyui_version',
+          type: 'hanzo-studio_version',
           current_value: 'current',
           required_value: 'required'
         },
@@ -119,7 +119,7 @@ describe('useImportFailedDetection', () => {
           required_value: 'Error details'
         },
         {
-          type: 'comfyui_version',
+          type: 'hanzo-studio_version',
           current_value: 'current',
           required_value: 'required'
         }
@@ -190,7 +190,7 @@ describe('useImportFailedDetection', () => {
       conflicts: [
         ...importFailedConflicts,
         {
-          type: 'comfyui_version',
+          type: 'hanzo-studio_version',
           current_value: 'current',
           required_value: 'required'
         }

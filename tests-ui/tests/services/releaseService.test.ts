@@ -21,7 +21,7 @@ describe('useReleaseService', () => {
   const mockReleases = [
     {
       id: 1,
-      project: 'comfyui' as const,
+      project: 'hanzo-studio' as const,
       version: '1.2.0',
       attention: 'high' as const,
       content: 'New features and improvements',
@@ -44,13 +44,13 @@ describe('useReleaseService', () => {
       mockAxiosInstance.get.mockResolvedValue({ data: mockReleases })
 
       const result = await service.getReleases({
-        project: 'comfyui',
+        project: 'hanzo-studio',
         current_version: '1.0.0'
       })
 
       expect(mockAxiosInstance.get).toHaveBeenCalledWith('/releases', {
         params: {
-          project: 'comfyui',
+          project: 'hanzo-studio',
           current_version: '1.0.0'
         },
         signal: undefined
@@ -65,14 +65,14 @@ describe('useReleaseService', () => {
       mockAxiosInstance.get.mockResolvedValue({ data: mockReleases })
 
       const result = await service.getReleases({
-        project: 'comfyui',
+        project: 'hanzo-studio',
         current_version: '1.0.0',
         form_factor: 'desktop-windows'
       })
 
       expect(mockAxiosInstance.get).toHaveBeenCalledWith('/releases', {
         params: {
-          project: 'comfyui',
+          project: 'hanzo-studio',
           current_version: '1.0.0',
           form_factor: 'desktop-windows'
         },
@@ -86,10 +86,10 @@ describe('useReleaseService', () => {
       const abortController = new AbortController()
       mockAxiosInstance.get.mockResolvedValue({ data: mockReleases })
 
-      await service.getReleases({ project: 'comfyui' }, abortController.signal)
+      await service.getReleases({ project: 'hanzo-studio' }, abortController.signal)
 
       expect(mockAxiosInstance.get).toHaveBeenCalledWith('/releases', {
-        params: { project: 'comfyui' },
+        params: { project: 'hanzo-studio' },
         signal: abortController.signal
       })
     })
@@ -104,7 +104,7 @@ describe('useReleaseService', () => {
       mockAxiosInstance.get.mockRejectedValue(errorResponse)
       vi.mocked(axios.isAxiosError).mockReturnValue(true)
 
-      const result = await service.getReleases({ project: 'comfyui' })
+      const result = await service.getReleases({ project: 'hanzo-studio' })
 
       expect(result).toBeNull()
       expect(service.error.value).toBe('Invalid project or version parameter')
@@ -120,7 +120,7 @@ describe('useReleaseService', () => {
       }
       mockAxiosInstance.get.mockRejectedValue(errorResponse)
 
-      const result = await service.getReleases({ project: 'comfyui' })
+      const result = await service.getReleases({ project: 'hanzo-studio' })
 
       expect(result).toBeNull()
       expect(service.error.value).toBe('Unauthorized: Authentication required')
@@ -135,7 +135,7 @@ describe('useReleaseService', () => {
       }
       mockAxiosInstance.get.mockRejectedValue(errorResponse)
 
-      const result = await service.getReleases({ project: 'comfyui' })
+      const result = await service.getReleases({ project: 'hanzo-studio' })
 
       expect(result).toBeNull()
       expect(service.error.value).toBe('Not found: Not found')
@@ -150,7 +150,7 @@ describe('useReleaseService', () => {
       }
       mockAxiosInstance.get.mockRejectedValue(errorResponse)
 
-      const result = await service.getReleases({ project: 'comfyui' })
+      const result = await service.getReleases({ project: 'hanzo-studio' })
 
       expect(result).toBeNull()
       expect(service.error.value).toBe('Server error: Server error')
@@ -160,7 +160,7 @@ describe('useReleaseService', () => {
       const networkError = new Error('Network Error')
       mockAxiosInstance.get.mockRejectedValue(networkError)
 
-      const result = await service.getReleases({ project: 'comfyui' })
+      const result = await service.getReleases({ project: 'hanzo-studio' })
 
       expect(result).toBeNull()
       expect(service.error.value).toBe('Failed to get releases: Network Error')
@@ -173,7 +173,7 @@ describe('useReleaseService', () => {
       }
       mockAxiosInstance.get.mockRejectedValue(abortError)
 
-      const result = await service.getReleases({ project: 'comfyui' })
+      const result = await service.getReleases({ project: 'hanzo-studio' })
 
       expect(result).toBeNull()
       expect(service.error.value).toContain('Request aborted') // Abort errors are handled
@@ -183,7 +183,7 @@ describe('useReleaseService', () => {
       const stringError = 'String error'
       mockAxiosInstance.get.mockRejectedValue(stringError)
 
-      const result = await service.getReleases({ project: 'comfyui' })
+      const result = await service.getReleases({ project: 'hanzo-studio' })
 
       expect(result).toBeNull()
       expect(service.error.value).toBe('Failed to get releases: undefined')
@@ -196,7 +196,7 @@ describe('useReleaseService', () => {
       })
       mockAxiosInstance.get.mockReturnValue(promise)
 
-      const fetchPromise = service.getReleases({ project: 'comfyui' })
+      const fetchPromise = service.getReleases({ project: 'hanzo-studio' })
       expect(service.isLoading.value).toBe(true)
 
       resolvePromise!({ data: mockReleases })
@@ -208,12 +208,12 @@ describe('useReleaseService', () => {
     it('should reset error state on new request', async () => {
       // First request fails
       mockAxiosInstance.get.mockRejectedValueOnce(new Error('First error'))
-      await service.getReleases({ project: 'comfyui' })
+      await service.getReleases({ project: 'hanzo-studio' })
       expect(service.error.value).toBe('Failed to get releases: First error')
 
       // Second request succeeds
       mockAxiosInstance.get.mockResolvedValueOnce({ data: mockReleases })
-      await service.getReleases({ project: 'comfyui' })
+      await service.getReleases({ project: 'hanzo-studio' })
       expect(service.error.value).toBeNull()
     })
   })

@@ -19,8 +19,8 @@ const meta: Meta<typeof MigrationPicker> = {
   decorators: [
     () => {
       ;(window as any).electronAPI = {
-        validateComfyUISource: () => Promise.resolve({ isValid: true }),
-        showDirectoryPicker: () => Promise.resolve('/Users/username/ComfyUI')
+        validateHanzo StudioSource: () => Promise.resolve({ isValid: true }),
+        showDirectoryPicker: () => Promise.resolve('/Users/username/Hanzo Studio')
       }
 
       return { template: '<story />' }

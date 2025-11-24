@@ -1,4 +1,4 @@
-import type { InstallValidation } from '@comfyorg/comfyui-electron-types'
+import type { InstallValidation } from '@hanzo-studio/electron-types'
 import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 

@@ -8,11 +8,11 @@ body:
     attributes:
       label: Prerequisites
       options:
-        - label: I am running the latest version of ComfyUI
+        - label: I am running the latest version of Hanzo Studio
           required: true
         - label: I have searched existing issues to make sure this isn't a duplicate
           required: true
-        - label: I have tested with all custom nodes disabled ([see how](https://docs.comfy.org/troubleshooting/custom-node-issues#step-1%3A-test-with-all-custom-nodes-disabled))
+        - label: I have tested with all custom nodes disabled ([see how](https://docs.studio.hanzo.ai/troubleshooting/custom-node-issues#step-1%3A-test-with-all-custom-nodes-disabled))
           required: true
 
   - type: textarea
@@ -47,7 +47,7 @@ body:
     attributes:
       label: How is this affecting you?
       options:
-        - Crashes ComfyUI completely
+        - Crashes Hanzo Studio completely
         - Workflow won't execute
         - Feature doesn't work as expected
         - Visual/UI issue only
@@ -58,7 +58,7 @@ body:
   - type: input
     id: version
     attributes:
-      label: ComfyUI Frontend Version
+      label: Hanzo Studio Frontend Version
       description: Found in Settings > About (e.g., "1.3.45")
       placeholder: "1.3.45"
     validations:

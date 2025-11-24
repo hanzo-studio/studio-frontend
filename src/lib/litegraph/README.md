@@ -1,24 +1,24 @@
-# @ComfyOrg/litegraph
+# @HanzoStudio/litegraph
 
-This is the litegraph version used in [ComfyUI_frontend](https://github.com/Comfy-Org/ComfyUI_frontend).
+This is the litegraph version used in [studio-frontend](https://github.com/hanzo-studio/studio-frontend).
 
 It is a fork of the original `litegraph.js`. Some APIs may by unchanged, however it is largely incompatible with the original.
 
 Some early highlights:
 
-- Accumulated comfyUI custom changes (2024-01 ~ 2024-05) (https://github.com/Comfy-Org/litegraph.js/pull/1)
-- Type schema change for ComfyUI_frontend TS migration (https://github.com/Comfy-Org/litegraph.js/pull/3)
-- Zoom fix (https://github.com/Comfy-Org/litegraph.js/pull/7)
-- Emit search box triggering custom events (<https://github.com/Comfy-Org/litegraph.js/pull/10>)
-- Truncate overflowing combo widget text (<https://github.com/Comfy-Org/litegraph.js/pull/17>)
-- Sort node based on ID on graph serialization (<https://github.com/Comfy-Org/litegraph.js/pull/21>)
-- Fix empty input not used when connecting links (<https://github.com/Comfy-Org/litegraph.js/pull/24>)
-- Batch output connection move/disconnect (<https://github.com/Comfy-Org/litegraph.js/pull/39>)
+- Accumulated comfyUI custom changes (2024-01 ~ 2024-05) (https://github.com/hanzo-studio/litegraph.js/pull/1)
+- Type schema change for studio-frontend TS migration (https://github.com/hanzo-studio/litegraph.js/pull/3)
+- Zoom fix (https://github.com/hanzo-studio/litegraph.js/pull/7)
+- Emit search box triggering custom events (<https://github.com/hanzo-studio/litegraph.js/pull/10>)
+- Truncate overflowing combo widget text (<https://github.com/hanzo-studio/litegraph.js/pull/17>)
+- Sort node based on ID on graph serialization (<https://github.com/hanzo-studio/litegraph.js/pull/21>)
+- Fix empty input not used when connecting links (<https://github.com/hanzo-studio/litegraph.js/pull/24>)
+- Batch output connection move/disconnect (<https://github.com/hanzo-studio/litegraph.js/pull/39>)
 - And now with hundreds more...
 
 # Usage
 
-This library is included as a git subtree in the ComfyUI frontend project at `src/lib/litegraph`.
+This library is included as a git subtree in the Hanzo Studio frontend project at `src/lib/litegraph`.
 
 # litegraph.js
 
@@ -50,7 +50,7 @@ It can be integrated easily in any existing web applications and graphs can be r
 
 ## Integration
 
-This library is integrated as a git subtree in the ComfyUI frontend project. To use it in your code:
+This library is integrated as a git subtree in the Hanzo Studio frontend project. To use it in your code:
 
 ```typescript
 import { LGraph, LGraphNode, LiteGraph } from '@/lib/litegraph'
@@ -110,9 +110,9 @@ graph.start()
 
 ## Projects using it
 
-### [ComfyUI](https://github.com/comfyanonymous/ComfyUI)
+### [Hanzo Studio](https://github.com/hanzoai/Hanzo Studio)
 
-![ComfyUI default workflow](https://github.com/comfyanonymous/ComfyUI/blob/6efe561c2a7321501b1b27f47039c7616dda1860/comfyui_screenshot.png "ComfyUI default workflow")
+![Hanzo Studio default workflow](https://github.com/hanzoai/Hanzo Studio/blob/6efe561c2a7321501b1b27f47039c7616dda1860/hanzo-studio_screenshot.png "Hanzo Studio default workflow")
 
 ### Projects using the original litegraph.js
 
@@ -136,7 +136,7 @@ graph.start()
 
 ## Feedback
 
-Please [open an issue](https://github.com/Comfy-Org/litegraph.js/issues/) on the GitHub repo.
+Please [open an issue](https://github.com/hanzo-studio/litegraph.js/issues/) on the GitHub repo.
 
 # Development
 
@@ -159,7 +159,7 @@ Use `patch` when ready to remove the pre-release suffix.
 
 ## Contributors
 
-You can find the [current list of contributors](https://github.com/Comfy-Org/litegraph.js/graphs/contributors) on GitHub.
+You can find the [current list of contributors](https://github.com/hanzo-studio/litegraph.js/graphs/contributors) on GitHub.
 
 ### Contributors (pre-fork)
 

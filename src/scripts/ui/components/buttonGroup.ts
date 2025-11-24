@@ -3,7 +3,7 @@ import { prop } from '../../utils'
 import { ComfyButton } from './button'
 
 export class ComfyButtonGroup {
-  element = $el('div.comfyui-button-group')
+  element = $el('div.hanzo-studio-button-group')
   buttons: (HTMLElement | ComfyButton)[]
 
   constructor(...buttons: (HTMLElement | ComfyButton)[]) {

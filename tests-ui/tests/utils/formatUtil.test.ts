@@ -30,9 +30,9 @@ describe('formatUtil', () => {
     })
 
     it('should preserve the start and end of the filename', () => {
-      const longName = 'ComfyUI_00001_timestamp_2024_01_01.png'
+      const longName = 'Hanzo Studio_00001_timestamp_2024_01_01.png'
       const truncated = truncateFilename(longName, 20)
-      expect(truncated).toMatch(/^ComfyUI.*01\.png$/)
+      expect(truncated).toMatch(/^Hanzo Studio.*01\.png$/)
       expect(truncated).toContain('...')
     })
 

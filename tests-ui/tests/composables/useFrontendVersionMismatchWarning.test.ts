@@ -14,7 +14,7 @@ global.__COMFYUI_FRONTEND_VERSION__ = '1.0.0'
 // Mock config first - this needs to be before any imports
 vi.mock('@/config', () => ({
   default: {
-    app_title: 'ComfyUI',
+    app_title: 'Hanzo Studio',
     app_version: '1.0.0'
   }
 }))
@@ -45,7 +45,7 @@ vi.mock('vue-i18n', () => ({
       if (key === 'g.versionMismatchWarning')
         return 'Version Compatibility Warning'
       if (key === 'g.versionMismatchWarningMessage' && params) {
-        return `${params.warning}: ${params.detail} Visit https://docs.comfy.org/installation/update_comfyui#common-update-issues for update instructions.`
+        return `${params.warning}: ${params.detail} Visit https://docs.studio.hanzo.ai/installation/update_hanzo-studio#common-update-issues for update instructions.`
       }
       if (key === 'g.frontendOutdated' && params) {
         return `Frontend version ${params.frontendVersion} is outdated. Backend requires ${params.requiredVersion} or higher.`

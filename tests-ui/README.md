@@ -1,6 +1,6 @@
-# ComfyUI Frontend Testing Guide
+# Hanzo Studio Frontend Testing Guide
 
-This guide provides an overview of testing approaches used in the ComfyUI Frontend codebase. These guides are meant to document any particularities or nuances of writing tests in this codebase, rather than being a comprehensive guide to testing in general. By reading these guides first, you may save yourself some time when encountering issues.
+This guide provides an overview of testing approaches used in the Hanzo Studio Frontend codebase. These guides are meant to document any particularities or nuances of writing tests in this codebase, rather than being a comprehensive guide to testing in general. By reading these guides first, you may save yourself some time when encountering issues.
 
 ## Testing Documentation
 
@@ -12,7 +12,7 @@ Documentation for unit tests is organized into three guides:
 
 ## Testing Structure
 
-The ComfyUI Frontend project uses a mixed approach to unit test organization:
+The Hanzo Studio Frontend project uses a mixed approach to unit test organization:
 
 - **Component Tests**: Located directly alongside their components with a `.spec.ts` extension
 - **Unit Tests**: Located in the `tests-ui/tests/` directory

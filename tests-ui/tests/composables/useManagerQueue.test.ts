@@ -170,9 +170,9 @@ describe('useManagerQueue', () => {
         running_queue: [],
         pending_queue: [],
         installed_packs: {
-          'ComfyUI-GGUF@1_1_4': {
+          'Hanzo Studio-GGUF@1_1_4': {
             enabled: false,
-            cnr_id: 'ComfyUI-GGUF',
+            cnr_id: 'Hanzo Studio-GGUF',
             ver: '1.1.4'
           },
           'test-pack': {
@@ -186,9 +186,9 @@ describe('useManagerQueue', () => {
       queue.updateTaskState(mockState)
 
       // Packs should be accessible by normalized keys
-      expect(installedPacks.value['ComfyUI-GGUF']).toEqual({
+      expect(installedPacks.value['Hanzo Studio-GGUF']).toEqual({
         enabled: false,
-        cnr_id: 'ComfyUI-GGUF',
+        cnr_id: 'Hanzo Studio-GGUF',
         ver: '1.1.4'
       })
       expect(installedPacks.value['test-pack']).toEqual({
@@ -199,7 +199,7 @@ describe('useManagerQueue', () => {
 
       // Version suffixed keys should not exist after normalization
       // The pack should be accessible by its base name only (without @version)
-      expect(installedPacks.value['ComfyUI-GGUF@1_1_4']).toBeUndefined()
+      expect(installedPacks.value['Hanzo Studio-GGUF@1_1_4']).toBeUndefined()
     })
 
     it('handles empty installed_packs gracefully', () => {

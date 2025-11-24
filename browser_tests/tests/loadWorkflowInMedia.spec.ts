@@ -34,7 +34,7 @@ test.describe('Load Workflow in Media', () => {
   })
 
   const urls = [
-    'https://comfyanonymous.github.io/ComfyUI_examples/hidream/hidream_dev_example.png'
+    'https://hanzoai.github.io/Hanzo Studio_examples/hidream/hidream_dev_example.png'
   ]
   urls.forEach(async (url) => {
     test(`Load workflow from URL ${url} (drop from different browser tabs)`, async ({

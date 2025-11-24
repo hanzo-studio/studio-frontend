@@ -1,5 +1,5 @@
 name: 'Api: Update Manager API Types'
-description: 'When upstream ComfyUI-Manager API is updated, click dispatch to update the TypeScript type definitions in this repo'
+description: 'When upstream Hanzo Studio-Manager API is updated, click dispatch to update the TypeScript type definitions in this repo'
 
 on:
   # Manual trigger
@@ -34,25 +34,25 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Checkout ComfyUI-Manager repository
+      - name: Checkout Hanzo Studio-Manager repository
         uses: actions/checkout@v5
         with:
-          repository: Comfy-Org/ComfyUI-Manager
-          path: ComfyUI-Manager
+          repository: hanzo-studio/Hanzo Studio-Manager
+          path: Hanzo Studio-Manager
           clean: true
 
       - name: Get Manager commit information
         id: manager-info
         run: |
-          cd ComfyUI-Manager
+          cd Hanzo Studio-Manager
           MANAGER_COMMIT=$(git rev-parse --short HEAD)
           echo "commit=${MANAGER_COMMIT}" >> $GITHUB_OUTPUT
           cd ..
 
       - name: Generate Manager API types
         run: |
-          echo "Generating TypeScript types from ComfyUI-Manager@${{ steps.manager-info.outputs.commit }}..."
-          pnpm dlx openapi-typescript ./ComfyUI-Manager/openapi.yaml --output ./src/types/generatedManagerTypes.ts
+          echo "Generating TypeScript types from Hanzo Studio-Manager@${{ steps.manager-info.outputs.commit }}..."
+          pnpm dlx openapi-typescript ./Hanzo Studio-Manager/openapi.yaml --output ./src/types/generatedManagerTypes.ts
 
       - name: Validate generated types
         run: |
@@ -69,18 +69,18 @@ jobs:
 
       - name: Lint generated types
         run: |
-          echo "Linting generated ComfyUI-Manager API types..."
+          echo "Linting generated Hanzo Studio-Manager API types..."
           pnpm lint:fix:no-cache -- ./src/types/generatedManagerTypes.ts
 
       - name: Check for changes
         id: check-changes
         run: |
           if [[ -z $(git status --porcelain ./src/types/generatedManagerTypes.ts) ]]; then
-            echo "No changes to ComfyUI-Manager API types detected."
+            echo "No changes to Hanzo Studio-Manager API types detected."
             echo "changed=false" >> $GITHUB_OUTPUT
             exit 0
           else
-            echo "Changes detected in ComfyUI-Manager API types."
+            echo "Changes detected in Hanzo Studio-Manager API types."
             echo "changed=true" >> $GITHUB_OUTPUT
           fi
 
@@ -89,12 +89,12 @@ jobs:
         uses: peter-evans/create-pull-request@271a8d0340265f705b14b6d32b9829c1cb33d45e
         with:
           token: ${{ secrets.PR_GH_TOKEN }}
-          commit-message: '[chore] Update ComfyUI-Manager API types from ComfyUI-Manager@${{ steps.manager-info.outputs.commit }}'
-          title: '[chore] Update ComfyUI-Manager API types from ComfyUI-Manager@${{ steps.manager-info.outputs.commit }}'
+          commit-message: '[chore] Update Hanzo Studio-Manager API types from Hanzo Studio-Manager@${{ steps.manager-info.outputs.commit }}'
+          title: '[chore] Update Hanzo Studio-Manager API types from Hanzo Studio-Manager@${{ steps.manager-info.outputs.commit }}'
           body: |
             ## Automated API Type Update
 
-            This PR updates the ComfyUI-Manager API types from the latest ComfyUI-Manager OpenAPI specification.
+            This PR updates the Hanzo Studio-Manager API types from the latest Hanzo Studio-Manager OpenAPI specification.
 
             - Manager commit: ${{ steps.manager-info.outputs.commit }}
             - Generated on: ${{ github.event.repository.updated_at }}

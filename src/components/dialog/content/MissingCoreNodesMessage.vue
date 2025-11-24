@@ -12,9 +12,9 @@
     <div class="flex flex-col gap-2">
       <div>
         {{
-          currentComfyUIVersion
+          currentHanzo StudioVersion
             ? $t('loadWorkflowWarning.outdatedVersion', {
-                version: currentComfyUIVersion
+                version: currentHanzo StudioVersion
               })
             : $t('loadWorkflowWarning.outdatedVersionGeneric')
         }}
@@ -58,9 +58,9 @@ const hasMissingCoreNodes = computed(() => {
 })
 
 // Use computed for reactive version tracking
-const currentComfyUIVersion = computed<string | null>(() => {
+const currentHanzo StudioVersion = computed<string | null>(() => {
   if (!hasMissingCoreNodes.value) return null
-  return systemStatsStore.systemStats?.system?.comfyui_version ?? null
+  return systemStatsStore.systemStats?.system?.hanzo-studio_version ?? null
 })
 
 const sortedMissingCoreNodes = computed(() => {

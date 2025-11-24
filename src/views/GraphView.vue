@@ -1,9 +1,9 @@
 <template>
-  <div class="comfyui-body grid h-full w-full overflow-hidden">
-    <div id="comfyui-body-top" class="comfyui-body-top" />
-    <div id="comfyui-body-bottom" class="comfyui-body-bottom" />
-    <div id="comfyui-body-left" class="comfyui-body-left" />
-    <div id="comfyui-body-right" class="comfyui-body-right" />
+  <div class="hanzo-studio-body grid h-full w-full overflow-hidden">
+    <div id="hanzo-studio-body-top" class="hanzo-studio-body-top" />
+    <div id="hanzo-studio-body-bottom" class="hanzo-studio-body-bottom" />
+    <div id="hanzo-studio-body-left" class="hanzo-studio-body-left" />
+    <div id="hanzo-studio-body-right" class="hanzo-studio-body-right" />
     <div
       v-show="!linearMode"
       id="graph-canvas-container"
@@ -256,7 +256,7 @@ onMounted(() => {
     // Relocate the legacy menu container to the graph canvas container so it is below other elements
     graphCanvasContainerRef.value?.prepend(app.ui.menuContainer)
   } catch (e) {
-    console.error('Failed to init ComfyUI frontend', e)
+    console.error('Failed to init Hanzo Studio frontend', e)
   }
 })
 
@@ -318,7 +318,7 @@ const onGraphReady = () => {
 
     // Set up tab count tracking (cloud only)
     if (isCloud && telemetry && !tabCountInterval) {
-      tabCountChannel = new BroadcastChannel('comfyui-tab-count')
+      tabCountChannel = new BroadcastChannel('hanzo-studio-tab-count')
       const activeTabs = new Map<string, number>()
       const currentTabId = crypto.randomUUID()
 
@@ -382,7 +382,7 @@ const onGraphReady = () => {
 </script>
 
 <style scoped>
-.comfyui-body {
+.hanzo-studio-body {
   grid-template-columns: auto 1fr auto;
   grid-template-rows: auto 1fr auto;
 }
@@ -390,26 +390,26 @@ const onGraphReady = () => {
 /**
   +------------------+------------------+------------------+
   |                                                        |
-  |  .comfyui-body-                                        |
+  |  .hanzo-studio-body-                                        |
   |       top                                              |
   | (spans all cols)                                       |
   |                                                        |
   +------------------+------------------+------------------+
   |                  |                  |                  |
-  | .comfyui-body-   |   #graph-canvas  | .comfyui-body-   |
+  | .hanzo-studio-body-   |   #graph-canvas  | .hanzo-studio-body-   |
   |      left        |                  |      right       |
   |                  |                  |                  |
   |                  |                  |                  |
   +------------------+------------------+------------------+
   |                                                        |
-  |  .comfyui-body-                                        |
+  |  .hanzo-studio-body-                                        |
   |      bottom                                            |
   | (spans all cols)                                       |
   |                                                        |
   +------------------+------------------+------------------+
 */
 
-.comfyui-body-top {
+.hanzo-studio-body-top {
   order: -5;
   /* Span across all columns */
   grid-column: 1/-1;
@@ -424,7 +424,7 @@ const onGraphReady = () => {
   flex-direction: column;
 }
 
-.comfyui-body-left {
+.hanzo-studio-body-left {
   order: -4;
   /* Position in the first column */
   grid-column: 1;
@@ -444,14 +444,14 @@ const onGraphReady = () => {
   overflow: clip;
 }
 
-.comfyui-body-right {
+.hanzo-studio-body-right {
   order: -2;
   z-index: 10;
   grid-column: 3;
   grid-row: 2;
 }
 
-.comfyui-body-bottom {
+.hanzo-studio-body-bottom {
   order: 4;
   /* Span across all columns */
   grid-column: 1/-1;

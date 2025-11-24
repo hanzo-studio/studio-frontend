@@ -32,7 +32,7 @@ const createMockNode = (type: string, version?: string): LGraphNode =>
 
 describe('MissingCoreNodesMessage', () => {
   const mockSystemStatsStore = {
-    systemStats: null as { system?: { comfyui_version?: string } } | null,
+    systemStats: null as { system?: { hanzo-studio_version?: string } } | null,
     refetchSystemStats: vi.fn()
   }
 
@@ -54,10 +54,10 @@ describe('MissingCoreNodesMessage', () => {
         mocks: {
           $t: (key: string, params?: { version?: string }) => {
             const translations: Record<string, string> = {
-              'loadWorkflowWarning.outdatedVersion': `Some nodes require a newer version of ComfyUI (current: ${params?.version}). Please update to use all nodes.`,
+              'loadWorkflowWarning.outdatedVersion': `Some nodes require a newer version of Hanzo Studio (current: ${params?.version}). Please update to use all nodes.`,
               'loadWorkflowWarning.outdatedVersionGeneric':
-                'Some nodes require a newer version of ComfyUI. Please update to use all nodes.',
-              'loadWorkflowWarning.coreNodesFromVersion': `Requires ComfyUI ${params?.version}:`
+                'Some nodes require a newer version of Hanzo Studio. Please update to use all nodes.',
+              'loadWorkflowWarning.coreNodesFromVersion': `Requires Hanzo Studio ${params?.version}:`
             }
             return translations[key] || key
           }
@@ -86,10 +86,10 @@ describe('MissingCoreNodesMessage', () => {
     expect(wrapper.findComponent(Message).exists()).toBe(true)
   })
 
-  it('displays current ComfyUI version when available', async () => {
+  it('displays current Hanzo Studio version when available', async () => {
     // Set systemStats directly (store auto-fetches with useAsyncState)
     mockSystemStatsStore.systemStats = {
-      system: { comfyui_version: '1.0.0' }
+      system: { hanzo-studio_version: '1.0.0' }
     }
 
     const missingCoreNodes = {
@@ -103,7 +103,7 @@ describe('MissingCoreNodesMessage', () => {
 
     // No need to check if fetchSystemStats was called since useAsyncState auto-fetches
     expect(wrapper.text()).toContain(
-      'Some nodes require a newer version of ComfyUI (current: 1.0.0)'
+      'Some nodes require a newer version of Hanzo Studio (current: 1.0.0)'
     )
   })
 
@@ -123,7 +123,7 @@ describe('MissingCoreNodesMessage', () => {
     await nextTick()
 
     expect(wrapper.text()).toContain(
-      'Some nodes require a newer version of ComfyUI. Please update to use all nodes.'
+      'Some nodes require a newer version of Hanzo Studio. Please update to use all nodes.'
     )
   })
 
@@ -140,9 +140,9 @@ describe('MissingCoreNodesMessage', () => {
     await nextTick()
 
     const text = wrapper.text()
-    expect(text).toContain('Requires ComfyUI 1.3.0:')
+    expect(text).toContain('Requires Hanzo Studio 1.3.0:')
     expect(text).toContain('NodeC')
-    expect(text).toContain('Requires ComfyUI 1.2.0:')
+    expect(text).toContain('Requires Hanzo Studio 1.2.0:')
     expect(text).toContain('NodeA, NodeB')
   })
 
@@ -193,7 +193,7 @@ describe('MissingCoreNodesMessage', () => {
     const wrapper = mountComponent({ missingCoreNodes })
     await nextTick()
 
-    expect(wrapper.text()).toContain('Requires ComfyUI unknown:')
+    expect(wrapper.text()).toContain('Requires Hanzo Studio unknown:')
     expect(wrapper.text()).toContain('NoVersionNode')
   })
 })

@@ -14,23 +14,23 @@ export const useAboutPanelStore = defineStore('aboutPanel', () => {
   const systemStatsStore = useSystemStatsStore()
   const { staticUrls } = useExternalLink()
   const coreVersion = computed(
-    () => systemStatsStore?.systemStats?.system?.comfyui_version ?? ''
+    () => systemStatsStore?.systemStats?.system?.hanzo-studio_version ?? ''
   )
 
   const coreBadges = computed<AboutPageBadge[]>(() => [
-    // In electron, the ComfyUI is packaged without the git repo,
+    // In electron, the Hanzo Studio is packaged without the git repo,
     // so the python server's API doesn't have the version info.
     {
-      label: `ComfyUI ${
+      label: `Hanzo Studio ${
         isElectron()
-          ? 'v' + electronAPI().getComfyUIVersion()
+          ? 'v' + electronAPI().getHanzo StudioVersion()
           : coreVersion.value
       }`,
       url: staticUrls.github,
       icon: 'pi pi-github'
     },
     {
-      label: `ComfyUI_frontend v${frontendVersion}`,
+      label: `studio-frontend v${frontendVersion}`,
       url: staticUrls.githubFrontend,
       icon: 'pi pi-github'
     },
@@ -39,7 +39,7 @@ export const useAboutPanelStore = defineStore('aboutPanel', () => {
       url: staticUrls.discord,
       icon: 'pi pi-discord'
     },
-    { label: 'ComfyOrg', url: staticUrls.comfyOrg, icon: 'pi pi-globe' }
+    { label: 'HanzoStudio', url: staticUrls.comfyOrg, icon: 'pi pi-globe' }
   ])
 
   const allBadges = computed<AboutPageBadge[]>(() => [

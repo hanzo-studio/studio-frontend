@@ -1,7 +1,7 @@
 /**
  * @fileoverview Test fixtures for history tests.
  */
-import type { HistoryResponseV2 } from '@/platform/remote/comfyui/history/types/historyV2Types'
+import type { HistoryResponseV2 } from '@/platform/remote/hanzo-studio/history/types/historyV2Types'
 import type { HistoryTaskItem } from '@/schemas/apiSchema'
 
 /**

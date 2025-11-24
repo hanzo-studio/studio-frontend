@@ -21,7 +21,7 @@ import { electronAPI as getElectronAPI, isElectron } from '@/utils/envUtil'
   const onChangeRestartApp = (newValue: string, oldValue: string) => {
     // Add a delay to allow changes to take effect before restarting.
     if (oldValue !== undefined && newValue !== oldValue) {
-      electronAPI.restartApp('Restart ComfyUI to apply changes.', 1500)
+      electronAPI.restartApp('Restart Hanzo Studio to apply changes.', 1500)
     }
   }
 
@@ -48,7 +48,7 @@ import { electronAPI as getElectronAPI, isElectron } from '@/utils/envUtil'
         id: 'Comfy-Desktop.WindowStyle',
         category: ['Comfy-Desktop', 'General', 'Window Style'],
         name: 'Window Style',
-        tooltip: "Custom: Replace the system title bar with ComfyUI's Top menu",
+        tooltip: "Custom: Replace the system title bar with Hanzo Studio's Top menu",
         type: 'combo',
         experimental: true,
         defaultValue: 'default',
@@ -300,7 +300,7 @@ import { electronAPI as getElectronAPI, isElectron } from '@/utils/envUtil'
 
     aboutPageBadges: [
       {
-        label: 'ComfyUI_desktop v' + desktopAppVersion,
+        label: 'Hanzo Studio_desktop v' + desktopAppVersion,
         url: staticUrls.githubElectron,
         icon: 'pi pi-github'
       }

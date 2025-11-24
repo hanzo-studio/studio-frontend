@@ -4,7 +4,7 @@
  * which loader node type to add to the canvas
  */
 
-import { getMediaTypeFromFilename } from '@comfyorg/shared-frontend-utils/formatUtil'
+import { getMediaTypeFromFilename } from '@hanzo-studio/shared-frontend-utils/formatUtil'
 
 /**
  * Detect loader node type from filename extension

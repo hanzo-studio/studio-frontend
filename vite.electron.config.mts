@@ -22,7 +22,7 @@ const mockElectronAPI: Plugin = {
           getSystemPaths: () =>
             Promise.resolve({
               appData: 'C:/Users/username/AppData/Roaming',
-              appPath: 'C:/Program Files/comfyui-electron/resources/app',
+              appPath: 'C:/Program Files/hanzo-studio-electron/resources/app',
               defaultInstallPath: 'bad'
             }),
           validateInstallPath: (path) => {
@@ -39,19 +39,19 @@ const mockElectronAPI: Plugin = {
                 description: 'Settings and user-created workflows'
               }
             ]),
-          validateComfyUISource: (path) => {
+          validateHanzo StudioSource: (path) => {
             if (path === 'bad') {
               return { isValid: false, error: 'Bad path!' }
             }
             return { isValid: true }
           },
-          showDirectoryPicker: () => Promise.resolve('C:/Users/username/comfyui-electron/1'),
+          showDirectoryPicker: () => Promise.resolve('C:/Users/username/hanzo-studio-electron/1'),
           DownloadManager: {
             getAllDownloads: () => Promise.resolve([]),
             onDownloadProgress: () => {}
           },
           getElectronVersion: () => Promise.resolve('1.0.0'),
-          getComfyUIVersion: () => '9.9.9',
+          getHanzo StudioVersion: () => '9.9.9',
           getPlatform: () => 'win32',
           changeTheme: () => {},
           Config: {

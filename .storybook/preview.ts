@@ -13,7 +13,7 @@ import '@/assets/css/style.css'
 import { i18n } from '@/i18n'
 import '@/lib/litegraph/public/css/litegraph.css'
 
-const ComfyUIPreset = definePreset(Aura, {
+const Hanzo StudioPreset = definePreset(Aura, {
   semantic: {
     // @ts-expect-error fix me
     primary: Aura['primitive'].blue
@@ -31,7 +31,7 @@ setup((app) => {
   app.use(i18n)
   app.use(PrimeVue, {
     theme: {
-      preset: ComfyUIPreset,
+      preset: Hanzo StudioPreset,
       options: {
         prefix: 'p',
         cssLayer: {

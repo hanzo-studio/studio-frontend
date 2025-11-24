@@ -44,8 +44,8 @@ globalThis.__DISTRIBUTION__ = 'localhost'
 window.__CONFIG__ = {
   subscription_required: true,
   mixpanel_token: 'test-token',
-  comfy_api_base_url: 'https://stagingapi.comfy.org',
-  comfy_platform_base_url: 'https://stagingplatform.comfy.org',
+  comfy_api_base_url: 'https://stagingapi.studio.hanzo.ai',
+  comfy_platform_base_url: 'https://stagingplatform.studio.hanzo.ai',
   firebase_config: {
     apiKey: 'test',
     authDomain: 'test.firebaseapp.com',

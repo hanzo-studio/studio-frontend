@@ -95,7 +95,7 @@ describe('ApiKeyForm', () => {
     const input = wrapper.findComponent(InputText)
 
     await input.setValue(
-      'comfyui-123456789012345678901234567890123456789012345678901234567890123456789012'
+      'hanzo-studio-123456789012345678901234567890123456789012345678901234567890123456789012'
     )
     await wrapper.find('form').trigger('submit')
 

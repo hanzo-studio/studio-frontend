@@ -27,17 +27,17 @@ export class ComfySplitButton {
       icon: 'chevron-down'
     })
     this.element = $el(
-      'div.comfyui-split-button' + (mode === 'hover' ? '.hover' : ''),
+      'div.hanzo-studio-split-button' + (mode === 'hover' ? '.hover' : ''),
       [
         $el(
-          'div.comfyui-split-primary',
+          'div.hanzo-studio-split-primary',
           {
             ariaLabel: 'Queue current workflow'
           },
           primary.element
         ),
         $el(
-          'div.comfyui-split-arrow',
+          'div.hanzo-studio-split-arrow',
           {
             ariaLabel: 'Open extra opens',
             ariaHasPopup: 'true'
@@ -50,7 +50,7 @@ export class ComfySplitButton {
       target: this.element,
       container: position === 'relative' ? this.element : document.body,
       classList:
-        'comfyui-split-button-popup' + (mode === 'hover' ? ' hover' : ''),
+        'hanzo-studio-split-button-popup' + (mode === 'hover' ? ' hover' : ''),
       closeOnEscape: mode === 'click',
       position,
       horizontal

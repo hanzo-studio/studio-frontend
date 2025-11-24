@@ -1,5 +1,5 @@
 /* Generic */
-.comfyui-button {
+.hanzo-studio-button {
   display: flex;
   align-items: center;
   gap: 0.5em;
@@ -12,28 +12,28 @@
   transition: box-shadow 0.1s;
 }
 
-.comfyui-button:active {
+.hanzo-studio-button:active {
   box-shadow: inset 1px 1px 10px rgb(0 0 0 / 0.5);
 }
 
-.comfyui-button:disabled {
+.hanzo-studio-button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
-.primary .comfyui-button,
-.primary.comfyui-button {
+.primary .hanzo-studio-button,
+.primary.hanzo-studio-button {
   background-color: var(--primary-bg) !important;
   color: var(--primary-fg) !important;
 }
 
-.primary .comfyui-button:not(:disabled):hover,
-.primary.comfyui-button:not(:disabled):hover {
+.primary .hanzo-studio-button:not(:disabled):hover,
+.primary.hanzo-studio-button:not(:disabled):hover {
   background-color: var(--primary-hover-bg) !important;
   color: var(--primary-hover-fg) !important;
 }
 
 /* Popup */
-.comfyui-popup {
+.hanzo-studio-popup {
   position: absolute;
   top: var(--top);
   right: var(--right);
@@ -44,41 +44,41 @@
   box-shadow: 3px 3px 5px 0 rgb(0 0 0 / 0.3);
 }
 
-.comfyui-popup:not(.open) {
+.hanzo-studio-popup:not(.open) {
   display: none;
 }
 
-.comfyui-popup.right.open {
+.hanzo-studio-popup.right.open {
   border-top-left-radius: 4px;
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
   overflow: hidden;
 }
 /* Split button */
-.comfyui-split-button {
+.hanzo-studio-split-button {
   position: relative;
   display: flex;
 }
 
-.comfyui-split-primary {
+.hanzo-studio-split-primary {
   flex: auto;
 }
 
-.comfyui-split-primary .comfyui-button {
+.hanzo-studio-split-primary .hanzo-studio-button {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   border-right: 1px solid var(--comfy-menu-bg);
   width: 100%;
 }
 
-.comfyui-split-arrow .comfyui-button {
+.hanzo-studio-split-arrow .hanzo-studio-button {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   padding-left: 2px;
   padding-right: 2px;
 }
 
-.comfyui-split-button-popup {
+.hanzo-studio-split-button-popup {
   white-space: nowrap;
   background-color: var(--content-bg);
   color: var(--content-fg);
@@ -87,32 +87,32 @@
   overflow: auto;
 }
 
-.comfyui-split-button-popup.hover {
+.hanzo-studio-split-button-popup.hover {
   z-index: 2001;
 }
-.comfyui-split-button-popup > .comfyui-button {
+.hanzo-studio-split-button-popup > .hanzo-studio-button {
   border: none;
   background-color: transparent;
   color: var(--fg-color);
   padding: 8px 12px 8px 8px;
 }
 
-.comfyui-split-button-popup > .comfyui-button:not(:disabled):hover {
+.hanzo-studio-split-button-popup > .hanzo-studio-button:not(:disabled):hover {
   background-color: var(--comfy-input-bg);
 }
 
 /* Button group */
-.comfyui-button-group {
+.hanzo-studio-button-group {
   display: flex;
   border-radius: 4px;
   overflow: hidden;
 }
 
-.comfyui-button-group:empty {
+.hanzo-studio-button-group:empty {
   display: none;
 }
-.comfyui-button-group > .comfyui-button,
-.comfyui-button-group > .comfyui-button-wrapper > .comfyui-button {
+.hanzo-studio-button-group > .hanzo-studio-button,
+.hanzo-studio-button-group > .hanzo-studio-button-wrapper > .hanzo-studio-button {
   padding: 4px 10px;
   border-radius: 0;
 }

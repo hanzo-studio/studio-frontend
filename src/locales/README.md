@@ -15,7 +15,7 @@ Our project supports multiple languages using `vue-i18n`. This allows users arou
 
 ## How to Add a New Language
 
-Want to add a new language to ComfyUI? See our detailed [Contributing Guide](./CONTRIBUTING.md) with step-by-step instructions and confirmed working process.
+Want to add a new language to Hanzo Studio? See our detailed [Contributing Guide](./CONTRIBUTING.md) with step-by-step instructions and confirmed working process.
 
 ### Quick Start
 1. Open an issue or reach out on Discord to request a new language

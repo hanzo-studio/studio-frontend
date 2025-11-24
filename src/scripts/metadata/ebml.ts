@@ -345,7 +345,7 @@ const handleFileLoad = (
 }
 
 /**
- * Extracts ComfyUI Workflow metadata from a WebM file
+ * Extracts Hanzo Studio Workflow metadata from a WebM file
  * @param file - The WebM file to extract metadata from
  */
 export function getFromWebmFile(file: File): Promise<ComfyMetadata> {

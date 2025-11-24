@@ -58,7 +58,7 @@ describe('useTemplateWorkflows', () => {
       loadWorkflowTemplates: vi.fn().mockResolvedValue(true),
       groupedTemplates: [
         {
-          label: 'ComfyUI Examples',
+          label: 'Hanzo Studio Examples',
           modules: [
             {
               moduleName: 'all',

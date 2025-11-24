@@ -1133,7 +1133,7 @@ dialog::backdrop {
   background: rgb(0 0 0 / 0.5);
 }
 
-.comfy-dialog.comfyui-dialog.comfy-modal {
+.comfy-dialog.hanzo-studio-dialog.comfy-modal {
   top: 0;
   left: 0;
   right: 0;
@@ -1163,7 +1163,7 @@ dialog::backdrop {
   width: 100%;
 }
 
-.comfy-dialog .comfy-modal-content > .comfyui-button {
+.comfy-dialog .comfy-modal-content > .hanzo-studio-button {
   flex: 1;
   justify-content: center;
 }

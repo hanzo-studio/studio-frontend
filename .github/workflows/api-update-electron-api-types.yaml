@@ -27,12 +27,12 @@ jobs:
           cache: 'pnpm'
 
       - name: Update electron types
-        run: pnpm install --workspace-root @comfyorg/comfyui-electron-types@latest
+        run: pnpm install --workspace-root @hanzo-studio/electron-types@latest
 
       - name: Get new version
         id: get-version
         run: |
-          NEW_VERSION=$(pnpm list @comfyorg/comfyui-electron-types --json --depth=0 | jq -r '.[0].dependencies."@comfyorg/comfyui-electron-types".version')
+          NEW_VERSION=$(pnpm list @hanzo-studio/electron-types --json --depth=0 | jq -r '.[0].dependencies."@hanzo-studio/electron-types".version')
           echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_OUTPUT
 
       - name: Create Pull Request

@@ -15,7 +15,7 @@ export type Node = components['schemas']['Node']
  * @enum {string}
  */
 export type ConflictType =
-  | 'comfyui_version' // ComfyUI version mismatch
+  | 'hanzo-studio_version' // Hanzo Studio version mismatch
   | 'frontend_version' // Frontend version mismatch
   | 'import_failed'
   | 'os' // Operating system incompatibility
@@ -41,7 +41,7 @@ export interface NodeRequirements extends Node {
  */
 export interface SystemEnvironment {
   // Version information
-  comfyui_version?: string
+  hanzo-studio_version?: string
   frontend_version?: string
   // Platform information
   os?: string

@@ -24,9 +24,9 @@ export const useReleaseStore = defineStore('release', () => {
   const systemStatsStore = useSystemStatsStore()
   const settingStore = useSettingStore()
 
-  // Current ComfyUI version
-  const currentComfyUIVersion = computed(
-    () => systemStatsStore?.systemStats?.system?.comfyui_version ?? ''
+  // Current Hanzo Studio version
+  const currentHanzo StudioVersion = computed(
+    () => systemStatsStore?.systemStats?.system?.hanzo-studio_version ?? ''
   )
 
   // Release data from settings
@@ -61,7 +61,7 @@ export const useReleaseStore = defineStore('release', () => {
       !!recentRelease.value &&
       compare(
         recentRelease.value.version,
-        currentComfyUIVersion.value || '0.0.0'
+        currentHanzo StudioVersion.value || '0.0.0'
       ) > 0
   )
 
@@ -70,7 +70,7 @@ export const useReleaseStore = defineStore('release', () => {
       !!recentRelease.value &&
       compare(
         recentRelease.value.version,
-        currentComfyUIVersion.value || '0.0.0'
+        currentHanzo StudioVersion.value || '0.0.0'
       ) === 0
   )
 
@@ -248,8 +248,8 @@ export const useReleaseStore = defineStore('release', () => {
       }
 
       const fetchedReleases = await releaseService.getReleases({
-        project: 'comfyui',
-        current_version: currentComfyUIVersion.value,
+        project: 'hanzo-studio',
+        current_version: currentHanzo StudioVersion.value,
         form_factor: systemStatsStore.getFormFactor(),
         locale: stringToLocale(locale.value)
       })

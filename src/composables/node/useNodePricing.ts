@@ -1299,7 +1299,7 @@ const apiNodeCosts: Record<string, { displayPrice: string | PricingFunction }> =
         return '$2.25/Run'
       }
     },
-    // Runway nodes - using actual node names from ComfyUI
+    // Runway nodes - using actual node names from Hanzo Studio
     RunwayTextToImageNode: {
       displayPrice: '$0.08/Run'
     },
@@ -1325,7 +1325,7 @@ const apiNodeCosts: Record<string, { displayPrice: string | PricingFunction }> =
     Rodin3D_Sketch: {
       displayPrice: '$0.4/Run'
     },
-    // Tripo nodes - using actual node names from ComfyUI
+    // Tripo nodes - using actual node names from Hanzo Studio
     TripoTextToModelNode: {
       displayPrice: (node: LGraphNode): string => {
         const quadWidget = node.widgets?.find(

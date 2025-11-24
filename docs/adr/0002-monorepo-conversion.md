@@ -1,4 +1,4 @@
-# 2. Restructure ComfyUI_frontend as a monorepo
+# 2. Restructure studio-frontend as a monorepo
 
 Date: 2025-08-25
 
@@ -10,7 +10,7 @@ Proposed
 
 ## Context
 
-[Most of the context is in here](https://github.com/Comfy-Org/ComfyUI_frontend/issues/4661)
+[Most of the context is in here](https://github.com/hanzo-studio/studio-frontend/issues/4661)
 
 TL;DR: As we're merging more subprojects like litegraph, devtools, and soon a fork of PrimeVue,
  a monorepo structure will help a lot with code sharing and organization.
@@ -38,7 +38,7 @@ There's a [whole list here](https://monorepo.tools/#tools-review) if you're inte
 - Adding new projects with shared dependencies becomes really easy
 - Makes the process of forking and customizing projects more structured, if not strictly easier
 - It *could* speed up the build and development process (not guaranteed)
-- It would let us cleanly organize and release packages like `comfyui-frontend-types`
+- It would let us cleanly organize and release packages like `hanzo-studio-frontend-types`
 
 ### Negative
 

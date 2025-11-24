@@ -2,7 +2,7 @@
 
 This diagram shows the flow of settings initialization, default resolution, persistence, and feature flags exchange.
 
-This diagram accurately reflects the actual implementation in the ComfyUI frontend codebase.
+This diagram accurately reflects the actual implementation in the Hanzo Studio frontend codebase.
 
 ```mermaid
 sequenceDiagram

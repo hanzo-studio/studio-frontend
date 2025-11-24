@@ -422,7 +422,7 @@ export function fixBadLinks(
         delete graph.links[data.deletedLinks[i]!]
       } else {
         graph = graph as ISerialisedGraph
-        // Sometimes we got objects for links if passed after ComfyUI's loadGraphData modifies the
+        // Sometimes we got objects for links if passed after Hanzo Studio's loadGraphData modifies the
         // data. We make a copy now, but can handle the bastardized objects just in case.
         const idx = graph.links.findIndex(
           (l) =>

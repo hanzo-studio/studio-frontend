@@ -4746,7 +4746,7 @@
     }
   },
   "LazyCache": {
-    "description": "自製版 EasyCache - 更「簡單」的 EasyCache 實作版本。整體表現不如 EasyCache，但在某些罕見情況下表現更好，且與 ComfyUI 中的所有內容具有通用相容性。",
+    "description": "自製版 EasyCache - 更「簡單」的 EasyCache 實作版本。整體表現不如 EasyCache，但在某些罕見情況下表現更好，且與 Hanzo Studio 中的所有內容具有通用相容性。",
     "display_name": "懶快取",
     "inputs": {
       "end_percent": {
@@ -5409,7 +5409,7 @@
     }
   },
   "MaskPreview": {
-    "description": "將輸入影像儲存到您的 ComfyUI 輸出目錄。",
+    "description": "將輸入影像儲存到您的 Hanzo Studio 輸出目錄。",
     "display_name": "MaskPreview",
     "inputs": {
       "mask": {
@@ -8863,7 +8863,7 @@
     }
   },
   "PreviewImage": {
-    "description": "將輸入圖片儲存到您的 ComfyUI 輸出目錄。",
+    "description": "將輸入圖片儲存到您的 Hanzo Studio 輸出目錄。",
     "display_name": "預覽圖片",
     "inputs": {
       "images": {
@@ -10352,7 +10352,7 @@
     }
   },
   "SaveImage": {
-    "description": "將輸入的圖片儲存到您的 ComfyUI 輸出目錄。",
+    "description": "將輸入的圖片儲存到您的 Hanzo Studio 輸出目錄。",
     "display_name": "儲存圖片",
     "inputs": {
       "filename_prefix": {
@@ -10415,7 +10415,7 @@
     }
   },
   "SaveVideo": {
-    "description": "將輸入的影像儲存到您的 ComfyUI 輸出目錄。",
+    "description": "將輸入的影像儲存到您的 Hanzo Studio 輸出目錄。",
     "display_name": "儲存影片",
     "inputs": {
       "codec": {

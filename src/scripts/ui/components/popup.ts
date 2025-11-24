@@ -3,7 +3,7 @@ import { prop } from '../../utils'
 import { type ClassList, applyClasses } from '../utils'
 
 export class ComfyPopup extends EventTarget {
-  element = $el('div.comfyui-popup')
+  element = $el('div.hanzo-studio-popup')
   open: boolean
   children: HTMLElement[]
   target: HTMLElement
@@ -49,7 +49,7 @@ export class ComfyPopup extends EventTarget {
       this.update()
     })
     this.classList = prop(this, 'classList', classList, () =>
-      applyClasses(this.element, this.classList, 'comfyui-popup', horizontal)
+      applyClasses(this.element, this.classList, 'hanzo-studio-popup', horizontal)
     )
     this.open = prop(this, 'open', false, (v, o) => {
       if (v === o) return

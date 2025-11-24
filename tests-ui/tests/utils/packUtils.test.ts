@@ -5,19 +5,19 @@ import { normalizePackId, normalizePackKeys } from '@/utils/packUtils'
 describe('packUtils', () => {
   describe('normalizePackId', () => {
     it('should return pack ID unchanged when no version suffix exists', () => {
-      expect(normalizePackId('ComfyUI-GGUF')).toBe('ComfyUI-GGUF')
-      expect(normalizePackId('ComfyUI-Manager')).toBe('ComfyUI-Manager')
+      expect(normalizePackId('Hanzo Studio-GGUF')).toBe('Hanzo Studio-GGUF')
+      expect(normalizePackId('Hanzo Studio-Manager')).toBe('Hanzo Studio-Manager')
       expect(normalizePackId('simple-pack')).toBe('simple-pack')
     })
 
     it('should remove version suffix with underscores', () => {
-      expect(normalizePackId('ComfyUI-GGUF@1_1_4')).toBe('ComfyUI-GGUF')
-      expect(normalizePackId('ComfyUI-Manager@2_0_0')).toBe('ComfyUI-Manager')
+      expect(normalizePackId('Hanzo Studio-GGUF@1_1_4')).toBe('Hanzo Studio-GGUF')
+      expect(normalizePackId('Hanzo Studio-Manager@2_0_0')).toBe('Hanzo Studio-Manager')
       expect(normalizePackId('pack@1_0_0_beta')).toBe('pack')
     })
 
     it('should remove version suffix with dots', () => {
-      expect(normalizePackId('ComfyUI-GGUF@1.1.4')).toBe('ComfyUI-GGUF')
+      expect(normalizePackId('Hanzo Studio-GGUF@1.1.4')).toBe('Hanzo Studio-GGUF')
       expect(normalizePackId('pack@2.0.0')).toBe('pack')
     })
 
@@ -54,14 +54,14 @@ describe('packUtils', () => {
   describe('normalizePackKeys', () => {
     it('should normalize all keys with version suffixes', () => {
       const input = {
-        'ComfyUI-GGUF': { ver: '1.1.4', enabled: true },
-        'ComfyUI-Manager@2_0_0': { ver: '2.0.0', enabled: false },
+        'Hanzo Studio-GGUF': { ver: '1.1.4', enabled: true },
+        'Hanzo Studio-Manager@2_0_0': { ver: '2.0.0', enabled: false },
         'another-pack@1_0_0': { ver: '1.0.0', enabled: true }
       }
 
       const expected = {
-        'ComfyUI-GGUF': { ver: '1.1.4', enabled: true },
-        'ComfyUI-Manager': { ver: '2.0.0', enabled: false },
+        'Hanzo Studio-GGUF': { ver: '1.1.4', enabled: true },
+        'Hanzo Studio-Manager': { ver: '2.0.0', enabled: false },
         'another-pack': { ver: '1.0.0', enabled: true }
       }
 
@@ -172,19 +172,19 @@ describe('packUtils', () => {
 
   describe('Integration scenarios from JSDoc examples', () => {
     it('should handle the examples from normalizePackId JSDoc', () => {
-      expect(normalizePackId('ComfyUI-GGUF')).toBe('ComfyUI-GGUF')
-      expect(normalizePackId('ComfyUI-GGUF@1_1_4')).toBe('ComfyUI-GGUF')
+      expect(normalizePackId('Hanzo Studio-GGUF')).toBe('Hanzo Studio-GGUF')
+      expect(normalizePackId('Hanzo Studio-GGUF@1_1_4')).toBe('Hanzo Studio-GGUF')
     })
 
     it('should handle the examples from normalizePackKeys JSDoc', () => {
       const input = {
-        'ComfyUI-GGUF': { ver: '1.1.4', enabled: true },
-        'ComfyUI-Manager@2_0_0': { ver: '2.0.0', enabled: false }
+        'Hanzo Studio-GGUF': { ver: '1.1.4', enabled: true },
+        'Hanzo Studio-Manager@2_0_0': { ver: '2.0.0', enabled: false }
       }
 
       const expected = {
-        'ComfyUI-GGUF': { ver: '1.1.4', enabled: true },
-        'ComfyUI-Manager': { ver: '2.0.0', enabled: false }
+        'Hanzo Studio-GGUF': { ver: '1.1.4', enabled: true },
+        'Hanzo Studio-Manager': { ver: '2.0.0', enabled: false }
       }
 
       expect(normalizePackKeys(input)).toEqual(expected)
@@ -192,19 +192,19 @@ describe('packUtils', () => {
   })
 
   describe('Real-world scenarios', () => {
-    it('should handle typical ComfyUI-Manager response with mixed enabled/disabled packs', () => {
+    it('should handle typical Hanzo Studio-Manager response with mixed enabled/disabled packs', () => {
       // Simulating actual server response pattern
       const serverResponse = {
         // Enabled packs come without version suffix
-        'ComfyUI-Essential': { ver: '1.2.3', enabled: true, aux_id: undefined },
-        'ComfyUI-Impact': { ver: '2.0.0', enabled: true, aux_id: undefined },
+        'Hanzo Studio-Essential': { ver: '1.2.3', enabled: true, aux_id: undefined },
+        'Hanzo Studio-Impact': { ver: '2.0.0', enabled: true, aux_id: undefined },
         // Disabled packs come with version suffix
-        'ComfyUI-GGUF@1_1_4': {
+        'Hanzo Studio-GGUF@1_1_4': {
           ver: '1.1.4',
           enabled: false,
           aux_id: undefined
         },
-        'ComfyUI-Manager@2_5_0': {
+        'Hanzo Studio-Manager@2_5_0': {
           ver: '2.5.0',
           enabled: false,
           aux_id: undefined
@@ -215,14 +215,14 @@ describe('packUtils', () => {
 
       // All keys should be normalized (no version suffixes)
       expect(Object.keys(normalized)).toEqual([
-        'ComfyUI-Essential',
-        'ComfyUI-Impact',
-        'ComfyUI-GGUF',
-        'ComfyUI-Manager'
+        'Hanzo Studio-Essential',
+        'Hanzo Studio-Impact',
+        'Hanzo Studio-GGUF',
+        'Hanzo Studio-Manager'
       ])
 
       // Values should be preserved
-      expect(normalized['ComfyUI-GGUF']).toEqual({
+      expect(normalized['Hanzo Studio-GGUF']).toEqual({
         ver: '1.1.4',
         enabled: false,
         aux_id: undefined

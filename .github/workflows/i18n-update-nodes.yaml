@@ -16,8 +16,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v5
       # Setup playwright environment
-      - name: Setup ComfyUI Server (and start)
-        uses: ./.github/actions/setup-comfyui-server
+      - name: Setup Hanzo Studio Server (and start)
+        uses: ./.github/actions/setup-hanzo-studio-server
         with:
           launch_server: true
       - name: Setup frontend

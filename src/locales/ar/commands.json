@@ -119,20 +119,20 @@
   "Comfy_GroupNode_UngroupSelectedGroupNodes": {
     "label": "إلغاء تجميع عقد المجموعات المحددة"
   },
-  "Comfy_Help_AboutComfyUI": {
-    "label": "حول ComfyUI"
+  "Comfy_Help_AboutHanzo Studio": {
+    "label": "حول Hanzo Studio"
   },
-  "Comfy_Help_OpenComfyOrgDiscord": {
-    "label": "فتح خادم Comfy-Org على Discord"
+  "Comfy_Help_OpenHanzoStudioDiscord": {
+    "label": "فتح خادم hanzo-studio على Discord"
   },
-  "Comfy_Help_OpenComfyUIDocs": {
-    "label": "فتح مستندات ComfyUI"
+  "Comfy_Help_OpenHanzo StudioDocs": {
+    "label": "فتح مستندات Hanzo Studio"
   },
-  "Comfy_Help_OpenComfyUIForum": {
-    "label": "فتح منتدى ComfyUI"
+  "Comfy_Help_OpenHanzo StudioForum": {
+    "label": "فتح منتدى Hanzo Studio"
   },
-  "Comfy_Help_OpenComfyUIIssues": {
-    "label": "فتح مشكلات ComfyUI"
+  "Comfy_Help_OpenHanzo StudioIssues": {
+    "label": "فتح مشكلات Hanzo Studio"
   },
   "Comfy_Interrupt": {
     "label": "إيقاف مؤقت"

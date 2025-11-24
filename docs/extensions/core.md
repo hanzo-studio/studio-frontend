@@ -1,6 +1,6 @@
 # Core Extensions
 
-This directory contains the core extensions that provide essential functionality to the ComfyUI frontend.
+This directory contains the core extensions that provide essential functionality to the Hanzo Studio frontend.
 
 ## Table of Contents
 
@@ -13,11 +13,11 @@ This directory contains the core extensions that provide essential functionality
 
 ## Overview
 
-Extensions in ComfyUI are modular JavaScript modules that extend and enhance the functionality of the frontend. The extensions in this directory are considered "core" as they provide fundamental features that are built into ComfyUI by default.
+Extensions in Hanzo Studio are modular JavaScript modules that extend and enhance the functionality of the frontend. The extensions in this directory are considered "core" as they provide fundamental features that are built into Hanzo Studio by default.
 
 ## Extension Architecture
 
-ComfyUI's extension system follows these key principles:
+Hanzo Studio's extension system follows these key principles:
 
 1. **Registration-based:** Extensions must register themselves with the application using `app.registerExtension()`
 2. **Hook-driven:** Extensions interact with the system through predefined hooks
@@ -115,7 +115,7 @@ app.registerExtension({
 
 ## Extension Hooks
 
-ComfyUI extensions can implement various hooks that are called at specific points in the application lifecycle:
+Hanzo Studio extensions can implement various hooks that are called at specific points in the application lifecycle:
 
 ### Hook Execution Sequence
 
@@ -166,16 +166,16 @@ nodeCreated
 | `afterConfigureGraph` | Called after a graph is configured |
 | `getSelectionToolboxCommands` | Allows extensions to add commands to the selection toolbox |
 
-For the complete list of available hooks and detailed descriptions, see the [ComfyExtension interface in comfy.ts](https://github.com/Comfy-Org/ComfyUI_frontend/blob/main/src/types/comfy.ts).
+For the complete list of available hooks and detailed descriptions, see the [ComfyExtension interface in comfy.ts](https://github.com/hanzo-studio/studio-frontend/blob/main/src/types/comfy.ts).
 
 ## Further Reading
 
-For more detailed information about ComfyUI's extension system, refer to the official documentation:
+For more detailed information about Hanzo Studio's extension system, refer to the official documentation:
 
-- [JavaScript Extension Overview](https://docs.comfy.org/custom-nodes/js/javascript_overview)
-- [JavaScript Hooks](https://docs.comfy.org/custom-nodes/js/javascript_hooks)
-- [JavaScript Objects and Hijacking](https://docs.comfy.org/custom-nodes/js/javascript_objects_and_hijacking)
-- [JavaScript Settings](https://docs.comfy.org/custom-nodes/js/javascript_settings)
-- [JavaScript Examples](https://docs.comfy.org/custom-nodes/js/javascript_examples)
+- [JavaScript Extension Overview](https://docs.studio.hanzo.ai/custom-nodes/js/javascript_overview)
+- [JavaScript Hooks](https://docs.studio.hanzo.ai/custom-nodes/js/javascript_hooks)
+- [JavaScript Objects and Hijacking](https://docs.studio.hanzo.ai/custom-nodes/js/javascript_objects_and_hijacking)
+- [JavaScript Settings](https://docs.studio.hanzo.ai/custom-nodes/js/javascript_settings)
+- [JavaScript Examples](https://docs.studio.hanzo.ai/custom-nodes/js/javascript_examples)
 
-Also, check the main [README.md](https://github.com/Comfy-Org/ComfyUI_frontend#developer-apis) section on Developer APIs for the latest information on extension APIs and features.
+Also, check the main [README.md](https://github.com/hanzo-studio/studio-frontend#developer-apis) section on Developer APIs for the latest information on extension APIs and features.

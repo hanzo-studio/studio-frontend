@@ -1,6 +1,6 @@
 # Core Extensions
 
-This directory contains the core extensions that provide essential functionality to the ComfyUI frontend.
+This directory contains the core extensions that provide essential functionality to the Hanzo Studio frontend.
 
 ## 📚 Full Documentation
 
@@ -10,7 +10,7 @@ The complete documentation for core extensions has been moved to:
 
 ## Quick Reference
 
-This directory contains built-in extensions that ship with ComfyUI, including:
+This directory contains built-in extensions that ship with Hanzo Studio, including:
 
 - **Image Processing**: maskeditor, uploadImage, saveImageExtraOutput, clipspace
 - **Graph Management**: groupNode, groupNodeManage, groupOptions, rerouteNode, noteNode

@@ -1,5 +1,5 @@
-import { DownloadStatus } from '@comfyorg/comfyui-electron-types'
-import type { DownloadState } from '@comfyorg/comfyui-electron-types'
+import { DownloadStatus } from '@hanzo-studio/electron-types'
+import type { DownloadState } from '@hanzo-studio/electron-types'
 import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 

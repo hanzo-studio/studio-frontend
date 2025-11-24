@@ -39,7 +39,7 @@ const warningBannerDismissed = useStorage(
  * - Tracking whether conflict modal has been dismissed
  * - Tracking whether red dot notification has been cleared
  * - Managing per-package conflict acknowledgments
- * - Detecting ComfyUI version changes to reset acknowledgment state
+ * - Detecting Hanzo Studio version changes to reset acknowledgment state
  */
 export function useConflictAcknowledgment() {
   const conflictDetectionStore = useConflictDetectionStore()

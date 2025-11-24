@@ -21,7 +21,7 @@ interface IDeltaPosition {
 
 /**
  * Workaround for Firefox returning 0 on offsetX/Y props
- * See https://github.com/Comfy-Org/litegraph.js/issues/403 for details
+ * See https://github.com/hanzo-studio/litegraph.js/issues/403 for details
  */
 interface IOffsetWorkaround {
   /** See {@link MouseEvent.offsetX}.  This workaround is required (2024-12-31) to support Firefox, which always returns 0 */

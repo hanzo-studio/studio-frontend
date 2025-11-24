@@ -36,7 +36,7 @@ jobs:
       - name: Checkout comfy-api repository
         uses: actions/checkout@v5
         with:
-          repository: Comfy-Org/comfy-api
+          repository: hanzo-studio/comfy-api
           path: comfy-api
           token: ${{ secrets.COMFY_API_PAT }}
           clean: true

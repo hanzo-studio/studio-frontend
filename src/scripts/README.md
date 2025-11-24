@@ -1,6 +1,6 @@
 # Scripts Directory Documentation
 
-This directory contains TypeScript code inherited from the legacy ComfyUI JavaScript frontend project. The code has been migrated from JavaScript to TypeScript while maintaining compatibility with the original functionality.
+This directory contains TypeScript code inherited from the legacy Hanzo Studio JavaScript frontend project. The code has been migrated from JavaScript to TypeScript while maintaining compatibility with the original functionality.
 
 When implementing new features, prefer using the new Vue3 system over the legacy scripts.
 
@@ -8,7 +8,7 @@ When implementing new features, prefer using the new Vue3 system over the legacy
 
 ### ComfyApi (api.ts)
 
-Main API client class that handles communication with the ComfyUI backend. Provides methods for:
+Main API client class that handles communication with the Hanzo Studio backend. Provides methods for:
 
 - Queue management
 - Model operations
@@ -43,10 +43,10 @@ All TypeScript exports are shimmed through Vite configuration to maintain compat
 
 ## Legacy Compatibility
 
-This codebase maintains compatibility with the original [ComfyUI Legacy Frontend](https://github.com/Comfy-Org/ComfyUI_legacy_frontend) while providing TypeScript type safety and modern development features.
+This codebase maintains compatibility with the original [Hanzo Studio Legacy Frontend](https://github.com/hanzo-studio/Hanzo Studio_legacy_frontend) while providing TypeScript type safety and modern development features.
 
 For users wanting to fall back to the legacy frontend, use the command line argument:
 
 ```bash
---front-end-version Comfy-Org/ComfyUI_legacy_frontend@latest
+--front-end-version hanzo-studio/Hanzo Studio_legacy_frontend@latest
 ```

@@ -12,7 +12,7 @@ test.describe('Browser tab title', () => {
       const workflowName = await comfyPage.page.evaluate(async () => {
         return window['app'].extensionManager.workflow.activeWorkflow.filename
       })
-      expect(await comfyPage.page.title()).toBe(`*${workflowName} - ComfyUI`)
+      expect(await comfyPage.page.title()).toBe(`*${workflowName} - Hanzo Studio`)
     })
 
     // Failing on CI
@@ -23,15 +23,15 @@ test.describe('Browser tab title', () => {
       const workflowName = await comfyPage.page.evaluate(async () => {
         return window['app'].extensionManager.workflow.activeWorkflow.filename
       })
-      expect(await comfyPage.page.title()).toBe(`${workflowName} - ComfyUI`)
+      expect(await comfyPage.page.title()).toBe(`${workflowName} - Hanzo Studio`)
 
       await comfyPage.menu.topbar.saveWorkflow('test')
-      expect(await comfyPage.page.title()).toBe('test - ComfyUI')
+      expect(await comfyPage.page.title()).toBe('test - Hanzo Studio')
 
       const textBox = comfyPage.widgetTextBox
       await textBox.fill('Hello World')
       await comfyPage.clickEmptySpace()
-      expect(await comfyPage.page.title()).toBe(`*test - ComfyUI`)
+      expect(await comfyPage.page.title()).toBe(`*test - Hanzo Studio`)
 
       // Delete the saved workflow for cleanup.
       await comfyPage.page.evaluate(async () => {
@@ -46,7 +46,7 @@ test.describe('Browser tab title', () => {
     })
 
     test('Can display default title', async ({ comfyPage }) => {
-      expect(await comfyPage.page.title()).toBe('ComfyUI')
+      expect(await comfyPage.page.title()).toBe('Hanzo Studio')
     })
   })
 })

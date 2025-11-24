@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-// Zod schemas for asset API validation matching ComfyUI Assets REST API spec
+// Zod schemas for asset API validation matching Hanzo Studio Assets REST API spec
 const zAsset = z.object({
   id: z.string(),
   name: z.string(),

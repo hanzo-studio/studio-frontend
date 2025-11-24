@@ -4,7 +4,7 @@ import type {
 } from '@/platform/workflow/validation/schemas/workflowSchema'
 
 /**
- * Tag names used in ComfyUI metadata
+ * Tag names used in Hanzo Studio metadata
  */
 export enum ComfyMetadataTags {
   PROMPT = 'PROMPT',
@@ -12,7 +12,7 @@ export enum ComfyMetadataTags {
 }
 
 /**
- * Metadata extracted from ComfyUI output files
+ * Metadata extracted from Hanzo Studio output files
  */
 export interface ComfyMetadata {
   workflow?: ComfyWorkflowJSON

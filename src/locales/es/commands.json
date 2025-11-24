@@ -119,20 +119,20 @@
   "Comfy_GroupNode_UngroupSelectedGroupNodes": {
     "label": "Desagrupar nodos de grupo seleccionados"
   },
-  "Comfy_Help_AboutComfyUI": {
-    "label": "Abrir Acerca de ComfyUI"
+  "Comfy_Help_AboutHanzo Studio": {
+    "label": "Abrir Acerca de Hanzo Studio"
   },
-  "Comfy_Help_OpenComfyOrgDiscord": {
-    "label": "Abrir Comfy-Org Discord"
+  "Comfy_Help_OpenHanzoStudioDiscord": {
+    "label": "Abrir hanzo-studio Discord"
   },
-  "Comfy_Help_OpenComfyUIDocs": {
-    "label": "Abrir documentación de ComfyUI"
+  "Comfy_Help_OpenHanzo StudioDocs": {
+    "label": "Abrir documentación de Hanzo Studio"
   },
-  "Comfy_Help_OpenComfyUIForum": {
-    "label": "Abrir foro de ComfyUI"
+  "Comfy_Help_OpenHanzo StudioForum": {
+    "label": "Abrir foro de Hanzo Studio"
   },
-  "Comfy_Help_OpenComfyUIIssues": {
-    "label": "Abrir problemas de ComfyUI"
+  "Comfy_Help_OpenHanzo StudioIssues": {
+    "label": "Abrir problemas de Hanzo Studio"
   },
   "Comfy_Interrupt": {
     "label": "Interrumpir"

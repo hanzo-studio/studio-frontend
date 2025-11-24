@@ -1,4 +1,4 @@
-# Contributing Translations to ComfyUI
+# Contributing Translations to Hanzo Studio
 
 ## Quick Start for New Languages
 
@@ -96,7 +96,7 @@ pnpm dev        # Start development server
 ```
 
 **Testing checklist:**
-- [ ] Language appears in ComfyUI Settings > Locale dropdown
+- [ ] Language appears in Hanzo Studio Settings > Locale dropdown
 - [ ] Can select the new language without errors
 - [ ] Partial translations display correctly
 - [ ] UI falls back to English for untranslated strings

@@ -1,4 +1,4 @@
-import baseConfig from '@comfyorg/design-system/tailwind-config'
+import baseConfig from '@hanzo-studio/design-system/tailwind-config'
 
 export default {
   ...baseConfig,

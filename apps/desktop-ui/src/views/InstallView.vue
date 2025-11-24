@@ -56,7 +56,7 @@
 import type {
   InstallOptions,
   TorchDeviceType
-} from '@comfyorg/comfyui-electron-types'
+} from '@hanzo-studio/electron-types'
 import StepPanel from 'primevue/steppanel'
 import StepPanels from 'primevue/steppanels'
 import Stepper from 'primevue/stepper'
@@ -155,7 +155,7 @@ const install = async () => {
     // @ts-expect-error fixme ts strict error
     device: device.value
   }
-  electron.installComfyUI(options)
+  electron.installHanzo Studio(options)
 
   const nextPage =
     options.device === 'unsupported' ? '/manual-configuration' : '/server-start'

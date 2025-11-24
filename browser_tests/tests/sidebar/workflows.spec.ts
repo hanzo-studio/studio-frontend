@@ -264,7 +264,7 @@ test.describe('Workflows sidebar', () => {
       `tempWorkflow-${test.info().title}`
     )
     const closeButton = comfyPage.page.locator(
-      '.comfyui-workflows-open .close-workflow-button'
+      '.hanzo-studio-workflows-open .close-workflow-button'
     )
     await closeButton.click()
     expect(await comfyPage.menu.workflowsTab.getOpenedWorkflowNames()).toEqual([
@@ -358,7 +358,7 @@ test.describe('Workflows sidebar', () => {
     }
 
     await comfyPage.page.dragAndDrop(
-      '.comfyui-workflows-browse .node-label:has-text("workflow1.json")',
+      '.hanzo-studio-workflows-browse .node-label:has-text("workflow1.json")',
       '#graph-canvas',
       { targetPosition }
     )

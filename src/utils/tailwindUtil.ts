@@ -1,1 +1,1 @@
-export { cn, type ClassValue } from '@comfyorg/tailwind-utils'
+export { cn, type ClassValue } from '@hanzo-studio/tailwind-utils'

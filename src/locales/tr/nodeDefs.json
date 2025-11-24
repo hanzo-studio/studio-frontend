@@ -4746,7 +4746,7 @@
     }
   },
   "LazyCache": {
-    "description": "EasyCache'in ev yapımı bir versiyonu - uygulaması daha 'kolay' bir EasyCache versiyonu. Genel olarak EasyCache'den daha kötü çalışır, ancak bazı nadir durumlarda daha iyidir VE ComfyUI'deki her şeyle evrensel uyumluluğa sahiptir.",
+    "description": "EasyCache'in ev yapımı bir versiyonu - uygulaması daha 'kolay' bir EasyCache versiyonu. Genel olarak EasyCache'den daha kötü çalışır, ancak bazı nadir durumlarda daha iyidir VE Hanzo Studio'deki her şeyle evrensel uyumluluğa sahiptir.",
     "display_name": "Tembel Önbellek",
     "inputs": {
       "end_percent": {
@@ -5409,7 +5409,7 @@
     }
   },
   "MaskPreview": {
-    "description": "Giriş görüntülerini ComfyUI çıktı dizininize kaydeder.",
+    "description": "Giriş görüntülerini Hanzo Studio çıktı dizininize kaydeder.",
     "display_name": "MaskeÖnizleme",
     "inputs": {
       "mask": {
@@ -8863,7 +8863,7 @@
     }
   },
   "PreviewImage": {
-    "description": "Giriş görüntülerini ComfyUI çıktı dizininize kaydeder.",
+    "description": "Giriş görüntülerini Hanzo Studio çıktı dizininize kaydeder.",
     "display_name": "Görüntüyü Önizle",
     "inputs": {
       "images": {
@@ -10352,7 +10352,7 @@
     }
   },
   "SaveImage": {
-    "description": "Giriş görüntülerini ComfyUI çıktı dizininize kaydeder.",
+    "description": "Giriş görüntülerini Hanzo Studio çıktı dizininize kaydeder.",
     "display_name": "Görüntüyü Kaydet",
     "inputs": {
       "filename_prefix": {
@@ -10415,7 +10415,7 @@
     }
   },
   "SaveVideo": {
-    "description": "Giriş görüntülerini ComfyUI çıktı dizininize kaydeder.",
+    "description": "Giriş görüntülerini Hanzo Studio çıktı dizininize kaydeder.",
     "display_name": "Videoyu Kaydet",
     "inputs": {
       "codec": {

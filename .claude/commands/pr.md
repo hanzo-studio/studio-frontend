@@ -83,7 +83,7 @@ You'll create the PR with the following structure:
 - `area:CI/CD` - CI/CD pipeline
 - `area:testing` - Testing infrastructure
 - `area:vue-migration` - Vue migration work
-- `area:manager` - ComfyUI Manager integration
+- `area:manager` - Hanzo Studio Manager integration
 
 **Platform-Specific**
 

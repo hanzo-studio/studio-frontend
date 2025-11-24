@@ -1,6 +1,6 @@
 # Services
 
-This directory contains the service layer for the ComfyUI frontend application. Services encapsulate application logic and functionality into organized, reusable modules.
+This directory contains the service layer for the Hanzo Studio frontend application. Services encapsulate application logic and functionality into organized, reusable modules.
 
 ## Table of Contents
 
@@ -12,15 +12,15 @@ This directory contains the service layer for the ComfyUI frontend application. 
 
 ## Overview
 
-Services in ComfyUI provide organized modules that implement the application's functionality and logic. They handle operations such as API communication, workflow management, user settings, and other essential features.
+Services in Hanzo Studio provide organized modules that implement the application's functionality and logic. They handle operations such as API communication, workflow management, user settings, and other essential features.
 
-The term "business logic" in this context refers to the code that implements the core functionality and behavior of the application - the rules, processes, and operations that make ComfyUI work as expected, separate from the UI display code.
+The term "business logic" in this context refers to the code that implements the core functionality and behavior of the application - the rules, processes, and operations that make Hanzo Studio work as expected, separate from the UI display code.
 
 Services help organize related functionality into cohesive units, making the codebase more maintainable and testable. By centralizing related operations in services, the application achieves better separation of concerns, with UI components focusing on presentation and services handling functional operations.
 
 ## Service Architecture
 
-The service layer in ComfyUI follows these architectural principles:
+The service layer in Hanzo Studio follows these architectural principles:
 
 1. **Domain-driven**: Each service focuses on a specific domain of the application
 2. **Stateless when possible**: Services generally avoid maintaining internal state
@@ -66,8 +66,8 @@ The following table lists ALL services in the system as of 2025-09-01:
 | audioService.ts | Manages audio recording and WAV encoding functionality | Media |
 | autoQueueService.ts | Manages automatic queue execution | Execution |
 | colorPaletteService.ts | Handles color palette management and customization | UI |
-| comfyManagerService.ts | Manages ComfyUI application packages and updates | Manager |
-| comfyRegistryService.ts | Handles registration and discovery of ComfyUI extensions | Registry |
+| comfyManagerService.ts | Manages Hanzo Studio application packages and updates | Manager |
+| comfyRegistryService.ts | Handles registration and discovery of Hanzo Studio extensions | Registry |
 | customerEventsService.ts | Handles customer event tracking and audit logs | Analytics |
 | dialogService.ts | Provides dialog and modal management | UI |
 | extensionService.ts | Manages extension registration and lifecycle | Extensions |
@@ -100,7 +100,7 @@ Located in `services/providers/`:
 
 ## Service Development Guidelines
 
-In ComfyUI, services can be implemented using two approaches:
+In Hanzo Studio, services can be implemented using two approaches:
 
 ### 1. Class-based Services
 
@@ -260,7 +260,7 @@ export function useExampleService() {
 
 ## Common Design Patterns
 
-Services in ComfyUI frequently use the following design patterns:
+Services in Hanzo Studio frequently use the following design patterns:
 
 ### Caching and Request Deduplication
 
@@ -336,7 +336,7 @@ export function useWorkflowService(
 
 ## Testing Services
 
-Services in ComfyUI can be tested effectively using different approaches depending on their implementation pattern.
+Services in Hanzo Studio can be tested effectively using different approaches depending on their implementation pattern.
 
 ### Testing Class-Based Services
 

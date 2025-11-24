@@ -84,7 +84,7 @@ import { deserialiseAndCreate } from '@/utils/vintageClipboard'
 import { type ComfyApi, PromptExecutionError, api } from './api'
 import { defaultGraph } from './defaultGraph'
 import { importA1111 } from './pnginfo'
-import { $el, ComfyUI } from './ui'
+import { $el, Hanzo Studio } from './ui'
 import { ComfyAppMenu } from './ui/menu/index'
 import { clone } from './utils'
 import { type ComfyWidgetConstructor } from './widgets'
@@ -146,7 +146,7 @@ export class ComfyApp {
 
   vueAppReady: boolean
   api: ComfyApi
-  ui: ComfyUI
+  ui: Hanzo Studio
   // @ts-expect-error fixme ts strict error
   extensionManager: ExtensionManager
   // @ts-expect-error fixme ts strict error
@@ -238,7 +238,7 @@ export class ComfyApp {
 
   /**
    * @deprecated storageLocation is always 'server' since
-   * https://github.com/comfyanonymous/ComfyUI/commit/53c8a99e6c00b5e20425100f6680cd9ea2652218
+   * https://github.com/hanzoai/Hanzo Studio/commit/53c8a99e6c00b5e20425100f6680cd9ea2652218
    */
   get storageLocation() {
     return 'server'
@@ -283,13 +283,13 @@ export class ComfyApp {
 
   constructor() {
     this.vueAppReady = false
-    this.ui = new ComfyUI(this)
+    this.ui = new Hanzo Studio(this)
     this.api = api
     // Dummy placeholder elements before GraphCanvas is mounted.
-    this.bodyTop = $el('div.comfyui-body-top')
-    this.bodyLeft = $el('div.comfyui-body-left')
-    this.bodyRight = $el('div.comfyui-body-right')
-    this.bodyBottom = $el('div.comfyui-body-bottom')
+    this.bodyTop = $el('div.hanzo-studio-body-top')
+    this.bodyLeft = $el('div.hanzo-studio-body-left')
+    this.bodyRight = $el('div.hanzo-studio-body-right')
+    this.bodyBottom = $el('div.hanzo-studio-body-bottom')
     this.canvasContainer = $el('div.graph-canvas-container')
 
     this.menu = new ComfyAppMenu(this)
@@ -744,13 +744,13 @@ export class ComfyApp {
    */
   async setup(canvasEl: HTMLCanvasElement) {
     // @ts-expect-error fixme ts strict error
-    this.bodyTop = document.getElementById('comfyui-body-top')
+    this.bodyTop = document.getElementById('hanzo-studio-body-top')
     // @ts-expect-error fixme ts strict error
-    this.bodyLeft = document.getElementById('comfyui-body-left')
+    this.bodyLeft = document.getElementById('hanzo-studio-body-left')
     // @ts-expect-error fixme ts strict error
-    this.bodyRight = document.getElementById('comfyui-body-right')
+    this.bodyRight = document.getElementById('hanzo-studio-body-right')
     // @ts-expect-error fixme ts strict error
-    this.bodyBottom = document.getElementById('comfyui-body-bottom')
+    this.bodyBottom = document.getElementById('hanzo-studio-body-bottom')
     // @ts-expect-error fixme ts strict error
     this.canvasContainer = document.getElementById('graph-canvas-container')
 
@@ -867,7 +867,7 @@ export class ComfyApp {
   }
 
   private resizeCanvas(canvas: HTMLCanvasElement) {
-    // Limit minimal scale to 1, see https://github.com/comfyanonymous/ComfyUI/pull/845
+    // Limit minimal scale to 1, see https://github.com/hanzoai/Hanzo Studio/pull/845
     const scale = Math.max(window.devicePixelRatio, 1)
 
     // Clear fixed width and height while calculating rect so it uses 100% instead
@@ -882,7 +882,7 @@ export class ComfyApp {
 
   private updateVueAppNodeDefs(defs: Record<string, ComfyNodeDefV1>) {
     // Frontend only nodes registered by custom nodes.
-    // Example: https://github.com/rgthree/rgthree-comfy/blob/dd534e5384be8cf0c0fa35865afe2126ba75ac55/src_web/comfyui/fast_groups_bypasser.ts#L10
+    // Example: https://github.com/rgthree/rgthree-comfy/blob/dd534e5384be8cf0c0fa35865afe2126ba75ac55/src_web/hanzo-studio/fast_groups_bypasser.ts#L10
 
     // Only create frontend_only definitions for nodes that don't have backend definitions
     const frontendOnlyDefs: Record<string, ComfyNodeDefV1> = {}
@@ -1075,7 +1075,7 @@ export class ComfyApp {
     // Only show the reroute migration warning if the workflow does not have native
     // reroutes. Merging reroute network has great complexity, and it is not supported
     // for now.
-    // See: https://github.com/Comfy-Org/ComfyUI_frontend/issues/3317
+    // See: https://github.com/hanzo-studio/studio-frontend/issues/3317
     if (
       checkForRerouteMigration &&
       graphData.version === 0.4 &&

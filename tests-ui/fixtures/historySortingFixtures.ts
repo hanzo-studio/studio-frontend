@@ -1,7 +1,7 @@
 /**
  * @fileoverview Test fixtures for history V2 timestamp-based sorting
  */
-import type { HistoryResponseV2 } from '@/platform/remote/comfyui/history/types/historyV2Types'
+import type { HistoryResponseV2 } from '@/platform/remote/hanzo-studio/history/types/historyV2Types'
 
 export const historyV2WithMissingTimestamp: HistoryResponseV2 = {
   history: [

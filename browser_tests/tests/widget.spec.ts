@@ -211,7 +211,7 @@ test.describe('Image widget', () => {
 })
 
 test.describe('Animated image widget', () => {
-  // https://github.com/Comfy-Org/ComfyUI_frontend/issues/3718
+  // https://github.com/hanzo-studio/studio-frontend/issues/3718
   test.skip('Shows preview of uploaded animated image', async ({
     comfyPage
   }) => {

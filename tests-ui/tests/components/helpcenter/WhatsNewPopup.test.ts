@@ -86,7 +86,7 @@ describe('WhatsNewPopup', () => {
       mockReleaseStore.shouldShowPopup = true
       mockReleaseStore.recentRelease = {
         id: 1,
-        project: 'comfyui_frontend',
+        project: 'hanzo-studio_frontend',
         version: '1.24.0',
         attention: 'medium',
         content: 'New features added',
@@ -103,7 +103,7 @@ describe('WhatsNewPopup', () => {
       mockReleaseStore.shouldShowPopup = true
       mockReleaseStore.recentRelease = {
         id: 1,
-        project: 'comfyui_frontend',
+        project: 'hanzo-studio_frontend',
         version: '1.24.0',
         attention: 'medium',
         content: 'New features added',
@@ -128,7 +128,7 @@ describe('WhatsNewPopup', () => {
       mockReleaseStore.shouldShowPopup = true
       mockReleaseStore.recentRelease = {
         id: 1,
-        project: 'comfyui_frontend',
+        project: 'hanzo-studio_frontend',
         version: '1.24.0',
         attention: 'medium',
         content: '# Release Notes\n\nNew features',
@@ -147,7 +147,7 @@ describe('WhatsNewPopup', () => {
       mockReleaseStore.shouldShowPopup = true
       mockReleaseStore.recentRelease = {
         id: 1,
-        project: 'comfyui_frontend',
+        project: 'hanzo-studio_frontend',
         version: '1.24.0',
         attention: 'medium',
         content: '',
@@ -165,7 +165,7 @@ describe('WhatsNewPopup', () => {
       mockReleaseStore.shouldShowPopup = true
       mockReleaseStore.recentRelease = {
         id: 1,
-        project: 'comfyui_frontend',
+        project: 'hanzo-studio_frontend',
         version: '1.24.0',
         attention: 'medium',
         content: 'Content with\nnewlines',
@@ -184,7 +184,7 @@ describe('WhatsNewPopup', () => {
       mockReleaseStore.shouldShowPopup = true
       mockReleaseStore.recentRelease = {
         id: 1,
-        project: 'comfyui_frontend',
+        project: 'hanzo-studio_frontend',
         version: '1.24.0-beta.1',
         attention: 'medium',
         content: 'Release content',
@@ -196,7 +196,7 @@ describe('WhatsNewPopup', () => {
 
       // formatVersionAnchor replaces dots with dashes: 1.24.0-beta.1 -> v1-24-0-beta-1
       expect(learnMoreLink.attributes('href')).toBe(
-        'https://docs.comfy.org/changelog#v1-24-0-beta-1'
+        'https://docs.studio.hanzo.ai/changelog#v1-24-0-beta-1'
       )
     })
 
@@ -204,7 +204,7 @@ describe('WhatsNewPopup', () => {
       mockReleaseStore.shouldShowPopup = true
       mockReleaseStore.recentRelease = {
         id: 1,
-        project: 'comfyui_frontend',
+        project: 'hanzo-studio_frontend',
         version: '1.24.0',
         attention: 'medium',
         content: 'Release content',
@@ -234,7 +234,7 @@ describe('WhatsNewPopup', () => {
       // In a real component test with proper i18n setup, this would show the Chinese URL
       const learnMoreLink = wrapper.find('.learn-more-link')
       expect(learnMoreLink.attributes('href')).toBe(
-        'https://docs.comfy.org/changelog#v1-24-0'
+        'https://docs.studio.hanzo.ai/changelog#v1-24-0'
       )
     })
 
@@ -242,7 +242,7 @@ describe('WhatsNewPopup', () => {
       mockReleaseStore.shouldShowPopup = true
       mockReleaseStore.recentRelease = {
         id: 1,
-        project: 'comfyui_frontend',
+        project: 'hanzo-studio_frontend',
         version: '',
         attention: 'medium',
         content: 'Release content',
@@ -253,7 +253,7 @@ describe('WhatsNewPopup', () => {
       const learnMoreLink = wrapper.find('.learn-more-link')
 
       expect(learnMoreLink.attributes('href')).toBe(
-        'https://docs.comfy.org/changelog'
+        'https://docs.studio.hanzo.ai/changelog'
       )
     })
   })
@@ -263,7 +263,7 @@ describe('WhatsNewPopup', () => {
       mockReleaseStore.shouldShowPopup = true
       mockReleaseStore.recentRelease = {
         id: 1,
-        project: 'comfyui_frontend',
+        project: 'hanzo-studio_frontend',
         version: '1.24.0',
         attention: 'medium',
         content: 'Release content',
@@ -285,7 +285,7 @@ describe('WhatsNewPopup', () => {
       mockReleaseStore.shouldShowPopup = true
       mockReleaseStore.recentRelease = {
         id: 1,
-        project: 'comfyui_frontend',
+        project: 'hanzo-studio_frontend',
         version: '1.24.0',
         attention: 'medium',
         content: 'Release content',
@@ -374,7 +374,7 @@ describe('WhatsNewPopup', () => {
       mockReleaseStore.releases = [
         {
           id: 1,
-          project: 'comfyui_frontend',
+          project: 'hanzo-studio_frontend',
           version: '1.24.0',
           attention: 'medium' as const,
           content: 'Content',
@@ -405,7 +405,7 @@ describe('WhatsNewPopup', () => {
       mockReleaseStore.shouldShowPopup = true
       mockReleaseStore.recentRelease = {
         id: 1,
-        project: 'comfyui_frontend',
+        project: 'hanzo-studio_frontend',
         version: '1.24.0',
         attention: 'medium',
         content: 'Content',
@@ -423,7 +423,7 @@ describe('WhatsNewPopup', () => {
       mockReleaseStore.shouldShowPopup = true
       mockReleaseStore.recentRelease = {
         id: 1,
-        project: 'comfyui_frontend',
+        project: 'hanzo-studio_frontend',
         version: '1.24.0',
         attention: 'medium',
         content: 'Content',

@@ -3,7 +3,7 @@ import { mapKeys } from 'es-toolkit/compat'
 /**
  * Normalizes a pack ID by removing the version suffix.
  *
- * ComfyUI-Manager returns pack IDs in different formats:
+ * Hanzo Studio-Manager returns pack IDs in different formats:
  * - Enabled packs: "packname" (without version)
  * - Disabled packs: "packname@1_0_3" (with version suffix)
  * - Latest versions from registry: "packname" (without version)

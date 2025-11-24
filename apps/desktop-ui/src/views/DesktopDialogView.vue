@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-import { normalizeI18nKey } from '@comfyorg/shared-frontend-utils/formatUtil'
+import { normalizeI18nKey } from '@hanzo-studio/shared-frontend-utils/formatUtil'
 import Button from 'primevue/button'
 import { useRoute } from 'vue-router'
 

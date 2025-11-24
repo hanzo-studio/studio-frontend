@@ -19,7 +19,7 @@ export const DESKTOP_MAINTENANCE_TASKS: Readonly<MaintenanceTask>[] = [
     errorDescription:
       'The current base path is invalid or unsafe. Please select a new location.',
     description:
-      'The base path is the default location where ComfyUI stores data. It is the location for the python environment, and may also contain models, custom nodes, and other extensions.',
+      'The base path is the default location where Hanzo Studio stores data. It is the location for the python environment, and may also contain models, custom nodes, and other extensions.',
     isInstallationFix: true,
     button: {
       icon: PrimeIcons.QUESTION,
@@ -33,9 +33,9 @@ export const DESKTOP_MAINTENANCE_TASKS: Readonly<MaintenanceTask>[] = [
     name: 'Download git',
     shortDescription: 'Open the git download page.',
     errorDescription:
-      'Git is missing. Please download and install git, then restart ComfyUI Desktop.',
+      'Git is missing. Please download and install git, then restart Hanzo Studio Desktop.',
     description:
-      'Git is required to download and manage custom nodes and other extensions. This task opens the download page in your default browser, where you can download the latest version of git. Once you have installed git, please restart ComfyUI Desktop.',
+      'Git is required to download and manage custom nodes and other extensions. This task opens the download page in your default browser, where you can download the latest version of git. Once you have installed git, please restart Hanzo Studio Desktop.',
     button: {
       icon: PrimeIcons.EXTERNAL_LINK,
       text: 'Download'
@@ -47,7 +47,7 @@ export const DESKTOP_MAINTENANCE_TASKS: Readonly<MaintenanceTask>[] = [
     name: 'Download VC++ Redist',
     shortDescription: 'Download the latest VC++ Redistributable runtime.',
     description:
-      'The Visual C++ runtime libraries are required to run ComfyUI. You will need to download and install this file.',
+      'The Visual C++ runtime libraries are required to run Hanzo Studio. You will need to download and install this file.',
     button: {
       icon: PrimeIcons.EXTERNAL_LINK,
       text: 'Download'
@@ -61,7 +61,7 @@ export const DESKTOP_MAINTENANCE_TASKS: Readonly<MaintenanceTask>[] = [
       await electron.reinstall()
       return true
     },
-    name: 'Reinstall ComfyUI',
+    name: 'Reinstall Hanzo Studio',
     shortDescription:
       'Deletes the desktop app config and load the welcome screen.',
     description:
@@ -85,11 +85,11 @@ export const DESKTOP_MAINTENANCE_TASKS: Readonly<MaintenanceTask>[] = [
     },
     name: 'Install python packages',
     shortDescription:
-      'Installs the base python packages required to run ComfyUI.',
+      'Installs the base python packages required to run Hanzo Studio.',
     errorDescription:
-      'Python packages that are required to run ComfyUI are not installed.',
+      'Python packages that are required to run Hanzo Studio are not installed.',
     description:
-      'This will install the python packages required to run ComfyUI. This includes torch, torchvision, and other dependencies.',
+      'This will install the python packages required to run Hanzo Studio. This includes torch, torchvision, and other dependencies.',
     usesTerminal: true,
     isInstallationFix: true,
     button: {
@@ -136,7 +136,7 @@ export const DESKTOP_MAINTENANCE_TASKS: Readonly<MaintenanceTask>[] = [
     shortDescription:
       'Remove and recreate the .venv directory. This removes all python packages.',
     description:
-      'The python environment is where ComfyUI installs python and python packages. It is used to run the ComfyUI server.',
+      'The python environment is where Hanzo Studio installs python and python packages. It is used to run the Hanzo Studio server.',
     confirmText: 'Delete the .venv directory?',
     usesTerminal: true,
     isInstallationFix: true,

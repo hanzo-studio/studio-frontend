@@ -58,7 +58,7 @@ test.describe('Copy Paste', () => {
   })
 
   /**
-   * https://github.com/Comfy-Org/ComfyUI_frontend/issues/98
+   * https://github.com/hanzo-studio/studio-frontend/issues/98
    */
   test('Paste in text area with node previously copied', async ({
     comfyPage

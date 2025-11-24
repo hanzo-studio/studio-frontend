@@ -157,7 +157,7 @@ test.describe('Node search box', () => {
 
     // Flaky test.
     // Sample test failure:
-    // https://github.com/Comfy-Org/ComfyUI_frontend/actions/runs/12696912248/job/35391990861?pr=2210
+    // https://github.com/hanzo-studio/studio-frontend/actions/runs/12696912248/job/35391990861?pr=2210
     /*
     1) [chromium-2x] › nodeSearchBox.spec.ts:135:5 › Node search box › Filtering › Outer click dismisses filter panel but keeps search box visible
 
@@ -179,7 +179,7 @@ test.describe('Node search box', () => {
       147 |       // Verify the node search dialog is still visible
       148 |       expect(comfyPage.searchBox.input).toBeVisible()
 
-        at /home/runner/work/ComfyUI_frontend/ComfyUI_frontend/ComfyUI_frontend/browser_tests/nodeSearchBox.spec.ts:145:32
+        at /home/runner/work/studio-frontend/studio-frontend/studio-frontend/browser_tests/nodeSearchBox.spec.ts:145:32
      */
     test.skip('Outer click dismisses filter panel but keeps search box visible', async ({
       comfyPage

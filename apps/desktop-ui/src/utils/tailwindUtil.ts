@@ -1,1 +1,1 @@
-export { cn } from '@comfyorg/tailwind-utils'
+export { cn } from '@hanzo-studio/tailwind-utils'

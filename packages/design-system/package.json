@@ -1,7 +1,7 @@
 {
-  "name": "@comfyorg/design-system",
+  "name": "@hanzo-studio/design-system",
   "version": "1.0.0",
-  "description": "Shared design system for ComfyUI Frontend",
+  "description": "Shared design system for Hanzo Studio Frontend",
   "type": "module",
   "exports": {
     "./tailwind-config": "./tailwind.config.ts",

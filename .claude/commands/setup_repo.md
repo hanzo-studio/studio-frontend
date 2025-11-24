@@ -1,6 +1,6 @@
 # Setup Repository
 
-Bootstrap the ComfyUI Frontend monorepo with all necessary dependencies and verification checks.
+Bootstrap the Hanzo Studio Frontend monorepo with all necessary dependencies and verification checks.
 
 ## Overview
 

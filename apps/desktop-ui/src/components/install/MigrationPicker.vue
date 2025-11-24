@@ -61,7 +61,7 @@
 </template>
 
 <script setup lang="ts">
-import { MigrationItems } from '@comfyorg/comfyui-electron-types'
+import { MigrationItems } from '@hanzo-studio/electron-types'
 import Button from 'primevue/button'
 import Checkbox from 'primevue/checkbox'
 import InputText from 'primevue/inputtext'
@@ -100,7 +100,7 @@ const validateSource = async (sourcePath: string | undefined) => {
 
   try {
     pathError.value = ''
-    const validation = await electron.validateComfyUISource(sourcePath)
+    const validation = await electron.validateHanzo StudioSource(sourcePath)
 
     if (!validation.isValid) pathError.value = validation.error ?? 'ERROR'
   } catch (error) {

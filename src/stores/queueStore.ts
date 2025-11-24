@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 import { computed, ref, shallowRef, toRaw, toValue } from 'vue'
 
 import { isCloud } from '@/platform/distribution/types'
-import { reconcileHistory } from '@/platform/remote/comfyui/history/reconciliation'
+import { reconcileHistory } from '@/platform/remote/hanzo-studio/history/reconciliation'
 import { getWorkflowFromHistory } from '@/platform/workflow/cloud'
 import type {
   ComfyWorkflowJSON,
@@ -235,7 +235,7 @@ export class TaskItemImpl {
     // array in the result are animated or not.
     // The queueStore does not use this information.
     // It is part of the legacy API response. We should redesign the backend API.
-    // https://github.com/Comfy-Org/ComfyUI_frontend/issues/2739
+    // https://github.com/hanzo-studio/studio-frontend/issues/2739
     this.outputs = _.mapValues(outputs ?? {}, (nodeOutputs) =>
       _.omit(nodeOutputs, 'animated')
     )

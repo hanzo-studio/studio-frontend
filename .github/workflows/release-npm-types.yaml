@@ -35,7 +35,7 @@ concurrency:
 
 jobs:
   publish_types_manual:
-    name: Publish @comfyorg/comfyui-frontend-types
+    name: Publish @hanzo-studio/studio-frontend-types
     runs-on: ubuntu-latest
     permissions:
       contents: read

@@ -69,7 +69,7 @@ describe('useBrowserTabTitle', () => {
   it('sets default title when idle and no workflow', () => {
     const scope: EffectScope = effectScope()
     scope.run(() => useBrowserTabTitle())
-    expect(document.title).toBe('ComfyUI')
+    expect(document.title).toBe('Hanzo Studio')
     scope.stop()
   })
 
@@ -83,7 +83,7 @@ describe('useBrowserTabTitle', () => {
     const scope: EffectScope = effectScope()
     scope.run(() => useBrowserTabTitle())
     await nextTick()
-    expect(document.title).toBe('myFlow - ComfyUI')
+    expect(document.title).toBe('myFlow - Hanzo Studio')
     scope.stop()
   })
 
@@ -97,7 +97,7 @@ describe('useBrowserTabTitle', () => {
     const scope: EffectScope = effectScope()
     scope.run(() => useBrowserTabTitle())
     await nextTick()
-    expect(document.title).toBe('*myFlow - ComfyUI')
+    expect(document.title).toBe('*myFlow - Hanzo Studio')
     scope.stop()
   })
 
@@ -114,7 +114,7 @@ describe('useBrowserTabTitle', () => {
     }
     useBrowserTabTitle()
     await nextTick()
-    expect(document.title).toBe('myFlow - ComfyUI')
+    expect(document.title).toBe('myFlow - Hanzo Studio')
   })
 
   it('hides asterisk while Shift key is held', async () => {
@@ -131,7 +131,7 @@ describe('useBrowserTabTitle', () => {
     }
     useBrowserTabTitle()
     await nextTick()
-    expect(document.title).toBe('myFlow - ComfyUI')
+    expect(document.title).toBe('myFlow - Hanzo Studio')
   })
 
   // Fails when run together with other tests. Suspect to be caused by leaked
@@ -146,7 +146,7 @@ describe('useBrowserTabTitle', () => {
     const scope: EffectScope = effectScope()
     scope.run(() => useBrowserTabTitle())
     await nextTick()
-    expect(document.title).toBe('ComfyUI')
+    expect(document.title).toBe('Hanzo Studio')
     scope.stop()
   })
 
@@ -156,7 +156,7 @@ describe('useBrowserTabTitle', () => {
     const scope: EffectScope = effectScope()
     scope.run(() => useBrowserTabTitle())
     await nextTick()
-    expect(document.title).toBe('[30%]ComfyUI')
+    expect(document.title).toBe('[30%]Hanzo Studio')
     scope.stop()
   })
 

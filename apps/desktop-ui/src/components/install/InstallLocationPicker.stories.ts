@@ -24,7 +24,7 @@ const meta: Meta<typeof InstallLocationPicker> = {
       ;(window as any).electronAPI = {
         getSystemPaths: () =>
           Promise.resolve({
-            defaultInstallPath: '/Users/username/ComfyUI'
+            defaultInstallPath: '/Users/username/Hanzo Studio'
           }),
         validateInstallPath: () =>
           Promise.resolve({
@@ -35,11 +35,11 @@ const meta: Meta<typeof InstallLocationPicker> = {
             requiredSpace: 10000000000,
             isNonDefaultDrive: false
           }),
-        validateComfyUISource: () =>
+        validateHanzo StudioSource: () =>
           Promise.resolve({
             isValid: true
           }),
-        showDirectoryPicker: () => Promise.resolve('/Users/username/ComfyUI')
+        showDirectoryPicker: () => Promise.resolve('/Users/username/Hanzo Studio')
       }
       return { template: '<story />' }
     }
@@ -54,9 +54,9 @@ export const Default: Story = {
   render: (args) => ({
     components: { InstallLocationPicker },
     setup() {
-      const installPath = ref('/Users/username/ComfyUI')
+      const installPath = ref('/Users/username/Hanzo Studio')
       const pathError = ref('')
-      const migrationSourcePath = ref('/Users/username/ComfyUI-old')
+      const migrationSourcePath = ref('/Users/username/Hanzo Studio-old')
       const migrationItemIds = ref<string[]>(['models', 'custom_nodes'])
 
       return {
@@ -85,9 +85,9 @@ export const OnNeutral900: Story = {
   render: (args) => ({
     components: { InstallLocationPicker },
     setup() {
-      const installPath = ref('/Users/username/ComfyUI')
+      const installPath = ref('/Users/username/Hanzo Studio')
       const pathError = ref('')
-      const migrationSourcePath = ref('/Users/username/ComfyUI-old')
+      const migrationSourcePath = ref('/Users/username/Hanzo Studio-old')
       const migrationItemIds = ref<string[]>(['models', 'custom_nodes'])
 
       return {
@@ -116,9 +116,9 @@ export const DebugBackgrounds: Story = {
   render: (args) => ({
     components: { InstallLocationPicker },
     setup() {
-      const installPath = ref('/Users/username/ComfyUI')
+      const installPath = ref('/Users/username/Hanzo Studio')
       const pathError = ref('')
-      const migrationSourcePath = ref('/Users/username/ComfyUI-old')
+      const migrationSourcePath = ref('/Users/username/Hanzo Studio-old')
       const migrationItemIds = ref<string[]>(['models', 'custom_nodes'])
 
       return {

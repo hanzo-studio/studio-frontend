@@ -19,7 +19,7 @@ function cleanVersion(version: string): string {
 /**
  * Checks version compatibility and returns conflict details.
  * Supports all semver ranges including >=, <=, >, <, ~, ^ operators.
- * @param type Conflict type (e.g., 'comfyui_version', 'frontend_version')
+ * @param type Conflict type (e.g., 'hanzo-studio_version', 'frontend_version')
  * @param currentVersion Current version string
  * @param supportedVersion Required version range string
  * @returns ConflictDetail object if incompatible, null if compatible

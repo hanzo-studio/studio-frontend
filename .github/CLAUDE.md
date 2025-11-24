@@ -1,4 +1,4 @@
-# ComfyUI Frontend - Claude Review Context
+# Hanzo Studio Frontend - Claude Review Context
 
 This file provides additional context for the automated PR review system.
 

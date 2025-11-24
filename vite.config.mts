@@ -29,17 +29,17 @@ const DISABLE_TEMPLATES_PROXY = process.env.DISABLE_TEMPLATES_PROXY === 'true'
 const GENERATE_SOURCEMAP = process.env.GENERATE_SOURCEMAP !== 'false'
 
 // Open Graph / Twitter Meta Tags Constants
-const VITE_OG_URL = 'https://cloud.comfy.org'
+const VITE_OG_URL = 'https://cloud.studio.hanzo.ai'
 const VITE_OG_TITLE =
-  'Comfy Cloud: Run ComfyUI online | Zero Setup, Powerful GPUs, Create anywhere'
+  'Comfy Cloud: Run Hanzo Studio online | Zero Setup, Powerful GPUs, Create anywhere'
 const VITE_OG_DESC =
   'Bring your creative ideas to life with Comfy Cloud. Build and run your workflows to generate stunning images and videos instantly using powerful GPUs — all from your browser, no installation required.'
 const VITE_OG_IMAGE = `${VITE_OG_URL}/assets/images/og-image.png`
-const VITE_OG_KEYWORDS = 'ComfyUI, Comfy Cloud, ComfyUI online'
+const VITE_OG_KEYWORDS = 'Hanzo Studio, Comfy Cloud, Hanzo Studio online'
 
 // Auto-detect cloud mode from DEV_SERVER_COMFYUI_URL
 const DEV_SERVER_COMFYUI_ENV_URL = process.env.DEV_SERVER_COMFYUI_URL
-const IS_CLOUD_URL = DEV_SERVER_COMFYUI_ENV_URL?.includes('.comfy.org')
+const IS_CLOUD_URL = DEV_SERVER_COMFYUI_ENV_URL?.includes('.studio.hanzo.ai')
 
 const DISTRIBUTION: 'desktop' | 'localhost' | 'cloud' =
   process.env.DISTRIBUTION === 'desktop' ||
@@ -57,7 +57,7 @@ const DISABLE_VUE_PLUGINS =
 
 const DEV_SEVER_FALLBACK_URL =
   DISTRIBUTION === 'cloud'
-    ? 'https://stagingcloud.comfy.org'
+    ? 'https://stagingcloud.studio.hanzo.ai'
     : 'http://127.0.0.1:8188'
 
 const DEV_SERVER_COMFYUI_URL =
@@ -516,7 +516,7 @@ export default defineConfig({
   },
 
   optimizeDeps: {
-    exclude: ['@comfyorg/comfyui-electron-types'],
+    exclude: ['@hanzo-studio/electron-types'],
     entries: ['index.html']
   }
 }) satisfies UserConfig as UserConfig

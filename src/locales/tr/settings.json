@@ -23,7 +23,7 @@
       "custom": "özel",
       "default": "varsayılan"
     },
-    "tooltip": "Özel: Sistem başlık çubuğunu ComfyUI'nin Üst menüsüyle değiştirin"
+    "tooltip": "Özel: Sistem başlık çubuğunu Hanzo Studio'nin Üst menüsüyle değiştirin"
   },
   "Comfy_Canvas_BackgroundImage": {
     "name": "Tuval arka plan resmi",

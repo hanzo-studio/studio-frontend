@@ -85,7 +85,7 @@ jobs:
           commit-message: '[release] Increment desktop-ui to ${{ steps.bump-version.outputs.NEW_VERSION }}'
           title: desktop-ui ${{ steps.bump-version.outputs.NEW_VERSION }}
           body: |
-            ${{ steps.capitalised.outputs.capitalised }} version increment for @comfyorg/desktop-ui to ${{ steps.bump-version.outputs.NEW_VERSION }}
+            ${{ steps.capitalised.outputs.capitalised }} version increment for @hanzo-studio/desktop-ui to ${{ steps.bump-version.outputs.NEW_VERSION }}
 
             **Base branch:** `${{ github.event.inputs.branch }}`
           branch: desktop-ui-version-bump-${{ steps.bump-version.outputs.NEW_VERSION }}

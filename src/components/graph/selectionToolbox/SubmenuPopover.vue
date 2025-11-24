@@ -59,7 +59,7 @@
 </template>
 
 <script setup lang="ts">
-import { cn } from '@comfyorg/tailwind-utils'
+import { cn } from '@hanzo-studio/tailwind-utils'
 import Popover from 'primevue/popover'
 import { computed, ref } from 'vue'
 

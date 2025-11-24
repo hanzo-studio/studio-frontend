@@ -9,7 +9,7 @@
           {{ t('auth.apiKey.description') }}
         </p>
         <a
-          href="https://docs.comfy.org/interface/user#logging-in-with-an-api-key"
+          href="https://docs.studio.hanzo.ai/interface/user#logging-in-with-an-api-key"
           target="_blank"
           class="cursor-pointer text-blue-500"
         >
@@ -56,7 +56,7 @@
             </a>
             <span class="mx-1">•</span>
             <a
-              href="https://docs.comfy.org/tutorials/api-nodes/overview#log-in-with-api-key-on-non-whitelisted-websites"
+              href="https://docs.studio.hanzo.ai/tutorials/api-nodes/overview#log-in-with-api-key-on-non-whitelisted-websites"
               target="_blank"
               class="cursor-pointer text-blue-500"
             >

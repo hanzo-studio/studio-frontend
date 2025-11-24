@@ -38,7 +38,7 @@ concurrency:
 
 jobs:
   publish_desktop_ui:
-    name: Publish @comfyorg/desktop-ui
+    name: Publish @hanzo-studio/desktop-ui
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -139,7 +139,7 @@ jobs:
           jq -n \
             --arg name "$NAME" \
             --arg version "$INPUT_VERSION" \
-            --arg description "Static assets for the ComfyUI Desktop UI" \
+            --arg description "Static assets for the Hanzo Studio Desktop UI" \
             --arg license "$ROOT_LICENSE" \
             --arg repository "$REPO" \
             '{

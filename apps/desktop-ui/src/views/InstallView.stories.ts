@@ -50,11 +50,11 @@ const meta: Meta<typeof InstallView> = {
         Events: {
           trackEvent: (_eventName: string, _data?: any) => {}
         },
-        installComfyUI: (_options: any) => {},
+        installHanzo Studio: (_options: any) => {},
         changeTheme: (_theme: any) => {},
         getSystemPaths: () =>
           Promise.resolve({
-            defaultInstallPath: '/Users/username/ComfyUI'
+            defaultInstallPath: '/Users/username/Hanzo Studio'
           }),
         validateInstallPath: () =>
           Promise.resolve({
@@ -65,11 +65,11 @@ const meta: Meta<typeof InstallView> = {
             requiredSpace: 10000000000,
             isNonDefaultDrive: false
           }),
-        validateComfyUISource: () =>
+        validateHanzo StudioSource: () =>
           Promise.resolve({
             isValid: true
           }),
-        showDirectoryPicker: () => Promise.resolve('/Users/username/ComfyUI')
+        showDirectoryPicker: () => Promise.resolve('/Users/username/Hanzo Studio')
       }
 
       return {

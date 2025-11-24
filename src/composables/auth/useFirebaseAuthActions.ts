@@ -41,7 +41,7 @@ export const useFirebaseAuthActions = () => {
         summary: t('g.error'),
         detail: t('toastMessages.unauthorizedDomain', {
           domain: window.location.hostname,
-          email: 'support@comfy.org'
+          email: 'support@studio.hanzo.ai'
         })
       })
     } else {

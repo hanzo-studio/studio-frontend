@@ -163,8 +163,8 @@ export const useWorkflowTemplatesStore = defineStore(
       const groupedByCategory = [
         {
           label: st(
-            'templateWorkflows.category.ComfyUI Examples',
-            'ComfyUI Examples'
+            'templateWorkflows.category.Hanzo Studio Examples',
+            'Hanzo Studio Examples'
           ),
           modules: [
             createAllCategory(),

@@ -53,7 +53,7 @@
 </template>
 
 <script setup lang="ts">
-import { normalizeI18nKey } from '@comfyorg/shared-frontend-utils/formatUtil'
+import { normalizeI18nKey } from '@hanzo-studio/shared-frontend-utils/formatUtil'
 import Dialog from 'primevue/dialog'
 import Divider from 'primevue/divider'
 import { computed, onMounted, ref, watch } from 'vue'

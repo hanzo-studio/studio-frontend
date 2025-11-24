@@ -137,7 +137,7 @@ export const useKeybindingService = () => {
   }
 
   async function persistUserKeybindings() {
-    // TODO(https://github.com/Comfy-Org/ComfyUI_frontend/issues/1079):
+    // TODO(https://github.com/hanzo-studio/studio-frontend/issues/1079):
     // Allow setting multiple values at once in settingStore
     await settingStore.set(
       'Comfy.Keybinding.NewBindings',

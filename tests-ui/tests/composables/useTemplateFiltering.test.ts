@@ -154,7 +154,7 @@ describe('useTemplateFiltering', () => {
       'Portrait',
       'Video'
     ])
-    expect(availableRunsOn.value).toEqual(['ComfyUI', 'External or Remote API'])
+    expect(availableRunsOn.value).toEqual(['Hanzo Studio', 'External or Remote API'])
 
     searchQuery.value = 'enterprise'
     await nextTick()

@@ -4746,7 +4746,7 @@
     }
   },
   "LazyCache": {
-    "description": "Une version maison d'EasyCache - une version encore 'plus facile' d'EasyCache à implémenter. Fonctionne globalement moins bien qu'EasyCache, mais mieux dans certains cas rares ET une compatibilité universelle avec tout dans ComfyUI.",
+    "description": "Une version maison d'EasyCache - une version encore 'plus facile' d'EasyCache à implémenter. Fonctionne globalement moins bien qu'EasyCache, mais mieux dans certains cas rares ET une compatibilité universelle avec tout dans Hanzo Studio.",
     "display_name": "CacheParesseux",
     "inputs": {
       "end_percent": {
@@ -5409,7 +5409,7 @@
     }
   },
   "MaskPreview": {
-    "description": "Enregistre les images d'entrée dans votre répertoire de sortie ComfyUI.",
+    "description": "Enregistre les images d'entrée dans votre répertoire de sortie Hanzo Studio.",
     "display_name": "MaskPreview",
     "inputs": {
       "mask": {
@@ -8863,7 +8863,7 @@
     }
   },
   "PreviewImage": {
-    "description": "Enregistre les images d'entrée dans votre répertoire de sortie ComfyUI.",
+    "description": "Enregistre les images d'entrée dans votre répertoire de sortie Hanzo Studio.",
     "display_name": "Aperçu Image",
     "inputs": {
       "images": {
@@ -10352,7 +10352,7 @@
     }
   },
   "SaveImage": {
-    "description": "Enregistre les images d'entrée dans votre répertoire de sortie ComfyUI.",
+    "description": "Enregistre les images d'entrée dans votre répertoire de sortie Hanzo Studio.",
     "display_name": "Enregistrer Image",
     "inputs": {
       "filename_prefix": {
@@ -10415,7 +10415,7 @@
     }
   },
   "SaveVideo": {
-    "description": "Enregistre les images d'entrée dans votre répertoire de sortie ComfyUI.",
+    "description": "Enregistre les images d'entrée dans votre répertoire de sortie Hanzo Studio.",
     "display_name": "Enregistrer la vidéo",
     "inputs": {
       "codec": {

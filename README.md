@@ -1,8 +1,8 @@
 <div align="center">
 
-# ComfyUI_frontend
+# studio-frontend
 
-**Official front-end implementation of [ComfyUI](https://github.com/comfyanonymous/ComfyUI).**
+**Official front-end implementation of [Hanzo Studio](https://github.com/hanzoai/Hanzo Studio).**
 
 [![Website][website-shield]][website-url]
 [![Discord][discord-shield]][discord-url]
@@ -14,18 +14,18 @@
 [![][github-downloads-latest-shield]][github-downloads-link]
 
 
-[github-release-shield]: https://img.shields.io/github/v/release/Comfy-Org/ComfyUI_frontend?style=flat&sort=semver
-[github-release-link]: https://github.com/Comfy-Org/ComfyUI_frontend/releases
-[github-release-date-shield]: https://img.shields.io/github/release-date/Comfy-Org/ComfyUI_frontend?style=flat
-[github-downloads-shield]: https://img.shields.io/github/downloads/Comfy-Org/ComfyUI_frontend/total?style=flat
-[github-downloads-latest-shield]: https://img.shields.io/github/downloads/Comfy-Org/ComfyUI_frontend/latest/total?style=flat&label=downloads%40latest
-[github-downloads-link]: https://github.com/Comfy-Org/ComfyUI_frontend/releases
+[github-release-shield]: https://img.shields.io/github/v/release/hanzo-studio/studio-frontend?style=flat&sort=semver
+[github-release-link]: https://github.com/hanzo-studio/studio-frontend/releases
+[github-release-date-shield]: https://img.shields.io/github/release-date/hanzo-studio/studio-frontend?style=flat
+[github-downloads-shield]: https://img.shields.io/github/downloads/hanzo-studio/studio-frontend/total?style=flat
+[github-downloads-latest-shield]: https://img.shields.io/github/downloads/hanzo-studio/studio-frontend/latest/total?style=flat&label=downloads%40latest
+[github-downloads-link]: https://github.com/hanzo-studio/studio-frontend/releases
 [matrix-shield]: https://img.shields.io/badge/Matrix-000000?style=flat&logo=matrix&logoColor=white
-[matrix-url]: https://app.element.io/#/room/%23comfyui_space%3Amatrix.org
-[website-shield]: https://img.shields.io/badge/ComfyOrg-4285F4?style=flat
-[website-url]: https://www.comfy.org/
+[matrix-url]: https://app.element.io/#/room/%23hanzo-studio_space%3Amatrix.org
+[website-shield]: https://img.shields.io/badge/HanzoStudio-4285F4?style=flat
+[website-url]: https://hanzo.ai/
 [discord-shield]: https://img.shields.io/discord/1218270712402415686?style=flat&logo=discord&logoColor=white&label=Discord
-[discord-url]: https://www.comfy.org/discord
+[discord-url]: https://hanzo.ai/discord
 
 </div>
 
@@ -47,12 +47,12 @@ The project follows a structured release process for each minor version, consist
    - Version is finalized and made available to all users
 
 ### Nightly Releases
-Nightly releases are published daily at [https://github.com/Comfy-Org/ComfyUI_frontend/releases](https://github.com/Comfy-Org/ComfyUI_frontend/releases).
+Nightly releases are published daily at [https://github.com/hanzo-studio/studio-frontend/releases](https://github.com/hanzo-studio/studio-frontend/releases).
 
-To use the latest nightly release, add the following command line argument to your ComfyUI launch script:
+To use the latest nightly release, add the following command line argument to your Hanzo Studio launch script:
 
 ```bat
---front-end-version Comfy-Org/ComfyUI_frontend@latest
+--front-end-version hanzo-studio/studio-frontend@latest
 ```
 
 ## Overlapping Release Cycles
@@ -74,17 +74,17 @@ The development of successive minor versions overlaps. For example, while versio
 <details id='feature-native-translation'>
   <summary>v1.5: Native translation (i18n)</summary>
 
-  ComfyUI now includes built-in translation support, replacing the need for third-party translation extensions. Select your language
+  Hanzo Studio now includes built-in translation support, replacing the need for third-party translation extensions. Select your language
   in `Comfy > Locale > Language` to translate the interface into English, Chinese (Simplified), Russian, Japanese, Korean, or Arabic. This native
   implementation offers better performance, reliability, and maintainability compared to previous solutions.<br>
 
-  More details available here: https://blog.comfy.org/p/native-localization-support-i18n
+  More details available here: https://blog.studio.hanzo.ai/p/native-localization-support-i18n
 </details>
 
 <details id='feature-mask-editor'>
   <summary>v1.4: New mask editor</summary>
 
-  https://github.com/Comfy-Org/ComfyUI_frontend/pull/1284 implements a new mask editor.
+  https://github.com/hanzo-studio/studio-frontend/pull/1284 implements a new mask editor.
 
   ![image](https://github.com/user-attachments/assets/f0ea6ee5-00ee-4e5d-a09c-6938e86a1f17)
 </details>
@@ -243,9 +243,9 @@ https://github.com/user-attachments/assets/c142c43f-2fe9-4030-8196-b3bfd4c6977d
 ### Developer APIs
 
 <details>
-  <summary>v1.6.13: prompt/confirm/alert replacements for ComfyUI desktop</summary>
+  <summary>v1.6.13: prompt/confirm/alert replacements for Hanzo Studio desktop</summary>
 
-Several browser-only APIs are not available in ComfyUI desktop's electron environment.
+Several browser-only APIs are not available in Hanzo Studio desktop's electron environment.
 
 - `window.prompt`
 - `window.confirm`
@@ -512,7 +512,7 @@ The selection toolbox will display the command button when items are selected:
 
 ## Contributing
 
-We welcome contributions to ComfyUI Frontend! Please see our [Contributing Guide](CONTRIBUTING.md) for:
+We welcome contributions to Hanzo Studio Frontend! Please see our [Contributing Guide](CONTRIBUTING.md) for:
 
 - Ways to contribute (code, documentation, testing, community support)
 - Development setup and workflow
@@ -537,6 +537,6 @@ See [.storybook/README.md](.storybook/README.md) for component development and v
 
 For comprehensive troubleshooting and technical support, please refer to our official documentation:
 
-- **[General Troubleshooting Guide](https://docs.comfy.org/troubleshooting/overview)** - Common issues, performance optimization, and reporting bugs
-- **[Custom Node Issues](https://docs.comfy.org/troubleshooting/custom-node-issues)** - Debugging custom node problems and conflicts
-- **[Desktop Installation Guide](https://docs.comfy.org/installation/desktop/windows)** - Desktop-specific installation and troubleshooting
+- **[General Troubleshooting Guide](https://docs.studio.hanzo.ai/troubleshooting/overview)** - Common issues, performance optimization, and reporting bugs
+- **[Custom Node Issues](https://docs.studio.hanzo.ai/troubleshooting/custom-node-issues)** - Debugging custom node problems and conflicts
+- **[Desktop Installation Guide](https://docs.studio.hanzo.ai/installation/desktop/windows)** - Desktop-specific installation and troubleshooting

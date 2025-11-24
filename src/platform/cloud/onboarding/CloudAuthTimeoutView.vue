@@ -51,7 +51,7 @@
       <p class="mb-5 text-center text-sm text-gray-600">
         {{ $t('cloudOnboarding.authTimeout.helpText') }}
         <a
-          href="https://support.comfy.org"
+          href="https://support.studio.hanzo.ai"
           class="cursor-pointer text-blue-400 no-underline"
           target="_blank"
           rel="noopener noreferrer"

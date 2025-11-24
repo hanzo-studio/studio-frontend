@@ -36,7 +36,7 @@
 </template>
 
 <script setup lang="ts">
-import type { TorchDeviceType } from '@comfyorg/comfyui-electron-types'
+import type { TorchDeviceType } from '@hanzo-studio/electron-types'
 
 import { cn } from '@/utils/tailwindUtil'
 

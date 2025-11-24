@@ -139,7 +139,7 @@ describe('TaskItemImpl', () => {
     expect(output.isImage).toBe(false)
   })
 
-  // https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite/blob/0a75c7958fe320efcb052f1d9f8451fd20c730a8/videohelpersuite/nodes.py#L578-L590
+  // https://github.com/Kosinkadink/Hanzo Studio-VideoHelperSuite/blob/0a75c7958fe320efcb052f1d9f8451fd20c730a8/videohelpersuite/nodes.py#L578-L590
   it('should recognize webm video from VHS', () => {
     const taskItem = new TaskItemImpl(
       'History',

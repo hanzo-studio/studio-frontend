@@ -4,7 +4,7 @@ import { useFirebaseAuthStore } from '@/stores/firebaseAuthStore'
 
 /**
  * Session cookie management for cloud authentication.
- * Creates and deletes session cookies on the ComfyUI server.
+ * Creates and deletes session cookies on the Hanzo Studio server.
  */
 export const useSessionCookie = () => {
   /**

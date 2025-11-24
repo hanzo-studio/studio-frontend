@@ -97,7 +97,7 @@ async function runButtonClick(e: Event) {
 function openFeedback() {
   //TODO: Does not link to a linear specific feedback section
   window.open(
-    'https://support.comfy.org/hc/en-us/requests/new?ticket_form_id=40026345549204',
+    'https://support.studio.hanzo.ai/hc/en-us/requests/new?ticket_form_id=40026345549204',
     '_blank',
     'noopener,noreferrer'
   )

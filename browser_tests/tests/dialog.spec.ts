@@ -119,7 +119,7 @@ test.describe('Missing models warning', () => {
       body: JSON.stringify([
         {
           name: 'text_encoders',
-          folders: ['ComfyUI/models/text_encoders']
+          folders: ['Hanzo Studio/models/text_encoders']
         }
       ])
     }
@@ -166,12 +166,12 @@ test.describe('Missing models warning', () => {
   })
 
   // Flaky test after parallelization
-  // https://github.com/Comfy-Org/ComfyUI_frontend/pull/1400
+  // https://github.com/hanzo-studio/studio-frontend/pull/1400
   test.skip('Should download missing model when clicking download button', async ({
     comfyPage
   }) => {
     // The fake_model.safetensors is served by
-    // https://github.com/Comfy-Org/ComfyUI_devtools/blob/main/__init__.py
+    // https://github.com/hanzo-studio/Hanzo Studio_devtools/blob/main/__init__.py
     await comfyPage.loadWorkflow('missing/missing_models')
 
     const missingModelsWarning = comfyPage.page.locator('.comfy-missing-models')

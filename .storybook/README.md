@@ -1,4 +1,4 @@
-# Storybook Configuration for ComfyUI Frontend
+# Storybook Configuration for Hanzo Studio Frontend
 
 ## What is Storybook?
 
@@ -84,7 +84,7 @@ export const WithVariant: Story = {
 
 - **Vue 3 Support**: Full Vue 3 composition API and reactivity
 - **PrimeVue Integration**: All PrimeVue components and theming
-- **ComfyUI Theming**: Custom ComfyUI theme preset applied
+- **Hanzo Studio Theming**: Custom Hanzo Studio theme preset applied
 - **Pinia Stores**: Access to application stores for components that need state
 - **TypeScript**: Full TypeScript support with proper type checking
 - **CSS/SCSS**: Component styling support
@@ -93,7 +93,7 @@ export const WithVariant: Story = {
 
 ## Development Tips
 
-## ComfyUI Storybook Guidelines
+## Hanzo Studio Storybook Guidelines
 
 ### Scope – When to Create Stories
 - **PrimeVue components**:  
@@ -199,11 +199,11 @@ This project uses [Chromatic](https://chromatic.com) for automated visual regres
 - **Edge Cases**: Include stories for loading, error, and empty states
 - **Realistic Data**: Use data that closely resembles production usage
 
-## Integration with ComfyUI
+## Integration with Hanzo Studio
 
 This Storybook setup includes:
 
-- ComfyUI-specific theming and styling
+- Hanzo Studio-specific theming and styling
 - Pre-configured Pinia stores for state management
 - Internationalization (i18n) support
 - PrimeVue component library integration

@@ -1,8 +1,8 @@
 {
-  "name": "@comfyorg/shared-frontend-utils",
+  "name": "@hanzo-studio/shared-frontend-utils",
   "private": true,
   "version": "1.0.0",
-  "description": "Shared frontend utils for ComfyUI Frontend",
+  "description": "Shared frontend utils for Hanzo Studio Frontend",
   "scripts": {
     "typecheck": "tsc --noEmit"
   },

@@ -12,7 +12,7 @@ import PromptDialogContent from '@/components/dialog/content/PromptDialogContent
 import SignInContent from '@/components/dialog/content/SignInContent.vue'
 import TopUpCreditsDialogContent from '@/components/dialog/content/TopUpCreditsDialogContent.vue'
 import UpdatePasswordContent from '@/components/dialog/content/UpdatePasswordContent.vue'
-import ComfyOrgHeader from '@/components/dialog/header/ComfyOrgHeader.vue'
+import HanzoStudioHeader from '@/components/dialog/header/HanzoStudioHeader.vue'
 import SettingDialogHeader from '@/components/dialog/header/SettingDialogHeader.vue'
 import { t } from '@/i18n'
 import { useTelemetry } from '@/platform/telemetry'
@@ -269,7 +269,7 @@ export const useDialogService = () => {
           onLogin: () => showSignInDialog().then((result) => resolve(result)),
           onCancel: () => resolve(false)
         },
-        headerComponent: ComfyOrgHeader,
+        headerComponent: HanzoStudioHeader,
         dialogComponentProps: {
           closable: false,
           onClose: () => resolve(false)
@@ -286,7 +286,7 @@ export const useDialogService = () => {
       dialogStore.showDialog({
         key: 'global-signin',
         component: SignInContent,
-        headerComponent: ComfyOrgHeader,
+        headerComponent: HanzoStudioHeader,
         props: {
           onSuccess: () => resolve(true)
         },
@@ -386,7 +386,7 @@ export const useDialogService = () => {
     return dialogStore.showDialog({
       key: 'top-up-credits',
       component: TopUpCreditsDialogContent,
-      headerComponent: ComfyOrgHeader,
+      headerComponent: HanzoStudioHeader,
       props: options,
       dialogComponentProps: {
         pt: {
@@ -403,7 +403,7 @@ export const useDialogService = () => {
     return dialogStore.showDialog({
       key: 'global-update-password',
       component: UpdatePasswordContent,
-      headerComponent: ComfyOrgHeader,
+      headerComponent: HanzoStudioHeader,
       props: {
         onSuccess: () =>
           dialogStore.closeDialog({ key: 'global-update-password' })

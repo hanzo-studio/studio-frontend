@@ -220,7 +220,7 @@ export const zComfyNodeDef = z.object({
   /**
    * Whether the node is an API node. Running API nodes requires login to
    * Comfy Org account.
-   * https://docs.comfy.org/tutorials/api-nodes/overview
+   * https://docs.studio.hanzo.ai/tutorials/api-nodes/overview
    */
   api_node: z.boolean().optional(),
   /**

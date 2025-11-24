@@ -3,7 +3,7 @@ import { expect } from '@playwright/test'
 import { userSelectPageFixture as test } from '../fixtures/UserSelectPage'
 
 /**
- * Expects ComfyUI backend to be launched with `--multi-user` flag.
+ * Expects Hanzo Studio backend to be launched with `--multi-user` flag.
  */
 test.describe('User Select View', () => {
   test.beforeEach(async ({ userSelectPage, page }) => {

@@ -93,7 +93,7 @@ export interface ISerialisedNode {
    * Note: Some custom nodes overrides the `widgets_values` property to an
    * object that has `length` property and index access. It is not safe to call
    * any array methods on it.
-   * See example in https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite/blob/8629188458dc6cb832f871ece3bd273507e8a766/web/js/VHS.core.js#L59-L84
+   * See example in https://github.com/Kosinkadink/Hanzo Studio-VideoHelperSuite/blob/8629188458dc6cb832f871ece3bd273507e8a766/web/js/VHS.core.js#L59-L84
    */
   widgets_values?: TWidgetValue[]
 }

@@ -174,7 +174,7 @@ const handleRestart = async () => {
 
     useEventListener(api, 'reconnected', onReconnect, { once: true })
 
-    await useComfyManagerService().rebootComfyUI()
+    await useComfyManagerService().rebootHanzo Studio()
   } catch (error) {
     // If restart fails, restore settings and reset state
     await settingStore.set(

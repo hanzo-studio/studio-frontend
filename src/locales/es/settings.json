@@ -23,7 +23,7 @@
       "custom": "personalizado",
       "default": "predeterminado"
     },
-    "tooltip": "Personalizado: Reemplace la barra de título del sistema con el menú superior de ComfyUI"
+    "tooltip": "Personalizado: Reemplace la barra de título del sistema con el menú superior de Hanzo Studio"
   },
   "Comfy_Canvas_BackgroundImage": {
     "name": "Imagen de fondo del lienzo",

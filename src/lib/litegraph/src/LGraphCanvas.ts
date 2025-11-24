@@ -6390,7 +6390,7 @@ export class LGraphCanvas
           this.graph.add(newNode)
 
           // Interim API - allow the link connection to be canceled.
-          // TODO: https://github.com/Comfy-Org/litegraph.js/issues/946
+          // TODO: https://github.com/hanzo-studio/litegraph.js/issues/946
           const detail = { node: newNode, opts }
           const mayConnectLinks = this.canvas.dispatchEvent(
             new CustomEvent('connect-new-default-node', {

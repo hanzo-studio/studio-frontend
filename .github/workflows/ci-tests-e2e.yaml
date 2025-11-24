@@ -22,8 +22,8 @@ jobs:
         uses: actions/checkout@v5
 
       # Setup Test Environment, build frontend but do not start server yet
-      - name: Setup ComfyUI server
-        uses: ./.github/actions/setup-comfyui-server
+      - name: Setup Hanzo Studio server
+        uses: ./.github/actions/setup-hanzo-studio-server
       - name: Setup frontend
         uses: ./.github/actions/setup-frontend
         with:
@@ -39,7 +39,7 @@ jobs:
         uses: actions/cache/save@5a3ec84eff668545956fd18022155c47e93e2684
         with:
           path: .
-          key: comfyui-setup-${{ steps.cache-key.outputs.key }}
+          key: hanzo-studio-setup-${{ steps.cache-key.outputs.key }}
 
   # Sharded chromium tests
   playwright-tests-chromium-sharded:
@@ -61,11 +61,11 @@ jobs:
         with:
           fail-on-cache-miss: true
           path: .
-          key: comfyui-setup-${{ needs.setup.outputs.cache-key }}
+          key: hanzo-studio-setup-${{ needs.setup.outputs.cache-key }}
 
       # Setup Test Environment for this runner, start server, use cached built frontend ./dist from 'setup' job
-      - name: Setup ComfyUI server
-        uses: ./.github/actions/setup-comfyui-server
+      - name: Setup Hanzo Studio server
+        uses: ./.github/actions/setup-hanzo-studio-server
         with:
           launch_server: true
       - name: Setup nodejs, pnpm, reuse built frontend
@@ -108,11 +108,11 @@ jobs:
         with:
           fail-on-cache-miss: true
           path: .
-          key: comfyui-setup-${{ needs.setup.outputs.cache-key }}
+          key: hanzo-studio-setup-${{ needs.setup.outputs.cache-key }}
 
       # Setup Test Environment for this runner, start server, use cached built frontend ./dist from 'setup' job
-      - name: Setup ComfyUI server
-        uses: ./.github/actions/setup-comfyui-server
+      - name: Setup Hanzo Studio server
+        uses: ./.github/actions/setup-hanzo-studio-server
         with:
           launch_server: true
       - name: Setup nodejs, pnpm, reuse built frontend

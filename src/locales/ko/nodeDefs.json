@@ -4746,7 +4746,7 @@
     }
   },
   "LazyCache": {
-    "description": "EasyCache의 자체 제작 버전 - 구현이 '더 쉬운' EasyCache 버전입니다. 전체적으로는 EasyCache보다 성능이 떨어지지만, 일부 드문 경우에 더 좋으며 ComfyUI의 모든 것과 완벽한 호환성을 제공합니다.",
+    "description": "EasyCache의 자체 제작 버전 - 구현이 '더 쉬운' EasyCache 버전입니다. 전체적으로는 EasyCache보다 성능이 떨어지지만, 일부 드문 경우에 더 좋으며 Hanzo Studio의 모든 것과 완벽한 호환성을 제공합니다.",
     "display_name": "LazyCache",
     "inputs": {
       "end_percent": {
@@ -5409,7 +5409,7 @@
     }
   },
   "MaskPreview": {
-    "description": "입력 이미지를 ComfyUI 출력 디렉터리에 저장합니다.",
+    "description": "입력 이미지를 Hanzo Studio 출력 디렉터리에 저장합니다.",
     "display_name": "마스크 미리보기",
     "inputs": {
       "mask": {
@@ -8863,7 +8863,7 @@
     }
   },
   "PreviewImage": {
-    "description": "입력 이미지를 ComfyUI 의 임시(temp) 폴더에 저장합니다.",
+    "description": "입력 이미지를 Hanzo Studio 의 임시(temp) 폴더에 저장합니다.",
     "display_name": "이미지 미리보기",
     "inputs": {
       "images": {
@@ -10352,7 +10352,7 @@
     }
   },
   "SaveImage": {
-    "description": "입력 이미지를 ComfyUI 출력 디렉토리에 저장합니다.",
+    "description": "입력 이미지를 Hanzo Studio 출력 디렉토리에 저장합니다.",
     "display_name": "이미지 저장",
     "inputs": {
       "filename_prefix": {
@@ -10415,7 +10415,7 @@
     }
   },
   "SaveVideo": {
-    "description": "입력 이미지를 ComfyUI 출력 디렉토리에 저장합니다.",
+    "description": "입력 이미지를 Hanzo Studio 출력 디렉토리에 저장합니다.",
     "display_name": "비디오 저장",
     "inputs": {
       "codec": {

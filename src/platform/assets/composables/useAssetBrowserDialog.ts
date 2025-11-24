@@ -4,7 +4,7 @@ import { useDialogStore } from '@/stores/dialogStore'
 import type { DialogComponentProps } from '@/stores/dialogStore'
 
 interface ShowOptions {
-  /** ComfyUI node type for context (e.g., 'CheckpointLoaderSimple') */
+  /** Hanzo Studio node type for context (e.g., 'CheckpointLoaderSimple') */
   nodeType: string
   /** Widget input name (e.g., 'ckpt_name') */
   inputName: string

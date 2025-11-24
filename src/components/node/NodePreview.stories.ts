@@ -4,7 +4,7 @@ import type { ComfyNodeDef as ComfyNodeDefV2 } from '@/schemas/nodeDef/nodeDefSc
 
 import NodePreview from './NodePreview.vue'
 
-// Mock node definition data for a typical ComfyUI node
+// Mock node definition data for a typical Hanzo Studio node
 const mockNodeDef: ComfyNodeDefV2 = {
   name: 'KSampler',
   display_name: 'KSampler',
@@ -184,7 +184,7 @@ const meta: Meta<typeof NodePreview> = {
     docs: {
       description: {
         component:
-          'NodePreview displays a preview of a ComfyUI node with its inputs, outputs, and parameters. This component is used to show node information in sidebars and tooltips.'
+          'NodePreview displays a preview of a Hanzo Studio node with its inputs, outputs, and parameters. This component is used to show node information in sidebars and tooltips.'
       }
     }
   },
