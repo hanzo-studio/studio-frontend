@@ -1,1 +1,1 @@
-recursive-include comfyui_frontend_package/static *
+recursive-include hanzo-studio_frontend_package/static *

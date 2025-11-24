@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: hanzo-studio-frontend
+Version: 1.30.6
+Summary: Hanzo Studio Web Frontend
+Home-page: https://github.com/hanzoai/studio-frontend
+Author: Hanzo AI
+Author-email: dev@hanzo.ai
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.9
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: home-page
+Dynamic: requires-python
+Dynamic: summary

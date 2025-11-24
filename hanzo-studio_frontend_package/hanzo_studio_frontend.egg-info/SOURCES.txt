@@ -1,0 +1,8 @@
+MANIFEST.in
+README.md
+setup.py
+hanzo-studio_frontend_package/__init__.py
+hanzo_studio_frontend.egg-info/PKG-INFO
+hanzo_studio_frontend.egg-info/SOURCES.txt
+hanzo_studio_frontend.egg-info/dependency_links.txt
+hanzo_studio_frontend.egg-info/top_level.txt
