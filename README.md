@@ -2,7 +2,7 @@
 
 # studio-frontend
 
-**Official front-end implementation of [Hanzo Studio](https://github.com/hanzoai/Hanzo Studio).**
+**Official front-end implementation of [Hanzo Studio](https://github.com/hanzoai/ComfyUI).**
 
 [![Website][website-shield]][website-url]
 [![Discord][discord-shield]][discord-url]
