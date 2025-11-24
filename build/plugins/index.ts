@@ -1,2 +1,2 @@
-export { comfyAPIPlugin } from './comfyAPIPlugin'
+export { hanzoAPIPlugin } from './hanzoAPIPlugin'
 export { generateImportMapPlugin } from './generateImportMapPlugin'

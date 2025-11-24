@@ -16,7 +16,7 @@ import type { ProxyOptions, UserConfig } from 'vite'
 import { createHtmlPlugin } from 'vite-plugin-html'
 import vueDevTools from 'vite-plugin-vue-devtools'
 
-import { comfyAPIPlugin, generateImportMapPlugin } from './build/plugins'
+import { hanzoAPIPlugin, generateImportMapPlugin } from './build/plugins'
 
 dotenvConfig()
 
@@ -233,7 +233,7 @@ export default defineConfig({
       : [vue()]),
     tailwindcss(),
     typegpuPlugin({}),
-    comfyAPIPlugin(IS_DEV),
+    hanzoAPIPlugin(IS_DEV),
     // Twitter/Open Graph meta tags plugin (cloud distribution only)
     {
       name: 'inject-twitter-meta',
