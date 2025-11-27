@@ -91,7 +91,7 @@ jobs:
           USE_PROD_CONFIG: 'true'
         run: |
           echo "🔨 Building frontend..."
-          pnpm install --ignore-scripts
+          pnpm install --no-frozen-lockfile --ignore-scripts
           pnpm exec vite build
 
       - name: Setup PyPI package
