@@ -91,8 +91,8 @@ jobs:
           USE_PROD_CONFIG: 'true'
         run: |
           echo "🔨 Building frontend..."
-          pnpm install --frozen-lockfile
-          pnpm build
+          pnpm install --no-frozen-lockfile
+          nx build @hanzo-studio/web-ui
 
       - name: Setup PyPI package
         if: steps.should_publish.outputs.publish == 'true'
