@@ -1,0 +1,131 @@
+name: Auto-Publish PyPI Package
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'package.json'
+      - 'hanzo-studio_frontend_package/setup.py'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Force publish even if version exists on PyPI'
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  check-and-publish:
+    name: Check Version and Publish to PyPI
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+          cache: 'pnpm'
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install build twine
+
+      - name: Get package version
+        id: package_version
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "📦 Package version: $VERSION"
+
+      - name: Check PyPI version
+        id: pypi_version
+        run: |
+          PYPI_VERSION=$(python -c "
+          import urllib.request, json
+          try:
+              with urllib.request.urlopen('https://pypi.org/pypi/hanzo-studio-frontend/json') as r:
+                  print(json.loads(r.read())['info']['version'])
+          except:
+              print('0.0.0')
+          ")
+          echo "version=$PYPI_VERSION" >> $GITHUB_OUTPUT
+          echo "📡 PyPI version: $PYPI_VERSION"
+
+      - name: Compare versions
+        id: should_publish
+        run: |
+          PACKAGE_VERSION="${{ steps.package_version.outputs.version }}"
+          PYPI_VERSION="${{ steps.pypi_version.outputs.version }}"
+          FORCE="${{ github.event.inputs.force }}"
+
+          if [ "$FORCE" = "true" ]; then
+            echo "🔄 Force publish enabled"
+            echo "publish=true" >> $GITHUB_OUTPUT
+          elif [ "$PACKAGE_VERSION" != "$PYPI_VERSION" ]; then
+            echo "✅ New version detected: $PACKAGE_VERSION > $PYPI_VERSION"
+            echo "publish=true" >> $GITHUB_OUTPUT
+          else
+            echo "⏭️  Version $PACKAGE_VERSION already exists on PyPI"
+            echo "publish=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Build frontend
+        if: steps.should_publish.outputs.publish == 'true'
+        env:
+          ENABLE_MINIFY: 'true'
+          USE_PROD_CONFIG: 'true'
+        run: |
+          echo "🔨 Building frontend..."
+          pnpm install --frozen-lockfile
+          pnpm build
+
+      - name: Setup PyPI package
+        if: steps.should_publish.outputs.publish == 'true'
+        run: |
+          echo "📦 Setting up PyPI package structure..."
+          mkdir -p hanzo-studio_frontend_package/hanzo_studio_frontend/static/
+          cp -r dist/* hanzo-studio_frontend_package/hanzo_studio_frontend/static/
+
+      - name: Build PyPI package
+        if: steps.should_publish.outputs.publish == 'true'
+        working-directory: hanzo-studio_frontend_package
+        env:
+          STUDIO_FRONTEND_VERSION: ${{ steps.package_version.outputs.version }}
+        run: |
+          echo "🏗️  Building PyPI package..."
+          python -m build
+
+      - name: Check package
+        if: steps.should_publish.outputs.publish == 'true'
+        working-directory: hanzo-studio_frontend_package
+        run: |
+          echo "🔍 Checking package..."
+          twine check dist/*
+
+      - name: Publish to PyPI
+        if: steps.should_publish.outputs.publish == 'true'
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          password: ${{ secrets.PYPI_TOKEN }}
+          packages-dir: hanzo-studio_frontend_package/dist
+          skip-existing: true
+
+      - name: Success message
+        if: steps.should_publish.outputs.publish == 'true'
+        run: |
+          echo "✅ Successfully published hanzo-studio-frontend ${{ steps.package_version.outputs.version }} to PyPI!"
