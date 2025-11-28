@@ -91,6 +91,8 @@ jobs:
           USE_PROD_CONFIG: 'true'
         run: |
           echo "🔨 Building frontend..."
+          # Temporarily exclude desktop-ui from workspace (it has unpublished dependencies)
+          sed -i "s|  - apps/\*\*|  # - apps/**  # Excluded for CI|" pnpm-workspace.yaml
           pnpm install --no-frozen-lockfile --ignore-scripts
           pnpm exec vite build
 
