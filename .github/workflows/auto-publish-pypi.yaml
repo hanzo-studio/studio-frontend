@@ -92,7 +92,37 @@ jobs:
         run: |
           echo "🔨 Building frontend..."
           # Temporarily exclude desktop-ui from workspace (it has unpublished dependencies)
-          sed -i "s|  - apps/\*\*|  # - apps/**  # Excluded for CI|" pnpm-workspace.yaml
+          sed -i 's|  - apps/\*\*|  # - apps/**  # Excluded for CI|' pnpm-workspace.yaml
+          # Remove electron-types dependency from root package.json (it's not published to npm yet)
+          sed -i '/"@hanzo-studio\/electron-types": "catalog:",/d' package.json
+          # Create a stub for electron-types to satisfy TypeScript during build
+          mkdir -p node_modules/@hanzo-studio/electron-types
+          cat > node_modules/@hanzo-studio/electron-types/package.json << 'EOF'
+          {
+            "name": "@hanzo-studio/electron-types",
+            "version": "0.5.5",
+            "main": "index.js",
+            "types": "index.d.ts"
+          }
+          EOF
+          cat > node_modules/@hanzo-studio/electron-types/index.d.ts << 'EOF'
+          // Stub types for CI build
+          export enum DownloadStatus {
+            Idle = 'idle',
+            Downloading = 'downloading',
+            Completed = 'completed',
+            Failed = 'failed'
+          }
+          export interface DownloadState {
+            status: DownloadStatus;
+            progress?: number;
+            error?: string;
+          }
+          export interface ElectronAPI {
+            [key: string]: any;
+          }
+          EOF
+          echo "export {}" > node_modules/@hanzo-studio/electron-types/index.js
           pnpm install --no-frozen-lockfile --ignore-scripts
           pnpm exec vite build
 
