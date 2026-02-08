@@ -91,7 +91,7 @@
     "build-storybook": "storybook build -o dist/storybook"
   },
   "dependencies": {
-    "@hanzo-studio/electron-types": "catalog:",
+    "@hanzo-studio/electron-types": "workspace:*",
     "@hanzo-studio/shared-frontend-utils": "workspace:*",
     "@primevue/core": "catalog:",
     "@primevue/themes": "catalog:",
