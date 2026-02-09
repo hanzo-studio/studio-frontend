@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 import { computed } from 'vue'
 
 import { useExternalLink } from '@/composables/useExternalLink'
-import type { AboutPageBadge } from '@/types/comfy'
+import type { AboutPageBadge } from '@/types/hanzo'
 import { electronAPI, isElectron } from '@/utils/envUtil'
 
 import { useExtensionStore } from './extensionStore'
@@ -14,7 +14,7 @@ export const useAboutPanelStore = defineStore('aboutPanel', () => {
   const systemStatsStore = useSystemStatsStore()
   const { staticUrls } = useExternalLink()
   const coreVersion = computed(
-    () => systemStatsStore?.systemStats?.system?.hanzo-studio_version ?? ''
+    () => systemStatsStore?.systemStats?.system?.hanzo_studio_version ?? ''
   )
 
   const coreBadges = computed<AboutPageBadge[]>(() => [
@@ -23,7 +23,7 @@ export const useAboutPanelStore = defineStore('aboutPanel', () => {
     {
       label: `Hanzo Studio ${
         isElectron()
-          ? 'v' + electronAPI().getHanzo StudioVersion()
+          ? 'v' + electronAPI().getHanzoStudioVersion()
           : coreVersion.value
       }`,
       url: staticUrls.github,

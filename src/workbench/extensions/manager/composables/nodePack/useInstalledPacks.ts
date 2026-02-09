@@ -1,10 +1,10 @@
 import { whenever } from '@vueuse/core'
 import { computed, onUnmounted, ref } from 'vue'
 
-import type { components } from '@/types/comfyRegistryTypes'
+import type { components } from '@/types/hanzoRegistryTypes'
 import { useNodePacks } from '@/workbench/extensions/manager/composables/nodePack/useNodePacks'
-import { useComfyManagerStore } from '@/workbench/extensions/manager/stores/comfyManagerStore'
-import type { UseNodePacksOptions } from '@/workbench/extensions/manager/types/comfyManagerTypes'
+import { useComfyManagerStore } from '@/workbench/extensions/manager/stores/hanzoManagerStore'
+import type { UseNodePacksOptions } from '@/workbench/extensions/manager/types/hanzoManagerTypes'
 
 export const useInstalledPacks = (options: UseNodePacksOptions = {}) => {
   const comfyManagerStore = useComfyManagerStore()

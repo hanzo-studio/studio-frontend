@@ -5,7 +5,7 @@
   "packageManager": "pnpm@10.17.1",
   "type": "module",
   "exports": {
-    ".": "./src/comfyRegistryTypes.ts"
+    ".": "./src/hanzoRegistryTypes.ts"
   },
   "nx": {
     "tags": [

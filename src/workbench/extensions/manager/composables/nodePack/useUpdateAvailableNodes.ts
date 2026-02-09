@@ -1,9 +1,9 @@
 import { compare, valid } from 'semver'
 import { computed, onMounted } from 'vue'
 
-import type { components } from '@/types/comfyRegistryTypes'
+import type { components } from '@/types/hanzoRegistryTypes'
 import { useInstalledPacks } from '@/workbench/extensions/manager/composables/nodePack/useInstalledPacks'
-import { useComfyManagerStore } from '@/workbench/extensions/manager/stores/comfyManagerStore'
+import { useComfyManagerStore } from '@/workbench/extensions/manager/stores/hanzoManagerStore'
 
 /**
  * Composable to find NodePacks that have updates available

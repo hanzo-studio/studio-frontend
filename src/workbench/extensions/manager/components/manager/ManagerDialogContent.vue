@@ -143,8 +143,8 @@ import NoResultsPlaceholder from '@/components/common/NoResultsPlaceholder.vue'
 import VirtualGrid from '@/components/common/VirtualGrid.vue'
 import { useResponsiveCollapse } from '@/composables/element/useResponsiveCollapse'
 import { useExternalLink } from '@/composables/useExternalLink'
-import { useComfyRegistryStore } from '@/stores/comfyRegistryStore'
-import type { components } from '@/types/comfyRegistryTypes'
+import { useComfyRegistryStore } from '@/stores/hanzoRegistryStore'
+import type { components } from '@/types/hanzoRegistryTypes'
 import ManagerNavSidebar from '@/workbench/extensions/manager/components/manager/ManagerNavSidebar.vue'
 import InfoPanel from '@/workbench/extensions/manager/components/manager/infoPanel/InfoPanel.vue'
 import InfoPanelMultiItem from '@/workbench/extensions/manager/components/manager/infoPanel/InfoPanelMultiItem.vue'
@@ -157,9 +157,9 @@ import { useWorkflowPacks } from '@/workbench/extensions/manager/composables/nod
 import { useConflictAcknowledgment } from '@/workbench/extensions/manager/composables/useConflictAcknowledgment'
 import { useManagerStatePersistence } from '@/workbench/extensions/manager/composables/useManagerStatePersistence'
 import { useRegistrySearch } from '@/workbench/extensions/manager/composables/useRegistrySearch'
-import { useComfyManagerStore } from '@/workbench/extensions/manager/stores/comfyManagerStore'
-import type { TabItem } from '@/workbench/extensions/manager/types/comfyManagerTypes'
-import { ManagerTab } from '@/workbench/extensions/manager/types/comfyManagerTypes'
+import { useComfyManagerStore } from '@/workbench/extensions/manager/stores/hanzoManagerStore'
+import type { TabItem } from '@/workbench/extensions/manager/types/hanzoManagerTypes'
+import { ManagerTab } from '@/workbench/extensions/manager/types/hanzoManagerTypes'
 
 const { initialTab } = defineProps<{
   initialTab?: ManagerTab

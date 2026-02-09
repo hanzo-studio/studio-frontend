@@ -80,11 +80,11 @@ import { api } from '@/scripts/api'
 import { useCommandStore } from '@/stores/commandStore'
 import { useDialogStore } from '@/stores/dialogStore'
 import { useConflictDetection } from '@/workbench/extensions/manager/composables/useConflictDetection'
-import { useComfyManagerService } from '@/workbench/extensions/manager/services/comfyManagerService'
+import { useComfyManagerService } from '@/workbench/extensions/manager/services/hanzoManagerService'
 import {
   useComfyManagerStore,
   useManagerProgressDialogStore
-} from '@/workbench/extensions/manager/stores/comfyManagerStore'
+} from '@/workbench/extensions/manager/stores/hanzoManagerStore'
 
 const { t } = useI18n()
 const dialogStore = useDialogStore()
@@ -174,7 +174,7 @@ const handleRestart = async () => {
 
     useEventListener(api, 'reconnected', onReconnect, { once: true })
 
-    await useComfyManagerService().rebootHanzo Studio()
+    await useComfyManagerService().rebootHanzoStudio()
   } catch (error) {
     // If restart fails, restore settings and reset state
     await settingStore.set(

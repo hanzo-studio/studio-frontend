@@ -35,7 +35,7 @@ const mockInstalledPacks = {
 
 const mockIsPackEnabled = vi.fn(() => true)
 
-vi.mock('@/workbench/extensions/manager/stores/comfyManagerStore', () => ({
+vi.mock('@/workbench/extensions/manager/stores/hanzoManagerStore', () => ({
   useComfyManagerStore: vi.fn(() => ({
     installedPacks: mockInstalledPacks,
     isPackInstalled: (id: string) =>

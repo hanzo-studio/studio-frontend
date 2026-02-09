@@ -4,11 +4,11 @@ import { computed, ref } from 'vue'
 
 import * as dialogService from '@/services/dialogService'
 import { useImportFailedDetection } from '@/workbench/extensions/manager/composables/useImportFailedDetection'
-import * as comfyManagerStore from '@/workbench/extensions/manager/stores/comfyManagerStore'
+import * as comfyManagerStore from '@/workbench/extensions/manager/stores/hanzoManagerStore'
 import * as conflictDetectionStore from '@/workbench/extensions/manager/stores/conflictDetectionStore'
 
 // Mock the stores and services
-vi.mock('@/workbench/extensions/manager/stores/comfyManagerStore')
+vi.mock('@/workbench/extensions/manager/stores/hanzoManagerStore')
 vi.mock('@/workbench/extensions/manager/stores/conflictDetectionStore')
 vi.mock('@/services/dialogService')
 vi.mock('vue-i18n', async (importOriginal) => {
@@ -86,7 +86,7 @@ describe('useImportFailedDetection', () => {
       is_compatible: false,
       conflicts: [
         {
-          type: 'hanzo-studio_version',
+          type: 'hanzo_studio_version',
           current_value: 'current',
           required_value: 'required'
         },
@@ -119,7 +119,7 @@ describe('useImportFailedDetection', () => {
           required_value: 'Error details'
         },
         {
-          type: 'hanzo-studio_version',
+          type: 'hanzo_studio_version',
           current_value: 'current',
           required_value: 'required'
         }
@@ -190,7 +190,7 @@ describe('useImportFailedDetection', () => {
       conflicts: [
         ...importFailedConflicts,
         {
-          type: 'hanzo-studio_version',
+          type: 'hanzo_studio_version',
           current_value: 'current',
           required_value: 'required'
         }

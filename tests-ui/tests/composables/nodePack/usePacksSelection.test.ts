@@ -2,9 +2,9 @@ import { createPinia, setActivePinia } from 'pinia'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { ref } from 'vue'
 
-import type { components } from '@/types/comfyRegistryTypes'
+import type { components } from '@/types/hanzoRegistryTypes'
 import { usePacksSelection } from '@/workbench/extensions/manager/composables/nodePack/usePacksSelection'
-import { useComfyManagerStore } from '@/workbench/extensions/manager/stores/comfyManagerStore'
+import { useComfyManagerStore } from '@/workbench/extensions/manager/stores/hanzoManagerStore'
 
 vi.mock('vue-i18n', async () => {
   const actual = await vi.importActual('vue-i18n')

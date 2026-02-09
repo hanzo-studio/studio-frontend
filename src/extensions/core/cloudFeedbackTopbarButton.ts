@@ -1,6 +1,6 @@
 import { t } from '@/i18n'
 import { useExtensionService } from '@/services/extensionService'
-import type { ActionBarButton } from '@/types/comfy'
+import type { ActionBarButton } from '@/types/hanzo'
 
 // Zendesk feedback URL - update this with the actual URL
 const ZENDESK_FEEDBACK_URL =

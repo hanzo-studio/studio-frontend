@@ -990,7 +990,7 @@ export interface paths {
     patch?: never
     trace?: never
   }
-  '/v2/hanzo-studio_manager/hanzo-studio_versions': {
+  '/v2/hanzo_studio_manager/hanzo_studio_versions': {
     parameters: {
       query?: never
       header?: never
@@ -1039,7 +1039,7 @@ export interface paths {
     patch?: never
     trace?: never
   }
-  '/v2/hanzo-studio_manager/hanzo-studio_switch_version': {
+  '/v2/hanzo_studio_manager/hanzo_studio_switch_version': {
     parameters: {
       query?: never
       header?: never
@@ -1373,7 +1373,7 @@ export interface components {
         | components['schemas']['InstallPackParams']
         | components['schemas']['UpdatePackParams']
         | components['schemas']['UpdateAllPacksParams']
-        | components['schemas']['UpdateHanzo StudioParams']
+        | components['schemas']['UpdateHanzoStudioParams']
         | components['schemas']['FixPackParams']
         | components['schemas']['UninstallPackParams']
         | components['schemas']['DisablePackParams']
@@ -1585,7 +1585,7 @@ export interface components {
       /** @description Current version of the node package */
       node_ver?: string | null
     }
-    UpdateHanzo StudioParams: {
+    UpdateHanzoStudioParams: {
       /**
        * @description Whether to update to stable version (true) or nightly (false)
        * @default true
@@ -1743,7 +1743,7 @@ export interface components {
        */
       install_date?: string | null
     }
-    Hanzo StudioVersionInfo: {
+    HanzoStudioVersionInfo: {
       /** @description Hanzo Studio version string */
       version: string
       /** @description Git commit hash */
@@ -1800,13 +1800,13 @@ export interface components {
       /** @description Client that initiated the operation */
       client_id?: string | null
     }
-    Hanzo StudioSystemState: {
+    HanzoStudioSystemState: {
       /**
        * Format: date-time
        * @description ISO timestamp when snapshot was taken
        */
       snapshot_time: string
-      hanzo-studio_version: components['schemas']['Hanzo StudioVersionInfo']
+      hanzo_studio_version: components['schemas']['HanzoStudioVersionInfo']
       /** @description Hanzo Studio frontend version if available */
       frontend_version?: string | null
       /** @description Python interpreter version */
@@ -1839,9 +1839,9 @@ export interface components {
        * @description ISO timestamp when batch completed
        */
       end_time?: string | null
-      state_before: components['schemas']['Hanzo StudioSystemState']
+      state_before: components['schemas']['HanzoStudioSystemState']
       /** @description System state after batch execution */
-      state_after?: components['schemas']['Hanzo StudioSystemState']
+      state_after?: components['schemas']['HanzoStudioSystemState']
       /** @description List of operations performed in this batch */
       operations?: components['schemas']['BatchOperation'][]
       /**

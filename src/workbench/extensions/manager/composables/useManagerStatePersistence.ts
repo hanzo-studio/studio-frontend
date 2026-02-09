@@ -1,8 +1,8 @@
-import type { ManagerState } from '@/workbench/extensions/manager/types/comfyManagerTypes'
+import type { ManagerState } from '@/workbench/extensions/manager/types/hanzoManagerTypes'
 import {
   ManagerTab,
   SortableAlgoliaField
-} from '@/workbench/extensions/manager/types/comfyManagerTypes'
+} from '@/workbench/extensions/manager/types/hanzoManagerTypes'
 
 const STORAGE_KEY = 'Comfy.Manager.UI.State'
 

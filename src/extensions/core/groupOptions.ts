@@ -8,7 +8,7 @@ import {
   type LGraphNode
 } from '@/lib/litegraph/src/litegraph'
 import { useSettingStore } from '@/platform/settings/settingStore'
-import type { ComfyExtension } from '@/types/comfy'
+import type { ComfyExtension } from '@/types/hanzo'
 
 import { app } from '../../scripts/app'
 

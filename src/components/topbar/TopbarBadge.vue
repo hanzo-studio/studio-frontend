@@ -126,7 +126,7 @@
 import Popover from 'primevue/popover'
 import { computed, ref } from 'vue'
 
-import type { TopbarBadge } from '@/types/comfy'
+import type { TopbarBadge } from '@/types/hanzo'
 import { cn } from '@/utils/tailwindUtil'
 
 const props = withDefaults(

@@ -3,6 +3,7 @@
 export enum DownloadStatus {
   IDLE = 'idle',
   PENDING = 'pending',
+  IN_PROGRESS = 'in_progress',
   DOWNLOADING = 'downloading',
   PAUSED = 'paused',
   COMPLETED = 'completed',
@@ -136,10 +137,93 @@ export interface ElectronAPI {
   /** Event tracking */
   Events: {
     trackEvent: (name: string, data?: Record<string, unknown>) => void
+    incrementUserProperty: (property: string, value: number) => void
   }
 
   /** Native context menu */
-  showContextMenu: () => void
+  showContextMenu: (options?: { type?: string }) => void
+
+  /** Get the Electron desktop app version */
+  getElectronVersion: () => Promise<string>
+
+  /** Get the Hanzo Studio backend version */
+  getHanzoStudioVersion: () => string
+
+  /** Get the current platform */
+  getPlatform: () => string
+
+  /** Restart the application */
+  restartApp: (message?: string, delay?: number) => void
+
+  /** Quit the application */
+  quit: () => void
+
+  /** Reinstall the application */
+  reinstall: () => void
+
+  /** Restart and install a pending update */
+  restartAndInstall: () => void
+
+  /** Check for available updates */
+  checkForUpdates: (options?: {
+    disableUpdateReadyAction?: boolean
+  }) => Promise<{ isUpdateAvailable: boolean; version?: string }>
+
+  /** Change the application theme */
+  changeTheme: (theme: Record<string, unknown>) => void
+
+  /** Set metrics consent */
+  setMetricsConsent: (consent: boolean) => Promise<void>
+
+  /** Validate a Hanzo Studio source path */
+  validateHanzoStudioSource: (
+    path: string
+  ) => Promise<{ isValid: boolean; message?: string }>
+
+  /** Desktop configuration */
+  Config: {
+    setWindowStyle: (style: string) => void
+    getDetectedGpu?: () => string
+    [key: string]: unknown
+  }
+
+  /** Network utilities */
+  NetWork: {
+    canAccessUrl: (url: string) => Promise<boolean>
+    [key: string]: unknown
+  }
+
+  /** Terminal access */
+  Terminal: {
+    onOutput: (callback: (data: string) => void) => () => void
+    write: (data: string) => Promise<void>
+    resize: (cols: number, rows: number) => Promise<void>
+    restore: () => Promise<{
+      buffer: string[]
+      size: { cols: number; rows: number }
+    }>
+    [key: string]: unknown
+  }
+
+  /** Dialog access (desktop-ui) */
+  Dialog: {
+    clickButton: (value: string) => Promise<void>
+    [key: string]: unknown
+  }
+
+  /** Open folders */
+  openLogsFolder: () => void
+  openModelsFolder: () => void
+  openOutputsFolder: () => void
+  openInputsFolder: () => void
+  openCustomNodesFolder: () => void
+  openModelConfig: () => void
+  openDevTools: () => void
+
+  /** Validate install path */
+  validateInstallPath: (
+    path: string
+  ) => Promise<{ isValid: boolean; message?: string }>
 
   /** Allow arbitrary additional properties */
   [key: string]: unknown

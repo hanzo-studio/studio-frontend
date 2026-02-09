@@ -29,7 +29,7 @@ const defaultMockTaskLogs = [
   { taskName: 'Task 2', logs: ['Log 3', 'Log 4'] }
 ]
 
-vi.mock('@/workbench/extensions/manager/stores/comfyManagerStore', () => ({
+vi.mock('@/workbench/extensions/manager/stores/hanzoManagerStore', () => ({
   useComfyManagerStore: vi.fn(() => ({
     taskLogs: [...defaultMockTaskLogs],
     succeededTasksLogs: [...defaultMockTaskLogs],

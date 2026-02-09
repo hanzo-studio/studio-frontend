@@ -49,7 +49,7 @@
 import { computed, onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-import ComfyActionbar from '@/components/actionbar/ComfyActionbar.vue'
+import ComfyActionbar from '@/components/actionbar/StudioActionbar.vue'
 import SubgraphBreadcrumb from '@/components/breadcrumb/SubgraphBreadcrumb.vue'
 import IconButton from '@/components/button/IconButton.vue'
 import QueueProgressOverlay from '@/components/queue/QueueProgressOverlay.vue'

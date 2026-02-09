@@ -8,7 +8,7 @@ import { nextTick } from 'vue'
 import { createI18n } from 'vue-i18n'
 
 import enMessages from '@/locales/en/main.json' with { type: 'json' }
-import { useComfyManagerStore } from '@/workbench/extensions/manager/stores/comfyManagerStore'
+import { useComfyManagerStore } from '@/workbench/extensions/manager/stores/hanzoManagerStore'
 
 import PackEnableToggle from './PackEnableToggle.vue'
 
@@ -33,7 +33,7 @@ const mockNodePack = {
 const mockIsPackEnabled = vi.fn()
 const mockEnablePack = vi.fn().mockResolvedValue(undefined)
 const mockDisablePack = vi.fn().mockResolvedValue(undefined)
-vi.mock('@/workbench/extensions/manager/stores/comfyManagerStore', () => ({
+vi.mock('@/workbench/extensions/manager/stores/hanzoManagerStore', () => ({
   useComfyManagerStore: vi.fn(() => ({
     isPackEnabled: mockIsPackEnabled,
     enablePack: mockEnablePack,

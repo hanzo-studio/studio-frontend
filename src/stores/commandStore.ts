@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 
 import { useErrorHandling } from '@/composables/useErrorHandling'
-import type { ComfyExtension } from '@/types/comfy'
+import type { ComfyExtension } from '@/types/hanzo'
 
 import { useKeybindingStore } from './keybindingStore'
 import type { KeybindingImpl } from './keybindingStore'

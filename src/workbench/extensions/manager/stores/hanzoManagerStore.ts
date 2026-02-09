@@ -11,8 +11,8 @@ import { app } from '@/scripts/app'
 import { useDialogService } from '@/services/dialogService'
 import { normalizePackKeys } from '@/utils/packUtils'
 import { useManagerQueue } from '@/workbench/extensions/manager/composables/useManagerQueue'
-import { useComfyManagerService } from '@/workbench/extensions/manager/services/comfyManagerService'
-import type { TaskLog } from '@/workbench/extensions/manager/types/comfyManagerTypes'
+import { useComfyManagerService } from '@/workbench/extensions/manager/services/hanzoManagerService'
+import type { TaskLog } from '@/workbench/extensions/manager/types/hanzoManagerTypes'
 import type { components } from '@/workbench/extensions/manager/types/generatedManagerTypes'
 
 type InstallPackParams = components['schemas']['InstallPackParams']

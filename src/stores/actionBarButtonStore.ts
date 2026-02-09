@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { computed } from 'vue'
 
-import type { ActionBarButton } from '@/types/comfy'
+import type { ActionBarButton } from '@/types/hanzo'
 
 import { useExtensionStore } from './extensionStore'
 

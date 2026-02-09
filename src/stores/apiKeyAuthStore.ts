@@ -7,7 +7,7 @@ import { t } from '@/i18n'
 import { useToastStore } from '@/platform/updates/common/toastStore'
 import { useFirebaseAuthStore } from '@/stores/firebaseAuthStore'
 import type { ApiKeyAuthHeader } from '@/types/authTypes'
-import type { operations } from '@/types/comfyRegistryTypes'
+import type { operations } from '@/types/hanzoRegistryTypes'
 
 type ComfyApiUser =
   operations['createCustomer']['responses']['201']['content']['application/json']

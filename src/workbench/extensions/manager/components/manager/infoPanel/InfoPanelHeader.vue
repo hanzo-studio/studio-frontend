@@ -45,12 +45,12 @@
 import { computed, inject, ref, watch } from 'vue'
 
 import NoResultsPlaceholder from '@/components/common/NoResultsPlaceholder.vue'
-import type { components } from '@/types/comfyRegistryTypes'
+import type { components } from '@/types/hanzoRegistryTypes'
 import PackInstallButton from '@/workbench/extensions/manager/components/manager/button/PackInstallButton.vue'
 import PackUninstallButton from '@/workbench/extensions/manager/components/manager/button/PackUninstallButton.vue'
 import PackIcon from '@/workbench/extensions/manager/components/manager/packIcon/PackIcon.vue'
 import { useConflictDetection } from '@/workbench/extensions/manager/composables/useConflictDetection'
-import { useComfyManagerStore } from '@/workbench/extensions/manager/stores/comfyManagerStore'
+import { useComfyManagerStore } from '@/workbench/extensions/manager/stores/hanzoManagerStore'
 import type { ConflictDetail } from '@/workbench/extensions/manager/types/conflictDetectionTypes'
 import { ImportFailedKey } from '@/workbench/extensions/manager/types/importFailedTypes'
 

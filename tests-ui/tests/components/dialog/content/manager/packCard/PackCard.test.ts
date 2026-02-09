@@ -8,7 +8,7 @@ import PackCard from '@/workbench/extensions/manager/components/manager/packCard
 import type {
   MergedNodePack,
   RegistryPack
-} from '@/workbench/extensions/manager/types/comfyManagerTypes'
+} from '@/workbench/extensions/manager/types/hanzoManagerTypes'
 
 // Mock dependencies
 vi.mock('vue-i18n', () => ({
@@ -24,7 +24,7 @@ vi.mock('vue-i18n', () => ({
   }))
 }))
 
-vi.mock('@/workbench/extensions/manager/stores/comfyManagerStore', () => ({
+vi.mock('@/workbench/extensions/manager/stores/hanzoManagerStore', () => ({
   useComfyManagerStore: vi.fn(() => ({
     isPackInstalled: vi.fn(() => false),
     isPackEnabled: vi.fn(() => true),

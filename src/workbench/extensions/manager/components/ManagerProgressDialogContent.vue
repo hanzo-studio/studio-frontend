@@ -88,7 +88,7 @@ import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import {
   useComfyManagerStore,
   useManagerProgressDialogStore
-} from '@/workbench/extensions/manager/stores/comfyManagerStore'
+} from '@/workbench/extensions/manager/stores/hanzoManagerStore'
 
 const comfyManagerStore = useComfyManagerStore()
 const progressDialogContent = useManagerProgressDialogStore()

@@ -155,7 +155,7 @@ const install = async () => {
     // @ts-expect-error fixme ts strict error
     device: device.value
   }
-  electron.installHanzo Studio(options)
+  electron.installHanzoStudio(options)
 
   const nextPage =
     options.device === 'unsupported' ? '/manual-configuration' : '/server-start'

@@ -35,10 +35,10 @@ import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 import { useDialogService } from '@/services/dialogService'
-import type { components } from '@/types/comfyRegistryTypes'
+import type { components } from '@/types/hanzoRegistryTypes'
 import { useConflictAcknowledgment } from '@/workbench/extensions/manager/composables/useConflictAcknowledgment'
-import { useComfyManagerStore } from '@/workbench/extensions/manager/stores/comfyManagerStore'
 import { useConflictDetectionStore } from '@/workbench/extensions/manager/stores/conflictDetectionStore'
+import { useComfyManagerStore } from '@/workbench/extensions/manager/stores/hanzoManagerStore'
 import type { components as ManagerComponents } from '@/workbench/extensions/manager/types/generatedManagerTypes'
 
 const TOGGLE_DEBOUNCE_MS = 256

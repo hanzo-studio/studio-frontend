@@ -3,7 +3,7 @@ import type { ComputedRef } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 import { useDialogService } from '@/services/dialogService'
-import { useComfyManagerStore } from '@/workbench/extensions/manager/stores/comfyManagerStore'
+import { useComfyManagerStore } from '@/workbench/extensions/manager/stores/hanzoManagerStore'
 import { useConflictDetectionStore } from '@/workbench/extensions/manager/stores/conflictDetectionStore'
 import type { ConflictDetail } from '@/workbench/extensions/manager/types/conflictDetectionTypes'
 

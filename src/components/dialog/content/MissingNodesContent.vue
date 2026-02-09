@@ -51,7 +51,7 @@ import { computed } from 'vue'
 
 import MissingCoreNodesMessage from '@/components/dialog/content/MissingCoreNodesMessage.vue'
 import { isCloud } from '@/platform/distribution/types'
-import type { MissingNodeType } from '@/types/comfy'
+import type { MissingNodeType } from '@/types/hanzo'
 import { useMissingNodes } from '@/workbench/extensions/manager/composables/nodePack/useMissingNodes'
 
 const props = defineProps<{

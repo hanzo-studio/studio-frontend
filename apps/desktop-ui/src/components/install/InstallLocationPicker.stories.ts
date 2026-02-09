@@ -35,11 +35,12 @@ const meta: Meta<typeof InstallLocationPicker> = {
             requiredSpace: 10000000000,
             isNonDefaultDrive: false
           }),
-        validateHanzo StudioSource: () =>
+        validateHanzoStudioSource: () =>
           Promise.resolve({
             isValid: true
           }),
-        showDirectoryPicker: () => Promise.resolve('/Users/username/Hanzo Studio')
+        showDirectoryPicker: () =>
+          Promise.resolve('/Users/username/Hanzo Studio')
       }
       return { template: '<story />' }
     }

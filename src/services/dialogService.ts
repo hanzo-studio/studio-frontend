@@ -12,7 +12,7 @@ import PromptDialogContent from '@/components/dialog/content/PromptDialogContent
 import SignInContent from '@/components/dialog/content/SignInContent.vue'
 import TopUpCreditsDialogContent from '@/components/dialog/content/TopUpCreditsDialogContent.vue'
 import UpdatePasswordContent from '@/components/dialog/content/UpdatePasswordContent.vue'
-import HanzoStudioHeader from '@/components/dialog/header/HanzoStudioHeader.vue'
+import HanzoStudioHeader from '@/components/dialog/header/StudioOrgHeader.vue'
 import SettingDialogHeader from '@/components/dialog/header/SettingDialogHeader.vue'
 import { t } from '@/i18n'
 import { useTelemetry } from '@/platform/telemetry'

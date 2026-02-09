@@ -1,7 +1,7 @@
 import { expect } from '@playwright/test'
 
 import type { SystemStats } from '../../src/schemas/apiSchema'
-import { comfyPageFixture as test } from '../fixtures/ComfyPage'
+import { comfyPageFixture as test } from '../fixtures/StudioPage'
 
 test.describe('Version Mismatch Warnings', () => {
   const ALWAYS_AHEAD_OF_INSTALLED_VERSION = '100.100.100'
@@ -15,7 +15,7 @@ test.describe('Version Mismatch Warnings', () => {
         os: 'posix',
         ram_total: 67235385344,
         ram_free: 13464207360,
-        hanzo-studio_version: '0.3.46',
+        hanzo_studio_version: '0.3.46',
         required_frontend_version: requiredFrontendVersion,
         python_version: '3.12.3 (main, Jun 18 2025, 17:59:45) [GCC 13.3.0]',
         pytorch_version: '2.6.0+cu124',

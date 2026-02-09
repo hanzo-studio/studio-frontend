@@ -1,10 +1,10 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 import { useComfyRegistrySearchProvider } from '@/services/providers/registrySearchProvider'
-import { useComfyRegistryStore } from '@/stores/comfyRegistryStore'
+import { useComfyRegistryStore } from '@/stores/hanzoRegistryStore'
 
 // Mock the store
-vi.mock('@/stores/comfyRegistryStore', () => ({
+vi.mock('@/stores/hanzoRegistryStore', () => ({
   useComfyRegistryStore: vi.fn()
 }))
 

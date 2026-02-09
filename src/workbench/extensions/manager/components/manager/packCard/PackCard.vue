@@ -79,15 +79,15 @@ import { useColorPaletteStore } from '@/stores/workspace/colorPaletteStore'
 import PackVersionBadge from '@/workbench/extensions/manager/components/manager/PackVersionBadge.vue'
 import PackBanner from '@/workbench/extensions/manager/components/manager/packBanner/PackBanner.vue'
 import PackCardFooter from '@/workbench/extensions/manager/components/manager/packCard/PackCardFooter.vue'
-import { useComfyManagerStore } from '@/workbench/extensions/manager/stores/comfyManagerStore'
+import { useComfyManagerStore } from '@/workbench/extensions/manager/stores/hanzoManagerStore'
 import {
   IsInstallingKey,
   isMergedNodePack
-} from '@/workbench/extensions/manager/types/comfyManagerTypes'
+} from '@/workbench/extensions/manager/types/hanzoManagerTypes'
 import type {
   MergedNodePack,
   RegistryPack
-} from '@/workbench/extensions/manager/types/comfyManagerTypes'
+} from '@/workbench/extensions/manager/types/hanzoManagerTypes'
 
 const { nodePack, isSelected = false } = defineProps<{
   nodePack: MergedNodePack | RegistryPack

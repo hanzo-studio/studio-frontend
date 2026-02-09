@@ -24,8 +24,8 @@ const defaultMockVersions = [
     createdAt: '2023-01-01',
     supported_os: ['windows', 'linux'],
     supported_accelerators: ['CPU'],
-    supported_hanzo-studio_version: '>=0.1.0',
-    supported_hanzo-studio_frontend_version: '>=1.0.0',
+    supported_hanzo_studio_version: '>=0.1.0',
+    supported_hanzo_studio_frontend_version: '>=1.0.0',
     supported_python_version: '>=3.8',
     is_banned: false,
     has_registry_data: true
@@ -41,8 +41,8 @@ const mockNodePack = {
     version: '1.0.0',
     supported_os: ['windows', 'linux'],
     supported_accelerators: ['CPU'],
-    supported_hanzo-studio_version: '>=0.1.0',
-    supported_hanzo-studio_frontend_version: '>=1.0.0',
+    supported_hanzo_studio_version: '>=0.1.0',
+    supported_hanzo_studio_frontend_version: '>=1.0.0',
     supported_python_version: '>=3.8',
     is_banned: false,
     has_registry_data: true
@@ -57,14 +57,14 @@ const mockInstallPack = vi.fn().mockResolvedValue(undefined)
 const mockCheckNodeCompatibility = vi.fn()
 
 // Mock the registry service
-vi.mock('@/services/comfyRegistryService', () => ({
+vi.mock('@/services/hanzoRegistryService', () => ({
   useComfyRegistryService: vi.fn(() => ({
     getPackVersions: mockGetPackVersions
   }))
 }))
 
 // Mock the manager store
-vi.mock('@/workbench/extensions/manager/stores/comfyManagerStore', () => ({
+vi.mock('@/workbench/extensions/manager/stores/hanzoManagerStore', () => ({
   useComfyManagerStore: vi.fn(() => ({
     installPack: {
       call: mockInstallPack,
@@ -444,8 +444,8 @@ describe('PackVersionSelectorPopover', () => {
           version: '1.0.0',
           supported_os: ['windows', 'linux'],
           supported_accelerators: ['CUDA', 'CPU'],
-          supported_hanzo-studio_version: '>=0.1.0',
-          supported_hanzo-studio_frontend_version: '>=1.0.0'
+          supported_hanzo_studio_version: '>=0.1.0',
+          supported_hanzo_studio_frontend_version: '>=1.0.0'
         }
       ]
       mockGetPackVersions.mockResolvedValueOnce(versionsWithCompatibility)
@@ -454,14 +454,14 @@ describe('PackVersionSelectorPopover', () => {
         ...mockNodePack,
         supported_os: ['windows'],
         supported_accelerators: ['CPU'],
-        supported_hanzo-studio_version: '>=0.1.0',
-        supported_hanzo-studio_frontend_version: '>=1.0.0',
+        supported_hanzo_studio_version: '>=0.1.0',
+        supported_hanzo_studio_frontend_version: '>=1.0.0',
         latest_version: {
           version: '1.0.0',
           supported_os: ['windows', 'linux'],
           supported_accelerators: ['CPU'], // latest_version data takes precedence
-          supported_hanzo-studio_version: '>=0.1.0',
-          supported_hanzo-studio_frontend_version: '>=1.0.0',
+          supported_hanzo_studio_version: '>=0.1.0',
+          supported_hanzo_studio_frontend_version: '>=1.0.0',
           supported_python_version: '>=3.8',
           is_banned: false,
           has_registry_data: true
@@ -485,8 +485,8 @@ describe('PackVersionSelectorPopover', () => {
       expect(mockCheckNodeCompatibility).toHaveBeenCalledWith({
         supported_os: ['windows', 'linux'],
         supported_accelerators: ['CPU'], // latest_version data takes precedence
-        supported_hanzo-studio_version: '>=0.1.0',
-        supported_hanzo-studio_frontend_version: '>=1.0.0',
+        supported_hanzo_studio_version: '>=0.1.0',
+        supported_hanzo_studio_frontend_version: '>=1.0.0',
         supported_python_version: '>=3.8',
         is_banned: false,
         has_registry_data: true,
@@ -501,18 +501,18 @@ describe('PackVersionSelectorPopover', () => {
       // Mock compatibility check to return version conflicts
       mockCheckNodeCompatibility.mockImplementation((versionData) => {
         const conflicts = []
-        if (versionData.supported_hanzo-studio_version) {
+        if (versionData.supported_hanzo_studio_version) {
           conflicts.push({
-            type: 'hanzo-studio_version',
+            type: 'hanzo_studio_version',
             current_value: '0.5.0',
-            required_value: versionData.supported_hanzo-studio_version
+            required_value: versionData.supported_hanzo_studio_version
           })
         }
-        if (versionData.supported_hanzo-studio_frontend_version) {
+        if (versionData.supported_hanzo_studio_frontend_version) {
           conflicts.push({
             type: 'frontend_version',
             current_value: '1.0.0',
-            required_value: versionData.supported_hanzo-studio_frontend_version
+            required_value: versionData.supported_hanzo_studio_frontend_version
           })
         }
         return {
@@ -523,8 +523,8 @@ describe('PackVersionSelectorPopover', () => {
 
       const nodePackWithVersionRequirements = {
         ...mockNodePack,
-        supported_hanzo-studio_version: '>=1.0.0',
-        supported_hanzo-studio_frontend_version: '>=2.0.0'
+        supported_hanzo_studio_version: '>=1.0.0',
+        supported_hanzo_studio_frontend_version: '>=2.0.0'
       }
 
       const wrapper = mountComponent({
@@ -548,8 +548,8 @@ describe('PackVersionSelectorPopover', () => {
         ...mockNodePack,
         supported_os: ['windows'],
         supported_accelerators: ['CPU'],
-        supported_hanzo-studio_version: '>=0.1.0',
-        supported_hanzo-studio_frontend_version: '>=1.0.0',
+        supported_hanzo_studio_version: '>=0.1.0',
+        supported_hanzo_studio_frontend_version: '>=1.0.0',
         latest_version: {
           ...mockNodePack.latest_version,
           supported_os: ['windows'], // Match nodePack data for test consistency
@@ -575,8 +575,8 @@ describe('PackVersionSelectorPopover', () => {
       expect(mockCheckNodeCompatibility).toHaveBeenCalledWith({
         supported_os: ['windows'],
         supported_accelerators: ['CPU'],
-        supported_hanzo-studio_version: '>=0.1.0',
-        supported_hanzo-studio_frontend_version: '>=1.0.0',
+        supported_hanzo_studio_version: '>=0.1.0',
+        supported_hanzo_studio_frontend_version: '>=1.0.0',
         supported_python_version: '>=3.8',
         is_banned: false,
         has_registry_data: true,
@@ -593,8 +593,8 @@ describe('PackVersionSelectorPopover', () => {
         name: 'Test Pack',
         supported_os: ['windows'],
         supported_accelerators: ['CPU'],
-        supported_hanzo-studio_version: '>=0.1.0',
-        supported_hanzo-studio_frontend_version: '>=1.0.0',
+        supported_hanzo_studio_version: '>=0.1.0',
+        supported_hanzo_studio_frontend_version: '>=1.0.0',
         repository: 'https://github.com/user/repo',
         has_registry_data: true,
         latest_version: {
@@ -604,8 +604,8 @@ describe('PackVersionSelectorPopover', () => {
           is_banned: false,
           has_registry_data: true,
           version: '1.0.0',
-          supported_hanzo-studio_version: '>=0.1.0',
-          supported_hanzo-studio_frontend_version: '>=1.0.0'
+          supported_hanzo_studio_version: '>=0.1.0',
+          supported_hanzo_studio_frontend_version: '>=1.0.0'
         }
       })
     })

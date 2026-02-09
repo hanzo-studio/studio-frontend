@@ -5,7 +5,7 @@
  * This file extends and uses types from comfyRegistryTypes.ts to maintain consistency
  * with the Registry API schema.
  */
-import type { components } from '@/types/comfyRegistryTypes'
+import type { components } from '@/types/hanzoRegistryTypes'
 
 // Re-export core types from Registry API
 export type Node = components['schemas']['Node']
@@ -15,7 +15,7 @@ export type Node = components['schemas']['Node']
  * @enum {string}
  */
 export type ConflictType =
-  | 'hanzo-studio_version' // Hanzo Studio version mismatch
+  | 'hanzo_studio_version' // Hanzo Studio version mismatch
   | 'frontend_version' // Frontend version mismatch
   | 'import_failed'
   | 'os' // Operating system incompatibility
@@ -41,7 +41,7 @@ export interface NodeRequirements extends Node {
  */
 export interface SystemEnvironment {
   // Version information
-  hanzo-studio_version?: string
+  hanzo_studio_version?: string
   frontend_version?: string
   // Platform information
   os?: string

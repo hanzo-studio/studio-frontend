@@ -4,7 +4,7 @@ import type { IContextMenuValue } from '@/lib/litegraph/src/interfaces'
 import type { LGraphCanvas } from '@/lib/litegraph/src/litegraph'
 import { useToastStore } from '@/platform/updates/common/toastStore'
 import { useDialogService } from '@/services/dialogService'
-import type { ComfyExtension } from '@/types/comfy'
+import type { ComfyExtension } from '@/types/hanzo'
 import { deserialiseAndCreate } from '@/utils/vintageClipboard'
 
 import { api } from '../../scripts/api'

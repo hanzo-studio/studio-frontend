@@ -2,7 +2,7 @@ import type { AxiosError, AxiosResponse } from 'axios'
 import axios from 'axios'
 import { ref } from 'vue'
 
-import type { components, operations } from '@/types/comfyRegistryTypes'
+import type { components, operations } from '@/types/hanzoRegistryTypes'
 import { isAbortError } from '@/utils/typeGuardUtil'
 
 const API_BASE_URL = 'https://api.studio.hanzo.ai'

@@ -67,7 +67,7 @@ import AutoComplete from 'primevue/autocomplete'
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-import type { components } from '@/types/comfyRegistryTypes'
+import type { components } from '@/types/hanzoRegistryTypes'
 import type {
   QuerySuggestion,
   SearchMode,
@@ -78,8 +78,8 @@ import PackUpdateButton from '@/workbench/extensions/manager/components/manager/
 import SearchFilterDropdown from '@/workbench/extensions/manager/components/manager/registrySearchBar/SearchFilterDropdown.vue'
 import { useMissingNodes } from '@/workbench/extensions/manager/composables/nodePack/useMissingNodes'
 import { useUpdateAvailableNodes } from '@/workbench/extensions/manager/composables/nodePack/useUpdateAvailableNodes'
-import { SortableAlgoliaField } from '@/workbench/extensions/manager/types/comfyManagerTypes'
-import type { SearchOption } from '@/workbench/extensions/manager/types/comfyManagerTypes'
+import { SortableAlgoliaField } from '@/workbench/extensions/manager/types/hanzoManagerTypes'
+import type { SearchOption } from '@/workbench/extensions/manager/types/hanzoManagerTypes'
 
 const { searchResults, sortOptions } = defineProps<{
   searchResults?: components['schemas']['Node'][]

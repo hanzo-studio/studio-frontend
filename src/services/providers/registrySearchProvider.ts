@@ -1,6 +1,6 @@
-import { useComfyRegistryStore } from '@/stores/comfyRegistryStore'
+import { useComfyRegistryStore } from '@/stores/hanzoRegistryStore'
 import type { SearchNodePacksParams } from '@/types/algoliaTypes'
-import type { components } from '@/types/comfyRegistryTypes'
+import type { components } from '@/types/hanzoRegistryTypes'
 import type {
   NodePackSearchProvider,
   SearchPacksResult,

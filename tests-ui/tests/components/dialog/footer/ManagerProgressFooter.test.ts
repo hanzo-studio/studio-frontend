@@ -9,19 +9,19 @@ import { useSettingStore } from '@/platform/settings/settingStore'
 import { useCommandStore } from '@/stores/commandStore'
 import { useDialogStore } from '@/stores/dialogStore'
 import ManagerProgressFooter from '@/workbench/extensions/manager/components/ManagerProgressFooter.vue'
-import { useComfyManagerService } from '@/workbench/extensions/manager/services/comfyManagerService'
+import { useComfyManagerService } from '@/workbench/extensions/manager/services/hanzoManagerService'
 import {
   useComfyManagerStore,
   useManagerProgressDialogStore
-} from '@/workbench/extensions/manager/stores/comfyManagerStore'
-import type { TaskLog } from '@/workbench/extensions/manager/types/comfyManagerTypes'
+} from '@/workbench/extensions/manager/stores/hanzoManagerStore'
+import type { TaskLog } from '@/workbench/extensions/manager/types/hanzoManagerTypes'
 
 // Mock modules
-vi.mock('@/workbench/extensions/manager/stores/comfyManagerStore')
+vi.mock('@/workbench/extensions/manager/stores/hanzoManagerStore')
 vi.mock('@/stores/dialogStore')
 vi.mock('@/platform/settings/settingStore')
 vi.mock('@/stores/commandStore')
-vi.mock('@/workbench/extensions/manager/services/comfyManagerService')
+vi.mock('@/workbench/extensions/manager/services/hanzoManagerService')
 vi.mock(
   '@/workbench/extensions/manager/composables/useConflictDetection',
   () => ({
@@ -80,7 +80,8 @@ const mountComponent = (options: { captureError?: boolean } = {}) => {
           restartingBackend: 'Restarting backend to apply changes...',
           extensionsSuccessfullyInstalled:
             'Extension(s) successfully installed and are ready to use!',
-          restartToApplyChanges: 'To apply changes, please restart Hanzo Studio',
+          restartToApplyChanges:
+            'To apply changes, please restart Hanzo Studio',
           installingDependencies: 'Installing dependencies...'
         }
       }
@@ -182,7 +183,7 @@ describe('ManagerProgressFooter', () => {
   }
 
   const mockComfyManagerService = {
-    rebootHanzo Studio: vi.fn().mockResolvedValue(null)
+    rebootHanzoStudio: vi.fn().mockResolvedValue(null)
   }
 
   beforeEach(() => {
@@ -445,7 +446,7 @@ describe('ManagerProgressFooter', () => {
       mockComfyManagerStore.allTasksDone = true
 
       // Mock restart to throw error
-      mockComfyManagerService.rebootHanzo Studio.mockRejectedValue(
+      mockComfyManagerService.rebootHanzoStudio.mockRejectedValue(
         new Error('Restart failed')
       )
 
@@ -475,7 +476,7 @@ describe('ManagerProgressFooter', () => {
         false
       )
       // Check that the error handler was called
-      expect(mockComfyManagerService.rebootHanzo Studio).toHaveBeenCalled()
+      expect(mockComfyManagerService.rebootHanzoStudio).toHaveBeenCalled()
     })
   })
 })

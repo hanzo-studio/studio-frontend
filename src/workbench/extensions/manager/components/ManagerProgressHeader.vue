@@ -24,7 +24,7 @@ import { useI18n } from 'vue-i18n'
 import {
   useComfyManagerStore,
   useManagerProgressDialogStore
-} from '@/workbench/extensions/manager/stores/comfyManagerStore'
+} from '@/workbench/extensions/manager/stores/hanzoManagerStore'
 
 const progressDialogContent = useManagerProgressDialogStore()
 const comfyManagerStore = useComfyManagerStore()

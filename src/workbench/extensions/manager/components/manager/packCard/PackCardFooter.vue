@@ -25,13 +25,13 @@
 import { computed, inject } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-import type { components } from '@/types/comfyRegistryTypes'
+import type { components } from '@/types/hanzoRegistryTypes'
 import PackEnableToggle from '@/workbench/extensions/manager/components/manager/button/PackEnableToggle.vue'
 import PackInstallButton from '@/workbench/extensions/manager/components/manager/button/PackInstallButton.vue'
 import { useConflictDetection } from '@/workbench/extensions/manager/composables/useConflictDetection'
-import { useComfyManagerStore } from '@/workbench/extensions/manager/stores/comfyManagerStore'
-import { IsInstallingKey } from '@/workbench/extensions/manager/types/comfyManagerTypes'
+import { useComfyManagerStore } from '@/workbench/extensions/manager/stores/hanzoManagerStore'
 import type { ConflictDetail } from '@/workbench/extensions/manager/types/conflictDetectionTypes'
+import { IsInstallingKey } from '@/workbench/extensions/manager/types/hanzoManagerTypes'
 
 const { nodePack } = defineProps<{
   nodePack: components['schemas']['Node']

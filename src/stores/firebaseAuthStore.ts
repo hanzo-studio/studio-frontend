@@ -21,14 +21,14 @@ import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 import { useFirebaseAuth } from 'vuefire'
 
-import { getComfyApiBaseUrl } from '@/config/comfyApi'
+import { getComfyApiBaseUrl } from '@/config/hanzoApi'
 import { t } from '@/i18n'
 import { isCloud } from '@/platform/distribution/types'
 import { useTelemetry } from '@/platform/telemetry'
 import { useDialogService } from '@/services/dialogService'
 import { useApiKeyAuthStore } from '@/stores/apiKeyAuthStore'
 import type { AuthHeader } from '@/types/authTypes'
-import type { operations } from '@/types/comfyRegistryTypes'
+import type { operations } from '@/types/hanzoRegistryTypes'
 
 type CreditPurchaseResponse =
   operations['InitiateCreditPurchase']['responses']['201']['content']['application/json']

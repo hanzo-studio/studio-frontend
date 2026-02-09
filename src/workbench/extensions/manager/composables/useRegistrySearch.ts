@@ -5,9 +5,9 @@ import { computed, ref, watch } from 'vue'
 import { DEFAULT_PAGE_SIZE } from '@/constants/searchConstants'
 import { useRegistrySearchGateway } from '@/services/gateway/registrySearchGateway'
 import type { SearchAttribute } from '@/types/algoliaTypes'
-import type { components } from '@/types/comfyRegistryTypes'
+import type { components } from '@/types/hanzoRegistryTypes'
 import type { QuerySuggestion, SearchMode } from '@/types/searchServiceTypes'
-import { SortableAlgoliaField } from '@/workbench/extensions/manager/types/comfyManagerTypes'
+import { SortableAlgoliaField } from '@/workbench/extensions/manager/types/hanzoManagerTypes'
 
 type RegistryNodePack = components['schemas']['Node']
 

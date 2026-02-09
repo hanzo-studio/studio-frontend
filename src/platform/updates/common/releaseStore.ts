@@ -26,7 +26,7 @@ export const useReleaseStore = defineStore('release', () => {
 
   // Current HanzoStudio version
   const currentHanzoStudioVersion = computed(
-    () => systemStatsStore?.systemStats?.system?.hanzo-studio_version ?? ''
+    () => systemStatsStore?.systemStats?.system?.hanzo_studio_version ?? ''
   )
 
   // Release data from settings

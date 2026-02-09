@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { computed, markRaw, ref } from 'vue'
 
-import type { ComfyExtension } from '@/types/comfy'
+import type { ComfyExtension } from '@/types/hanzo'
 
 /**
  * These extensions are always active, even if they are disabled in the setting.

@@ -6,7 +6,7 @@ import type { IContextMenuValue } from '@/lib/litegraph/src/interfaces'
 import type { LGraphCanvas, LGraphNode } from '@/lib/litegraph/src/litegraph'
 import { useExtensionService } from '@/services/extensionService'
 import { useExtensionStore } from '@/stores/extensionStore'
-import type { ComfyExtension } from '@/types/comfy'
+import type { ComfyExtension } from '@/types/hanzo'
 
 describe('Context Menu Extension API', () => {
   let mockCanvas: LGraphCanvas

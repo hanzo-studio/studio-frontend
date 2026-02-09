@@ -28,7 +28,7 @@
 import { computed } from 'vue'
 
 import { t } from '@/i18n'
-import type { components } from '@/types/comfyRegistryTypes'
+import type { components } from '@/types/hanzoRegistryTypes'
 import { useImportFailedDetection } from '@/workbench/extensions/manager/composables/useImportFailedDetection'
 import type { ConflictDetectionResult } from '@/workbench/extensions/manager/types/conflictDetectionTypes'
 import { getConflictMessage } from '@/workbench/extensions/manager/utils/conflictMessageUtil'

@@ -26,7 +26,7 @@
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-import type { components } from '@/types/comfyRegistryTypes'
+import type { components } from '@/types/hanzoRegistryTypes'
 import { isValidUrl } from '@/utils/formatUtil'
 import InfoTextSection from '@/workbench/extensions/manager/components/manager/infoPanel/InfoTextSection.vue'
 import type { TextSection } from '@/workbench/extensions/manager/components/manager/infoPanel/InfoTextSection.vue'

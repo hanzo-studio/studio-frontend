@@ -1,6 +1,6 @@
 import type { BaseSearchParamsWithoutQuery } from 'algoliasearch/dist/lite/browser'
 
-import type { components } from '@/types/comfyRegistryTypes'
+import type { components } from '@/types/hanzoRegistryTypes'
 
 type SafeNestedProperty<
   T,
@@ -52,8 +52,8 @@ export interface AlgoliaNodePack {
   tags: RegistryNodePack['tags']
   github_stars: RegistryNodePack['github_stars']
   supported_os: RegistryNodePack['supported_os']
-  supported_hanzo-studio_version: RegistryNodePack['supported_hanzo-studio_version']
-  supported_hanzo-studio_frontend_version: RegistryNodePack['supported_hanzo-studio_frontend_version']
+  supported_hanzo_studio_version: RegistryNodePack['supported_hanzo_studio_version']
+  supported_hanzo_studio_frontend_version: RegistryNodePack['supported_hanzo_studio_frontend_version']
   supported_accelerators: RegistryNodePack['supported_accelerators']
   banner_url: RegistryNodePack['banner_url']
 }

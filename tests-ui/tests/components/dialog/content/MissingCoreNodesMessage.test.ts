@@ -32,7 +32,7 @@ const createMockNode = (type: string, version?: string): LGraphNode =>
 
 describe('MissingCoreNodesMessage', () => {
   const mockSystemStatsStore = {
-    systemStats: null as { system?: { hanzo-studio_version?: string } } | null,
+    systemStats: null as { system?: { hanzo_studio_version?: string } } | null,
     refetchSystemStats: vi.fn()
   }
 
@@ -89,7 +89,7 @@ describe('MissingCoreNodesMessage', () => {
   it('displays current Hanzo Studio version when available', async () => {
     // Set systemStats directly (store auto-fetches with useAsyncState)
     mockSystemStatsStore.systemStats = {
-      system: { hanzo-studio_version: '1.0.0' }
+      system: { hanzo_studio_version: '1.0.0' }
     }
 
     const missingCoreNodes = {

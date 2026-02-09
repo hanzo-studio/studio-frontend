@@ -16,14 +16,14 @@ import type {
   SearchAttribute,
   SearchNodePacksParams
 } from '@/types/algoliaTypes'
-import type { components } from '@/types/comfyRegistryTypes'
+import type { components } from '@/types/hanzoRegistryTypes'
 import type {
   NodePackSearchProvider,
   SearchPacksResult,
   SortableField
 } from '@/types/searchServiceTypes'
 import { paramsToCacheKey } from '@/utils/formatUtil'
-import { SortableAlgoliaField } from '@/workbench/extensions/manager/types/comfyManagerTypes'
+import { SortableAlgoliaField } from '@/workbench/extensions/manager/types/hanzoManagerTypes'
 
 type RegistryNodePack = components['schemas']['Node']
 
@@ -45,8 +45,8 @@ const RETRIEVE_ATTRIBUTES: SearchAttribute[] = [
   'icon_url',
   'github_stars',
   'supported_os',
-  'supported_hanzo-studio_version',
-  'supported_hanzo-studio_frontend_version',
+  'supported_hanzo_studio_version',
+  'supported_hanzo_studio_frontend_version',
   'supported_accelerators',
   'banner_url'
 ]
@@ -100,9 +100,10 @@ const toRegistryPack = memoize(
       tags: algoliaNode.tags,
       github_stars: algoliaNode.github_stars,
       supported_os: algoliaNode.supported_os,
-      supported_hanzo-studio_version: algoliaNode.supported_hanzo-studio_version,
-      supported_hanzo-studio_frontend_version:
-        algoliaNode.supported_hanzo-studio_frontend_version,
+      supported_hanzo_studio_version:
+        algoliaNode.supported_hanzo_studio_version,
+      supported_hanzo_studio_frontend_version:
+        algoliaNode.supported_hanzo_studio_frontend_version,
       supported_accelerators: algoliaNode.supported_accelerators,
       banner_url: algoliaNode.banner_url,
       comfy_nodes: algoliaNode.comfy_nodes

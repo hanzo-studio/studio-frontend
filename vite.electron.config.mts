@@ -39,7 +39,7 @@ const mockElectronAPI: Plugin = {
                 description: 'Settings and user-created workflows'
               }
             ]),
-          validateHanzo StudioSource: (path) => {
+          validateHanzoStudioSource: (path) => {
             if (path === 'bad') {
               return { isValid: false, error: 'Bad path!' }
             }
@@ -51,7 +51,7 @@ const mockElectronAPI: Plugin = {
             onDownloadProgress: () => {}
           },
           getElectronVersion: () => Promise.resolve('1.0.0'),
-          getHanzo StudioVersion: () => '9.9.9',
+          getHanzoStudioVersion: () => '9.9.9',
           getPlatform: () => 'win32',
           changeTheme: () => {},
           Config: {

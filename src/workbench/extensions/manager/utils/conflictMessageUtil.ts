@@ -16,7 +16,7 @@ export function getConflictMessage(
 
   // For version and compatibility conflicts, use interpolated message
   if (
-    conflict.type === 'hanzo-studio_version' ||
+    conflict.type === 'hanzo_studio_version' ||
     conflict.type === 'frontend_version' ||
     conflict.type === 'os' ||
     conflict.type === 'accelerator'

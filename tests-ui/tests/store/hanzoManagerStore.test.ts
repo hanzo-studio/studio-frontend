@@ -2,8 +2,8 @@ import { createPinia, setActivePinia } from 'pinia'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { nextTick, ref } from 'vue'
 
-import { useComfyManagerService } from '@/workbench/extensions/manager/services/comfyManagerService'
-import { useComfyManagerStore } from '@/workbench/extensions/manager/stores/comfyManagerStore'
+import { useComfyManagerService } from '@/workbench/extensions/manager/services/hanzoManagerService'
+import { useComfyManagerStore } from '@/workbench/extensions/manager/stores/hanzoManagerStore'
 import type { components as ManagerComponents } from '@/workbench/extensions/manager/types/generatedManagerTypes'
 
 type InstalledPacksResponse =
@@ -13,7 +13,7 @@ type ManagerDatabaseSource =
   ManagerComponents['schemas']['ManagerDatabaseSource']
 type ManagerPackInstalled = ManagerComponents['schemas']['ManagerPackInstalled']
 
-vi.mock('@/workbench/extensions/manager/services/comfyManagerService', () => ({
+vi.mock('@/workbench/extensions/manager/services/hanzoManagerService', () => ({
   useComfyManagerService: vi.fn()
 }))
 
@@ -95,7 +95,7 @@ describe('useComfyManagerStore', () => {
       disablePack: vi.fn().mockResolvedValue(null),
       updatePack: vi.fn().mockResolvedValue(null),
       updateAllPacks: vi.fn().mockResolvedValue(null),
-      rebootHanzo Studio: vi.fn().mockResolvedValue(null),
+      rebootHanzoStudio: vi.fn().mockResolvedValue(null),
       isLegacyManagerUI: vi.fn().mockResolvedValue(false)
     }
 

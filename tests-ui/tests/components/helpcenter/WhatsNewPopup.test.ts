@@ -3,7 +3,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { nextTick } from 'vue'
 
 import WhatsNewPopup from '@/platform/updates/components/WhatsNewPopup.vue'
-import type { components } from '@/types/comfyRegistryTypes'
+import type { components } from '@/types/hanzoRegistryTypes'
 
 type ReleaseNote = components['schemas']['ReleaseNote']
 
@@ -86,7 +86,7 @@ describe('WhatsNewPopup', () => {
       mockReleaseStore.shouldShowPopup = true
       mockReleaseStore.recentRelease = {
         id: 1,
-        project: 'hanzo-studio_frontend',
+        project: 'hanzo_studio_frontend',
         version: '1.24.0',
         attention: 'medium',
         content: 'New features added',
@@ -103,7 +103,7 @@ describe('WhatsNewPopup', () => {
       mockReleaseStore.shouldShowPopup = true
       mockReleaseStore.recentRelease = {
         id: 1,
-        project: 'hanzo-studio_frontend',
+        project: 'hanzo_studio_frontend',
         version: '1.24.0',
         attention: 'medium',
         content: 'New features added',
@@ -128,7 +128,7 @@ describe('WhatsNewPopup', () => {
       mockReleaseStore.shouldShowPopup = true
       mockReleaseStore.recentRelease = {
         id: 1,
-        project: 'hanzo-studio_frontend',
+        project: 'hanzo_studio_frontend',
         version: '1.24.0',
         attention: 'medium',
         content: '# Release Notes\n\nNew features',
@@ -147,7 +147,7 @@ describe('WhatsNewPopup', () => {
       mockReleaseStore.shouldShowPopup = true
       mockReleaseStore.recentRelease = {
         id: 1,
-        project: 'hanzo-studio_frontend',
+        project: 'hanzo_studio_frontend',
         version: '1.24.0',
         attention: 'medium',
         content: '',
@@ -165,7 +165,7 @@ describe('WhatsNewPopup', () => {
       mockReleaseStore.shouldShowPopup = true
       mockReleaseStore.recentRelease = {
         id: 1,
-        project: 'hanzo-studio_frontend',
+        project: 'hanzo_studio_frontend',
         version: '1.24.0',
         attention: 'medium',
         content: 'Content with\nnewlines',
@@ -184,7 +184,7 @@ describe('WhatsNewPopup', () => {
       mockReleaseStore.shouldShowPopup = true
       mockReleaseStore.recentRelease = {
         id: 1,
-        project: 'hanzo-studio_frontend',
+        project: 'hanzo_studio_frontend',
         version: '1.24.0-beta.1',
         attention: 'medium',
         content: 'Release content',
@@ -204,7 +204,7 @@ describe('WhatsNewPopup', () => {
       mockReleaseStore.shouldShowPopup = true
       mockReleaseStore.recentRelease = {
         id: 1,
-        project: 'hanzo-studio_frontend',
+        project: 'hanzo_studio_frontend',
         version: '1.24.0',
         attention: 'medium',
         content: 'Release content',
@@ -242,7 +242,7 @@ describe('WhatsNewPopup', () => {
       mockReleaseStore.shouldShowPopup = true
       mockReleaseStore.recentRelease = {
         id: 1,
-        project: 'hanzo-studio_frontend',
+        project: 'hanzo_studio_frontend',
         version: '',
         attention: 'medium',
         content: 'Release content',
@@ -263,7 +263,7 @@ describe('WhatsNewPopup', () => {
       mockReleaseStore.shouldShowPopup = true
       mockReleaseStore.recentRelease = {
         id: 1,
-        project: 'hanzo-studio_frontend',
+        project: 'hanzo_studio_frontend',
         version: '1.24.0',
         attention: 'medium',
         content: 'Release content',
@@ -285,7 +285,7 @@ describe('WhatsNewPopup', () => {
       mockReleaseStore.shouldShowPopup = true
       mockReleaseStore.recentRelease = {
         id: 1,
-        project: 'hanzo-studio_frontend',
+        project: 'hanzo_studio_frontend',
         version: '1.24.0',
         attention: 'medium',
         content: 'Release content',
@@ -374,7 +374,7 @@ describe('WhatsNewPopup', () => {
       mockReleaseStore.releases = [
         {
           id: 1,
-          project: 'hanzo-studio_frontend',
+          project: 'hanzo_studio_frontend',
           version: '1.24.0',
           attention: 'medium' as const,
           content: 'Content',
@@ -405,7 +405,7 @@ describe('WhatsNewPopup', () => {
       mockReleaseStore.shouldShowPopup = true
       mockReleaseStore.recentRelease = {
         id: 1,
-        project: 'hanzo-studio_frontend',
+        project: 'hanzo_studio_frontend',
         version: '1.24.0',
         attention: 'medium',
         content: 'Content',
@@ -423,7 +423,7 @@ describe('WhatsNewPopup', () => {
       mockReleaseStore.shouldShowPopup = true
       mockReleaseStore.recentRelease = {
         id: 1,
-        project: 'hanzo-studio_frontend',
+        project: 'hanzo_studio_frontend',
         version: '1.24.0',
         attention: 'medium',
         content: 'Content',
