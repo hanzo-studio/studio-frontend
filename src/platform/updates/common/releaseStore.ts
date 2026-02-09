@@ -24,8 +24,8 @@ export const useReleaseStore = defineStore('release', () => {
   const systemStatsStore = useSystemStatsStore()
   const settingStore = useSettingStore()
 
-  // Current Hanzo Studio version
-  const currentHanzo StudioVersion = computed(
+  // Current HanzoStudio version
+  const currentHanzoStudioVersion = computed(
     () => systemStatsStore?.systemStats?.system?.hanzo-studio_version ?? ''
   )
 
@@ -61,7 +61,7 @@ export const useReleaseStore = defineStore('release', () => {
       !!recentRelease.value &&
       compare(
         recentRelease.value.version,
-        currentHanzo StudioVersion.value || '0.0.0'
+        currentHanzoStudioVersion.value || '0.0.0'
       ) > 0
   )
 
@@ -70,7 +70,7 @@ export const useReleaseStore = defineStore('release', () => {
       !!recentRelease.value &&
       compare(
         recentRelease.value.version,
-        currentHanzo StudioVersion.value || '0.0.0'
+        currentHanzoStudioVersion.value || '0.0.0'
       ) === 0
   )
 
@@ -249,7 +249,7 @@ export const useReleaseStore = defineStore('release', () => {
 
       const fetchedReleases = await releaseService.getReleases({
         project: 'hanzo-studio',
-        current_version: currentHanzo StudioVersion.value,
+        current_version: currentHanzoStudioVersion.value,
         form_factor: systemStatsStore.getFormFactor(),
         locale: stringToLocale(locale.value)
       })

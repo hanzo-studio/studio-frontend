@@ -84,7 +84,7 @@ import { deserialiseAndCreate } from '@/utils/vintageClipboard'
 import { type ComfyApi, PromptExecutionError, api } from './api'
 import { defaultGraph } from './defaultGraph'
 import { importA1111 } from './pnginfo'
-import { $el, Hanzo Studio } from './ui'
+import { $el, HanzoStudio } from './ui'
 import { ComfyAppMenu } from './ui/menu/index'
 import { clone } from './utils'
 import { type ComfyWidgetConstructor } from './widgets'
@@ -146,7 +146,7 @@ export class ComfyApp {
 
   vueAppReady: boolean
   api: ComfyApi
-  ui: Hanzo Studio
+  ui: HanzoStudio
   // @ts-expect-error fixme ts strict error
   extensionManager: ExtensionManager
   // @ts-expect-error fixme ts strict error
@@ -238,7 +238,7 @@ export class ComfyApp {
 
   /**
    * @deprecated storageLocation is always 'server' since
-   * https://github.com/hanzoai/Hanzo Studio/commit/53c8a99e6c00b5e20425100f6680cd9ea2652218
+   * https://github.com/hanzoai/HanzoStudio/commit/53c8a99e6c00b5e20425100f6680cd9ea2652218
    */
   get storageLocation() {
     return 'server'
@@ -283,7 +283,7 @@ export class ComfyApp {
 
   constructor() {
     this.vueAppReady = false
-    this.ui = new Hanzo Studio(this)
+    this.ui = new HanzoStudio(this)
     this.api = api
     // Dummy placeholder elements before GraphCanvas is mounted.
     this.bodyTop = $el('div.hanzo-studio-body-top')
@@ -867,7 +867,7 @@ export class ComfyApp {
   }
 
   private resizeCanvas(canvas: HTMLCanvasElement) {
-    // Limit minimal scale to 1, see https://github.com/hanzoai/Hanzo Studio/pull/845
+    // Limit minimal scale to 1, see https://github.com/hanzoai/HanzoStudio/pull/845
     const scale = Math.max(window.devicePixelRatio, 1)
 
     // Clear fixed width and height while calculating rect so it uses 100% instead

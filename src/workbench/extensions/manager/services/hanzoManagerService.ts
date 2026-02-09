@@ -19,7 +19,7 @@ const GENERIC_SECURITY_ERR_MSG =
   'Forbidden: A security error has occurred. Please check the terminal logs'
 
 /**
- * API routes for Hanzo Studio Manager
+ * API routes for HanzoStudio Manager
  */
 enum ManagerRoute {
   START_QUEUE = 'manager/queue/start',
@@ -44,8 +44,8 @@ const managerApiClient = axios.create({
 })
 
 /**
- * Service for interacting with the Hanzo Studio Manager API
- * Provides methods for managing packs, Hanzo Studio-Manager queue operations, and system functions
+ * Service for interacting with the HanzoStudio Manager API
+ * Provides methods for managing packs, HanzoStudio-Manager queue operations, and system functions
  * Note: This service should only be used when Manager state is NEW_UI
  */
 export const useComfyManagerService = () => {
@@ -75,7 +75,7 @@ export const useComfyManagerService = () => {
       if (status && routeSpecificErrors?.[status]) {
         message = routeSpecificErrors[status]
       } else if (status === 404) {
-        message = 'Could not connect to Hanzo Studio-Manager'
+        message = 'Could not connect to HanzoStudio-Manager'
       } else {
         message =
           axiosError.response?.data?.message ??
@@ -118,9 +118,9 @@ export const useComfyManagerService = () => {
   }
 
   const startQueue = async (signal?: AbortSignal) => {
-    const errorContext = 'Starting Hanzo Studio-Manager job queue'
+    const errorContext = 'Starting HanzoStudio-Manager job queue'
     const routeSpecificErrors = {
-      201: 'Created: Hanzo Studio-Manager job queue is already running'
+      201: 'Created: HanzoStudio-Manager job queue is already running'
     }
 
     return executeRequest<null>(
@@ -130,7 +130,7 @@ export const useComfyManagerService = () => {
   }
 
   const getQueueStatus = async (client_id?: string, signal?: AbortSignal) => {
-    const errorContext = 'Getting Hanzo Studio-Manager queue status'
+    const errorContext = 'Getting HanzoStudio-Manager queue status'
 
     return executeRequest<ManagerQueueStatus>(
       () =>
@@ -252,7 +252,7 @@ export const useComfyManagerService = () => {
     const errorContext = 'Updating all packs'
     const routeSpecificErrors = {
       403: 'Forbidden: To use this action, a security_level of `middle or below` is required',
-      401: 'Unauthorized: Hanzo Studio-Manager job queue is busy'
+      401: 'Unauthorized: HanzoStudio-Manager job queue is busy'
     }
 
     const queryParams = {
@@ -271,10 +271,10 @@ export const useComfyManagerService = () => {
     )
   }
 
-  const rebootHanzo Studio = async (signal?: AbortSignal) => {
-    const errorContext = 'Rebooting Hanzo Studio'
+  const rebootHanzoStudio = async (signal?: AbortSignal) => {
+    const errorContext = 'Rebooting HanzoStudio'
     const routeSpecificErrors = {
-      403: 'Forbidden: Rebooting Hanzo Studio requires security_level of middle or below'
+      403: 'Forbidden: Rebooting HanzoStudio requires security_level of middle or below'
     }
 
     return executeRequest<null>(
@@ -301,7 +301,7 @@ export const useComfyManagerService = () => {
     } = {},
     signal?: AbortSignal
   ) => {
-    const errorContext = 'Getting Hanzo Studio-Manager task history'
+    const errorContext = 'Getting HanzoStudio-Manager task history'
 
     return executeRequest<ManagerTaskHistory>(
       () =>
@@ -335,7 +335,7 @@ export const useComfyManagerService = () => {
     updateAllPacks,
 
     // System operations
-    rebootHanzo Studio,
+    rebootHanzoStudio,
     isLegacyManagerUI
   }
 }
