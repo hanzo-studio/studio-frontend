@@ -7,7 +7,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-import ComfyQueueButton from '@/components/actionbar/ComfyRunButton/ComfyQueueButton.vue'
+import ComfyQueueButton from '@/components/actionbar/StudioRunButton/StudioQueueButton.vue'
 import SubscribeToRunButton from '@/platform/cloud/subscription/components/SubscribeToRun.vue'
 import { useSubscription } from '@/platform/cloud/subscription/composables/useSubscription'
 

@@ -57,8 +57,8 @@
 import { useAsyncState } from '@vueuse/core'
 import { computed, onUnmounted, provide, toRef } from 'vue'
 
-import { useComfyRegistryStore } from '@/stores/comfyRegistryStore'
-import type { components } from '@/types/comfyRegistryTypes'
+import { useComfyRegistryStore } from '@/stores/hanzoRegistryStore'
+import type { components } from '@/types/hanzoRegistryTypes'
 import PackStatusMessage from '@/workbench/extensions/manager/components/manager/PackStatusMessage.vue'
 import PackInstallButton from '@/workbench/extensions/manager/components/manager/button/PackInstallButton.vue'
 import PackUninstallButton from '@/workbench/extensions/manager/components/manager/button/PackUninstallButton.vue'

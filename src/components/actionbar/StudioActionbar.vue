@@ -51,7 +51,7 @@ import { useSettingStore } from '@/platform/settings/settingStore'
 import { useTelemetry } from '@/platform/telemetry'
 import { cn } from '@/utils/tailwindUtil'
 
-import ComfyRunButton from './ComfyRunButton'
+import ComfyRunButton from './StudioRunButton'
 
 const settingsStore = useSettingStore()
 

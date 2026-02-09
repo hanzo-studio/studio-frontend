@@ -88,7 +88,7 @@ import Message from 'primevue/message'
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-import { getComfyPlatformBaseUrl } from '@/config/comfyApi'
+import { getComfyPlatformBaseUrl } from '@/config/hanzoApi'
 import {
   configValueOrDefault,
   remoteConfig

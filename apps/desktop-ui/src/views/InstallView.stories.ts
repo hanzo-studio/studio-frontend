@@ -50,7 +50,7 @@ const meta: Meta<typeof InstallView> = {
         Events: {
           trackEvent: (_eventName: string, _data?: any) => {}
         },
-        installHanzo Studio: (_options: any) => {},
+        installHanzoStudio: (_options: any) => {},
         changeTheme: (_theme: any) => {},
         getSystemPaths: () =>
           Promise.resolve({
@@ -65,11 +65,12 @@ const meta: Meta<typeof InstallView> = {
             requiredSpace: 10000000000,
             isNonDefaultDrive: false
           }),
-        validateHanzo StudioSource: () =>
+        validateHanzoStudioSource: () =>
           Promise.resolve({
             isValid: true
           }),
-        showDirectoryPicker: () => Promise.resolve('/Users/username/Hanzo Studio')
+        showDirectoryPicker: () =>
+          Promise.resolve('/Users/username/Hanzo Studio')
       }
 
       return {

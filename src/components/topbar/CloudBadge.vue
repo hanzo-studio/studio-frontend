@@ -12,7 +12,7 @@
 import { computed } from 'vue'
 
 import { t } from '@/i18n'
-import type { TopbarBadge as TopbarBadgeType } from '@/types/comfy'
+import type { TopbarBadge as TopbarBadgeType } from '@/types/hanzo'
 
 import TopbarBadge from './TopbarBadge.vue'
 

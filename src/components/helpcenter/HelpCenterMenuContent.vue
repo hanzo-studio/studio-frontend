@@ -154,7 +154,7 @@ import { electronAPI, isElectron } from '@/utils/envUtil'
 import { formatVersionAnchor } from '@/utils/formatUtil'
 import { useConflictAcknowledgment } from '@/workbench/extensions/manager/composables/useConflictAcknowledgment'
 import { useManagerState } from '@/workbench/extensions/manager/composables/useManagerState'
-import { ManagerTab } from '@/workbench/extensions/manager/types/comfyManagerTypes'
+import { ManagerTab } from '@/workbench/extensions/manager/types/hanzoManagerTypes'
 
 // Types
 interface MenuItem {

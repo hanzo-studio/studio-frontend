@@ -29,9 +29,9 @@ import DotSpinner from '@/components/common/DotSpinner.vue'
 import { t } from '@/i18n'
 import { useDialogService } from '@/services/dialogService'
 import type { ButtonSize } from '@/types/buttonTypes'
-import type { components } from '@/types/comfyRegistryTypes'
+import type { components } from '@/types/hanzoRegistryTypes'
 import { useConflictDetection } from '@/workbench/extensions/manager/composables/useConflictDetection'
-import { useComfyManagerStore } from '@/workbench/extensions/manager/stores/comfyManagerStore'
+import { useComfyManagerStore } from '@/workbench/extensions/manager/stores/hanzoManagerStore'
 import type {
   ConflictDetail,
   ConflictDetectionResult

@@ -64,8 +64,8 @@ import { useDialogStore } from '@/stores/dialogStore'
 import PackInstallButton from '@/workbench/extensions/manager/components/manager/button/PackInstallButton.vue'
 import { useMissingNodes } from '@/workbench/extensions/manager/composables/nodePack/useMissingNodes'
 import { useManagerState } from '@/workbench/extensions/manager/composables/useManagerState'
-import { useComfyManagerStore } from '@/workbench/extensions/manager/stores/comfyManagerStore'
-import { ManagerTab } from '@/workbench/extensions/manager/types/comfyManagerTypes'
+import { useComfyManagerStore } from '@/workbench/extensions/manager/stores/hanzoManagerStore'
+import { ManagerTab } from '@/workbench/extensions/manager/types/hanzoManagerTypes'
 
 const dialogStore = useDialogStore()
 const { t } = useI18n()

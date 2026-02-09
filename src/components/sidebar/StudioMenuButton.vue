@@ -108,7 +108,7 @@ import { computed, nextTick, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 import SettingDialogHeader from '@/components/dialog/header/SettingDialogHeader.vue'
-import ComfyLogo from '@/components/icons/ComfyLogo.vue'
+import ComfyLogo from '@/components/icons/StudioLogo.vue'
 import { useWorkflowTemplateSelectorDialog } from '@/composables/useWorkflowTemplateSelectorDialog'
 import SettingDialogContent from '@/platform/settings/components/SettingDialogContent.vue'
 import { useSettingStore } from '@/platform/settings/settingStore'
@@ -121,7 +121,7 @@ import { useColorPaletteStore } from '@/stores/workspace/colorPaletteStore'
 import { normalizeI18nKey } from '@/utils/formatUtil'
 import { whileMouseDown } from '@/utils/mouseDownUtil'
 import { useManagerState } from '@/workbench/extensions/manager/composables/useManagerState'
-import { ManagerTab } from '@/workbench/extensions/manager/types/comfyManagerTypes'
+import { ManagerTab } from '@/workbench/extensions/manager/types/hanzoManagerTypes'
 
 const { t } = useI18n()
 const commandStore = useCommandStore()

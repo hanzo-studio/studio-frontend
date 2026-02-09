@@ -2,8 +2,8 @@ import type { AxiosError, AxiosResponse } from 'axios'
 import axios from 'axios'
 import { ref, watch } from 'vue'
 
-import { getComfyApiBaseUrl } from '@/config/comfyApi'
-import type { components, operations } from '@/types/comfyRegistryTypes'
+import { getComfyApiBaseUrl } from '@/config/hanzoApi'
+import type { components, operations } from '@/types/hanzoRegistryTypes'
 import { isAbortError } from '@/utils/typeGuardUtil'
 
 // Use generated types from OpenAPI spec

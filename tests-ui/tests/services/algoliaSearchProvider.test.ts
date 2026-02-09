@@ -2,7 +2,7 @@ import { liteClient as algoliasearch } from 'algoliasearch/dist/lite/builds/brow
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 import { useAlgoliaSearchProvider } from '@/services/providers/algoliaSearchProvider'
-import { SortableAlgoliaField } from '@/workbench/extensions/manager/types/comfyManagerTypes'
+import { SortableAlgoliaField } from '@/workbench/extensions/manager/types/hanzoManagerTypes'
 
 // Mock global Algolia constants
 ;(global as any).__ALGOLIA_APP_ID__ = 'test-app-id'
@@ -114,8 +114,8 @@ describe('useAlgoliaSearchProvider', () => {
         tags: undefined,
         github_stars: undefined,
         supported_os: undefined,
-        supported_hanzo-studio_version: undefined,
-        supported_hanzo-studio_frontend_version: undefined,
+        supported_hanzo_studio_version: undefined,
+        supported_hanzo_studio_frontend_version: undefined,
         supported_accelerators: undefined,
         banner_url: undefined
       })

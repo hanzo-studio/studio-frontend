@@ -10,7 +10,7 @@ import { KeybindingImpl, useKeybindingStore } from '@/stores/keybindingStore'
 import { useMenuItemStore } from '@/stores/menuItemStore'
 import { useWidgetStore } from '@/stores/widgetStore'
 import { useBottomPanelStore } from '@/stores/workspace/bottomPanelStore'
-import type { ComfyExtension } from '@/types/comfy'
+import type { ComfyExtension } from '@/types/hanzo'
 import type { AuthUserInfo } from '@/types/authTypes'
 
 export const useExtensionService = () => {

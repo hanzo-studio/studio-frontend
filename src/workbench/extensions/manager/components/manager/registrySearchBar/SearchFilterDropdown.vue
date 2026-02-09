@@ -22,7 +22,7 @@
 // eslint-disable-next-line no-restricted-imports -- TODO: Migrate to Select component
 import Dropdown from 'primevue/dropdown'
 
-import type { SearchOption } from '@/workbench/extensions/manager/types/comfyManagerTypes'
+import type { SearchOption } from '@/workbench/extensions/manager/types/hanzoManagerTypes'
 
 defineProps<{
   options: SearchOption<T>[]

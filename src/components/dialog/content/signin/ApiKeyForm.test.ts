@@ -9,7 +9,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { createApp } from 'vue'
 import { createI18n } from 'vue-i18n'
 
-import { getComfyPlatformBaseUrl } from '@/config/comfyApi'
+import { getComfyPlatformBaseUrl } from '@/config/hanzoApi'
 
 import ApiKeyForm from './ApiKeyForm.vue'
 

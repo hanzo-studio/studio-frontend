@@ -64,7 +64,7 @@ import { useScroll, whenever } from '@vueuse/core'
 import { computed, provide, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-import type { components } from '@/types/comfyRegistryTypes'
+import type { components } from '@/types/hanzoRegistryTypes'
 import PackStatusMessage from '@/workbench/extensions/manager/components/manager/PackStatusMessage.vue'
 import PackVersionBadge from '@/workbench/extensions/manager/components/manager/PackVersionBadge.vue'
 import PackEnableToggle from '@/workbench/extensions/manager/components/manager/button/PackEnableToggle.vue'
@@ -73,10 +73,10 @@ import InfoTabs from '@/workbench/extensions/manager/components/manager/infoPane
 import MetadataRow from '@/workbench/extensions/manager/components/manager/infoPanel/MetadataRow.vue'
 import { useConflictDetection } from '@/workbench/extensions/manager/composables/useConflictDetection'
 import { useImportFailedDetection } from '@/workbench/extensions/manager/composables/useImportFailedDetection'
-import { useComfyManagerStore } from '@/workbench/extensions/manager/stores/comfyManagerStore'
 import { useConflictDetectionStore } from '@/workbench/extensions/manager/stores/conflictDetectionStore'
-import { IsInstallingKey } from '@/workbench/extensions/manager/types/comfyManagerTypes'
+import { useComfyManagerStore } from '@/workbench/extensions/manager/stores/hanzoManagerStore'
 import type { ConflictDetectionResult } from '@/workbench/extensions/manager/types/conflictDetectionTypes'
+import { IsInstallingKey } from '@/workbench/extensions/manager/types/hanzoManagerTypes'
 import { ImportFailedKey } from '@/workbench/extensions/manager/types/importFailedTypes'
 
 interface InfoItem {

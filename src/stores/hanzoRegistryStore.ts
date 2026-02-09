@@ -3,8 +3,8 @@ import { partition } from 'es-toolkit/compat'
 import { defineStore } from 'pinia'
 
 import { useCachedRequest } from '@/composables/useCachedRequest'
-import { useComfyRegistryService } from '@/services/comfyRegistryService'
-import type { components, operations } from '@/types/comfyRegistryTypes'
+import { useComfyRegistryService } from '@/services/hanzoRegistryService'
+import type { components, operations } from '@/types/hanzoRegistryTypes'
 
 const PACK_LIST_CACHE_SIZE = 20
 const PACK_BY_ID_CACHE_SIZE = 64

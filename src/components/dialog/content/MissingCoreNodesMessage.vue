@@ -60,7 +60,7 @@ const hasMissingCoreNodes = computed(() => {
 // Use computed for reactive version tracking
 const currentHanzoStudioVersion = computed<string | null>(() => {
   if (!hasMissingCoreNodes.value) return null
-  return systemStatsStore.systemStats?.system?.hanzo-studio_version ?? null
+  return systemStatsStore.systemStats?.system?.hanzo_studio_version ?? null
 })
 
 const sortedMissingCoreNodes = computed(() => {

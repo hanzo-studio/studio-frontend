@@ -2,13 +2,13 @@ import { until } from '@vueuse/core'
 import { find } from 'es-toolkit/compat'
 import { computed, getCurrentInstance, onUnmounted, readonly, ref } from 'vue'
 
-import { useComfyRegistryService } from '@/services/comfyRegistryService'
+import { useComfyRegistryService } from '@/services/hanzoRegistryService'
 import { useSystemStatsStore } from '@/stores/systemStatsStore'
-import type { components } from '@/types/comfyRegistryTypes'
+import type { components } from '@/types/hanzoRegistryTypes'
 import { useInstalledPacks } from '@/workbench/extensions/manager/composables/nodePack/useInstalledPacks'
 import { useConflictAcknowledgment } from '@/workbench/extensions/manager/composables/useConflictAcknowledgment'
-import { useComfyManagerService } from '@/workbench/extensions/manager/services/comfyManagerService'
-import { useComfyManagerStore } from '@/workbench/extensions/manager/stores/comfyManagerStore'
+import { useComfyManagerService } from '@/workbench/extensions/manager/services/hanzoManagerService'
+import { useComfyManagerStore } from '@/workbench/extensions/manager/stores/hanzoManagerStore'
 import { useConflictDetectionStore } from '@/workbench/extensions/manager/stores/conflictDetectionStore'
 import type {
   RegistryAccelerator,
@@ -94,7 +94,7 @@ export function useConflictDetection() {
       const frontendVersion = getFrontendVersion()
 
       const environment: SystemEnvironment = {
-        hanzo-studio_version: systemStats?.system.hanzo-studio_version ?? '',
+        hanzo_studio_version: systemStats?.system.hanzo_studio_version ?? '',
         frontend_version: frontendVersion,
         os: systemStats?.system.os ?? '',
         accelerator: systemStats?.devices?.[0]?.type ?? ''
@@ -104,7 +104,7 @@ export function useConflictDetection() {
       return environment
     } catch (error) {
       const fallbackEnvironment: SystemEnvironment = {
-        hanzo-studio_version: undefined,
+        hanzo_studio_version: undefined,
         frontend_version: undefined,
         os: undefined,
         accelerator: undefined
@@ -217,9 +217,10 @@ export function useConflictDetection() {
             is_enabled: isEnabled,
 
             // Version-specific compatibility data
-            supported_hanzo-studio_version: versionData.supported_hanzo-studio_version,
-            supported_hanzo-studio_frontend_version:
-              versionData.supported_hanzo-studio_frontend_version,
+            supported_hanzo_studio_version:
+              versionData.supported_hanzo_studio_version,
+            supported_hanzo_studio_frontend_version:
+              versionData.supported_hanzo_studio_frontend_version,
             supported_os: normalizeOSList(
               versionData.supported_os
             ) as Node['supported_os'],
@@ -276,9 +277,9 @@ export function useConflictDetection() {
 
     // 1. Hanzo Studio version conflict check
     const versionConflict = checkVersionCompatibility(
-      'hanzo-studio_version',
-      systemEnvInfo.hanzo-studio_version,
-      packageReq.supported_hanzo-studio_version
+      'hanzo_studio_version',
+      systemEnvInfo.hanzo_studio_version,
+      packageReq.supported_hanzo_studio_version
     )
     if (versionConflict) conflicts.push(versionConflict)
 
@@ -286,7 +287,7 @@ export function useConflictDetection() {
     const frontendConflict = checkVersionCompatibility(
       'frontend_version',
       systemEnvInfo.frontend_version,
-      packageReq.supported_hanzo-studio_frontend_version
+      packageReq.supported_hanzo_studio_frontend_version
     )
     if (frontendConflict) conflicts.push(frontendConflict)
 
@@ -636,9 +637,9 @@ export function useConflictDetection() {
 
     // Check Hanzo Studio version compatibility
     const comfyUIVersionConflict = checkVersionCompatibility(
-      'hanzo-studio_version',
-      systemEnvironment.value?.hanzo-studio_version,
-      node.supported_hanzo-studio_version
+      'hanzo_studio_version',
+      systemEnvironment.value?.hanzo_studio_version,
+      node.supported_hanzo_studio_version
     )
     if (comfyUIVersionConflict) {
       conflicts.push(comfyUIVersionConflict)
@@ -649,7 +650,7 @@ export function useConflictDetection() {
     const frontendVersionConflict = checkVersionCompatibility(
       'frontend_version',
       currentFrontendVersion,
-      node.supported_hanzo-studio_frontend_version
+      node.supported_hanzo_studio_frontend_version
     )
     if (frontendVersionConflict) {
       conflicts.push(frontendVersionConflict)

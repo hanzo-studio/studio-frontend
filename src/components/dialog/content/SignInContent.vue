@@ -133,7 +133,10 @@
           {{ t('auth.login.privacyLink') }} </a
         >.
         {{ t('auth.login.questionsContactPrefix') }}
-        <a href="mailto:hello@studio.hanzo.ai" class="cursor-pointer text-blue-500">
+        <a
+          href="mailto:hello@studio.hanzo.ai"
+          class="cursor-pointer text-blue-500"
+        >
           hello@studio.hanzo.ai</a
         >.
       </p>
@@ -149,7 +152,7 @@ import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 import { useFirebaseAuthActions } from '@/composables/auth/useFirebaseAuthActions'
-import { getComfyPlatformBaseUrl } from '@/config/comfyApi'
+import { getComfyPlatformBaseUrl } from '@/config/hanzoApi'
 import {
   configValueOrDefault,
   remoteConfig

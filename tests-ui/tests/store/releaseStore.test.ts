@@ -52,7 +52,7 @@ describe('useReleaseStore', () => {
     mockSystemStatsStore = {
       systemStats: {
         system: {
-          hanzo-studio_version: '1.0.0'
+          hanzo_studio_version: '1.0.0'
         }
       },
       isInitialized: true,
@@ -170,7 +170,7 @@ describe('useReleaseStore', () => {
       })
 
       it('should show popup for latest version', () => {
-        mockSystemStatsStore.systemStats.system.hanzo-studio_version = '1.2.0'
+        mockSystemStatsStore.systemStats.system.hanzo_studio_version = '1.2.0'
 
         vi.mocked(semverCompare).mockReturnValue(0)
 
@@ -212,7 +212,7 @@ describe('useReleaseStore', () => {
       })
 
       it('should not show popup even for latest version', () => {
-        mockSystemStatsStore.systemStats.system.hanzo-studio_version = '1.2.0'
+        mockSystemStatsStore.systemStats.system.hanzo_studio_version = '1.2.0'
 
         vi.mocked(semverCompare).mockReturnValue(0)
 
@@ -514,7 +514,7 @@ describe('useReleaseStore', () => {
     })
 
     it('should show popup for latest version', () => {
-      mockSystemStatsStore.systemStats.system.hanzo-studio_version = '1.2.0' // Same as release
+      mockSystemStatsStore.systemStats.system.hanzo_studio_version = '1.2.0' // Same as release
       mockSettingStore.get.mockImplementation((key: string) => {
         if (key === 'Comfy.Notification.ShowVersionUpdates') return true
         return null
@@ -591,7 +591,7 @@ describe('useReleaseStore', () => {
       })
 
       it('should show popup for latest version', () => {
-        mockSystemStatsStore.systemStats.system.hanzo-studio_version = '1.2.0'
+        mockSystemStatsStore.systemStats.system.hanzo_studio_version = '1.2.0'
 
         vi.mocked(semverCompare).mockReturnValue(0)
 
@@ -648,7 +648,7 @@ describe('useReleaseStore', () => {
       })
 
       it('should NOT show popup even for latest version', () => {
-        mockSystemStatsStore.systemStats.system.hanzo-studio_version = '1.2.0'
+        mockSystemStatsStore.systemStats.system.hanzo_studio_version = '1.2.0'
 
         vi.mocked(semverCompare).mockReturnValue(0)
 

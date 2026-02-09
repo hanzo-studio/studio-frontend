@@ -59,7 +59,7 @@ import {
   ManagerUIState,
   useManagerState
 } from '@/workbench/extensions/manager/composables/useManagerState'
-import { ManagerTab } from '@/workbench/extensions/manager/types/comfyManagerTypes'
+import { ManagerTab } from '@/workbench/extensions/manager/types/hanzoManagerTypes'
 
 import { useWorkflowTemplateSelectorDialog } from './useWorkflowTemplateSelectorDialog'
 
@@ -752,7 +752,7 @@ export function useCoreCommands(): ComfyCommand[] {
       }
     },
     {
-      id: 'Comfy.Help.OpenHanzo StudioIssues',
+      id: 'Comfy.Help.OpenHanzoStudioIssues',
       icon: 'pi pi-github',
       label: 'Open Hanzo Studio Issues',
       menubarLabel: 'Hanzo Studio Issues',
@@ -767,7 +767,7 @@ export function useCoreCommands(): ComfyCommand[] {
       }
     },
     {
-      id: 'Comfy.Help.OpenHanzo StudioDocs',
+      id: 'Comfy.Help.OpenHanzoStudioDocs',
       icon: 'pi pi-info-circle',
       label: 'Open Hanzo Studio Docs',
       menubarLabel: 'Hanzo Studio Docs',
@@ -849,7 +849,7 @@ export function useCoreCommands(): ComfyCommand[] {
       }
     },
     {
-      id: 'Comfy.Help.OpenHanzo StudioForum',
+      id: 'Comfy.Help.OpenHanzoStudioForum',
       icon: 'pi pi-comments',
       label: 'Open Hanzo Studio Forum',
       menubarLabel: 'Hanzo Studio Forum',

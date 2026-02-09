@@ -91,8 +91,8 @@ function isIPv6Loopback(h: string): boolean {
   return leftCount + rightCount <= 6
 }
 
-const COMFY_ORG_HOST = /\.comfy\.org$/
+const HANZO_STUDIO_HOST = /\.studio\.hanzo\.ai$/
 
 function isHanzoStudioHost(h: string): boolean {
-  return COMFY_ORG_HOST.test(h)
+  return HANZO_STUDIO_HOST.test(h)
 }

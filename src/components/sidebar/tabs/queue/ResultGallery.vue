@@ -44,7 +44,7 @@
 import Galleria from 'primevue/galleria'
 import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 
-import ComfyImage from '@/components/common/ComfyImage.vue'
+import ComfyImage from '@/components/common/StudioImage.vue'
 import type { ResultItemImpl } from '@/stores/queueStore'
 
 import ResultAudio from './ResultAudio.vue'

@@ -45,7 +45,7 @@ ${error.traceback || 'No stack trace available'}
     : ''
 }
 ## System Information
-- **Hanzo Studio Version:** ${systemStats.system.hanzo-studio_version}
+- **Hanzo Studio Version:** ${systemStats.system.hanzo_studio_version}
 - **Arguments:** ${systemStats.system.argv.join(' ')}
 - **OS:** ${systemStats.system.os}
 - **Python Version:** ${systemStats.system.python_version}

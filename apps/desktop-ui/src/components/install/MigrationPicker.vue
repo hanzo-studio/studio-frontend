@@ -100,7 +100,7 @@ const validateSource = async (sourcePath: string | undefined) => {
 
   try {
     pathError.value = ''
-    const validation = await electron.validateHanzo StudioSource(sourcePath)
+    const validation = await electron.validateHanzoStudioSource(sourcePath)
 
     if (!validation.isValid) pathError.value = validation.error ?? 'ERROR'
   } catch (error) {

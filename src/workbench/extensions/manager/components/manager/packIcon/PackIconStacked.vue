@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import type { components } from '@/types/comfyRegistryTypes'
+import type { components } from '@/types/hanzoRegistryTypes'
 import PackIcon from '@/workbench/extensions/manager/components/manager/packIcon/PackIcon.vue'
 
 const {

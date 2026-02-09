@@ -7,7 +7,7 @@ import { api } from '@/scripts/api'
 import { useDialogService } from '@/services/dialogService'
 import { useCommandStore } from '@/stores/commandStore'
 import { useSystemStatsStore } from '@/stores/systemStatsStore'
-import { ManagerTab } from '@/workbench/extensions/manager/types/comfyManagerTypes'
+import { ManagerTab } from '@/workbench/extensions/manager/types/hanzoManagerTypes'
 
 export enum ManagerUIState {
   DISABLED = 'disabled',

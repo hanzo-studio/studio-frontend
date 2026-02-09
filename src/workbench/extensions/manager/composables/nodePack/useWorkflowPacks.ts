@@ -3,13 +3,13 @@ import { computed, onUnmounted, ref } from 'vue'
 import type { LGraphNode } from '@/lib/litegraph/src/litegraph'
 import type { ComfyWorkflowJSON } from '@/platform/workflow/validation/schemas/workflowSchema'
 import { app } from '@/scripts/app'
-import { useComfyRegistryStore } from '@/stores/comfyRegistryStore'
+import { useComfyRegistryStore } from '@/stores/hanzoRegistryStore'
 import { useNodeDefStore } from '@/stores/nodeDefStore'
 import { useSystemStatsStore } from '@/stores/systemStatsStore'
-import type { components } from '@/types/comfyRegistryTypes'
+import type { components } from '@/types/hanzoRegistryTypes'
 import { collectAllNodes } from '@/utils/graphTraversalUtil'
 import { useNodePacks } from '@/workbench/extensions/manager/composables/nodePack/useNodePacks'
-import type { UseNodePacksOptions } from '@/workbench/extensions/manager/types/comfyManagerTypes'
+import type { UseNodePacksOptions } from '@/workbench/extensions/manager/types/hanzoManagerTypes'
 
 type WorkflowPack = {
   id:
@@ -66,7 +66,8 @@ export const useWorkflowPacks = (options: UseNodePacksOptions = {}) => {
       return {
         id: CORE_NODES_PACK_NAME,
         version:
-          systemStatsStore.systemStats?.system?.hanzo-studio_version ?? 'nightly'
+          systemStatsStore.systemStats?.system?.hanzo_studio_version ??
+          'nightly'
       }
     }
 

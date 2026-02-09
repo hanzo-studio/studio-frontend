@@ -2,11 +2,11 @@ import { createPinia, setActivePinia } from 'pinia'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { ref } from 'vue'
 
-import { useComfyRegistryService } from '@/services/comfyRegistryService'
-import { useComfyRegistryStore } from '@/stores/comfyRegistryStore'
-import type { components, operations } from '@/types/comfyRegistryTypes'
+import { useComfyRegistryService } from '@/services/hanzoRegistryService'
+import { useComfyRegistryStore } from '@/stores/hanzoRegistryStore'
+import type { components, operations } from '@/types/hanzoRegistryTypes'
 
-vi.mock('@/services/comfyRegistryService', () => ({
+vi.mock('@/services/hanzoRegistryService', () => ({
   useComfyRegistryService: vi.fn()
 }))
 

@@ -30,7 +30,7 @@ describe('useConflictDetectionStore', () => {
       is_compatible: false,
       conflicts: [
         {
-          type: 'hanzo-studio_version',
+          type: 'hanzo_studio_version',
           current_value: '0.3.43',
           required_value: '<0.3.40'
         }
