@@ -100,3 +100,5 @@ vitest.config.*.timestamp*
 
 # Weekly docs check output
 /output.txt
+
+CLAUDE.md
