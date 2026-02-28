@@ -1,6 +1,6 @@
 import { expect } from '@playwright/test'
 
-import { comfyPageFixture as test } from '../fixtures/ComfyPage'
+import { comfyPageFixture as test } from '../fixtures/StudioPage'
 
 test.describe('Browser tab title', () => {
   test.describe('Beta Menu', () => {
@@ -12,7 +12,9 @@ test.describe('Browser tab title', () => {
       const workflowName = await comfyPage.page.evaluate(async () => {
         return window['app'].extensionManager.workflow.activeWorkflow.filename
       })
-      expect(await comfyPage.page.title()).toBe(`*${workflowName} - Hanzo Studio`)
+      expect(await comfyPage.page.title()).toBe(
+        `*${workflowName} - Hanzo Studio`
+      )
     })
 
     // Failing on CI
@@ -23,7 +25,9 @@ test.describe('Browser tab title', () => {
       const workflowName = await comfyPage.page.evaluate(async () => {
         return window['app'].extensionManager.workflow.activeWorkflow.filename
       })
-      expect(await comfyPage.page.title()).toBe(`${workflowName} - Hanzo Studio`)
+      expect(await comfyPage.page.title()).toBe(
+        `${workflowName} - Hanzo Studio`
+      )
 
       await comfyPage.menu.topbar.saveWorkflow('test')
       expect(await comfyPage.page.title()).toBe('test - Hanzo Studio')

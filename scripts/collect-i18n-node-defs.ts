@@ -2,7 +2,8 @@ import * as fs from 'fs'
 
 import type { ComfyNodeDef } from '@/schemas/nodeDefSchema'
 
-import { comfyPageFixture as test } from '../browser_tests/fixtures/ComfyPage'
+import { comfyPageFixture as test } from '../browser_tests/fixtures/StudioPage'
+// eslint-disable-next-line import-x/no-relative-packages
 import { normalizeI18nKey } from '../packages/shared-frontend-utils/src/formatUtil'
 import type { ComfyNodeDefImpl } from '../src/stores/nodeDefStore'
 
@@ -44,7 +45,7 @@ test('collect-i18n-node-defs', async ({ comfyPage }) => {
     }
   )
 
-  console.log(`Collected ${nodeDefs.length} node definitions`)
+  console.warn(`Collected ${nodeDefs.length} node definitions`)
 
   const allDataTypesLocale = Object.fromEntries(
     nodeDefs

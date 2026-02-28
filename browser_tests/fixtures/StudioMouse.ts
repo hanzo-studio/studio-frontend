@@ -1,6 +1,6 @@
 import type { Mouse } from '@playwright/test'
 
-import type { ComfyPage } from './ComfyPage'
+import type { ComfyPage } from './StudioPage'
 import type { Position } from './types'
 
 /**

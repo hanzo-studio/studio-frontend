@@ -10,9 +10,9 @@ import type { useWorkspaceStore } from '../../src/stores/workspaceStore'
 import { NodeBadgeMode } from '../../src/types/nodeSource'
 import { ComfyActionbar } from '../helpers/actionbar'
 import { ComfyTemplates } from '../helpers/templates'
-import { ComfyMouse } from './ComfyMouse'
+import { ComfyMouse } from './StudioMouse'
 import { VueNodeHelpers } from './VueNodeHelpers'
-import { ComfyNodeSearchBox } from './components/ComfyNodeSearchBox'
+import { ComfyNodeSearchBox } from './components/StudioNodeSearchBox'
 import { SettingDialog } from './components/SettingDialog'
 import {
   NodeLibrarySidebarTab,

@@ -9,7 +9,7 @@ import type {
   TaskItem,
   TaskOutput
 } from '../../../src/schemas/apiSchema'
-import type { ComfyPage } from '../ComfyPage'
+import type { ComfyPage } from '../StudioPage'
 
 /** keyof TaskOutput[string] */
 type OutputFileType = 'images' | 'audio' | 'animated'

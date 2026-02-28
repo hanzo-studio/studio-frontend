@@ -1,7 +1,7 @@
 import { expect } from '@playwright/test'
 
-import type { ComfyPage } from '../fixtures/ComfyPage'
-import { comfyPageFixture as test } from '../fixtures/ComfyPage'
+import type { ComfyPage } from '../fixtures/StudioPage'
+import { comfyPageFixture as test } from '../fixtures/StudioPage'
 
 test.describe('Remote COMBO Widget', () => {
   const mockOptions = ['d', 'c', 'b', 'a']

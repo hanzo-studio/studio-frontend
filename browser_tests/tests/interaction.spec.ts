@@ -5,8 +5,8 @@ import type { Position } from '@vueuse/core'
 import {
   comfyPageFixture as test,
   testComfySnapToGridGridSize
-} from '../fixtures/ComfyPage'
-import type { ComfyPage } from '../fixtures/ComfyPage'
+} from '../fixtures/StudioPage'
+import type { ComfyPage } from '../fixtures/StudioPage'
 import type { NodeReference } from '../fixtures/utils/litegraphUtils'
 
 test.beforeEach(async ({ comfyPage }) => {

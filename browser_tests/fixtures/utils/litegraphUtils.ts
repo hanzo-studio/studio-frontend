@@ -2,7 +2,7 @@ import type { Page } from '@playwright/test'
 
 import type { NodeId } from '../../../src/platform/workflow/validation/schemas/workflowSchema'
 import { ManageGroupNode } from '../../helpers/manageGroupNode'
-import type { ComfyPage } from '../ComfyPage'
+import type { ComfyPage } from '../StudioPage'
 import type { Position, Size } from '../types'
 
 export const getMiddlePoint = (pos1: Position, pos2: Position) => {

@@ -1,8 +1,8 @@
-import type { ComfyPage } from '../fixtures/ComfyPage'
+import type { ComfyPage } from '../fixtures/StudioPage'
 import {
   comfyExpect as expect,
   comfyPageFixture as test
-} from '../fixtures/ComfyPage'
+} from '../fixtures/StudioPage'
 
 async function beforeChange(comfyPage: ComfyPage) {
   await comfyPage.page.evaluate(() => {

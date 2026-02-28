@@ -1,3 +1,4 @@
+import './build/localStorage-polyfill'
 import { sentryVitePlugin } from '@sentry/vite-plugin'
 import tailwindcss from '@tailwindcss/vite'
 import vue from '@vitejs/plugin-vue'

@@ -1,7 +1,7 @@
 import {
   comfyExpect as expect,
   comfyPageFixture as test
-} from '../fixtures/ComfyPage'
+} from '../fixtures/StudioPage'
 import { fitToViewInstant } from '../helpers/fitToView'
 
 // TODO: there might be a better solution for this

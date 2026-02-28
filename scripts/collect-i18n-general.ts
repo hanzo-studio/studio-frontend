@@ -1,11 +1,13 @@
 import * as fs from 'fs'
 
+/* eslint-disable import-x/no-relative-packages */
 import { DESKTOP_DIALOGS } from '../apps/desktop-ui/src/constants/desktopDialogs'
-import { comfyPageFixture as test } from '../browser_tests/fixtures/ComfyPage'
+import { comfyPageFixture as test } from '../browser_tests/fixtures/StudioPage'
 import {
   formatCamelCase,
   normalizeI18nKey
 } from '../packages/shared-frontend-utils/src/formatUtil'
+/* eslint-enable import-x/no-relative-packages */
 import { CORE_MENU_COMMANDS } from '../src/constants/coreMenuCommands'
 import { SERVER_CONFIG_ITEMS } from '../src/constants/serverConfig'
 import type { FormItem, SettingParams } from '../src/platform/settings/types'
